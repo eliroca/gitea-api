@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.annotated_tag_object import AnnotatedTagObject
+from gitea_api.models.annotated_tag_object import AnnotatedTagObject
 
 # TODO update the JSON string below
 json = "{}"

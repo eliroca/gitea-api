@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.edit_label_option import EditLabelOption
+from gitea_api.models.edit_label_option import EditLabelOption
 
 # TODO update the JSON string below
 json = "{}"

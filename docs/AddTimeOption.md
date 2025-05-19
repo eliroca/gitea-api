@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.add_time_option import AddTimeOption
+from gitea_api.models.add_time_option import AddTimeOption
 
 # TODO update the JSON string below
 json = "{}"

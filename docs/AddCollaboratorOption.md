@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.add_collaborator_option import AddCollaboratorOption
+from gitea_api.models.add_collaborator_option import AddCollaboratorOption
 
 # TODO update the JSON string below
 json = "{}"

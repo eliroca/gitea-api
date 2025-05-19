@@ -42,7 +42,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.edit_repo_option import EditRepoOption
+from gitea_api.models.edit_repo_option import EditRepoOption
 
 # TODO update the JSON string below
 json = "{}"

@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.branch import Branch
+from gitea_api.models.branch import Branch
 
 # TODO update the JSON string below
 json = "{}"

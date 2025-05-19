@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.wiki_page_meta_data import WikiPageMetaData
+from gitea_api.models.wiki_page_meta_data import WikiPageMetaData
 
 # TODO update the JSON string below
 json = "{}"

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.create_fork_option import CreateForkOption
+from gitea_api.models.create_fork_option import CreateForkOption
 
 # TODO update the JSON string below
 json = "{}"

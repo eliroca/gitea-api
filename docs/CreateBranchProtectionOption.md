@@ -41,7 +41,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.create_branch_protection_option import CreateBranchProtectionOption
+from gitea_api.models.create_branch_protection_option import CreateBranchProtectionOption
 
 # TODO update the JSON string below
 json = "{}"

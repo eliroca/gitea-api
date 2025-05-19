@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.merge_pull_request_option import MergePullRequestOption
+from gitea_api.models.merge_pull_request_option import MergePullRequestOption
 
 # TODO update the JSON string below
 json = "{}"

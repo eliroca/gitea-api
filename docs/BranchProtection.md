@@ -43,7 +43,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.branch_protection import BranchProtection
+from gitea_api.models.branch_protection import BranchProtection
 
 # TODO update the JSON string below
 json = "{}"

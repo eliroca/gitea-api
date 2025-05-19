@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.cron import Cron
+from gitea_api.models.cron import Cron
 
 # TODO update the JSON string below
 json = "{}"

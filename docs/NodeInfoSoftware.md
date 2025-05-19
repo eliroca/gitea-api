@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.node_info_software import NodeInfoSoftware
+from gitea_api.models.node_info_software import NodeInfoSoftware
 
 # TODO update the JSON string below
 json = "{}"

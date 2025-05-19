@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.edit_reaction_option import EditReactionOption
+from gitea_api.models.edit_reaction_option import EditReactionOption
 
 # TODO update the JSON string below
 json = "{}"

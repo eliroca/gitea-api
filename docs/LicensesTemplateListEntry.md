@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.licenses_template_list_entry import LicensesTemplateListEntry
+from gitea_api.models.licenses_template_list_entry import LicensesTemplateListEntry
 
 # TODO update the JSON string below
 json = "{}"

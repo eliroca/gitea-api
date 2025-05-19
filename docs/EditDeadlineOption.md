@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.edit_deadline_option import EditDeadlineOption
+from gitea_api.models.edit_deadline_option import EditDeadlineOption
 
 # TODO update the JSON string below
 json = "{}"

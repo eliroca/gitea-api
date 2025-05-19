@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.reaction import Reaction
+from gitea_api.models.reaction import Reaction
 
 # TODO update the JSON string below
 json = "{}"

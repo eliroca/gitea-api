@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.general_api_settings import GeneralAPISettings
+from gitea_api.models.general_api_settings import GeneralAPISettings
 
 # TODO update the JSON string below
 json = "{}"

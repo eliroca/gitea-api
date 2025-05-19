@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.create_repo_option import CreateRepoOption
+from gitea_api.models.create_repo_option import CreateRepoOption
 
 # TODO update the JSON string below
 json = "{}"

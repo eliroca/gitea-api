@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.organization_permissions import OrganizationPermissions
+from gitea_api.models.organization_permissions import OrganizationPermissions
 
 # TODO update the JSON string below
 json = "{}"

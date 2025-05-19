@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.merge_upstream_response import MergeUpstreamResponse
+from gitea_api.models.merge_upstream_response import MergeUpstreamResponse
 
 # TODO update the JSON string below
 json = "{}"

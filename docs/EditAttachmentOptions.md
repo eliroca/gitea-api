@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.edit_attachment_options import EditAttachmentOptions
+from gitea_api.models.edit_attachment_options import EditAttachmentOptions
 
 # TODO update the JSON string below
 json = "{}"

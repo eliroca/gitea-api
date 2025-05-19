@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.create_status_option import CreateStatusOption
+from gitea_api.models.create_status_option import CreateStatusOption
 
 # TODO update the JSON string below
 json = "{}"

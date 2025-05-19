@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.create_file_options import CreateFileOptions
+from gitea_api.models.create_file_options import CreateFileOptions
 
 # TODO update the JSON string below
 json = "{}"

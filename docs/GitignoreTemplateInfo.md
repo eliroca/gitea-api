@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.gitignore_template_info import GitignoreTemplateInfo
+from gitea_api.models.gitignore_template_info import GitignoreTemplateInfo
 
 # TODO update the JSON string below
 json = "{}"

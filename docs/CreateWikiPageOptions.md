@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.create_wiki_page_options import CreateWikiPageOptions
+from gitea_api.models.create_wiki_page_options import CreateWikiPageOptions
 
 # TODO update the JSON string below
 json = "{}"

@@ -47,7 +47,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.pull_request import PullRequest
+from gitea_api.models.pull_request import PullRequest
 
 # TODO update the JSON string below
 json = "{}"

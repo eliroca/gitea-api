@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.repo_collaborator_permission import RepoCollaboratorPermission
+from gitea_api.models.repo_collaborator_permission import RepoCollaboratorPermission
 
 # TODO update the JSON string below
 json = "{}"

@@ -7,6 +7,7 @@ Repository represents a repository
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **allow_fast_forward_only_merge** | **bool** |  | [optional] 
+**allow_manual_merge** | **bool** |  | [optional] 
 **allow_merge_commits** | **bool** |  | [optional] 
 **allow_rebase** | **bool** |  | [optional] 
 **allow_rebase_explicit** | **bool** |  | [optional] 
@@ -14,6 +15,7 @@ Name | Type | Description | Notes
 **allow_squash_merge** | **bool** |  | [optional] 
 **archived** | **bool** |  | [optional] 
 **archived_at** | **datetime** |  | [optional] 
+**autodetect_manual_merge** | **bool** |  | [optional] 
 **avatar_url** | **str** |  | [optional] 
 **clone_url** | **str** |  | [optional] 
 **created_at** | **datetime** |  | [optional] 
@@ -72,7 +74,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.repository import Repository
+from gitea_api.models.repository import Repository
 
 # TODO update the JSON string below
 json = "{}"

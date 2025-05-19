@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.deploy_key import DeployKey
+from gitea_api.models.deploy_key import DeployKey
 
 # TODO update the JSON string below
 json = "{}"

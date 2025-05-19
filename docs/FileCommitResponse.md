@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.file_commit_response import FileCommitResponse
+from gitea_api.models.file_commit_response import FileCommitResponse
 
 # TODO update the JSON string below
 json = "{}"

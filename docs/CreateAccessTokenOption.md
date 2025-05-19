@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.create_access_token_option import CreateAccessTokenOption
+from gitea_api.models.create_access_token_option import CreateAccessTokenOption
 
 # TODO update the JSON string below
 json = "{}"

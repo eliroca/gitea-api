@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.migrate_repo_options import MigrateRepoOptions
+from gitea_api.models.migrate_repo_options import MigrateRepoOptions
 
 # TODO update the JSON string below
 json = "{}"

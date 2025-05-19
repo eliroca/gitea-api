@@ -25,9 +25,9 @@ jobs:
             docker.io/openapitools/openapi-generator-cli generate \
               -i https://src.opensuse.org/swagger.v1.json \
               -g python --library asyncio -o /local/ \
-              -p packageName=py_gitea_opensuse_org \
-              --git-repo-id py-gitea-opensuse-org \
-              --git-user-id dcermak \
+              -p packageName=gitea_api \
+              --git-repo-id gitea-api \
+              --git-user-id eliroca \
               --additional-properties=packageVersion=$(curl https://src.opensuse.org/swagger.v1.json | jq '.info.version'|sed 's/"//g')
 
       - name: update poetry lockfile
@@ -41,7 +41,7 @@ jobs:
         with:
           delete-branch: true
           commit-message: "🤖: Update gitea API via openapi-generator-cli"
-          assignees: dcermak
+          assignees: eliroca
           title: "🤖: Update gitea API"
           body: |
             This is an automated update regenerating the gitea API via openapi-generator-cli

@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.comment import Comment
+from gitea_api.models.comment import Comment
 
 # TODO update the JSON string below
 json = "{}"

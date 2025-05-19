@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.payload_user import PayloadUser
+from gitea_api.models.payload_user import PayloadUser
 
 # TODO update the JSON string below
 json = "{}"

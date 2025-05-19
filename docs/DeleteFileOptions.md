@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.delete_file_options import DeleteFileOptions
+from gitea_api.models.delete_file_options import DeleteFileOptions
 
 # TODO update the JSON string below
 json = "{}"

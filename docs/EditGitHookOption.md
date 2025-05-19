@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.edit_git_hook_option import EditGitHookOption
+from gitea_api.models.edit_git_hook_option import EditGitHookOption
 
 # TODO update the JSON string below
 json = "{}"

@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.create_pull_review_comment import CreatePullReviewComment
+from gitea_api.models.create_pull_review_comment import CreatePullReviewComment
 
 # TODO update the JSON string below
 json = "{}"

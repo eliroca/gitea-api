@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.git_hook import GitHook
+from gitea_api.models.git_hook import GitHook
 
 # TODO update the JSON string below
 json = "{}"

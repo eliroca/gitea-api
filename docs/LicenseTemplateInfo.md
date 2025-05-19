@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.license_template_info import LicenseTemplateInfo
+from gitea_api.models.license_template_info import LicenseTemplateInfo
 
 # TODO update the JSON string below
 json = "{}"

@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.create_pull_request_option import CreatePullRequestOption
+from gitea_api.models.create_pull_request_option import CreatePullRequestOption
 
 # TODO update the JSON string below
 json = "{}"

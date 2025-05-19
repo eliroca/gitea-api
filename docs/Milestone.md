@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.milestone import Milestone
+from gitea_api.models.milestone import Milestone
 
 # TODO update the JSON string below
 json = "{}"

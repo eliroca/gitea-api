@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.compare import Compare
+from gitea_api.models.compare import Compare
 
 # TODO update the JSON string below
 json = "{}"

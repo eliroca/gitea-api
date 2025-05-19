@@ -1,13 +1,13 @@
 [tool.poetry]
-name = "py_gitea_opensuse_org"
-version = "1.23.7"
+name = "gitea_api"
+version = "1.23.8"
 description = "Gitea API"
 authors = ["OpenAPI Generator Community <team@openapitools.org>"]
 license = "MIT"
 readme = "README.md"
 repository = "https://github.com/eliroca/gitea-api"
 keywords = ["OpenAPI", "OpenAPI-Generator", "Gitea API"]
-include = ["py_gitea_opensuse_org/py.typed"]
+include = ["gitea_api/py.typed"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
@@ -37,7 +37,7 @@ extension-pkg-whitelist = "pydantic"
 
 [tool.mypy]
 files = [
-  "py_gitea_opensuse_org",
+  "gitea_api",
   #"test",  # auto-generated tests
   "tests", # hand-written tests
 ]
@@ -75,7 +75,7 @@ disallow_any_generics = true
 
 [[tool.mypy.overrides]]
 module = [
-  "py_gitea_opensuse_org.configuration",
+  "gitea_api.configuration",
 ]
 warn_unused_ignores = true
 strict_equality = true

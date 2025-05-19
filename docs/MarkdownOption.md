@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.markdown_option import MarkdownOption
+from gitea_api.models.markdown_option import MarkdownOption
 
 # TODO update the JSON string below
 json = "{}"

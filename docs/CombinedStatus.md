@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.combined_status import CombinedStatus
+from gitea_api.models.combined_status import CombinedStatus
 
 # TODO update the JSON string below
 json = "{}"

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.commit_user import CommitUser
+from gitea_api.models.commit_user import CommitUser
 
 # TODO update the JSON string below
 json = "{}"

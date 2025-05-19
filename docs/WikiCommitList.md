@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.wiki_commit_list import WikiCommitList
+from gitea_api.models.wiki_commit_list import WikiCommitList
 
 # TODO update the JSON string below
 json = "{}"

@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.action_variable import ActionVariable
+from gitea_api.models.action_variable import ActionVariable
 
 # TODO update the JSON string below
 json = "{}"

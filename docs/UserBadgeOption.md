@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.user_badge_option import UserBadgeOption
+from gitea_api.models.user_badge_option import UserBadgeOption
 
 # TODO update the JSON string below
 json = "{}"

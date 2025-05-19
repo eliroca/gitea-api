@@ -39,7 +39,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.timeline_comment import TimelineComment
+from gitea_api.models.timeline_comment import TimelineComment
 
 # TODO update the JSON string below
 json = "{}"

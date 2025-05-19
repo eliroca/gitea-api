@@ -1,4 +1,4 @@
-# py_gitea_opensuse_org.SettingsApi
+# gitea_api.SettingsApi
 
 All URIs are relative to */api/v1*
 
@@ -26,14 +26,14 @@ Get instance's global settings for api
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.general_api_settings import GeneralAPISettings
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.general_api_settings import GeneralAPISettings
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -61,7 +61,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -85,9 +85,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.SettingsApi(api_client)
+    api_instance = gitea_api.SettingsApi(api_client)
 
     try:
         # Get instance's global settings for api
@@ -141,14 +141,14 @@ Get instance's global settings for Attachment
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.general_attachment_settings import GeneralAttachmentSettings
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.general_attachment_settings import GeneralAttachmentSettings
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -176,7 +176,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -200,9 +200,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.SettingsApi(api_client)
+    api_instance = gitea_api.SettingsApi(api_client)
 
     try:
         # Get instance's global settings for Attachment
@@ -256,14 +256,14 @@ Get instance's global settings for repositories
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.general_repo_settings import GeneralRepoSettings
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.general_repo_settings import GeneralRepoSettings
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -291,7 +291,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -315,9 +315,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.SettingsApi(api_client)
+    api_instance = gitea_api.SettingsApi(api_client)
 
     try:
         # Get instance's global settings for repositories
@@ -371,14 +371,14 @@ Get instance's global settings for ui
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.general_ui_settings import GeneralUISettings
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.general_ui_settings import GeneralUISettings
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -406,7 +406,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -430,9 +430,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.SettingsApi(api_client)
+    api_instance = gitea_api.SettingsApi(api_client)
 
     try:
         # Get instance's global settings for ui

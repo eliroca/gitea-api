@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.gpg_key_email import GPGKeyEmail
+from gitea_api.models.gpg_key_email import GPGKeyEmail
 
 # TODO update the JSON string below
 json = "{}"

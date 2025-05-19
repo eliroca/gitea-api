@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.edit_tag_protection_option import EditTagProtectionOption
+from gitea_api.models.edit_tag_protection_option import EditTagProtectionOption
 
 # TODO update the JSON string below
 json = "{}"

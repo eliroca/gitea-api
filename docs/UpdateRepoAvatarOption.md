@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.update_repo_avatar_option import UpdateRepoAvatarOption
+from gitea_api.models.update_repo_avatar_option import UpdateRepoAvatarOption
 
 # TODO update the JSON string below
 json = "{}"

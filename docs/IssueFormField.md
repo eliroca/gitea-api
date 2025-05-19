@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.issue_form_field import IssueFormField
+from gitea_api.models.issue_form_field import IssueFormField
 
 # TODO update the JSON string below
 json = "{}"

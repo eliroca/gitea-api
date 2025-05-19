@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.user_heatmap_data import UserHeatmapData
+from gitea_api.models.user_heatmap_data import UserHeatmapData
 
 # TODO update the JSON string below
 json = "{}"

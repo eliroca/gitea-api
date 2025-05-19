@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.pull_review_request_options import PullReviewRequestOptions
+from gitea_api.models.pull_review_request_options import PullReviewRequestOptions
 
 # TODO update the JSON string below
 json = "{}"

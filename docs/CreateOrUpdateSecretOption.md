@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.create_or_update_secret_option import CreateOrUpdateSecretOption
+from gitea_api.models.create_or_update_secret_option import CreateOrUpdateSecretOption
 
 # TODO update the JSON string below
 json = "{}"

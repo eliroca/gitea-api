@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.label_template import LabelTemplate
+from gitea_api.models.label_template import LabelTemplate
 
 # TODO update the JSON string below
 json = "{}"

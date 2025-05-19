@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.action_task_response import ActionTaskResponse
+from gitea_api.models.action_task_response import ActionTaskResponse
 
 # TODO update the JSON string below
 json = "{}"

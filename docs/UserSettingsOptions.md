@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.user_settings_options import UserSettingsOptions
+from gitea_api.models.user_settings_options import UserSettingsOptions
 
 # TODO update the JSON string below
 json = "{}"

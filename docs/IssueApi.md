@@ -1,4 +1,4 @@
-# py_gitea_opensuse_org.IssueApi
+# gitea_api.IssueApi
 
 All URIs are relative to */api/v1*
 
@@ -89,15 +89,15 @@ Add a label to an issue
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.issue_labels_option import IssueLabelsOption
-from py_gitea_opensuse_org.models.label import Label
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.issue_labels_option import IssueLabelsOption
+from gitea_api.models.label import Label
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -125,7 +125,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -149,13 +149,13 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 56 # int | index of the issue
-    body = py_gitea_opensuse_org.IssueLabelsOption() # IssueLabelsOption |  (optional)
+    body = gitea_api.IssueLabelsOption() # IssueLabelsOption |  (optional)
 
     try:
         # Add a label to an issue
@@ -217,13 +217,13 @@ Subscribe user to issue
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -251,7 +251,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -275,9 +275,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 56 # int | index of the issue
@@ -342,15 +342,15 @@ Add tracked time to a issue
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.add_time_option import AddTimeOption
-from py_gitea_opensuse_org.models.tracked_time import TrackedTime
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.add_time_option import AddTimeOption
+from gitea_api.models.tracked_time import TrackedTime
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -378,7 +378,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -402,13 +402,13 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 56 # int | index of the issue
-    body = py_gitea_opensuse_org.AddTimeOption() # AddTimeOption |  (optional)
+    body = gitea_api.AddTimeOption() # AddTimeOption |  (optional)
 
     try:
         # Add tracked time to a issue
@@ -471,14 +471,14 @@ Check if user is subscribed to an issue
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.watch_info import WatchInfo
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.watch_info import WatchInfo
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -506,7 +506,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -530,9 +530,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 56 # int | index of the issue
@@ -595,13 +595,13 @@ Remove all labels from an issue
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -629,7 +629,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -653,9 +653,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 56 # int | index of the issue
@@ -717,15 +717,15 @@ Add a comment to an issue
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.comment import Comment
-from py_gitea_opensuse_org.models.create_issue_comment_option import CreateIssueCommentOption
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.comment import Comment
+from gitea_api.models.create_issue_comment_option import CreateIssueCommentOption
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -753,7 +753,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -777,13 +777,13 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 56 # int | index of the issue
-    body = py_gitea_opensuse_org.CreateIssueCommentOption() # CreateIssueCommentOption |  (optional)
+    body = gitea_api.CreateIssueCommentOption() # CreateIssueCommentOption |  (optional)
 
     try:
         # Add a comment to an issue
@@ -846,15 +846,15 @@ Create an issue. If using deadline only the date will be taken into account, and
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.create_issue_option import CreateIssueOption
-from py_gitea_opensuse_org.models.issue import Issue
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.create_issue_option import CreateIssueOption
+from gitea_api.models.issue import Issue
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -882,7 +882,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -906,12 +906,12 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
-    body = py_gitea_opensuse_org.CreateIssueOption() # CreateIssueOption |  (optional)
+    body = gitea_api.CreateIssueOption() # CreateIssueOption |  (optional)
 
     try:
         # Create an issue. If using deadline only the date will be taken into account, and time of day ignored.
@@ -975,14 +975,14 @@ Create an issue attachment
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.attachment import Attachment
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.attachment import Attachment
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -1010,7 +1010,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -1034,9 +1034,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 56 # int | index of the issue
@@ -1106,15 +1106,15 @@ Block the issue given in the body by the issue in path
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.issue import Issue
-from py_gitea_opensuse_org.models.issue_meta import IssueMeta
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.issue import Issue
+from gitea_api.models.issue_meta import IssueMeta
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -1142,7 +1142,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -1166,13 +1166,13 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 'index_example' # str | index of the issue
-    body = py_gitea_opensuse_org.IssueMeta() # IssueMeta |  (optional)
+    body = gitea_api.IssueMeta() # IssueMeta |  (optional)
 
     try:
         # Block the issue given in the body by the issue in path
@@ -1233,14 +1233,14 @@ Create a comment attachment
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.attachment import Attachment
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.attachment import Attachment
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -1268,7 +1268,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -1292,9 +1292,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     id = 56 # int | id of the comment
@@ -1365,15 +1365,15 @@ Make the issue in the url depend on the issue in the form.
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.issue import Issue
-from py_gitea_opensuse_org.models.issue_meta import IssueMeta
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.issue import Issue
+from gitea_api.models.issue_meta import IssueMeta
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -1401,7 +1401,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -1425,13 +1425,13 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 'index_example' # str | index of the issue
-    body = py_gitea_opensuse_org.IssueMeta() # IssueMeta |  (optional)
+    body = gitea_api.IssueMeta() # IssueMeta |  (optional)
 
     try:
         # Make the issue in the url depend on the issue in the form.
@@ -1493,15 +1493,15 @@ Create a label
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.create_label_option import CreateLabelOption
-from py_gitea_opensuse_org.models.label import Label
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.create_label_option import CreateLabelOption
+from gitea_api.models.label import Label
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -1529,7 +1529,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -1553,12 +1553,12 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
-    body = py_gitea_opensuse_org.CreateLabelOption() # CreateLabelOption |  (optional)
+    body = gitea_api.CreateLabelOption() # CreateLabelOption |  (optional)
 
     try:
         # Create a label
@@ -1619,15 +1619,15 @@ Create a milestone
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.create_milestone_option import CreateMilestoneOption
-from py_gitea_opensuse_org.models.milestone import Milestone
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.create_milestone_option import CreateMilestoneOption
+from gitea_api.models.milestone import Milestone
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -1655,7 +1655,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -1679,12 +1679,12 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
-    body = py_gitea_opensuse_org.CreateMilestoneOption() # CreateMilestoneOption |  (optional)
+    body = gitea_api.CreateMilestoneOption() # CreateMilestoneOption |  (optional)
 
     try:
         # Create a milestone
@@ -1744,13 +1744,13 @@ Delete an issue
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -1778,7 +1778,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -1802,9 +1802,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 56 # int | index of issue to delete
@@ -1866,13 +1866,13 @@ Delete a comment
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -1900,7 +1900,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -1924,9 +1924,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     id = 56 # int | id of comment to delete
@@ -1988,13 +1988,13 @@ Delete a comment
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -2022,7 +2022,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -2046,9 +2046,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 56 # int | this parameter is ignored
@@ -2112,14 +2112,14 @@ Remove a reaction from a comment of an issue
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.edit_reaction_option import EditReactionOption
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.edit_reaction_option import EditReactionOption
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -2147,7 +2147,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -2171,13 +2171,13 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     id = 56 # int | id of the comment to edit
-    content = py_gitea_opensuse_org.EditReactionOption() # EditReactionOption |  (optional)
+    content = gitea_api.EditReactionOption() # EditReactionOption |  (optional)
 
     try:
         # Remove a reaction from a comment of an issue
@@ -2237,13 +2237,13 @@ Delete an issue attachment
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -2271,7 +2271,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -2295,9 +2295,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 56 # int | index of the issue
@@ -2361,13 +2361,13 @@ Delete a comment attachment
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -2395,7 +2395,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -2419,9 +2419,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     id = 56 # int | id of the comment
@@ -2485,14 +2485,14 @@ Remove a reaction from an issue
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.edit_reaction_option import EditReactionOption
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.edit_reaction_option import EditReactionOption
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -2520,7 +2520,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -2544,13 +2544,13 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 56 # int | index of the issue
-    content = py_gitea_opensuse_org.EditReactionOption() # EditReactionOption |  (optional)
+    content = gitea_api.EditReactionOption() # EditReactionOption |  (optional)
 
     try:
         # Remove a reaction from an issue
@@ -2610,13 +2610,13 @@ Delete a label
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -2644,7 +2644,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -2668,9 +2668,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     id = 56 # int | id of the label to delete
@@ -2731,13 +2731,13 @@ Delete a milestone
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -2765,7 +2765,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -2789,9 +2789,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     id = 'id_example' # str | the milestone to delete, identified by ID and if not available by name
@@ -2852,13 +2852,13 @@ Delete an issue's existing stopwatch.
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -2886,7 +2886,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -2910,9 +2910,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 56 # int | index of the issue to stop the stopwatch on
@@ -2975,13 +2975,13 @@ Unsubscribe user from issue
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -3009,7 +3009,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -3033,9 +3033,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 56 # int | index of the issue
@@ -3100,13 +3100,13 @@ Delete specific tracked time
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -3134,7 +3134,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -3158,9 +3158,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 56 # int | index of the issue
@@ -3225,15 +3225,15 @@ Edit a comment
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.comment import Comment
-from py_gitea_opensuse_org.models.edit_issue_comment_option import EditIssueCommentOption
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.comment import Comment
+from gitea_api.models.edit_issue_comment_option import EditIssueCommentOption
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -3261,7 +3261,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -3285,13 +3285,13 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     id = 56 # int | id of the comment to edit
-    body = py_gitea_opensuse_org.EditIssueCommentOption() # EditIssueCommentOption |  (optional)
+    body = gitea_api.EditIssueCommentOption() # EditIssueCommentOption |  (optional)
 
     try:
         # Edit a comment
@@ -3355,15 +3355,15 @@ Edit a comment
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.comment import Comment
-from py_gitea_opensuse_org.models.edit_issue_comment_option import EditIssueCommentOption
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.comment import Comment
+from gitea_api.models.edit_issue_comment_option import EditIssueCommentOption
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -3391,7 +3391,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -3415,14 +3415,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 56 # int | this parameter is ignored
     id = 56 # int | id of the comment to edit
-    body = py_gitea_opensuse_org.EditIssueCommentOption() # EditIssueCommentOption |  (optional)
+    body = gitea_api.EditIssueCommentOption() # EditIssueCommentOption |  (optional)
 
     try:
         # Edit a comment
@@ -3486,15 +3486,15 @@ Edit an issue. If using deadline only the date will be taken into account, and t
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.edit_issue_option import EditIssueOption
-from py_gitea_opensuse_org.models.issue import Issue
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.edit_issue_option import EditIssueOption
+from gitea_api.models.issue import Issue
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -3522,7 +3522,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -3546,13 +3546,13 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 56 # int | index of the issue to edit
-    body = py_gitea_opensuse_org.EditIssueOption() # EditIssueOption |  (optional)
+    body = gitea_api.EditIssueOption() # EditIssueOption |  (optional)
 
     try:
         # Edit an issue. If using deadline only the date will be taken into account, and time of day ignored.
@@ -3615,15 +3615,15 @@ Edit an issue attachment
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.attachment import Attachment
-from py_gitea_opensuse_org.models.edit_attachment_options import EditAttachmentOptions
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.attachment import Attachment
+from gitea_api.models.edit_attachment_options import EditAttachmentOptions
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -3651,7 +3651,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -3675,14 +3675,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 56 # int | index of the issue
     attachment_id = 56 # int | id of the attachment to edit
-    body = py_gitea_opensuse_org.EditAttachmentOptions() # EditAttachmentOptions |  (optional)
+    body = gitea_api.EditAttachmentOptions() # EditAttachmentOptions |  (optional)
 
     try:
         # Edit an issue attachment
@@ -3746,15 +3746,15 @@ Edit a comment attachment
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.attachment import Attachment
-from py_gitea_opensuse_org.models.edit_attachment_options import EditAttachmentOptions
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.attachment import Attachment
+from gitea_api.models.edit_attachment_options import EditAttachmentOptions
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -3782,7 +3782,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -3806,14 +3806,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     id = 56 # int | id of the comment
     attachment_id = 56 # int | id of the attachment to edit
-    body = py_gitea_opensuse_org.EditAttachmentOptions() # EditAttachmentOptions |  (optional)
+    body = gitea_api.EditAttachmentOptions() # EditAttachmentOptions |  (optional)
 
     try:
         # Edit a comment attachment
@@ -3877,15 +3877,15 @@ Set an issue deadline. If set to null, the deadline is deleted. If using deadlin
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.edit_deadline_option import EditDeadlineOption
-from py_gitea_opensuse_org.models.issue_deadline import IssueDeadline
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.edit_deadline_option import EditDeadlineOption
+from gitea_api.models.issue_deadline import IssueDeadline
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -3913,7 +3913,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -3937,13 +3937,13 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 56 # int | index of the issue to create or update a deadline on
-    body = py_gitea_opensuse_org.EditDeadlineOption() # EditDeadlineOption |  (optional)
+    body = gitea_api.EditDeadlineOption() # EditDeadlineOption |  (optional)
 
     try:
         # Set an issue deadline. If set to null, the deadline is deleted. If using deadline only the date will be taken into account, and time of day ignored.
@@ -4005,15 +4005,15 @@ Update a label
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.edit_label_option import EditLabelOption
-from py_gitea_opensuse_org.models.label import Label
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.edit_label_option import EditLabelOption
+from gitea_api.models.label import Label
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -4041,7 +4041,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -4065,13 +4065,13 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     id = 56 # int | id of the label to edit
-    body = py_gitea_opensuse_org.EditLabelOption() # EditLabelOption |  (optional)
+    body = gitea_api.EditLabelOption() # EditLabelOption |  (optional)
 
     try:
         # Update a label
@@ -4133,15 +4133,15 @@ Update a milestone
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.edit_milestone_option import EditMilestoneOption
-from py_gitea_opensuse_org.models.milestone import Milestone
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.edit_milestone_option import EditMilestoneOption
+from gitea_api.models.milestone import Milestone
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -4169,7 +4169,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -4193,13 +4193,13 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     id = 'id_example' # str | the milestone to edit, identified by ID and if not available by name
-    body = py_gitea_opensuse_org.EditMilestoneOption() # EditMilestoneOption |  (optional)
+    body = gitea_api.EditMilestoneOption() # EditMilestoneOption |  (optional)
 
     try:
         # Update a milestone
@@ -4260,14 +4260,14 @@ Get a comment
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.comment import Comment
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.comment import Comment
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -4295,7 +4295,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -4319,9 +4319,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     id = 56 # int | id of the comment
@@ -4386,14 +4386,14 @@ Get a list of reactions from a comment of an issue
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.reaction import Reaction
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.reaction import Reaction
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -4421,7 +4421,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -4445,9 +4445,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     id = 56 # int | id of the comment to edit
@@ -4511,14 +4511,14 @@ List all comments on an issue
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.comment import Comment
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.comment import Comment
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -4546,7 +4546,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -4570,9 +4570,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 56 # int | index of the issue
@@ -4639,14 +4639,14 @@ List all comments and events on an issue
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.timeline_comment import TimelineComment
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.timeline_comment import TimelineComment
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -4674,7 +4674,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -4698,9 +4698,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 56 # int | index of the issue
@@ -4771,14 +4771,14 @@ Get an issue
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.issue import Issue
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.issue import Issue
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -4806,7 +4806,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -4830,9 +4830,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 56 # int | index of the issue to get
@@ -4895,14 +4895,14 @@ Get an issue attachment
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.attachment import Attachment
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.attachment import Attachment
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -4930,7 +4930,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -4954,9 +4954,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 56 # int | index of the issue
@@ -5021,14 +5021,14 @@ Get a comment attachment
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.attachment import Attachment
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.attachment import Attachment
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -5056,7 +5056,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -5080,9 +5080,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     id = 56 # int | id of the comment
@@ -5147,14 +5147,14 @@ Get a list reactions of an issue
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.reaction import Reaction
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.reaction import Reaction
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -5182,7 +5182,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -5206,9 +5206,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 56 # int | index of the issue
@@ -5276,14 +5276,14 @@ Get a single label
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.label import Label
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.label import Label
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -5311,7 +5311,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -5335,9 +5335,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     id = 56 # int | id of the label to get
@@ -5400,14 +5400,14 @@ Get an issue's labels
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.label import Label
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.label import Label
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -5435,7 +5435,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -5459,9 +5459,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 56 # int | index of the issue
@@ -5524,14 +5524,14 @@ Get a milestone
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.milestone import Milestone
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.milestone import Milestone
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -5559,7 +5559,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -5583,9 +5583,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     id = 'id_example' # str | the milestone to get, identified by ID and if not available by name
@@ -5648,14 +5648,14 @@ Get all of a repository's opened milestones
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.milestone import Milestone
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.milestone import Milestone
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -5683,7 +5683,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -5707,9 +5707,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     state = 'state_example' # str | Milestone state, Recognized values are open, closed and all. Defaults to \"open\" (optional)
@@ -5778,14 +5778,14 @@ List all comments in a repository
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.comment import Comment
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.comment import Comment
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -5813,7 +5813,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -5837,9 +5837,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     since = '2013-10-20T19:20:30+01:00' # datetime | if provided, only comments updated since the provided time are returned. (optional)
@@ -5908,14 +5908,14 @@ List issues that are blocked by this issue
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.issue import Issue
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.issue import Issue
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -5943,7 +5943,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -5967,9 +5967,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 'index_example' # str | index of the issue
@@ -6036,14 +6036,14 @@ List issue's attachments
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.attachment import Attachment
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.attachment import Attachment
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -6071,7 +6071,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -6095,9 +6095,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 56 # int | index of the issue
@@ -6160,14 +6160,14 @@ List comment's attachments
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.attachment import Attachment
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.attachment import Attachment
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -6195,7 +6195,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -6219,9 +6219,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     id = 56 # int | id of the comment
@@ -6284,14 +6284,14 @@ List an issue's dependencies, i.e all issues that block this issue.
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.issue import Issue
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.issue import Issue
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -6319,7 +6319,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -6343,9 +6343,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 'index_example' # str | index of the issue
@@ -6412,14 +6412,14 @@ List a repository's issues
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.issue import Issue
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.issue import Issue
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -6447,7 +6447,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -6471,9 +6471,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     state = 'state_example' # str | whether issue is open or closed (optional)
@@ -6558,14 +6558,14 @@ Get all of a repository's labels
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.label import Label
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.label import Label
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -6593,7 +6593,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -6617,9 +6617,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     page = 56 # int | page number of results to return (1-based) (optional)
@@ -6684,15 +6684,15 @@ Add a reaction to a comment of an issue
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.edit_reaction_option import EditReactionOption
-from py_gitea_opensuse_org.models.reaction import Reaction
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.edit_reaction_option import EditReactionOption
+from gitea_api.models.reaction import Reaction
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -6720,7 +6720,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -6744,13 +6744,13 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     id = 56 # int | id of the comment to edit
-    content = py_gitea_opensuse_org.EditReactionOption() # EditReactionOption |  (optional)
+    content = gitea_api.EditReactionOption() # EditReactionOption |  (optional)
 
     try:
         # Add a reaction to a comment of an issue
@@ -6813,15 +6813,15 @@ Add a reaction to an issue
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.edit_reaction_option import EditReactionOption
-from py_gitea_opensuse_org.models.reaction import Reaction
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.edit_reaction_option import EditReactionOption
+from gitea_api.models.reaction import Reaction
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -6849,7 +6849,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -6873,13 +6873,13 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 56 # int | index of the issue
-    content = py_gitea_opensuse_org.EditReactionOption() # EditReactionOption |  (optional)
+    content = gitea_api.EditReactionOption() # EditReactionOption |  (optional)
 
     try:
         # Add a reaction to an issue
@@ -6942,15 +6942,15 @@ Unblock the issue given in the body by the issue in path
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.issue import Issue
-from py_gitea_opensuse_org.models.issue_meta import IssueMeta
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.issue import Issue
+from gitea_api.models.issue_meta import IssueMeta
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -6978,7 +6978,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -7002,13 +7002,13 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 'index_example' # str | index of the issue
-    body = py_gitea_opensuse_org.IssueMeta() # IssueMeta |  (optional)
+    body = gitea_api.IssueMeta() # IssueMeta |  (optional)
 
     try:
         # Unblock the issue given in the body by the issue in path
@@ -7069,15 +7069,15 @@ Remove an issue dependency
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.issue import Issue
-from py_gitea_opensuse_org.models.issue_meta import IssueMeta
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.issue import Issue
+from gitea_api.models.issue_meta import IssueMeta
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -7105,7 +7105,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -7129,13 +7129,13 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 'index_example' # str | index of the issue
-    body = py_gitea_opensuse_org.IssueMeta() # IssueMeta |  (optional)
+    body = gitea_api.IssueMeta() # IssueMeta |  (optional)
 
     try:
         # Remove an issue dependency
@@ -7197,13 +7197,13 @@ Remove a label from an issue
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -7231,7 +7231,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -7255,9 +7255,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 56 # int | index of the issue
@@ -7322,15 +7322,15 @@ Replace an issue's labels
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.issue_labels_option import IssueLabelsOption
-from py_gitea_opensuse_org.models.label import Label
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.issue_labels_option import IssueLabelsOption
+from gitea_api.models.label import Label
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -7358,7 +7358,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -7382,13 +7382,13 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 56 # int | index of the issue
-    body = py_gitea_opensuse_org.IssueLabelsOption() # IssueLabelsOption |  (optional)
+    body = gitea_api.IssueLabelsOption() # IssueLabelsOption |  (optional)
 
     try:
         # Replace an issue's labels
@@ -7450,13 +7450,13 @@ Reset a tracked time of an issue
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -7484,7 +7484,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -7508,9 +7508,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 56 # int | index of the issue to add tracked time to
@@ -7573,14 +7573,14 @@ Search for issues across the repositories that the user has access to
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.issue import Issue
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.issue import Issue
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -7608,7 +7608,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -7632,9 +7632,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     state = open # str | State of the issue (optional) (default to open)
     labels = 'labels_example' # str | Comma-separated list of label names. Fetch only issues that have any of these labels. Non existent labels are discarded. (optional)
     milestones = 'milestones_example' # str | Comma-separated list of milestone names. Fetch only issues that have any of these milestones. Non existent milestones are discarded. (optional)
@@ -7726,13 +7726,13 @@ Start stopwatch on an issue.
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -7760,7 +7760,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -7784,9 +7784,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 56 # int | index of the issue to create the stopwatch on
@@ -7849,13 +7849,13 @@ Stop an issue's existing stopwatch.
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -7883,7 +7883,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -7907,9 +7907,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 56 # int | index of the issue to stop the stopwatch on
@@ -7972,14 +7972,14 @@ Get users who subscribed on an issue.
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.user import User
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.user import User
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -8007,7 +8007,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -8031,9 +8031,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 56 # int | index of the issue
@@ -8100,14 +8100,14 @@ List an issue's tracked times
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.models.tracked_time import TrackedTime
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.models.tracked_time import TrackedTime
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -8135,7 +8135,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -8159,9 +8159,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 56 # int | index of the issue
@@ -8234,13 +8234,13 @@ Moves the Pin to the given Position
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -8268,7 +8268,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -8292,9 +8292,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 56 # int | index of issue
@@ -8358,13 +8358,13 @@ Pin an Issue
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -8392,7 +8392,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -8416,9 +8416,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 56 # int | index of issue to pin
@@ -8480,13 +8480,13 @@ Unpin an Issue
 * Api Key Authentication (Token):
 
 ```python
-import py_gitea_opensuse_org
-from py_gitea_opensuse_org.rest import ApiException
+import gitea_api
+from gitea_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to /api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     host = "/api/v1"
 )
 
@@ -8514,7 +8514,7 @@ configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['SudoHeader'] = 'Bearer'
 
 # Configure HTTP basic authorization: BasicAuth
-configuration = py_gitea_opensuse_org.Configuration(
+configuration = gitea_api.Configuration(
     username = os.environ["USERNAME"],
     password = os.environ["PASSWORD"]
 )
@@ -8538,9 +8538,9 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with py_gitea_opensuse_org.ApiClient(configuration) as api_client:
+async with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = py_gitea_opensuse_org.IssueApi(api_client)
+    api_instance = gitea_api.IssueApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     index = 56 # int | index of issue to unpin

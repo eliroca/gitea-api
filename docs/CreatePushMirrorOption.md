@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.create_push_mirror_option import CreatePushMirrorOption
+from gitea_api.models.create_push_mirror_option import CreatePushMirrorOption
 
 # TODO update the JSON string below
 json = "{}"

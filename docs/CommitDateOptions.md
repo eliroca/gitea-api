@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.commit_date_options import CommitDateOptions
+from gitea_api.models.commit_date_options import CommitDateOptions
 
 # TODO update the JSON string below
 json = "{}"

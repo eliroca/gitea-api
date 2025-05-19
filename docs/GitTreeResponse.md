@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.git_tree_response import GitTreeResponse
+from gitea_api.models.git_tree_response import GitTreeResponse
 
 # TODO update the JSON string below
 json = "{}"

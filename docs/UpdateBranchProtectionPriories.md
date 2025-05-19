@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.update_branch_protection_priories import UpdateBranchProtectionPriories
+from gitea_api.models.update_branch_protection_priories import UpdateBranchProtectionPriories
 
 # TODO update the JSON string below
 json = "{}"

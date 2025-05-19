@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.create_branch_repo_option import CreateBranchRepoOption
+from gitea_api.models.create_branch_repo_option import CreateBranchRepoOption
 
 # TODO update the JSON string below
 json = "{}"

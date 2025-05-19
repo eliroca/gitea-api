@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.external_tracker import ExternalTracker
+from gitea_api.models.external_tracker import ExternalTracker
 
 # TODO update the JSON string below
 json = "{}"

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.activity_pub import ActivityPub
+from gitea_api.models.activity_pub import ActivityPub
 
 # TODO update the JSON string below
 json = "{}"

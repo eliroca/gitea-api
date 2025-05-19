@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.create_gpg_key_option import CreateGPGKeyOption
+from gitea_api.models.create_gpg_key_option import CreateGPGKeyOption
 
 # TODO update the JSON string below
 json = "{}"

@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.payload_commit_verification import PayloadCommitVerification
+from gitea_api.models.payload_commit_verification import PayloadCommitVerification
 
 # TODO update the JSON string below
 json = "{}"

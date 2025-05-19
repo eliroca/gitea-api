@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.repo_create_release_attachment_request import RepoCreateReleaseAttachmentRequest
+from gitea_api.models.repo_create_release_attachment_request import RepoCreateReleaseAttachmentRequest
 
 # TODO update the JSON string below
 json = "{}"

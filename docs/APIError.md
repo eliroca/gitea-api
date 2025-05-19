@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.api_error import APIError
+from gitea_api.models.api_error import APIError
 
 # TODO update the JSON string below
 json = "{}"

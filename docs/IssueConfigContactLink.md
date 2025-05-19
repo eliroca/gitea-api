@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.issue_config_contact_link import IssueConfigContactLink
+from gitea_api.models.issue_config_contact_link import IssueConfigContactLink
 
 # TODO update the JSON string below
 json = "{}"

@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.team import Team
+from gitea_api.models.team import Team
 
 # TODO update the JSON string below
 json = "{}"

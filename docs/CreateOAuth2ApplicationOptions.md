@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.create_o_auth2_application_options import CreateOAuth2ApplicationOptions
+from gitea_api.models.create_o_auth2_application_options import CreateOAuth2ApplicationOptions
 
 # TODO update the JSON string below
 json = "{}"

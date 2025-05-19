@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.tag_protection import TagProtection
+from gitea_api.models.tag_protection import TagProtection
 
 # TODO update the JSON string below
 json = "{}"

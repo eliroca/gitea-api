@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.gpg_key import GPGKey
+from gitea_api.models.gpg_key import GPGKey
 
 # TODO update the JSON string below
 json = "{}"

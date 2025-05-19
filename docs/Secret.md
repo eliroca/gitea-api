@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.secret import Secret
+from gitea_api.models.secret import Secret
 
 # TODO update the JSON string below
 json = "{}"

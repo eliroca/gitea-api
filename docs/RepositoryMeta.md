@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.repository_meta import RepositoryMeta
+from gitea_api.models.repository_meta import RepositoryMeta
 
 # TODO update the JSON string below
 json = "{}"

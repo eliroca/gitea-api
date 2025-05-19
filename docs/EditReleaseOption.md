@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.edit_release_option import EditReleaseOption
+from gitea_api.models.edit_release_option import EditReleaseOption
 
 # TODO update the JSON string below
 json = "{}"

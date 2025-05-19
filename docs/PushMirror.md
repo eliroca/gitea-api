@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.push_mirror import PushMirror
+from gitea_api.models.push_mirror import PushMirror
 
 # TODO update the JSON string below
 json = "{}"

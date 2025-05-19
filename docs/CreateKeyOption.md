@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.create_key_option import CreateKeyOption
+from gitea_api.models.create_key_option import CreateKeyOption
 
 # TODO update the JSON string below
 json = "{}"

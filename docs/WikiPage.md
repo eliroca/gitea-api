@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.wiki_page import WikiPage
+from gitea_api.models.wiki_page import WikiPage
 
 # TODO update the JSON string below
 json = "{}"

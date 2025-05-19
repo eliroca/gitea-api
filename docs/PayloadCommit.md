@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.payload_commit import PayloadCommit
+from gitea_api.models.payload_commit import PayloadCommit
 
 # TODO update the JSON string below
 json = "{}"

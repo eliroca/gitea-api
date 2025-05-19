@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from py_gitea_opensuse_org.models.user import User
+from gitea_api.models.user import User
 
 # TODO update the JSON string below
 json = "{}"
