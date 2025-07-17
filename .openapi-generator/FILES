@@ -1,14 +1,21 @@
 .github/workflows/python.yml
 .gitignore
 .gitlab-ci.yml
-.openapi-generator-ignore
 .travis.yml
 README.md
 docs/APIError.md
 docs/AccessToken.md
+docs/ActionArtifact.md
+docs/ActionArtifactsResponse.md
+docs/ActionRunner.md
+docs/ActionRunnerLabel.md
+docs/ActionRunnersResponse.md
 docs/ActionTask.md
 docs/ActionTaskResponse.md
 docs/ActionVariable.md
+docs/ActionWorkflow.md
+docs/ActionWorkflowResponse.md
+docs/ActionWorkflowRun.md
 docs/Activity.md
 docs/ActivityPub.md
 docs/ActivitypubApi.md
@@ -36,6 +43,7 @@ docs/CommitUser.md
 docs/Compare.md
 docs/ContentsResponse.md
 docs/CreateAccessTokenOption.md
+docs/CreateActionWorkflowDispatch.md
 docs/CreateBranchProtectionOption.md
 docs/CreateBranchRepoOption.md
 docs/CreateEmailOption.md
@@ -101,6 +109,7 @@ docs/GeneralAttachmentSettings.md
 docs/GeneralRepoSettings.md
 docs/GeneralUISettings.md
 docs/GenerateRepoOption.md
+docs/GetFilesOptions.md
 docs/GitBlobResponse.md
 docs/GitEntry.md
 docs/GitHook.md
@@ -124,6 +133,7 @@ docs/Label.md
 docs/LabelTemplate.md
 docs/LicenseTemplateInfo.md
 docs/LicensesTemplateListEntry.md
+docs/LockIssueOption.md
 docs/MarkdownOption.md
 docs/MarkupOption.md
 docs/MergePullRequestOption.md
@@ -165,6 +175,7 @@ docs/PushMirror.md
 docs/Reaction.md
 docs/Reference.md
 docs/Release.md
+docs/RenameOrgOption.md
 docs/RenameUserOption.md
 docs/RepoCollaboratorPermission.md
 docs/RepoCommit.md
@@ -226,9 +237,17 @@ gitea_api/configuration.py
 gitea_api/exceptions.py
 gitea_api/models/__init__.py
 gitea_api/models/access_token.py
+gitea_api/models/action_artifact.py
+gitea_api/models/action_artifacts_response.py
+gitea_api/models/action_runner.py
+gitea_api/models/action_runner_label.py
+gitea_api/models/action_runners_response.py
 gitea_api/models/action_task.py
 gitea_api/models/action_task_response.py
 gitea_api/models/action_variable.py
+gitea_api/models/action_workflow.py
+gitea_api/models/action_workflow_response.py
+gitea_api/models/action_workflow_run.py
 gitea_api/models/activity.py
 gitea_api/models/activity_pub.py
 gitea_api/models/add_collaborator_option.py
@@ -255,6 +274,7 @@ gitea_api/models/commit_user.py
 gitea_api/models/compare.py
 gitea_api/models/contents_response.py
 gitea_api/models/create_access_token_option.py
+gitea_api/models/create_action_workflow_dispatch.py
 gitea_api/models/create_branch_protection_option.py
 gitea_api/models/create_branch_repo_option.py
 gitea_api/models/create_email_option.py
@@ -318,6 +338,7 @@ gitea_api/models/general_attachment_settings.py
 gitea_api/models/general_repo_settings.py
 gitea_api/models/general_ui_settings.py
 gitea_api/models/generate_repo_option.py
+gitea_api/models/get_files_options.py
 gitea_api/models/git_blob_response.py
 gitea_api/models/git_entry.py
 gitea_api/models/git_hook.py
@@ -342,6 +363,7 @@ gitea_api/models/label.py
 gitea_api/models/label_template.py
 gitea_api/models/license_template_info.py
 gitea_api/models/licenses_template_list_entry.py
+gitea_api/models/lock_issue_option.py
 gitea_api/models/markdown_option.py
 gitea_api/models/markup_option.py
 gitea_api/models/merge_pull_request_option.py
@@ -379,6 +401,7 @@ gitea_api/models/push_mirror.py
 gitea_api/models/reaction.py
 gitea_api/models/reference.py
 gitea_api/models/release.py
+gitea_api/models/rename_org_option.py
 gitea_api/models/rename_user_option.py
 gitea_api/models/repo_collaborator_permission.py
 gitea_api/models/repo_commit.py
@@ -427,9 +450,17 @@ setup.py
 test-requirements.txt
 test/__init__.py
 test/test_access_token.py
+test/test_action_artifact.py
+test/test_action_artifacts_response.py
+test/test_action_runner.py
+test/test_action_runner_label.py
+test/test_action_runners_response.py
 test/test_action_task.py
 test/test_action_task_response.py
 test/test_action_variable.py
+test/test_action_workflow.py
+test/test_action_workflow_response.py
+test/test_action_workflow_run.py
 test/test_activity.py
 test/test_activity_pub.py
 test/test_activitypub_api.py
@@ -458,6 +489,7 @@ test/test_commit_user.py
 test/test_compare.py
 test/test_contents_response.py
 test/test_create_access_token_option.py
+test/test_create_action_workflow_dispatch.py
 test/test_create_branch_protection_option.py
 test/test_create_branch_repo_option.py
 test/test_create_email_option.py
@@ -521,6 +553,7 @@ test/test_general_attachment_settings.py
 test/test_general_repo_settings.py
 test/test_general_ui_settings.py
 test/test_generate_repo_option.py
+test/test_get_files_options.py
 test/test_git_blob_response.py
 test/test_git_entry.py
 test/test_git_hook.py
@@ -546,6 +579,7 @@ test/test_label.py
 test/test_label_template.py
 test/test_license_template_info.py
 test/test_licenses_template_list_entry.py
+test/test_lock_issue_option.py
 test/test_markdown_option.py
 test/test_markup_option.py
 test/test_merge_pull_request_option.py
@@ -587,6 +621,7 @@ test/test_push_mirror.py
 test/test_reaction.py
 test/test_reference.py
 test/test_release.py
+test/test_rename_org_option.py
 test/test_rename_user_option.py
 test/test_repo_collaborator_permission.py
 test/test_repo_commit.py
