@@ -88,7 +88,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.PackageApi(api_client)
     owner = 'owner_example' # str | owner of the package
@@ -98,7 +98,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Delete a package
-        await api_instance.delete_package(owner, type, name, version)
+        api_instance.delete_package(owner, type, name, version)
     except Exception as e:
         print("Exception when calling PackageApi->delete_package: %s\n" % e)
 ```
@@ -212,7 +212,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.PackageApi(api_client)
     owner = 'owner_example' # str | owner of the package
@@ -221,7 +221,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Gets the latest version of a package
-        api_response = await api_instance.get_latest_package_version(owner, type, name)
+        api_response = api_instance.get_latest_package_version(owner, type, name)
         print("The response of PackageApi->get_latest_package_version:\n")
         pprint(api_response)
     except Exception as e:
@@ -336,7 +336,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.PackageApi(api_client)
     owner = 'owner_example' # str | owner of the package
@@ -346,7 +346,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Gets a package
-        api_response = await api_instance.get_package(owner, type, name, version)
+        api_response = api_instance.get_package(owner, type, name, version)
         print("The response of PackageApi->get_package:\n")
         pprint(api_response)
     except Exception as e:
@@ -461,7 +461,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.PackageApi(api_client)
     owner = 'owner_example' # str | owner of the package
@@ -471,7 +471,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Link a package to a repository
-        await api_instance.link_package(owner, type, name, repo_name)
+        api_instance.link_package(owner, type, name, repo_name)
     except Exception as e:
         print("Exception when calling PackageApi->link_package: %s\n" % e)
 ```
@@ -585,7 +585,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.PackageApi(api_client)
     owner = 'owner_example' # str | owner of the package
@@ -595,7 +595,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Gets all files of a package
-        api_response = await api_instance.list_package_files(owner, type, name, version)
+        api_response = api_instance.list_package_files(owner, type, name, version)
         print("The response of PackageApi->list_package_files:\n")
         pprint(api_response)
     except Exception as e:
@@ -711,7 +711,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.PackageApi(api_client)
     owner = 'owner_example' # str | owner of the package
@@ -722,7 +722,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Gets all versions of a package
-        api_response = await api_instance.list_package_versions(owner, type, name, page=page, limit=limit)
+        api_response = api_instance.list_package_versions(owner, type, name, page=page, limit=limit)
         print("The response of PackageApi->list_package_versions:\n")
         pprint(api_response)
     except Exception as e:
@@ -839,7 +839,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.PackageApi(api_client)
     owner = 'owner_example' # str | owner of the packages
@@ -850,7 +850,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Gets all packages of an owner
-        api_response = await api_instance.list_packages(owner, page=page, limit=limit, type=type, q=q)
+        api_response = api_instance.list_packages(owner, page=page, limit=limit, type=type, q=q)
         print("The response of PackageApi->list_packages:\n")
         pprint(api_response)
     except Exception as e:
@@ -966,7 +966,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.PackageApi(api_client)
     owner = 'owner_example' # str | owner of the package
@@ -975,7 +975,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Unlink a package from a repository
-        await api_instance.unlink_package(owner, type, name)
+        api_instance.unlink_package(owner, type, name)
     except Exception as e:
         print("Exception when calling PackageApi->unlink_package: %s\n" % e)
 ```

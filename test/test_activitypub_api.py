@@ -17,23 +17,23 @@ import unittest
 from gitea_api.api.activitypub_api import ActivitypubApi
 
 
-class TestActivitypubApi(unittest.IsolatedAsyncioTestCase):
+class TestActivitypubApi(unittest.TestCase):
     """ActivitypubApi unit test stubs"""
 
-    async def asyncSetUp(self) -> None:
+    def setUp(self) -> None:
         self.api = ActivitypubApi()
 
-    async def asyncTearDown(self) -> None:
-        await self.api.api_client.close()
+    def tearDown(self) -> None:
+        pass
 
-    async def test_activitypub_person(self) -> None:
+    def test_activitypub_person(self) -> None:
         """Test case for activitypub_person
 
         Returns the Person actor for a user
         """
         pass
 
-    async def test_activitypub_person_inbox(self) -> None:
+    def test_activitypub_person_inbox(self) -> None:
         """Test case for activitypub_person_inbox
 
         Send to the inbox

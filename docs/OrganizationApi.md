@@ -146,7 +146,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of organization
@@ -154,7 +154,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Create a repository in an organization
-        api_response = await api_instance.create_org_repo(org, body=body)
+        api_response = api_instance.create_org_repo(org, body=body)
         print("The response of OrganizationApi->create_org_repo:\n")
         pprint(api_response)
     except Exception as e:
@@ -271,7 +271,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of organization
@@ -279,7 +279,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Create a repository in an organization
-        api_response = await api_instance.create_org_repo_deprecated(org, body=body)
+        api_response = api_instance.create_org_repo_deprecated(org, body=body)
         print("The response of OrganizationApi->create_org_repo_deprecated:\n")
         pprint(api_response)
     except Exception as e:
@@ -395,7 +395,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of the organization
@@ -404,7 +404,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Create an org-level variable
-        await api_instance.create_org_variable(org, variablename, body=body)
+        api_instance.create_org_variable(org, variablename, body=body)
     except Exception as e:
         print("Exception when calling OrganizationApi->create_org_variable: %s\n" % e)
 ```
@@ -518,7 +518,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of the organization
@@ -526,7 +526,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Delete an org-level runner
-        await api_instance.delete_org_runner(org, runner_id)
+        api_instance.delete_org_runner(org, runner_id)
     except Exception as e:
         print("Exception when calling OrganizationApi->delete_org_runner: %s\n" % e)
 ```
@@ -638,7 +638,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of organization
@@ -646,7 +646,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Delete a secret in an organization
-        await api_instance.delete_org_secret(org, secretname)
+        api_instance.delete_org_secret(org, secretname)
     except Exception as e:
         print("Exception when calling OrganizationApi->delete_org_secret: %s\n" % e)
 ```
@@ -759,7 +759,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of the organization
@@ -767,7 +767,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Delete an org-level variable
-        api_response = await api_instance.delete_org_variable(org, variablename)
+        api_response = api_instance.delete_org_variable(org, variablename)
         print("The response of OrganizationApi->delete_org_variable:\n")
         pprint(api_response)
     except Exception as e:
@@ -883,7 +883,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of the organization
@@ -891,7 +891,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get an org-level runner
-        await api_instance.get_org_runner(org, runner_id)
+        api_instance.get_org_runner(org, runner_id)
     except Exception as e:
         print("Exception when calling OrganizationApi->get_org_runner: %s\n" % e)
 ```
@@ -1003,14 +1003,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of the organization
 
     try:
         # Get org-level runners
-        await api_instance.get_org_runners(org)
+        api_instance.get_org_runners(org)
     except Exception as e:
         print("Exception when calling OrganizationApi->get_org_runners: %s\n" % e)
 ```
@@ -1122,7 +1122,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of the organization
@@ -1130,7 +1130,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get an org-level variable
-        api_response = await api_instance.get_org_variable(org, variablename)
+        api_response = api_instance.get_org_variable(org, variablename)
         print("The response of OrganizationApi->get_org_variable:\n")
         pprint(api_response)
     except Exception as e:
@@ -1245,7 +1245,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of the organization
@@ -1254,7 +1254,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get an org-level variables list
-        api_response = await api_instance.get_org_variables_list(org, page=page, limit=limit)
+        api_response = api_instance.get_org_variables_list(org, page=page, limit=limit)
         print("The response of OrganizationApi->get_org_variables_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -1369,7 +1369,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     id = 56 # int | id of the team
@@ -1377,7 +1377,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Add a team member
-        await api_instance.org_add_team_member(id, username)
+        api_instance.org_add_team_member(id, username)
     except Exception as e:
         print("Exception when calling OrganizationApi->org_add_team_member: %s\n" % e)
 ```
@@ -1489,7 +1489,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     id = 56 # int | id of the team
@@ -1498,7 +1498,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Add a repository to a team
-        await api_instance.org_add_team_repository(id, org, repo)
+        api_instance.org_add_team_repository(id, org, repo)
     except Exception as e:
         print("Exception when calling OrganizationApi->org_add_team_repository: %s\n" % e)
 ```
@@ -1611,7 +1611,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of the organization
@@ -1619,7 +1619,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Conceal a user's membership
-        await api_instance.org_conceal_member(org, username)
+        api_instance.org_conceal_member(org, username)
     except Exception as e:
         print("Exception when calling OrganizationApi->org_conceal_member: %s\n" % e)
 ```
@@ -1733,14 +1733,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     organization = gitea_api.CreateOrgOption() # CreateOrgOption | 
 
     try:
         # Create an organization
-        api_response = await api_instance.org_create(organization)
+        api_response = api_instance.org_create(organization)
         print("The response of OrganizationApi->org_create:\n")
         pprint(api_response)
     except Exception as e:
@@ -1855,7 +1855,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of the organization
@@ -1863,7 +1863,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Create a hook
-        api_response = await api_instance.org_create_hook(org, body)
+        api_response = api_instance.org_create_hook(org, body)
         print("The response of OrganizationApi->org_create_hook:\n")
         pprint(api_response)
     except Exception as e:
@@ -1978,7 +1978,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of the organization
@@ -1986,7 +1986,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Create a label for an organization
-        api_response = await api_instance.org_create_label(org, body=body)
+        api_response = api_instance.org_create_label(org, body=body)
         print("The response of OrganizationApi->org_create_label:\n")
         pprint(api_response)
     except Exception as e:
@@ -2100,14 +2100,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of the organization
 
     try:
         # Get an organization's actions runner registration token
-        await api_instance.org_create_runner_registration_token(org)
+        api_instance.org_create_runner_registration_token(org)
     except Exception as e:
         print("Exception when calling OrganizationApi->org_create_runner_registration_token: %s\n" % e)
 ```
@@ -2218,7 +2218,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of the organization
@@ -2226,7 +2226,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Create a team
-        api_response = await api_instance.org_create_team(org, body=body)
+        api_response = api_instance.org_create_team(org, body=body)
         print("The response of OrganizationApi->org_create_team:\n")
         pprint(api_response)
     except Exception as e:
@@ -2340,14 +2340,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | organization that is to be deleted
 
     try:
         # Delete an organization
-        await api_instance.org_delete(org)
+        api_instance.org_delete(org)
     except Exception as e:
         print("Exception when calling OrganizationApi->org_delete: %s\n" % e)
 ```
@@ -2457,14 +2457,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of the organization
 
     try:
         # Delete Avatar
-        await api_instance.org_delete_avatar(org)
+        api_instance.org_delete_avatar(org)
     except Exception as e:
         print("Exception when calling OrganizationApi->org_delete_avatar: %s\n" % e)
 ```
@@ -2574,7 +2574,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of the organization
@@ -2582,7 +2582,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Delete a hook
-        await api_instance.org_delete_hook(org, id)
+        api_instance.org_delete_hook(org, id)
     except Exception as e:
         print("Exception when calling OrganizationApi->org_delete_hook: %s\n" % e)
 ```
@@ -2693,7 +2693,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of the organization
@@ -2701,7 +2701,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Delete a label
-        await api_instance.org_delete_label(org, id)
+        api_instance.org_delete_label(org, id)
     except Exception as e:
         print("Exception when calling OrganizationApi->org_delete_label: %s\n" % e)
 ```
@@ -2812,7 +2812,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of the organization
@@ -2820,7 +2820,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Remove a member from an organization
-        await api_instance.org_delete_member(org, username)
+        api_instance.org_delete_member(org, username)
     except Exception as e:
         print("Exception when calling OrganizationApi->org_delete_member: %s\n" % e)
 ```
@@ -2931,14 +2931,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     id = 56 # int | id of the team to delete
 
     try:
         # Delete a team
-        await api_instance.org_delete_team(id)
+        api_instance.org_delete_team(id)
     except Exception as e:
         print("Exception when calling OrganizationApi->org_delete_team: %s\n" % e)
 ```
@@ -3050,7 +3050,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of the organization to edit
@@ -3058,7 +3058,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Edit an organization
-        api_response = await api_instance.org_edit(org, body)
+        api_response = api_instance.org_edit(org, body)
         print("The response of OrganizationApi->org_edit:\n")
         pprint(api_response)
     except Exception as e:
@@ -3173,7 +3173,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of the organization
@@ -3182,7 +3182,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Update a hook
-        api_response = await api_instance.org_edit_hook(org, id, body=body)
+        api_response = api_instance.org_edit_hook(org, id, body=body)
         print("The response of OrganizationApi->org_edit_hook:\n")
         pprint(api_response)
     except Exception as e:
@@ -3298,7 +3298,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of the organization
@@ -3307,7 +3307,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Update a label
-        api_response = await api_instance.org_edit_label(org, id, body=body)
+        api_response = api_instance.org_edit_label(org, id, body=body)
         print("The response of OrganizationApi->org_edit_label:\n")
         pprint(api_response)
     except Exception as e:
@@ -3424,7 +3424,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     id = 56 # int | id of the team to edit
@@ -3432,7 +3432,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Edit a team
-        api_response = await api_instance.org_edit_team(id, body=body)
+        api_response = api_instance.org_edit_team(id, body=body)
         print("The response of OrganizationApi->org_edit_team:\n")
         pprint(api_response)
     except Exception as e:
@@ -3546,14 +3546,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of the organization to get
 
     try:
         # Get an organization
-        api_response = await api_instance.org_get(org)
+        api_response = api_instance.org_get(org)
         print("The response of OrganizationApi->org_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -3666,7 +3666,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     page = 56 # int | page number of results to return (1-based) (optional)
@@ -3674,7 +3674,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get list of organizations
-        api_response = await api_instance.org_get_all(page=page, limit=limit)
+        api_response = api_instance.org_get_all(page=page, limit=limit)
         print("The response of OrganizationApi->org_get_all:\n")
         pprint(api_response)
     except Exception as e:
@@ -3787,7 +3787,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of the organization
@@ -3795,7 +3795,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get a hook
-        api_response = await api_instance.org_get_hook(org, id)
+        api_response = api_instance.org_get_hook(org, id)
         print("The response of OrganizationApi->org_get_hook:\n")
         pprint(api_response)
     except Exception as e:
@@ -3909,7 +3909,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of the organization
@@ -3917,7 +3917,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get a single label
-        api_response = await api_instance.org_get_label(org, id)
+        api_response = api_instance.org_get_label(org, id)
         print("The response of OrganizationApi->org_get_label:\n")
         pprint(api_response)
     except Exception as e:
@@ -4030,14 +4030,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of the organization
 
     try:
         # Get an organization's actions runner registration token
-        await api_instance.org_get_runner_registration_token(org)
+        api_instance.org_get_runner_registration_token(org)
     except Exception as e:
         print("Exception when calling OrganizationApi->org_get_runner_registration_token: %s\n" % e)
 ```
@@ -4147,14 +4147,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     id = 56 # int | id of the team to get
 
     try:
         # Get a team
-        api_response = await api_instance.org_get_team(id)
+        api_response = api_instance.org_get_team(id)
         print("The response of OrganizationApi->org_get_team:\n")
         pprint(api_response)
     except Exception as e:
@@ -4267,7 +4267,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     username = 'username_example' # str | username of user
@@ -4275,7 +4275,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get user permissions in organization
-        api_response = await api_instance.org_get_user_permissions(username, org)
+        api_response = api_instance.org_get_user_permissions(username, org)
         print("The response of OrganizationApi->org_get_user_permissions:\n")
         pprint(api_response)
     except Exception as e:
@@ -4389,7 +4389,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of the organization
@@ -4397,7 +4397,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Check if a user is a member of an organization
-        await api_instance.org_is_member(org, username)
+        api_instance.org_is_member(org, username)
     except Exception as e:
         print("Exception when calling OrganizationApi->org_is_member: %s\n" % e)
 ```
@@ -4509,7 +4509,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of the organization
@@ -4517,7 +4517,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Check if a user is a public member of an organization
-        await api_instance.org_is_public_member(org, username)
+        api_instance.org_is_public_member(org, username)
     except Exception as e:
         print("Exception when calling OrganizationApi->org_is_public_member: %s\n" % e)
 ```
@@ -4629,7 +4629,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of the organization
@@ -4638,7 +4638,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List an organization's actions secrets
-        api_response = await api_instance.org_list_actions_secrets(org, page=page, limit=limit)
+        api_response = api_instance.org_list_actions_secrets(org, page=page, limit=limit)
         print("The response of OrganizationApi->org_list_actions_secrets:\n")
         pprint(api_response)
     except Exception as e:
@@ -4753,7 +4753,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of the org
@@ -4763,7 +4763,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List an organization's activity feeds
-        api_response = await api_instance.org_list_activity_feeds(org, var_date=var_date, page=page, limit=limit)
+        api_response = api_instance.org_list_activity_feeds(org, var_date=var_date, page=page, limit=limit)
         print("The response of OrganizationApi->org_list_activity_feeds:\n")
         pprint(api_response)
     except Exception as e:
@@ -4879,7 +4879,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     page = 56 # int | page number of results to return (1-based) (optional)
@@ -4887,7 +4887,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List the current user's organizations
-        api_response = await api_instance.org_list_current_user_orgs(page=page, limit=limit)
+        api_response = api_instance.org_list_current_user_orgs(page=page, limit=limit)
         print("The response of OrganizationApi->org_list_current_user_orgs:\n")
         pprint(api_response)
     except Exception as e:
@@ -5001,7 +5001,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of the organization
@@ -5010,7 +5010,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List an organization's webhooks
-        api_response = await api_instance.org_list_hooks(org, page=page, limit=limit)
+        api_response = api_instance.org_list_hooks(org, page=page, limit=limit)
         print("The response of OrganizationApi->org_list_hooks:\n")
         pprint(api_response)
     except Exception as e:
@@ -5125,7 +5125,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of the organization
@@ -5134,7 +5134,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List an organization's labels
-        api_response = await api_instance.org_list_labels(org, page=page, limit=limit)
+        api_response = api_instance.org_list_labels(org, page=page, limit=limit)
         print("The response of OrganizationApi->org_list_labels:\n")
         pprint(api_response)
     except Exception as e:
@@ -5249,7 +5249,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of the organization
@@ -5258,7 +5258,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List an organization's members
-        api_response = await api_instance.org_list_members(org, page=page, limit=limit)
+        api_response = api_instance.org_list_members(org, page=page, limit=limit)
         print("The response of OrganizationApi->org_list_members:\n")
         pprint(api_response)
     except Exception as e:
@@ -5373,7 +5373,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of the organization
@@ -5382,7 +5382,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List an organization's public members
-        api_response = await api_instance.org_list_public_members(org, page=page, limit=limit)
+        api_response = api_instance.org_list_public_members(org, page=page, limit=limit)
         print("The response of OrganizationApi->org_list_public_members:\n")
         pprint(api_response)
     except Exception as e:
@@ -5497,7 +5497,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of the organization
@@ -5506,7 +5506,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List an organization's repos
-        api_response = await api_instance.org_list_repos(org, page=page, limit=limit)
+        api_response = api_instance.org_list_repos(org, page=page, limit=limit)
         print("The response of OrganizationApi->org_list_repos:\n")
         pprint(api_response)
     except Exception as e:
@@ -5621,7 +5621,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     id = 56 # int | id of the team
@@ -5631,7 +5631,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List a team's activity feeds
-        api_response = await api_instance.org_list_team_activity_feeds(id, var_date=var_date, page=page, limit=limit)
+        api_response = api_instance.org_list_team_activity_feeds(id, var_date=var_date, page=page, limit=limit)
         print("The response of OrganizationApi->org_list_team_activity_feeds:\n")
         pprint(api_response)
     except Exception as e:
@@ -5747,7 +5747,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     id = 56 # int | id of the team
@@ -5755,7 +5755,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List a particular member of team
-        api_response = await api_instance.org_list_team_member(id, username)
+        api_response = api_instance.org_list_team_member(id, username)
         print("The response of OrganizationApi->org_list_team_member:\n")
         pprint(api_response)
     except Exception as e:
@@ -5869,7 +5869,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     id = 56 # int | id of the team
@@ -5878,7 +5878,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List a team's members
-        api_response = await api_instance.org_list_team_members(id, page=page, limit=limit)
+        api_response = api_instance.org_list_team_members(id, page=page, limit=limit)
         print("The response of OrganizationApi->org_list_team_members:\n")
         pprint(api_response)
     except Exception as e:
@@ -5993,7 +5993,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     id = 56 # int | id of the team
@@ -6002,7 +6002,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List a particular repo of team
-        api_response = await api_instance.org_list_team_repo(id, org, repo)
+        api_response = api_instance.org_list_team_repo(id, org, repo)
         print("The response of OrganizationApi->org_list_team_repo:\n")
         pprint(api_response)
     except Exception as e:
@@ -6117,7 +6117,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     id = 56 # int | id of the team
@@ -6126,7 +6126,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List a team's repos
-        api_response = await api_instance.org_list_team_repos(id, page=page, limit=limit)
+        api_response = api_instance.org_list_team_repos(id, page=page, limit=limit)
         print("The response of OrganizationApi->org_list_team_repos:\n")
         pprint(api_response)
     except Exception as e:
@@ -6241,7 +6241,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of the organization
@@ -6250,7 +6250,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List an organization's teams
-        api_response = await api_instance.org_list_teams(org, page=page, limit=limit)
+        api_response = api_instance.org_list_teams(org, page=page, limit=limit)
         print("The response of OrganizationApi->org_list_teams:\n")
         pprint(api_response)
     except Exception as e:
@@ -6365,7 +6365,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     username = 'username_example' # str | username of user
@@ -6374,7 +6374,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List a user's organizations
-        api_response = await api_instance.org_list_user_orgs(username, page=page, limit=limit)
+        api_response = api_instance.org_list_user_orgs(username, page=page, limit=limit)
         print("The response of OrganizationApi->org_list_user_orgs:\n")
         pprint(api_response)
     except Exception as e:
@@ -6488,7 +6488,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of the organization
@@ -6496,7 +6496,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Publicize a user's membership
-        await api_instance.org_publicize_member(org, username)
+        api_instance.org_publicize_member(org, username)
     except Exception as e:
         print("Exception when calling OrganizationApi->org_publicize_member: %s\n" % e)
 ```
@@ -6608,7 +6608,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     id = 56 # int | id of the team
@@ -6616,7 +6616,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Remove a team member
-        await api_instance.org_remove_team_member(id, username)
+        api_instance.org_remove_team_member(id, username)
     except Exception as e:
         print("Exception when calling OrganizationApi->org_remove_team_member: %s\n" % e)
 ```
@@ -6729,7 +6729,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     id = 56 # int | id of the team
@@ -6738,7 +6738,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Remove a repository from a team
-        await api_instance.org_remove_team_repository(id, org, repo)
+        api_instance.org_remove_team_repository(id, org, repo)
     except Exception as e:
         print("Exception when calling OrganizationApi->org_remove_team_repository: %s\n" % e)
 ```
@@ -6852,7 +6852,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of the organization
@@ -6860,7 +6860,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Update Avatar
-        await api_instance.org_update_avatar(org, body=body)
+        api_instance.org_update_avatar(org, body=body)
     except Exception as e:
         print("Exception when calling OrganizationApi->org_update_avatar: %s\n" % e)
 ```
@@ -6971,7 +6971,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of the organization
@@ -6980,7 +6980,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Block a user
-        await api_instance.organization_block_user(org, username, note=note)
+        api_instance.organization_block_user(org, username, note=note)
     except Exception as e:
         print("Exception when calling OrganizationApi->organization_block_user: %s\n" % e)
 ```
@@ -7093,7 +7093,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of the organization
@@ -7101,7 +7101,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Check if a user is blocked by the organization
-        await api_instance.organization_check_user_block(org, username)
+        api_instance.organization_check_user_block(org, username)
     except Exception as e:
         print("Exception when calling OrganizationApi->organization_check_user_block: %s\n" % e)
 ```
@@ -7213,7 +7213,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of the organization
@@ -7222,7 +7222,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List users blocked by the organization
-        api_response = await api_instance.organization_list_blocks(org, page=page, limit=limit)
+        api_response = api_instance.organization_list_blocks(org, page=page, limit=limit)
         print("The response of OrganizationApi->organization_list_blocks:\n")
         pprint(api_response)
     except Exception as e:
@@ -7335,7 +7335,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of the organization
@@ -7343,7 +7343,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Unblock a user
-        await api_instance.organization_unblock_user(org, username)
+        api_instance.organization_unblock_user(org, username)
     except Exception as e:
         print("Exception when calling OrganizationApi->organization_unblock_user: %s\n" % e)
 ```
@@ -7456,7 +7456,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | existing org name
@@ -7464,7 +7464,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Rename an organization
-        await api_instance.rename_org(org, body)
+        api_instance.rename_org(org, body)
     except Exception as e:
         print("Exception when calling OrganizationApi->rename_org: %s\n" % e)
 ```
@@ -7577,7 +7577,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of the organization
@@ -7588,7 +7588,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Search for teams within an organization
-        api_response = await api_instance.team_search(org, q=q, include_desc=include_desc, page=page, limit=limit)
+        api_response = api_instance.team_search(org, q=q, include_desc=include_desc, page=page, limit=limit)
         print("The response of OrganizationApi->team_search:\n")
         pprint(api_response)
     except Exception as e:
@@ -7705,7 +7705,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of organization
@@ -7714,7 +7714,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Create or Update a secret value in an organization
-        await api_instance.update_org_secret(org, secretname, body=body)
+        api_instance.update_org_secret(org, secretname, body=body)
     except Exception as e:
         print("Exception when calling OrganizationApi->update_org_secret: %s\n" % e)
 ```
@@ -7829,7 +7829,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.OrganizationApi(api_client)
     org = 'org_example' # str | name of the organization
@@ -7838,7 +7838,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Update an org-level variable
-        await api_instance.update_org_variable(org, variablename, body=body)
+        api_instance.update_org_variable(org, variablename, body=body)
     except Exception as e:
         print("Exception when calling OrganizationApi->update_org_variable: %s\n" % e)
 ```

@@ -65,7 +65,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def create_org_repo(
+    def create_org_repo(
         self,
         org: Annotated[StrictStr, Field(description="name of organization")],
         body: Optional[CreateRepoOption] = None,
@@ -126,11 +126,11 @@ class OrganizationApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -138,7 +138,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def create_org_repo_with_http_info(
+    def create_org_repo_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of organization")],
         body: Optional[CreateRepoOption] = None,
@@ -199,11 +199,11 @@ class OrganizationApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -211,7 +211,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def create_org_repo_without_preload_content(
+    def create_org_repo_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of organization")],
         body: Optional[CreateRepoOption] = None,
@@ -272,7 +272,7 @@ class OrganizationApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -366,7 +366,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def create_org_repo_deprecated(
+    def create_org_repo_deprecated(
         self,
         org: Annotated[StrictStr, Field(description="name of organization")],
         body: Optional[CreateRepoOption] = None,
@@ -428,11 +428,11 @@ class OrganizationApi:
             '404': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -440,7 +440,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def create_org_repo_deprecated_with_http_info(
+    def create_org_repo_deprecated_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of organization")],
         body: Optional[CreateRepoOption] = None,
@@ -502,11 +502,11 @@ class OrganizationApi:
             '404': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -514,7 +514,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def create_org_repo_deprecated_without_preload_content(
+    def create_org_repo_deprecated_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of organization")],
         body: Optional[CreateRepoOption] = None,
@@ -576,7 +576,7 @@ class OrganizationApi:
             '404': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -670,7 +670,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def create_org_variable(
+    def create_org_variable(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         variablename: Annotated[StrictStr, Field(description="name of the variable")],
@@ -735,11 +735,11 @@ class OrganizationApi:
             '400': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -747,7 +747,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def create_org_variable_with_http_info(
+    def create_org_variable_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         variablename: Annotated[StrictStr, Field(description="name of the variable")],
@@ -812,11 +812,11 @@ class OrganizationApi:
             '400': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -824,7 +824,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def create_org_variable_without_preload_content(
+    def create_org_variable_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         variablename: Annotated[StrictStr, Field(description="name of the variable")],
@@ -889,7 +889,7 @@ class OrganizationApi:
             '400': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -979,7 +979,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def delete_org_runner(
+    def delete_org_runner(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         runner_id: Annotated[StrictStr, Field(description="id of the runner")],
@@ -1039,11 +1039,11 @@ class OrganizationApi:
             '400': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1051,7 +1051,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def delete_org_runner_with_http_info(
+    def delete_org_runner_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         runner_id: Annotated[StrictStr, Field(description="id of the runner")],
@@ -1111,11 +1111,11 @@ class OrganizationApi:
             '400': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1123,7 +1123,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def delete_org_runner_without_preload_content(
+    def delete_org_runner_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         runner_id: Annotated[StrictStr, Field(description="id of the runner")],
@@ -1183,7 +1183,7 @@ class OrganizationApi:
             '400': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1257,7 +1257,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def delete_org_secret(
+    def delete_org_secret(
         self,
         org: Annotated[StrictStr, Field(description="name of organization")],
         secretname: Annotated[StrictStr, Field(description="name of the secret")],
@@ -1317,11 +1317,11 @@ class OrganizationApi:
             '400': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1329,7 +1329,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def delete_org_secret_with_http_info(
+    def delete_org_secret_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of organization")],
         secretname: Annotated[StrictStr, Field(description="name of the secret")],
@@ -1389,11 +1389,11 @@ class OrganizationApi:
             '400': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1401,7 +1401,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def delete_org_secret_without_preload_content(
+    def delete_org_secret_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of organization")],
         secretname: Annotated[StrictStr, Field(description="name of the secret")],
@@ -1461,7 +1461,7 @@ class OrganizationApi:
             '400': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1535,7 +1535,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def delete_org_variable(
+    def delete_org_variable(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         variablename: Annotated[StrictStr, Field(description="name of the variable")],
@@ -1597,11 +1597,11 @@ class OrganizationApi:
             '400': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1609,7 +1609,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def delete_org_variable_with_http_info(
+    def delete_org_variable_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         variablename: Annotated[StrictStr, Field(description="name of the variable")],
@@ -1671,11 +1671,11 @@ class OrganizationApi:
             '400': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1683,7 +1683,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def delete_org_variable_without_preload_content(
+    def delete_org_variable_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         variablename: Annotated[StrictStr, Field(description="name of the variable")],
@@ -1745,7 +1745,7 @@ class OrganizationApi:
             '400': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1826,7 +1826,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def get_org_runner(
+    def get_org_runner(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         runner_id: Annotated[StrictStr, Field(description="id of the runner")],
@@ -1886,11 +1886,11 @@ class OrganizationApi:
             '400': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1898,7 +1898,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def get_org_runner_with_http_info(
+    def get_org_runner_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         runner_id: Annotated[StrictStr, Field(description="id of the runner")],
@@ -1958,11 +1958,11 @@ class OrganizationApi:
             '400': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1970,7 +1970,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def get_org_runner_without_preload_content(
+    def get_org_runner_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         runner_id: Annotated[StrictStr, Field(description="id of the runner")],
@@ -2030,7 +2030,7 @@ class OrganizationApi:
             '400': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2104,7 +2104,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def get_org_runners(
+    def get_org_runners(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         _request_timeout: Union[
@@ -2160,11 +2160,11 @@ class OrganizationApi:
             '400': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2172,7 +2172,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def get_org_runners_with_http_info(
+    def get_org_runners_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         _request_timeout: Union[
@@ -2228,11 +2228,11 @@ class OrganizationApi:
             '400': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2240,7 +2240,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def get_org_runners_without_preload_content(
+    def get_org_runners_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         _request_timeout: Union[
@@ -2296,7 +2296,7 @@ class OrganizationApi:
             '400': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2367,7 +2367,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def get_org_variable(
+    def get_org_variable(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         variablename: Annotated[StrictStr, Field(description="name of the variable")],
@@ -2427,11 +2427,11 @@ class OrganizationApi:
             '400': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2439,7 +2439,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def get_org_variable_with_http_info(
+    def get_org_variable_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         variablename: Annotated[StrictStr, Field(description="name of the variable")],
@@ -2499,11 +2499,11 @@ class OrganizationApi:
             '400': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2511,7 +2511,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def get_org_variable_without_preload_content(
+    def get_org_variable_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         variablename: Annotated[StrictStr, Field(description="name of the variable")],
@@ -2571,7 +2571,7 @@ class OrganizationApi:
             '400': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2652,7 +2652,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def get_org_variables_list(
+    def get_org_variables_list(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -2716,11 +2716,11 @@ class OrganizationApi:
             '400': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2728,7 +2728,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def get_org_variables_list_with_http_info(
+    def get_org_variables_list_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -2792,11 +2792,11 @@ class OrganizationApi:
             '400': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2804,7 +2804,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def get_org_variables_list_without_preload_content(
+    def get_org_variables_list_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -2868,7 +2868,7 @@ class OrganizationApi:
             '400': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2956,7 +2956,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_add_team_member(
+    def org_add_team_member(
         self,
         id: Annotated[StrictInt, Field(description="id of the team")],
         username: Annotated[StrictStr, Field(description="username of the user to add")],
@@ -3016,11 +3016,11 @@ class OrganizationApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3028,7 +3028,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_add_team_member_with_http_info(
+    def org_add_team_member_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description="id of the team")],
         username: Annotated[StrictStr, Field(description="username of the user to add")],
@@ -3088,11 +3088,11 @@ class OrganizationApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3100,7 +3100,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_add_team_member_without_preload_content(
+    def org_add_team_member_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description="id of the team")],
         username: Annotated[StrictStr, Field(description="username of the user to add")],
@@ -3160,7 +3160,7 @@ class OrganizationApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3234,7 +3234,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_add_team_repository(
+    def org_add_team_repository(
         self,
         id: Annotated[StrictInt, Field(description="id of the team")],
         org: Annotated[StrictStr, Field(description="organization that owns the repo to add")],
@@ -3298,11 +3298,11 @@ class OrganizationApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3310,7 +3310,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_add_team_repository_with_http_info(
+    def org_add_team_repository_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description="id of the team")],
         org: Annotated[StrictStr, Field(description="organization that owns the repo to add")],
@@ -3374,11 +3374,11 @@ class OrganizationApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3386,7 +3386,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_add_team_repository_without_preload_content(
+    def org_add_team_repository_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description="id of the team")],
         org: Annotated[StrictStr, Field(description="organization that owns the repo to add")],
@@ -3450,7 +3450,7 @@ class OrganizationApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3527,7 +3527,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_conceal_member(
+    def org_conceal_member(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         username: Annotated[StrictStr, Field(description="username of the user")],
@@ -3587,11 +3587,11 @@ class OrganizationApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3599,7 +3599,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_conceal_member_with_http_info(
+    def org_conceal_member_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         username: Annotated[StrictStr, Field(description="username of the user")],
@@ -3659,11 +3659,11 @@ class OrganizationApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3671,7 +3671,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_conceal_member_without_preload_content(
+    def org_conceal_member_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         username: Annotated[StrictStr, Field(description="username of the user")],
@@ -3731,7 +3731,7 @@ class OrganizationApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3805,7 +3805,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_create(
+    def org_create(
         self,
         organization: CreateOrgOption,
         _request_timeout: Union[
@@ -3861,11 +3861,11 @@ class OrganizationApi:
             '403': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3873,7 +3873,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_create_with_http_info(
+    def org_create_with_http_info(
         self,
         organization: CreateOrgOption,
         _request_timeout: Union[
@@ -3929,11 +3929,11 @@ class OrganizationApi:
             '403': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3941,7 +3941,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_create_without_preload_content(
+    def org_create_without_preload_content(
         self,
         organization: CreateOrgOption,
         _request_timeout: Union[
@@ -3997,7 +3997,7 @@ class OrganizationApi:
             '403': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4088,7 +4088,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_create_hook(
+    def org_create_hook(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         body: CreateHookOption,
@@ -4147,11 +4147,11 @@ class OrganizationApi:
             '201': "Hook",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4159,7 +4159,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_create_hook_with_http_info(
+    def org_create_hook_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         body: CreateHookOption,
@@ -4218,11 +4218,11 @@ class OrganizationApi:
             '201': "Hook",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4230,7 +4230,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_create_hook_without_preload_content(
+    def org_create_hook_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         body: CreateHookOption,
@@ -4289,7 +4289,7 @@ class OrganizationApi:
             '201': "Hook",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4383,7 +4383,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_create_label(
+    def org_create_label(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         body: Optional[CreateLabelOption] = None,
@@ -4443,11 +4443,11 @@ class OrganizationApi:
             '404': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4455,7 +4455,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_create_label_with_http_info(
+    def org_create_label_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         body: Optional[CreateLabelOption] = None,
@@ -4515,11 +4515,11 @@ class OrganizationApi:
             '404': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4527,7 +4527,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_create_label_without_preload_content(
+    def org_create_label_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         body: Optional[CreateLabelOption] = None,
@@ -4587,7 +4587,7 @@ class OrganizationApi:
             '404': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4681,7 +4681,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_create_runner_registration_token(
+    def org_create_runner_registration_token(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         _request_timeout: Union[
@@ -4735,11 +4735,11 @@ class OrganizationApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4747,7 +4747,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_create_runner_registration_token_with_http_info(
+    def org_create_runner_registration_token_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         _request_timeout: Union[
@@ -4801,11 +4801,11 @@ class OrganizationApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4813,7 +4813,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_create_runner_registration_token_without_preload_content(
+    def org_create_runner_registration_token_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         _request_timeout: Union[
@@ -4867,7 +4867,7 @@ class OrganizationApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4938,7 +4938,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_create_team(
+    def org_create_team(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         body: Optional[CreateTeamOption] = None,
@@ -4998,11 +4998,11 @@ class OrganizationApi:
             '404': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5010,7 +5010,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_create_team_with_http_info(
+    def org_create_team_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         body: Optional[CreateTeamOption] = None,
@@ -5070,11 +5070,11 @@ class OrganizationApi:
             '404': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5082,7 +5082,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_create_team_without_preload_content(
+    def org_create_team_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         body: Optional[CreateTeamOption] = None,
@@ -5142,7 +5142,7 @@ class OrganizationApi:
             '404': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -5236,7 +5236,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_delete(
+    def org_delete(
         self,
         org: Annotated[StrictStr, Field(description="organization that is to be deleted")],
         _request_timeout: Union[
@@ -5291,11 +5291,11 @@ class OrganizationApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5303,7 +5303,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_delete_with_http_info(
+    def org_delete_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="organization that is to be deleted")],
         _request_timeout: Union[
@@ -5358,11 +5358,11 @@ class OrganizationApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5370,7 +5370,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_delete_without_preload_content(
+    def org_delete_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="organization that is to be deleted")],
         _request_timeout: Union[
@@ -5425,7 +5425,7 @@ class OrganizationApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -5496,7 +5496,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_delete_avatar(
+    def org_delete_avatar(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         _request_timeout: Union[
@@ -5551,11 +5551,11 @@ class OrganizationApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5563,7 +5563,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_delete_avatar_with_http_info(
+    def org_delete_avatar_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         _request_timeout: Union[
@@ -5618,11 +5618,11 @@ class OrganizationApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5630,7 +5630,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_delete_avatar_without_preload_content(
+    def org_delete_avatar_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         _request_timeout: Union[
@@ -5685,7 +5685,7 @@ class OrganizationApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -5756,7 +5756,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_delete_hook(
+    def org_delete_hook(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         id: Annotated[StrictInt, Field(description="id of the hook to delete")],
@@ -5815,11 +5815,11 @@ class OrganizationApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5827,7 +5827,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_delete_hook_with_http_info(
+    def org_delete_hook_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         id: Annotated[StrictInt, Field(description="id of the hook to delete")],
@@ -5886,11 +5886,11 @@ class OrganizationApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5898,7 +5898,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_delete_hook_without_preload_content(
+    def org_delete_hook_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         id: Annotated[StrictInt, Field(description="id of the hook to delete")],
@@ -5957,7 +5957,7 @@ class OrganizationApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -6031,7 +6031,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_delete_label(
+    def org_delete_label(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         id: Annotated[StrictInt, Field(description="id of the label to delete")],
@@ -6090,11 +6090,11 @@ class OrganizationApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6102,7 +6102,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_delete_label_with_http_info(
+    def org_delete_label_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         id: Annotated[StrictInt, Field(description="id of the label to delete")],
@@ -6161,11 +6161,11 @@ class OrganizationApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6173,7 +6173,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_delete_label_without_preload_content(
+    def org_delete_label_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         id: Annotated[StrictInt, Field(description="id of the label to delete")],
@@ -6232,7 +6232,7 @@ class OrganizationApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -6306,7 +6306,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_delete_member(
+    def org_delete_member(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         username: Annotated[StrictStr, Field(description="username of the user")],
@@ -6365,11 +6365,11 @@ class OrganizationApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6377,7 +6377,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_delete_member_with_http_info(
+    def org_delete_member_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         username: Annotated[StrictStr, Field(description="username of the user")],
@@ -6436,11 +6436,11 @@ class OrganizationApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6448,7 +6448,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_delete_member_without_preload_content(
+    def org_delete_member_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         username: Annotated[StrictStr, Field(description="username of the user")],
@@ -6507,7 +6507,7 @@ class OrganizationApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -6581,7 +6581,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_delete_team(
+    def org_delete_team(
         self,
         id: Annotated[StrictInt, Field(description="id of the team to delete")],
         _request_timeout: Union[
@@ -6636,11 +6636,11 @@ class OrganizationApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6648,7 +6648,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_delete_team_with_http_info(
+    def org_delete_team_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description="id of the team to delete")],
         _request_timeout: Union[
@@ -6703,11 +6703,11 @@ class OrganizationApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6715,7 +6715,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_delete_team_without_preload_content(
+    def org_delete_team_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description="id of the team to delete")],
         _request_timeout: Union[
@@ -6770,7 +6770,7 @@ class OrganizationApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -6841,7 +6841,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_edit(
+    def org_edit(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization to edit")],
         body: EditOrgOption,
@@ -6900,11 +6900,11 @@ class OrganizationApi:
             '200': "Organization",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6912,7 +6912,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_edit_with_http_info(
+    def org_edit_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization to edit")],
         body: EditOrgOption,
@@ -6971,11 +6971,11 @@ class OrganizationApi:
             '200': "Organization",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6983,7 +6983,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_edit_without_preload_content(
+    def org_edit_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization to edit")],
         body: EditOrgOption,
@@ -7042,7 +7042,7 @@ class OrganizationApi:
             '200': "Organization",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -7136,7 +7136,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_edit_hook(
+    def org_edit_hook(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         id: Annotated[StrictInt, Field(description="id of the hook to update")],
@@ -7199,11 +7199,11 @@ class OrganizationApi:
             '200': "Hook",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -7211,7 +7211,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_edit_hook_with_http_info(
+    def org_edit_hook_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         id: Annotated[StrictInt, Field(description="id of the hook to update")],
@@ -7274,11 +7274,11 @@ class OrganizationApi:
             '200': "Hook",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -7286,7 +7286,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_edit_hook_without_preload_content(
+    def org_edit_hook_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         id: Annotated[StrictInt, Field(description="id of the hook to update")],
@@ -7349,7 +7349,7 @@ class OrganizationApi:
             '200': "Hook",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -7446,7 +7446,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_edit_label(
+    def org_edit_label(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         id: Annotated[StrictInt, Field(description="id of the label to edit")],
@@ -7510,11 +7510,11 @@ class OrganizationApi:
             '404': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -7522,7 +7522,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_edit_label_with_http_info(
+    def org_edit_label_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         id: Annotated[StrictInt, Field(description="id of the label to edit")],
@@ -7586,11 +7586,11 @@ class OrganizationApi:
             '404': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -7598,7 +7598,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_edit_label_without_preload_content(
+    def org_edit_label_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         id: Annotated[StrictInt, Field(description="id of the label to edit")],
@@ -7662,7 +7662,7 @@ class OrganizationApi:
             '404': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -7759,7 +7759,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_edit_team(
+    def org_edit_team(
         self,
         id: Annotated[StrictInt, Field(description="id of the team to edit")],
         body: Optional[EditTeamOption] = None,
@@ -7818,11 +7818,11 @@ class OrganizationApi:
             '200': "Team",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -7830,7 +7830,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_edit_team_with_http_info(
+    def org_edit_team_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description="id of the team to edit")],
         body: Optional[EditTeamOption] = None,
@@ -7889,11 +7889,11 @@ class OrganizationApi:
             '200': "Team",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -7901,7 +7901,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_edit_team_without_preload_content(
+    def org_edit_team_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description="id of the team to edit")],
         body: Optional[EditTeamOption] = None,
@@ -7960,7 +7960,7 @@ class OrganizationApi:
             '200': "Team",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -8054,7 +8054,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_get(
+    def org_get(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization to get")],
         _request_timeout: Union[
@@ -8109,11 +8109,11 @@ class OrganizationApi:
             '200': "Organization",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -8121,7 +8121,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_get_with_http_info(
+    def org_get_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization to get")],
         _request_timeout: Union[
@@ -8176,11 +8176,11 @@ class OrganizationApi:
             '200': "Organization",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -8188,7 +8188,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_get_without_preload_content(
+    def org_get_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization to get")],
         _request_timeout: Union[
@@ -8243,7 +8243,7 @@ class OrganizationApi:
             '200': "Organization",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -8321,7 +8321,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_get_all(
+    def org_get_all(
         self,
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="page size of results")] = None,
@@ -8379,11 +8379,11 @@ class OrganizationApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[Organization]",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -8391,7 +8391,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_get_all_with_http_info(
+    def org_get_all_with_http_info(
         self,
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="page size of results")] = None,
@@ -8449,11 +8449,11 @@ class OrganizationApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[Organization]",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -8461,7 +8461,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_get_all_without_preload_content(
+    def org_get_all_without_preload_content(
         self,
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="page size of results")] = None,
@@ -8519,7 +8519,7 @@ class OrganizationApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[Organization]",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -8604,7 +8604,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_get_hook(
+    def org_get_hook(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         id: Annotated[StrictInt, Field(description="id of the hook to get")],
@@ -8663,11 +8663,11 @@ class OrganizationApi:
             '200': "Hook",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -8675,7 +8675,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_get_hook_with_http_info(
+    def org_get_hook_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         id: Annotated[StrictInt, Field(description="id of the hook to get")],
@@ -8734,11 +8734,11 @@ class OrganizationApi:
             '200': "Hook",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -8746,7 +8746,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_get_hook_without_preload_content(
+    def org_get_hook_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         id: Annotated[StrictInt, Field(description="id of the hook to get")],
@@ -8805,7 +8805,7 @@ class OrganizationApi:
             '200': "Hook",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -8886,7 +8886,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_get_label(
+    def org_get_label(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         id: Annotated[StrictInt, Field(description="id of the label to get")],
@@ -8945,11 +8945,11 @@ class OrganizationApi:
             '200': "Label",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -8957,7 +8957,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_get_label_with_http_info(
+    def org_get_label_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         id: Annotated[StrictInt, Field(description="id of the label to get")],
@@ -9016,11 +9016,11 @@ class OrganizationApi:
             '200': "Label",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -9028,7 +9028,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_get_label_without_preload_content(
+    def org_get_label_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         id: Annotated[StrictInt, Field(description="id of the label to get")],
@@ -9087,7 +9087,7 @@ class OrganizationApi:
             '200': "Label",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -9168,7 +9168,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_get_runner_registration_token(
+    def org_get_runner_registration_token(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         _request_timeout: Union[
@@ -9222,11 +9222,11 @@ class OrganizationApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -9234,7 +9234,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_get_runner_registration_token_with_http_info(
+    def org_get_runner_registration_token_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         _request_timeout: Union[
@@ -9288,11 +9288,11 @@ class OrganizationApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -9300,7 +9300,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_get_runner_registration_token_without_preload_content(
+    def org_get_runner_registration_token_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         _request_timeout: Union[
@@ -9354,7 +9354,7 @@ class OrganizationApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -9425,7 +9425,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_get_team(
+    def org_get_team(
         self,
         id: Annotated[StrictInt, Field(description="id of the team to get")],
         _request_timeout: Union[
@@ -9480,11 +9480,11 @@ class OrganizationApi:
             '200': "Team",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -9492,7 +9492,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_get_team_with_http_info(
+    def org_get_team_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description="id of the team to get")],
         _request_timeout: Union[
@@ -9547,11 +9547,11 @@ class OrganizationApi:
             '200': "Team",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -9559,7 +9559,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_get_team_without_preload_content(
+    def org_get_team_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description="id of the team to get")],
         _request_timeout: Union[
@@ -9614,7 +9614,7 @@ class OrganizationApi:
             '200': "Team",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -9692,7 +9692,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_get_user_permissions(
+    def org_get_user_permissions(
         self,
         username: Annotated[StrictStr, Field(description="username of user")],
         org: Annotated[StrictStr, Field(description="name of the organization")],
@@ -9752,11 +9752,11 @@ class OrganizationApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -9764,7 +9764,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_get_user_permissions_with_http_info(
+    def org_get_user_permissions_with_http_info(
         self,
         username: Annotated[StrictStr, Field(description="username of user")],
         org: Annotated[StrictStr, Field(description="name of the organization")],
@@ -9824,11 +9824,11 @@ class OrganizationApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -9836,7 +9836,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_get_user_permissions_without_preload_content(
+    def org_get_user_permissions_without_preload_content(
         self,
         username: Annotated[StrictStr, Field(description="username of user")],
         org: Annotated[StrictStr, Field(description="name of the organization")],
@@ -9896,7 +9896,7 @@ class OrganizationApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -9977,7 +9977,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_is_member(
+    def org_is_member(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         username: Annotated[StrictStr, Field(description="username of the user")],
@@ -10037,11 +10037,11 @@ class OrganizationApi:
             '303': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -10049,7 +10049,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_is_member_with_http_info(
+    def org_is_member_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         username: Annotated[StrictStr, Field(description="username of the user")],
@@ -10109,11 +10109,11 @@ class OrganizationApi:
             '303': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -10121,7 +10121,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_is_member_without_preload_content(
+    def org_is_member_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         username: Annotated[StrictStr, Field(description="username of the user")],
@@ -10181,7 +10181,7 @@ class OrganizationApi:
             '303': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -10255,7 +10255,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_is_public_member(
+    def org_is_public_member(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         username: Annotated[StrictStr, Field(description="username of the user")],
@@ -10314,11 +10314,11 @@ class OrganizationApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -10326,7 +10326,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_is_public_member_with_http_info(
+    def org_is_public_member_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         username: Annotated[StrictStr, Field(description="username of the user")],
@@ -10385,11 +10385,11 @@ class OrganizationApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -10397,7 +10397,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_is_public_member_without_preload_content(
+    def org_is_public_member_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         username: Annotated[StrictStr, Field(description="username of the user")],
@@ -10456,7 +10456,7 @@ class OrganizationApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -10530,7 +10530,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_actions_secrets(
+    def org_list_actions_secrets(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -10593,11 +10593,11 @@ class OrganizationApi:
             '200': "List[Secret]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -10605,7 +10605,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_actions_secrets_with_http_info(
+    def org_list_actions_secrets_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -10668,11 +10668,11 @@ class OrganizationApi:
             '200': "List[Secret]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -10680,7 +10680,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_actions_secrets_without_preload_content(
+    def org_list_actions_secrets_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -10743,7 +10743,7 @@ class OrganizationApi:
             '200': "List[Secret]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -10831,7 +10831,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_activity_feeds(
+    def org_list_activity_feeds(
         self,
         org: Annotated[StrictStr, Field(description="name of the org")],
         var_date: Annotated[Optional[date], Field(description="the date of the activities to be found")] = None,
@@ -10898,11 +10898,11 @@ class OrganizationApi:
             '200': "List[Activity]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -10910,7 +10910,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_activity_feeds_with_http_info(
+    def org_list_activity_feeds_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of the org")],
         var_date: Annotated[Optional[date], Field(description="the date of the activities to be found")] = None,
@@ -10977,11 +10977,11 @@ class OrganizationApi:
             '200': "List[Activity]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -10989,7 +10989,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_activity_feeds_without_preload_content(
+    def org_list_activity_feeds_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of the org")],
         var_date: Annotated[Optional[date], Field(description="the date of the activities to be found")] = None,
@@ -11056,7 +11056,7 @@ class OrganizationApi:
             '200': "List[Activity]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -11158,7 +11158,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_current_user_orgs(
+    def org_list_current_user_orgs(
         self,
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="page size of results")] = None,
@@ -11217,11 +11217,11 @@ class OrganizationApi:
             '200': "List[Organization]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -11229,7 +11229,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_current_user_orgs_with_http_info(
+    def org_list_current_user_orgs_with_http_info(
         self,
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="page size of results")] = None,
@@ -11288,11 +11288,11 @@ class OrganizationApi:
             '200': "List[Organization]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -11300,7 +11300,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_current_user_orgs_without_preload_content(
+    def org_list_current_user_orgs_without_preload_content(
         self,
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="page size of results")] = None,
@@ -11359,7 +11359,7 @@ class OrganizationApi:
             '200': "List[Organization]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -11444,7 +11444,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_hooks(
+    def org_list_hooks(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -11507,11 +11507,11 @@ class OrganizationApi:
             '200': "List[Hook]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -11519,7 +11519,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_hooks_with_http_info(
+    def org_list_hooks_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -11582,11 +11582,11 @@ class OrganizationApi:
             '200': "List[Hook]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -11594,7 +11594,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_hooks_without_preload_content(
+    def org_list_hooks_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -11657,7 +11657,7 @@ class OrganizationApi:
             '200': "List[Hook]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -11745,7 +11745,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_labels(
+    def org_list_labels(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -11808,11 +11808,11 @@ class OrganizationApi:
             '200': "List[Label]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -11820,7 +11820,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_labels_with_http_info(
+    def org_list_labels_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -11883,11 +11883,11 @@ class OrganizationApi:
             '200': "List[Label]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -11895,7 +11895,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_labels_without_preload_content(
+    def org_list_labels_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -11958,7 +11958,7 @@ class OrganizationApi:
             '200': "List[Label]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -12046,7 +12046,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_members(
+    def org_list_members(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -12109,11 +12109,11 @@ class OrganizationApi:
             '200': "List[User]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -12121,7 +12121,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_members_with_http_info(
+    def org_list_members_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -12184,11 +12184,11 @@ class OrganizationApi:
             '200': "List[User]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -12196,7 +12196,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_members_without_preload_content(
+    def org_list_members_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -12259,7 +12259,7 @@ class OrganizationApi:
             '200': "List[User]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -12347,7 +12347,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_public_members(
+    def org_list_public_members(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -12410,11 +12410,11 @@ class OrganizationApi:
             '200': "List[User]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -12422,7 +12422,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_public_members_with_http_info(
+    def org_list_public_members_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -12485,11 +12485,11 @@ class OrganizationApi:
             '200': "List[User]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -12497,7 +12497,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_public_members_without_preload_content(
+    def org_list_public_members_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -12560,7 +12560,7 @@ class OrganizationApi:
             '200': "List[User]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -12648,7 +12648,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_repos(
+    def org_list_repos(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -12711,11 +12711,11 @@ class OrganizationApi:
             '200': "List[Repository]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -12723,7 +12723,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_repos_with_http_info(
+    def org_list_repos_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -12786,11 +12786,11 @@ class OrganizationApi:
             '200': "List[Repository]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -12798,7 +12798,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_repos_without_preload_content(
+    def org_list_repos_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -12861,7 +12861,7 @@ class OrganizationApi:
             '200': "List[Repository]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -12949,7 +12949,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_team_activity_feeds(
+    def org_list_team_activity_feeds(
         self,
         id: Annotated[StrictInt, Field(description="id of the team")],
         var_date: Annotated[Optional[date], Field(description="the date of the activities to be found")] = None,
@@ -13016,11 +13016,11 @@ class OrganizationApi:
             '200': "List[Activity]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -13028,7 +13028,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_team_activity_feeds_with_http_info(
+    def org_list_team_activity_feeds_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description="id of the team")],
         var_date: Annotated[Optional[date], Field(description="the date of the activities to be found")] = None,
@@ -13095,11 +13095,11 @@ class OrganizationApi:
             '200': "List[Activity]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -13107,7 +13107,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_team_activity_feeds_without_preload_content(
+    def org_list_team_activity_feeds_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description="id of the team")],
         var_date: Annotated[Optional[date], Field(description="the date of the activities to be found")] = None,
@@ -13174,7 +13174,7 @@ class OrganizationApi:
             '200': "List[Activity]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -13276,7 +13276,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_team_member(
+    def org_list_team_member(
         self,
         id: Annotated[StrictInt, Field(description="id of the team")],
         username: Annotated[StrictStr, Field(description="username of the member to list")],
@@ -13335,11 +13335,11 @@ class OrganizationApi:
             '200': "User",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -13347,7 +13347,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_team_member_with_http_info(
+    def org_list_team_member_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description="id of the team")],
         username: Annotated[StrictStr, Field(description="username of the member to list")],
@@ -13406,11 +13406,11 @@ class OrganizationApi:
             '200': "User",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -13418,7 +13418,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_team_member_without_preload_content(
+    def org_list_team_member_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description="id of the team")],
         username: Annotated[StrictStr, Field(description="username of the member to list")],
@@ -13477,7 +13477,7 @@ class OrganizationApi:
             '200': "User",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -13558,7 +13558,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_team_members(
+    def org_list_team_members(
         self,
         id: Annotated[StrictInt, Field(description="id of the team")],
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -13621,11 +13621,11 @@ class OrganizationApi:
             '200': "List[User]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -13633,7 +13633,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_team_members_with_http_info(
+    def org_list_team_members_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description="id of the team")],
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -13696,11 +13696,11 @@ class OrganizationApi:
             '200': "List[User]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -13708,7 +13708,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_team_members_without_preload_content(
+    def org_list_team_members_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description="id of the team")],
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -13771,7 +13771,7 @@ class OrganizationApi:
             '200': "List[User]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -13859,7 +13859,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_team_repo(
+    def org_list_team_repo(
         self,
         id: Annotated[StrictInt, Field(description="id of the team")],
         org: Annotated[StrictStr, Field(description="organization that owns the repo to list")],
@@ -13922,11 +13922,11 @@ class OrganizationApi:
             '200': "Repository",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -13934,7 +13934,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_team_repo_with_http_info(
+    def org_list_team_repo_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description="id of the team")],
         org: Annotated[StrictStr, Field(description="organization that owns the repo to list")],
@@ -13997,11 +13997,11 @@ class OrganizationApi:
             '200': "Repository",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -14009,7 +14009,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_team_repo_without_preload_content(
+    def org_list_team_repo_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description="id of the team")],
         org: Annotated[StrictStr, Field(description="organization that owns the repo to list")],
@@ -14072,7 +14072,7 @@ class OrganizationApi:
             '200': "Repository",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -14156,7 +14156,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_team_repos(
+    def org_list_team_repos(
         self,
         id: Annotated[StrictInt, Field(description="id of the team")],
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -14219,11 +14219,11 @@ class OrganizationApi:
             '200': "List[Repository]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -14231,7 +14231,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_team_repos_with_http_info(
+    def org_list_team_repos_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description="id of the team")],
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -14294,11 +14294,11 @@ class OrganizationApi:
             '200': "List[Repository]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -14306,7 +14306,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_team_repos_without_preload_content(
+    def org_list_team_repos_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description="id of the team")],
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -14369,7 +14369,7 @@ class OrganizationApi:
             '200': "List[Repository]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -14457,7 +14457,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_teams(
+    def org_list_teams(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -14520,11 +14520,11 @@ class OrganizationApi:
             '200': "List[Team]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -14532,7 +14532,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_teams_with_http_info(
+    def org_list_teams_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -14595,11 +14595,11 @@ class OrganizationApi:
             '200': "List[Team]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -14607,7 +14607,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_teams_without_preload_content(
+    def org_list_teams_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -14670,7 +14670,7 @@ class OrganizationApi:
             '200': "List[Team]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -14758,7 +14758,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_user_orgs(
+    def org_list_user_orgs(
         self,
         username: Annotated[StrictStr, Field(description="username of user")],
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -14821,11 +14821,11 @@ class OrganizationApi:
             '200': "List[Organization]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -14833,7 +14833,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_user_orgs_with_http_info(
+    def org_list_user_orgs_with_http_info(
         self,
         username: Annotated[StrictStr, Field(description="username of user")],
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -14896,11 +14896,11 @@ class OrganizationApi:
             '200': "List[Organization]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -14908,7 +14908,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_list_user_orgs_without_preload_content(
+    def org_list_user_orgs_without_preload_content(
         self,
         username: Annotated[StrictStr, Field(description="username of user")],
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -14971,7 +14971,7 @@ class OrganizationApi:
             '200': "List[Organization]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -15059,7 +15059,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_publicize_member(
+    def org_publicize_member(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         username: Annotated[StrictStr, Field(description="username of the user")],
@@ -15119,11 +15119,11 @@ class OrganizationApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -15131,7 +15131,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_publicize_member_with_http_info(
+    def org_publicize_member_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         username: Annotated[StrictStr, Field(description="username of the user")],
@@ -15191,11 +15191,11 @@ class OrganizationApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -15203,7 +15203,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_publicize_member_without_preload_content(
+    def org_publicize_member_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         username: Annotated[StrictStr, Field(description="username of the user")],
@@ -15263,7 +15263,7 @@ class OrganizationApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -15337,7 +15337,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_remove_team_member(
+    def org_remove_team_member(
         self,
         id: Annotated[StrictInt, Field(description="id of the team")],
         username: Annotated[StrictStr, Field(description="username of the user to remove")],
@@ -15396,11 +15396,11 @@ class OrganizationApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -15408,7 +15408,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_remove_team_member_with_http_info(
+    def org_remove_team_member_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description="id of the team")],
         username: Annotated[StrictStr, Field(description="username of the user to remove")],
@@ -15467,11 +15467,11 @@ class OrganizationApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -15479,7 +15479,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_remove_team_member_without_preload_content(
+    def org_remove_team_member_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description="id of the team")],
         username: Annotated[StrictStr, Field(description="username of the user to remove")],
@@ -15538,7 +15538,7 @@ class OrganizationApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -15612,7 +15612,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_remove_team_repository(
+    def org_remove_team_repository(
         self,
         id: Annotated[StrictInt, Field(description="id of the team")],
         org: Annotated[StrictStr, Field(description="organization that owns the repo to remove")],
@@ -15677,11 +15677,11 @@ class OrganizationApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -15689,7 +15689,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_remove_team_repository_with_http_info(
+    def org_remove_team_repository_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description="id of the team")],
         org: Annotated[StrictStr, Field(description="organization that owns the repo to remove")],
@@ -15754,11 +15754,11 @@ class OrganizationApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -15766,7 +15766,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_remove_team_repository_without_preload_content(
+    def org_remove_team_repository_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description="id of the team")],
         org: Annotated[StrictStr, Field(description="organization that owns the repo to remove")],
@@ -15831,7 +15831,7 @@ class OrganizationApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -15908,7 +15908,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_update_avatar(
+    def org_update_avatar(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         body: Optional[UpdateUserAvatarOption] = None,
@@ -15967,11 +15967,11 @@ class OrganizationApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -15979,7 +15979,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_update_avatar_with_http_info(
+    def org_update_avatar_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         body: Optional[UpdateUserAvatarOption] = None,
@@ -16038,11 +16038,11 @@ class OrganizationApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -16050,7 +16050,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def org_update_avatar_without_preload_content(
+    def org_update_avatar_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         body: Optional[UpdateUserAvatarOption] = None,
@@ -16109,7 +16109,7 @@ class OrganizationApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -16197,7 +16197,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def organization_block_user(
+    def organization_block_user(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         username: Annotated[StrictStr, Field(description="user to block")],
@@ -16261,11 +16261,11 @@ class OrganizationApi:
             '404': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -16273,7 +16273,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def organization_block_user_with_http_info(
+    def organization_block_user_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         username: Annotated[StrictStr, Field(description="user to block")],
@@ -16337,11 +16337,11 @@ class OrganizationApi:
             '404': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -16349,7 +16349,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def organization_block_user_without_preload_content(
+    def organization_block_user_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         username: Annotated[StrictStr, Field(description="user to block")],
@@ -16413,7 +16413,7 @@ class OrganizationApi:
             '404': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -16492,7 +16492,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def organization_check_user_block(
+    def organization_check_user_block(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         username: Annotated[StrictStr, Field(description="user to check")],
@@ -16551,11 +16551,11 @@ class OrganizationApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -16563,7 +16563,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def organization_check_user_block_with_http_info(
+    def organization_check_user_block_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         username: Annotated[StrictStr, Field(description="user to check")],
@@ -16622,11 +16622,11 @@ class OrganizationApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -16634,7 +16634,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def organization_check_user_block_without_preload_content(
+    def organization_check_user_block_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         username: Annotated[StrictStr, Field(description="user to check")],
@@ -16693,7 +16693,7 @@ class OrganizationApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -16767,7 +16767,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def organization_list_blocks(
+    def organization_list_blocks(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -16829,11 +16829,11 @@ class OrganizationApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[User]",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -16841,7 +16841,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def organization_list_blocks_with_http_info(
+    def organization_list_blocks_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -16903,11 +16903,11 @@ class OrganizationApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[User]",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -16915,7 +16915,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def organization_list_blocks_without_preload_content(
+    def organization_list_blocks_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -16977,7 +16977,7 @@ class OrganizationApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[User]",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -17065,7 +17065,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def organization_unblock_user(
+    def organization_unblock_user(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         username: Annotated[StrictStr, Field(description="user to unblock")],
@@ -17125,11 +17125,11 @@ class OrganizationApi:
             '404': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -17137,7 +17137,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def organization_unblock_user_with_http_info(
+    def organization_unblock_user_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         username: Annotated[StrictStr, Field(description="user to unblock")],
@@ -17197,11 +17197,11 @@ class OrganizationApi:
             '404': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -17209,7 +17209,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def organization_unblock_user_without_preload_content(
+    def organization_unblock_user_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         username: Annotated[StrictStr, Field(description="user to unblock")],
@@ -17269,7 +17269,7 @@ class OrganizationApi:
             '404': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -17343,7 +17343,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def rename_org(
+    def rename_org(
         self,
         org: Annotated[StrictStr, Field(description="existing org name")],
         body: RenameOrgOption,
@@ -17403,11 +17403,11 @@ class OrganizationApi:
             '403': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -17415,7 +17415,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def rename_org_with_http_info(
+    def rename_org_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="existing org name")],
         body: RenameOrgOption,
@@ -17475,11 +17475,11 @@ class OrganizationApi:
             '403': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -17487,7 +17487,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def rename_org_without_preload_content(
+    def rename_org_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="existing org name")],
         body: RenameOrgOption,
@@ -17547,7 +17547,7 @@ class OrganizationApi:
             '403': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -17635,7 +17635,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def team_search(
+    def team_search(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         q: Annotated[Optional[StrictStr], Field(description="keywords to search")] = None,
@@ -17706,11 +17706,11 @@ class OrganizationApi:
             '200': "TeamSearch200Response",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -17718,7 +17718,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def team_search_with_http_info(
+    def team_search_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         q: Annotated[Optional[StrictStr], Field(description="keywords to search")] = None,
@@ -17789,11 +17789,11 @@ class OrganizationApi:
             '200': "TeamSearch200Response",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -17801,7 +17801,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def team_search_without_preload_content(
+    def team_search_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         q: Annotated[Optional[StrictStr], Field(description="keywords to search")] = None,
@@ -17872,7 +17872,7 @@ class OrganizationApi:
             '200': "TeamSearch200Response",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -17970,7 +17970,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def update_org_secret(
+    def update_org_secret(
         self,
         org: Annotated[StrictStr, Field(description="name of organization")],
         secretname: Annotated[StrictStr, Field(description="name of the secret")],
@@ -18035,11 +18035,11 @@ class OrganizationApi:
             '400': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -18047,7 +18047,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def update_org_secret_with_http_info(
+    def update_org_secret_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of organization")],
         secretname: Annotated[StrictStr, Field(description="name of the secret")],
@@ -18112,11 +18112,11 @@ class OrganizationApi:
             '400': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -18124,7 +18124,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def update_org_secret_without_preload_content(
+    def update_org_secret_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of organization")],
         secretname: Annotated[StrictStr, Field(description="name of the secret")],
@@ -18189,7 +18189,7 @@ class OrganizationApi:
             '400': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -18279,7 +18279,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def update_org_variable(
+    def update_org_variable(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         variablename: Annotated[StrictStr, Field(description="name of the variable")],
@@ -18344,11 +18344,11 @@ class OrganizationApi:
             '400': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -18356,7 +18356,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def update_org_variable_with_http_info(
+    def update_org_variable_with_http_info(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         variablename: Annotated[StrictStr, Field(description="name of the variable")],
@@ -18421,11 +18421,11 @@ class OrganizationApi:
             '400': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -18433,7 +18433,7 @@ class OrganizationApi:
 
 
     @validate_call
-    async def update_org_variable_without_preload_content(
+    def update_org_variable_without_preload_content(
         self,
         org: Annotated[StrictStr, Field(description="name of the organization")],
         variablename: Annotated[StrictStr, Field(description="name of the variable")],
@@ -18498,7 +18498,7 @@ class OrganizationApi:
             '400': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

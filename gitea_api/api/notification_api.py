@@ -42,7 +42,7 @@ class NotificationApi:
 
 
     @validate_call
-    async def notify_get_list(
+    def notify_get_list(
         self,
         all: Annotated[Optional[StrictBool], Field(description="If true, show notifications marked as read. Default value is false")] = None,
         status_types: Annotated[Optional[List[StrictStr]], Field(description="Show notifications with the provided status types. Options are: unread, read and/or pinned. Defaults to unread & pinned.")] = None,
@@ -120,11 +120,11 @@ class NotificationApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[NotificationThread]",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -132,7 +132,7 @@ class NotificationApi:
 
 
     @validate_call
-    async def notify_get_list_with_http_info(
+    def notify_get_list_with_http_info(
         self,
         all: Annotated[Optional[StrictBool], Field(description="If true, show notifications marked as read. Default value is false")] = None,
         status_types: Annotated[Optional[List[StrictStr]], Field(description="Show notifications with the provided status types. Options are: unread, read and/or pinned. Defaults to unread & pinned.")] = None,
@@ -210,11 +210,11 @@ class NotificationApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[NotificationThread]",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -222,7 +222,7 @@ class NotificationApi:
 
 
     @validate_call
-    async def notify_get_list_without_preload_content(
+    def notify_get_list_without_preload_content(
         self,
         all: Annotated[Optional[StrictBool], Field(description="If true, show notifications marked as read. Default value is false")] = None,
         status_types: Annotated[Optional[List[StrictStr]], Field(description="Show notifications with the provided status types. Options are: unread, read and/or pinned. Defaults to unread & pinned.")] = None,
@@ -300,7 +300,7 @@ class NotificationApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[NotificationThread]",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -430,7 +430,7 @@ class NotificationApi:
 
 
     @validate_call
-    async def notify_get_repo_list(
+    def notify_get_repo_list(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -516,11 +516,11 @@ class NotificationApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[NotificationThread]",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -528,7 +528,7 @@ class NotificationApi:
 
 
     @validate_call
-    async def notify_get_repo_list_with_http_info(
+    def notify_get_repo_list_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -614,11 +614,11 @@ class NotificationApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[NotificationThread]",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -626,7 +626,7 @@ class NotificationApi:
 
 
     @validate_call
-    async def notify_get_repo_list_without_preload_content(
+    def notify_get_repo_list_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -712,7 +712,7 @@ class NotificationApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[NotificationThread]",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -848,7 +848,7 @@ class NotificationApi:
 
 
     @validate_call
-    async def notify_get_thread(
+    def notify_get_thread(
         self,
         id: Annotated[StrictStr, Field(description="id of notification thread")],
         _request_timeout: Union[
@@ -904,11 +904,11 @@ class NotificationApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -916,7 +916,7 @@ class NotificationApi:
 
 
     @validate_call
-    async def notify_get_thread_with_http_info(
+    def notify_get_thread_with_http_info(
         self,
         id: Annotated[StrictStr, Field(description="id of notification thread")],
         _request_timeout: Union[
@@ -972,11 +972,11 @@ class NotificationApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -984,7 +984,7 @@ class NotificationApi:
 
 
     @validate_call
-    async def notify_get_thread_without_preload_content(
+    def notify_get_thread_without_preload_content(
         self,
         id: Annotated[StrictStr, Field(description="id of notification thread")],
         _request_timeout: Union[
@@ -1040,7 +1040,7 @@ class NotificationApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1118,7 +1118,7 @@ class NotificationApi:
 
 
     @validate_call
-    async def notify_new_available(
+    def notify_new_available(
         self,
         _request_timeout: Union[
             None,
@@ -1168,11 +1168,11 @@ class NotificationApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "NotificationCount",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1180,7 +1180,7 @@ class NotificationApi:
 
 
     @validate_call
-    async def notify_new_available_with_http_info(
+    def notify_new_available_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -1230,11 +1230,11 @@ class NotificationApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "NotificationCount",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1242,7 +1242,7 @@ class NotificationApi:
 
 
     @validate_call
-    async def notify_new_available_without_preload_content(
+    def notify_new_available_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -1292,7 +1292,7 @@ class NotificationApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "NotificationCount",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1368,7 +1368,7 @@ class NotificationApi:
 
 
     @validate_call
-    async def notify_read_list(
+    def notify_read_list(
         self,
         last_read_at: Annotated[Optional[datetime], Field(description="Describes the last point that notifications were checked. Anything updated since this time will not be updated.")] = None,
         all: Annotated[Optional[StrictStr], Field(description="If true, mark all notifications on this repo. Default value is false")] = None,
@@ -1434,11 +1434,11 @@ class NotificationApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '205': "List[NotificationThread]",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1446,7 +1446,7 @@ class NotificationApi:
 
 
     @validate_call
-    async def notify_read_list_with_http_info(
+    def notify_read_list_with_http_info(
         self,
         last_read_at: Annotated[Optional[datetime], Field(description="Describes the last point that notifications were checked. Anything updated since this time will not be updated.")] = None,
         all: Annotated[Optional[StrictStr], Field(description="If true, mark all notifications on this repo. Default value is false")] = None,
@@ -1512,11 +1512,11 @@ class NotificationApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '205': "List[NotificationThread]",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1524,7 +1524,7 @@ class NotificationApi:
 
 
     @validate_call
-    async def notify_read_list_without_preload_content(
+    def notify_read_list_without_preload_content(
         self,
         last_read_at: Annotated[Optional[datetime], Field(description="Describes the last point that notifications were checked. Anything updated since this time will not be updated.")] = None,
         all: Annotated[Optional[StrictStr], Field(description="If true, mark all notifications on this repo. Default value is false")] = None,
@@ -1590,7 +1590,7 @@ class NotificationApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '205': "List[NotificationThread]",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1695,7 +1695,7 @@ class NotificationApi:
 
 
     @validate_call
-    async def notify_read_repo_list(
+    def notify_read_repo_list(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -1769,11 +1769,11 @@ class NotificationApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '205': "List[NotificationThread]",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1781,7 +1781,7 @@ class NotificationApi:
 
 
     @validate_call
-    async def notify_read_repo_list_with_http_info(
+    def notify_read_repo_list_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -1855,11 +1855,11 @@ class NotificationApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '205': "List[NotificationThread]",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1867,7 +1867,7 @@ class NotificationApi:
 
 
     @validate_call
-    async def notify_read_repo_list_without_preload_content(
+    def notify_read_repo_list_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -1941,7 +1941,7 @@ class NotificationApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '205': "List[NotificationThread]",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2052,7 +2052,7 @@ class NotificationApi:
 
 
     @validate_call
-    async def notify_read_thread(
+    def notify_read_thread(
         self,
         id: Annotated[StrictStr, Field(description="id of notification thread")],
         to_status: Annotated[Optional[StrictStr], Field(description="Status to mark notifications as")] = None,
@@ -2112,11 +2112,11 @@ class NotificationApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2124,7 +2124,7 @@ class NotificationApi:
 
 
     @validate_call
-    async def notify_read_thread_with_http_info(
+    def notify_read_thread_with_http_info(
         self,
         id: Annotated[StrictStr, Field(description="id of notification thread")],
         to_status: Annotated[Optional[StrictStr], Field(description="Status to mark notifications as")] = None,
@@ -2184,11 +2184,11 @@ class NotificationApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2196,7 +2196,7 @@ class NotificationApi:
 
 
     @validate_call
-    async def notify_read_thread_without_preload_content(
+    def notify_read_thread_without_preload_content(
         self,
         id: Annotated[StrictStr, Field(description="id of notification thread")],
         to_status: Annotated[Optional[StrictStr], Field(description="Status to mark notifications as")] = None,
@@ -2256,7 +2256,7 @@ class NotificationApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

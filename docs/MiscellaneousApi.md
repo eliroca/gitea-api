@@ -93,14 +93,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.MiscellaneousApi(api_client)
     name = 'name_example' # str | name of the template
 
     try:
         # Returns information about a gitignore template
-        api_response = await api_instance.get_gitignore_template_info(name)
+        api_response = api_instance.get_gitignore_template_info(name)
         print("The response of MiscellaneousApi->get_gitignore_template_info:\n")
         pprint(api_response)
     except Exception as e:
@@ -213,14 +213,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.MiscellaneousApi(api_client)
     name = 'name_example' # str | name of the template
 
     try:
         # Returns all labels in a template
-        api_response = await api_instance.get_label_template_info(name)
+        api_response = api_instance.get_label_template_info(name)
         print("The response of MiscellaneousApi->get_label_template_info:\n")
         pprint(api_response)
     except Exception as e:
@@ -333,14 +333,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.MiscellaneousApi(api_client)
     name = 'name_example' # str | name of the license
 
     try:
         # Returns information about a license template
-        api_response = await api_instance.get_license_template_info(name)
+        api_response = api_instance.get_license_template_info(name)
         print("The response of MiscellaneousApi->get_license_template_info:\n")
         pprint(api_response)
     except Exception as e:
@@ -453,13 +453,13 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.MiscellaneousApi(api_client)
 
     try:
         # Returns the nodeinfo of the Gitea application
-        api_response = await api_instance.get_node_info()
+        api_response = api_instance.get_node_info()
         print("The response of MiscellaneousApi->get_node_info:\n")
         pprint(api_response)
     except Exception as e:
@@ -567,13 +567,13 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.MiscellaneousApi(api_client)
 
     try:
         # Get default signing-key.gpg
-        api_response = await api_instance.get_signing_key()
+        api_response = api_instance.get_signing_key()
         print("The response of MiscellaneousApi->get_signing_key:\n")
         pprint(api_response)
     except Exception as e:
@@ -682,13 +682,13 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.MiscellaneousApi(api_client)
 
     try:
         # Returns the version of the Gitea application
-        api_response = await api_instance.get_version()
+        api_response = api_instance.get_version()
         print("The response of MiscellaneousApi->get_version:\n")
         pprint(api_response)
     except Exception as e:
@@ -796,13 +796,13 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.MiscellaneousApi(api_client)
 
     try:
         # Returns a list of all gitignore templates
-        api_response = await api_instance.list_gitignores_templates()
+        api_response = api_instance.list_gitignores_templates()
         print("The response of MiscellaneousApi->list_gitignores_templates:\n")
         pprint(api_response)
     except Exception as e:
@@ -910,13 +910,13 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.MiscellaneousApi(api_client)
 
     try:
         # Returns a list of all label templates
-        api_response = await api_instance.list_label_templates()
+        api_response = api_instance.list_label_templates()
         print("The response of MiscellaneousApi->list_label_templates:\n")
         pprint(api_response)
     except Exception as e:
@@ -1025,13 +1025,13 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.MiscellaneousApi(api_client)
 
     try:
         # Returns a list of all license templates
-        api_response = await api_instance.list_license_templates()
+        api_response = api_instance.list_license_templates()
         print("The response of MiscellaneousApi->list_license_templates:\n")
         pprint(api_response)
     except Exception as e:
@@ -1140,14 +1140,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.MiscellaneousApi(api_client)
     body = gitea_api.MarkdownOption() # MarkdownOption |  (optional)
 
     try:
         # Render a markdown document as HTML
-        api_response = await api_instance.render_markdown(body=body)
+        api_response = api_instance.render_markdown(body=body)
         print("The response of MiscellaneousApi->render_markdown:\n")
         pprint(api_response)
     except Exception as e:
@@ -1259,14 +1259,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.MiscellaneousApi(api_client)
     body = 'body_example' # str | Request body to render
 
     try:
         # Render raw markdown as HTML
-        api_response = await api_instance.render_markdown_raw(body)
+        api_response = api_instance.render_markdown_raw(body)
         print("The response of MiscellaneousApi->render_markdown_raw:\n")
         pprint(api_response)
     except Exception as e:
@@ -1379,14 +1379,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.MiscellaneousApi(api_client)
     body = gitea_api.MarkupOption() # MarkupOption |  (optional)
 
     try:
         # Render a markup document as HTML
-        api_response = await api_instance.render_markup(body=body)
+        api_response = api_instance.render_markup(body=body)
         print("The response of MiscellaneousApi->render_markup:\n")
         pprint(api_response)
     except Exception as e:

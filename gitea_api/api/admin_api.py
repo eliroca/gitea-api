@@ -56,7 +56,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_add_user_badges(
+    def admin_add_user_badges(
         self,
         username: Annotated[StrictStr, Field(description="username of user")],
         body: Optional[UserBadgeOption] = None,
@@ -115,11 +115,11 @@ class AdminApi:
             '204': None,
             '403': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -127,7 +127,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_add_user_badges_with_http_info(
+    def admin_add_user_badges_with_http_info(
         self,
         username: Annotated[StrictStr, Field(description="username of user")],
         body: Optional[UserBadgeOption] = None,
@@ -186,11 +186,11 @@ class AdminApi:
             '204': None,
             '403': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -198,7 +198,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_add_user_badges_without_preload_content(
+    def admin_add_user_badges_without_preload_content(
         self,
         username: Annotated[StrictStr, Field(description="username of user")],
         body: Optional[UserBadgeOption] = None,
@@ -257,7 +257,7 @@ class AdminApi:
             '204': None,
             '403': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -344,7 +344,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_adopt_repository(
+    def admin_adopt_repository(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -404,11 +404,11 @@ class AdminApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -416,7 +416,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_adopt_repository_with_http_info(
+    def admin_adopt_repository_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -476,11 +476,11 @@ class AdminApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -488,7 +488,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_adopt_repository_without_preload_content(
+    def admin_adopt_repository_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -548,7 +548,7 @@ class AdminApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -622,7 +622,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_create_hook(
+    def admin_create_hook(
         self,
         body: CreateHookOption,
         _request_timeout: Union[
@@ -676,11 +676,11 @@ class AdminApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "Hook",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -688,7 +688,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_create_hook_with_http_info(
+    def admin_create_hook_with_http_info(
         self,
         body: CreateHookOption,
         _request_timeout: Union[
@@ -742,11 +742,11 @@ class AdminApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "Hook",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -754,7 +754,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_create_hook_without_preload_content(
+    def admin_create_hook_without_preload_content(
         self,
         body: CreateHookOption,
         _request_timeout: Union[
@@ -808,7 +808,7 @@ class AdminApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "Hook",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -899,7 +899,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_create_org(
+    def admin_create_org(
         self,
         username: Annotated[StrictStr, Field(description="username of the user that will own the created organization")],
         organization: CreateOrgOption,
@@ -959,11 +959,11 @@ class AdminApi:
             '403': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -971,7 +971,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_create_org_with_http_info(
+    def admin_create_org_with_http_info(
         self,
         username: Annotated[StrictStr, Field(description="username of the user that will own the created organization")],
         organization: CreateOrgOption,
@@ -1031,11 +1031,11 @@ class AdminApi:
             '403': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1043,7 +1043,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_create_org_without_preload_content(
+    def admin_create_org_without_preload_content(
         self,
         username: Annotated[StrictStr, Field(description="username of the user that will own the created organization")],
         organization: CreateOrgOption,
@@ -1103,7 +1103,7 @@ class AdminApi:
             '403': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1197,7 +1197,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_create_public_key(
+    def admin_create_public_key(
         self,
         username: Annotated[StrictStr, Field(description="username of the user")],
         key: Optional[CreateKeyOption] = None,
@@ -1257,11 +1257,11 @@ class AdminApi:
             '403': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1269,7 +1269,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_create_public_key_with_http_info(
+    def admin_create_public_key_with_http_info(
         self,
         username: Annotated[StrictStr, Field(description="username of the user")],
         key: Optional[CreateKeyOption] = None,
@@ -1329,11 +1329,11 @@ class AdminApi:
             '403': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1341,7 +1341,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_create_public_key_without_preload_content(
+    def admin_create_public_key_without_preload_content(
         self,
         username: Annotated[StrictStr, Field(description="username of the user")],
         key: Optional[CreateKeyOption] = None,
@@ -1401,7 +1401,7 @@ class AdminApi:
             '403': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1495,7 +1495,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_create_repo(
+    def admin_create_repo(
         self,
         username: Annotated[StrictStr, Field(description="username of the user. This user will own the created repository")],
         repository: CreateRepoOption,
@@ -1558,11 +1558,11 @@ class AdminApi:
             '409': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1570,7 +1570,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_create_repo_with_http_info(
+    def admin_create_repo_with_http_info(
         self,
         username: Annotated[StrictStr, Field(description="username of the user. This user will own the created repository")],
         repository: CreateRepoOption,
@@ -1633,11 +1633,11 @@ class AdminApi:
             '409': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1645,7 +1645,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_create_repo_without_preload_content(
+    def admin_create_repo_without_preload_content(
         self,
         username: Annotated[StrictStr, Field(description="username of the user. This user will own the created repository")],
         repository: CreateRepoOption,
@@ -1708,7 +1708,7 @@ class AdminApi:
             '409': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1802,7 +1802,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_create_runner_registration_token(
+    def admin_create_runner_registration_token(
         self,
         _request_timeout: Union[
             None,
@@ -1852,11 +1852,11 @@ class AdminApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1864,7 +1864,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_create_runner_registration_token_with_http_info(
+    def admin_create_runner_registration_token_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -1914,11 +1914,11 @@ class AdminApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1926,7 +1926,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_create_runner_registration_token_without_preload_content(
+    def admin_create_runner_registration_token_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -1976,7 +1976,7 @@ class AdminApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2044,7 +2044,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_create_user(
+    def admin_create_user(
         self,
         body: Optional[CreateUserOption] = None,
         _request_timeout: Union[
@@ -2101,11 +2101,11 @@ class AdminApi:
             '403': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2113,7 +2113,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_create_user_with_http_info(
+    def admin_create_user_with_http_info(
         self,
         body: Optional[CreateUserOption] = None,
         _request_timeout: Union[
@@ -2170,11 +2170,11 @@ class AdminApi:
             '403': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2182,7 +2182,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_create_user_without_preload_content(
+    def admin_create_user_without_preload_content(
         self,
         body: Optional[CreateUserOption] = None,
         _request_timeout: Union[
@@ -2239,7 +2239,7 @@ class AdminApi:
             '403': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2330,7 +2330,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_cron_list(
+    def admin_cron_list(
         self,
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="page size of results")] = None,
@@ -2389,11 +2389,11 @@ class AdminApi:
             '200': "List[Cron]",
             '403': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2401,7 +2401,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_cron_list_with_http_info(
+    def admin_cron_list_with_http_info(
         self,
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="page size of results")] = None,
@@ -2460,11 +2460,11 @@ class AdminApi:
             '200': "List[Cron]",
             '403': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2472,7 +2472,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_cron_list_without_preload_content(
+    def admin_cron_list_without_preload_content(
         self,
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="page size of results")] = None,
@@ -2531,7 +2531,7 @@ class AdminApi:
             '200': "List[Cron]",
             '403': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2616,7 +2616,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_cron_run(
+    def admin_cron_run(
         self,
         task: Annotated[StrictStr, Field(description="task to run")],
         _request_timeout: Union[
@@ -2671,11 +2671,11 @@ class AdminApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2683,7 +2683,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_cron_run_with_http_info(
+    def admin_cron_run_with_http_info(
         self,
         task: Annotated[StrictStr, Field(description="task to run")],
         _request_timeout: Union[
@@ -2738,11 +2738,11 @@ class AdminApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2750,7 +2750,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_cron_run_without_preload_content(
+    def admin_cron_run_without_preload_content(
         self,
         task: Annotated[StrictStr, Field(description="task to run")],
         _request_timeout: Union[
@@ -2805,7 +2805,7 @@ class AdminApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2876,7 +2876,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_delete_hook(
+    def admin_delete_hook(
         self,
         id: Annotated[StrictInt, Field(description="id of the hook to delete")],
         _request_timeout: Union[
@@ -2930,11 +2930,11 @@ class AdminApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2942,7 +2942,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_delete_hook_with_http_info(
+    def admin_delete_hook_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description="id of the hook to delete")],
         _request_timeout: Union[
@@ -2996,11 +2996,11 @@ class AdminApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3008,7 +3008,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_delete_hook_without_preload_content(
+    def admin_delete_hook_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description="id of the hook to delete")],
         _request_timeout: Union[
@@ -3062,7 +3062,7 @@ class AdminApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3133,7 +3133,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_delete_unadopted_repository(
+    def admin_delete_unadopted_repository(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -3192,11 +3192,11 @@ class AdminApi:
             '204': None,
             '403': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3204,7 +3204,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_delete_unadopted_repository_with_http_info(
+    def admin_delete_unadopted_repository_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -3263,11 +3263,11 @@ class AdminApi:
             '204': None,
             '403': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3275,7 +3275,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_delete_unadopted_repository_without_preload_content(
+    def admin_delete_unadopted_repository_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -3334,7 +3334,7 @@ class AdminApi:
             '204': None,
             '403': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3408,7 +3408,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_delete_user(
+    def admin_delete_user(
         self,
         username: Annotated[StrictStr, Field(description="username of user to delete")],
         purge: Annotated[Optional[StrictBool], Field(description="purge the user from the system completely")] = None,
@@ -3469,11 +3469,11 @@ class AdminApi:
             '404': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3481,7 +3481,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_delete_user_with_http_info(
+    def admin_delete_user_with_http_info(
         self,
         username: Annotated[StrictStr, Field(description="username of user to delete")],
         purge: Annotated[Optional[StrictBool], Field(description="purge the user from the system completely")] = None,
@@ -3542,11 +3542,11 @@ class AdminApi:
             '404': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3554,7 +3554,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_delete_user_without_preload_content(
+    def admin_delete_user_without_preload_content(
         self,
         username: Annotated[StrictStr, Field(description="username of user to delete")],
         purge: Annotated[Optional[StrictBool], Field(description="purge the user from the system completely")] = None,
@@ -3615,7 +3615,7 @@ class AdminApi:
             '404': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3691,7 +3691,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_delete_user_badges(
+    def admin_delete_user_badges(
         self,
         username: Annotated[StrictStr, Field(description="username of user")],
         body: Optional[UserBadgeOption] = None,
@@ -3751,11 +3751,11 @@ class AdminApi:
             '403': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3763,7 +3763,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_delete_user_badges_with_http_info(
+    def admin_delete_user_badges_with_http_info(
         self,
         username: Annotated[StrictStr, Field(description="username of user")],
         body: Optional[UserBadgeOption] = None,
@@ -3823,11 +3823,11 @@ class AdminApi:
             '403': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3835,7 +3835,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_delete_user_badges_without_preload_content(
+    def admin_delete_user_badges_without_preload_content(
         self,
         username: Annotated[StrictStr, Field(description="username of user")],
         body: Optional[UserBadgeOption] = None,
@@ -3895,7 +3895,7 @@ class AdminApi:
             '403': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3983,7 +3983,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_delete_user_public_key(
+    def admin_delete_user_public_key(
         self,
         username: Annotated[StrictStr, Field(description="username of user")],
         id: Annotated[StrictInt, Field(description="id of the key to delete")],
@@ -4043,11 +4043,11 @@ class AdminApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4055,7 +4055,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_delete_user_public_key_with_http_info(
+    def admin_delete_user_public_key_with_http_info(
         self,
         username: Annotated[StrictStr, Field(description="username of user")],
         id: Annotated[StrictInt, Field(description="id of the key to delete")],
@@ -4115,11 +4115,11 @@ class AdminApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4127,7 +4127,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_delete_user_public_key_without_preload_content(
+    def admin_delete_user_public_key_without_preload_content(
         self,
         username: Annotated[StrictStr, Field(description="username of user")],
         id: Annotated[StrictInt, Field(description="id of the key to delete")],
@@ -4187,7 +4187,7 @@ class AdminApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4261,7 +4261,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_edit_hook(
+    def admin_edit_hook(
         self,
         id: Annotated[StrictInt, Field(description="id of the hook to update")],
         body: Optional[EditHookOption] = None,
@@ -4319,11 +4319,11 @@ class AdminApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Hook",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4331,7 +4331,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_edit_hook_with_http_info(
+    def admin_edit_hook_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description="id of the hook to update")],
         body: Optional[EditHookOption] = None,
@@ -4389,11 +4389,11 @@ class AdminApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Hook",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4401,7 +4401,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_edit_hook_without_preload_content(
+    def admin_edit_hook_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description="id of the hook to update")],
         body: Optional[EditHookOption] = None,
@@ -4459,7 +4459,7 @@ class AdminApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Hook",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4553,7 +4553,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_edit_user(
+    def admin_edit_user(
         self,
         username: Annotated[StrictStr, Field(description="username of user to edit")],
         body: Optional[EditUserOption] = None,
@@ -4614,11 +4614,11 @@ class AdminApi:
             '403': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4626,7 +4626,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_edit_user_with_http_info(
+    def admin_edit_user_with_http_info(
         self,
         username: Annotated[StrictStr, Field(description="username of user to edit")],
         body: Optional[EditUserOption] = None,
@@ -4687,11 +4687,11 @@ class AdminApi:
             '403': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4699,7 +4699,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_edit_user_without_preload_content(
+    def admin_edit_user_without_preload_content(
         self,
         username: Annotated[StrictStr, Field(description="username of user to edit")],
         body: Optional[EditUserOption] = None,
@@ -4760,7 +4760,7 @@ class AdminApi:
             '403': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4854,7 +4854,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_get_all_emails(
+    def admin_get_all_emails(
         self,
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="page size of results")] = None,
@@ -4913,11 +4913,11 @@ class AdminApi:
             '200': "List[Email]",
             '403': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4925,7 +4925,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_get_all_emails_with_http_info(
+    def admin_get_all_emails_with_http_info(
         self,
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="page size of results")] = None,
@@ -4984,11 +4984,11 @@ class AdminApi:
             '200': "List[Email]",
             '403': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4996,7 +4996,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_get_all_emails_without_preload_content(
+    def admin_get_all_emails_without_preload_content(
         self,
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="page size of results")] = None,
@@ -5055,7 +5055,7 @@ class AdminApi:
             '200': "List[Email]",
             '403': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -5140,7 +5140,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_get_all_orgs(
+    def admin_get_all_orgs(
         self,
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="page size of results")] = None,
@@ -5199,11 +5199,11 @@ class AdminApi:
             '200': "List[Organization]",
             '403': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5211,7 +5211,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_get_all_orgs_with_http_info(
+    def admin_get_all_orgs_with_http_info(
         self,
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="page size of results")] = None,
@@ -5270,11 +5270,11 @@ class AdminApi:
             '200': "List[Organization]",
             '403': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5282,7 +5282,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_get_all_orgs_without_preload_content(
+    def admin_get_all_orgs_without_preload_content(
         self,
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="page size of results")] = None,
@@ -5341,7 +5341,7 @@ class AdminApi:
             '200': "List[Organization]",
             '403': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -5426,7 +5426,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_get_hook(
+    def admin_get_hook(
         self,
         id: Annotated[StrictInt, Field(description="id of the hook to get")],
         _request_timeout: Union[
@@ -5480,11 +5480,11 @@ class AdminApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Hook",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5492,7 +5492,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_get_hook_with_http_info(
+    def admin_get_hook_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description="id of the hook to get")],
         _request_timeout: Union[
@@ -5546,11 +5546,11 @@ class AdminApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Hook",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5558,7 +5558,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_get_hook_without_preload_content(
+    def admin_get_hook_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description="id of the hook to get")],
         _request_timeout: Union[
@@ -5612,7 +5612,7 @@ class AdminApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Hook",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -5690,7 +5690,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_get_runner_registration_token(
+    def admin_get_runner_registration_token(
         self,
         _request_timeout: Union[
             None,
@@ -5740,11 +5740,11 @@ class AdminApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5752,7 +5752,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_get_runner_registration_token_with_http_info(
+    def admin_get_runner_registration_token_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -5802,11 +5802,11 @@ class AdminApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5814,7 +5814,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_get_runner_registration_token_without_preload_content(
+    def admin_get_runner_registration_token_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -5864,7 +5864,7 @@ class AdminApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -5932,7 +5932,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_list_hooks(
+    def admin_list_hooks(
         self,
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="page size of results")] = None,
@@ -5994,11 +5994,11 @@ class AdminApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[Hook]",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6006,7 +6006,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_list_hooks_with_http_info(
+    def admin_list_hooks_with_http_info(
         self,
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="page size of results")] = None,
@@ -6068,11 +6068,11 @@ class AdminApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[Hook]",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6080,7 +6080,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_list_hooks_without_preload_content(
+    def admin_list_hooks_without_preload_content(
         self,
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="page size of results")] = None,
@@ -6142,7 +6142,7 @@ class AdminApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[Hook]",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -6232,7 +6232,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_list_user_badges(
+    def admin_list_user_badges(
         self,
         username: Annotated[StrictStr, Field(description="username of user")],
         _request_timeout: Union[
@@ -6287,11 +6287,11 @@ class AdminApi:
             '200': "List[Badge]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6299,7 +6299,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_list_user_badges_with_http_info(
+    def admin_list_user_badges_with_http_info(
         self,
         username: Annotated[StrictStr, Field(description="username of user")],
         _request_timeout: Union[
@@ -6354,11 +6354,11 @@ class AdminApi:
             '200': "List[Badge]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6366,7 +6366,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_list_user_badges_without_preload_content(
+    def admin_list_user_badges_without_preload_content(
         self,
         username: Annotated[StrictStr, Field(description="username of user")],
         _request_timeout: Union[
@@ -6421,7 +6421,7 @@ class AdminApi:
             '200': "List[Badge]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -6499,7 +6499,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_rename_user(
+    def admin_rename_user(
         self,
         username: Annotated[StrictStr, Field(description="existing username of user")],
         body: RenameUserOption,
@@ -6559,11 +6559,11 @@ class AdminApi:
             '403': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6571,7 +6571,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_rename_user_with_http_info(
+    def admin_rename_user_with_http_info(
         self,
         username: Annotated[StrictStr, Field(description="existing username of user")],
         body: RenameUserOption,
@@ -6631,11 +6631,11 @@ class AdminApi:
             '403': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6643,7 +6643,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_rename_user_without_preload_content(
+    def admin_rename_user_without_preload_content(
         self,
         username: Annotated[StrictStr, Field(description="existing username of user")],
         body: RenameUserOption,
@@ -6703,7 +6703,7 @@ class AdminApi:
             '403': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -6791,7 +6791,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_search_emails(
+    def admin_search_emails(
         self,
         q: Annotated[Optional[StrictStr], Field(description="keyword")] = None,
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -6854,11 +6854,11 @@ class AdminApi:
             '200': "List[Email]",
             '403': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6866,7 +6866,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_search_emails_with_http_info(
+    def admin_search_emails_with_http_info(
         self,
         q: Annotated[Optional[StrictStr], Field(description="keyword")] = None,
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -6929,11 +6929,11 @@ class AdminApi:
             '200': "List[Email]",
             '403': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6941,7 +6941,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_search_emails_without_preload_content(
+    def admin_search_emails_without_preload_content(
         self,
         q: Annotated[Optional[StrictStr], Field(description="keyword")] = None,
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -7004,7 +7004,7 @@ class AdminApi:
             '200': "List[Email]",
             '403': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -7094,7 +7094,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_search_users(
+    def admin_search_users(
         self,
         source_id: Annotated[Optional[StrictInt], Field(description="ID of the user's login source to search for")] = None,
         login_name: Annotated[Optional[StrictStr], Field(description="user's login name to search for")] = None,
@@ -7161,11 +7161,11 @@ class AdminApi:
             '200': "List[User]",
             '403': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -7173,7 +7173,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_search_users_with_http_info(
+    def admin_search_users_with_http_info(
         self,
         source_id: Annotated[Optional[StrictInt], Field(description="ID of the user's login source to search for")] = None,
         login_name: Annotated[Optional[StrictStr], Field(description="user's login name to search for")] = None,
@@ -7240,11 +7240,11 @@ class AdminApi:
             '200': "List[User]",
             '403': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -7252,7 +7252,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_search_users_without_preload_content(
+    def admin_search_users_without_preload_content(
         self,
         source_id: Annotated[Optional[StrictInt], Field(description="ID of the user's login source to search for")] = None,
         login_name: Annotated[Optional[StrictStr], Field(description="user's login name to search for")] = None,
@@ -7319,7 +7319,7 @@ class AdminApi:
             '200': "List[User]",
             '403': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -7414,7 +7414,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_unadopted_list(
+    def admin_unadopted_list(
         self,
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="page size of results")] = None,
@@ -7477,11 +7477,11 @@ class AdminApi:
             '200': "List[str]",
             '403': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -7489,7 +7489,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_unadopted_list_with_http_info(
+    def admin_unadopted_list_with_http_info(
         self,
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="page size of results")] = None,
@@ -7552,11 +7552,11 @@ class AdminApi:
             '200': "List[str]",
             '403': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -7564,7 +7564,7 @@ class AdminApi:
 
 
     @validate_call
-    async def admin_unadopted_list_without_preload_content(
+    def admin_unadopted_list_without_preload_content(
         self,
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="page size of results")] = None,
@@ -7627,7 +7627,7 @@ class AdminApi:
             '200': "List[str]",
             '403': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -7717,7 +7717,7 @@ class AdminApi:
 
 
     @validate_call
-    async def delete_admin_runner(
+    def delete_admin_runner(
         self,
         runner_id: Annotated[StrictStr, Field(description="id of the runner")],
         _request_timeout: Union[
@@ -7773,11 +7773,11 @@ class AdminApi:
             '400': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -7785,7 +7785,7 @@ class AdminApi:
 
 
     @validate_call
-    async def delete_admin_runner_with_http_info(
+    def delete_admin_runner_with_http_info(
         self,
         runner_id: Annotated[StrictStr, Field(description="id of the runner")],
         _request_timeout: Union[
@@ -7841,11 +7841,11 @@ class AdminApi:
             '400': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -7853,7 +7853,7 @@ class AdminApi:
 
 
     @validate_call
-    async def delete_admin_runner_without_preload_content(
+    def delete_admin_runner_without_preload_content(
         self,
         runner_id: Annotated[StrictStr, Field(description="id of the runner")],
         _request_timeout: Union[
@@ -7909,7 +7909,7 @@ class AdminApi:
             '400': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -7980,7 +7980,7 @@ class AdminApi:
 
 
     @validate_call
-    async def get_admin_runner(
+    def get_admin_runner(
         self,
         runner_id: Annotated[StrictStr, Field(description="id of the runner")],
         _request_timeout: Union[
@@ -8036,11 +8036,11 @@ class AdminApi:
             '400': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -8048,7 +8048,7 @@ class AdminApi:
 
 
     @validate_call
-    async def get_admin_runner_with_http_info(
+    def get_admin_runner_with_http_info(
         self,
         runner_id: Annotated[StrictStr, Field(description="id of the runner")],
         _request_timeout: Union[
@@ -8104,11 +8104,11 @@ class AdminApi:
             '400': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -8116,7 +8116,7 @@ class AdminApi:
 
 
     @validate_call
-    async def get_admin_runner_without_preload_content(
+    def get_admin_runner_without_preload_content(
         self,
         runner_id: Annotated[StrictStr, Field(description="id of the runner")],
         _request_timeout: Union[
@@ -8172,7 +8172,7 @@ class AdminApi:
             '400': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -8243,7 +8243,7 @@ class AdminApi:
 
 
     @validate_call
-    async def get_admin_runners(
+    def get_admin_runners(
         self,
         _request_timeout: Union[
             None,
@@ -8295,11 +8295,11 @@ class AdminApi:
             '400': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -8307,7 +8307,7 @@ class AdminApi:
 
 
     @validate_call
-    async def get_admin_runners_with_http_info(
+    def get_admin_runners_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -8359,11 +8359,11 @@ class AdminApi:
             '400': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -8371,7 +8371,7 @@ class AdminApi:
 
 
     @validate_call
-    async def get_admin_runners_without_preload_content(
+    def get_admin_runners_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -8423,7 +8423,7 @@ class AdminApi:
             '400': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

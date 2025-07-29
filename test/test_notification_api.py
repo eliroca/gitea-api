@@ -17,58 +17,58 @@ import unittest
 from gitea_api.api.notification_api import NotificationApi
 
 
-class TestNotificationApi(unittest.IsolatedAsyncioTestCase):
+class TestNotificationApi(unittest.TestCase):
     """NotificationApi unit test stubs"""
 
-    async def asyncSetUp(self) -> None:
+    def setUp(self) -> None:
         self.api = NotificationApi()
 
-    async def asyncTearDown(self) -> None:
-        await self.api.api_client.close()
+    def tearDown(self) -> None:
+        pass
 
-    async def test_notify_get_list(self) -> None:
+    def test_notify_get_list(self) -> None:
         """Test case for notify_get_list
 
         List users's notification threads
         """
         pass
 
-    async def test_notify_get_repo_list(self) -> None:
+    def test_notify_get_repo_list(self) -> None:
         """Test case for notify_get_repo_list
 
         List users's notification threads on a specific repo
         """
         pass
 
-    async def test_notify_get_thread(self) -> None:
+    def test_notify_get_thread(self) -> None:
         """Test case for notify_get_thread
 
         Get notification thread by ID
         """
         pass
 
-    async def test_notify_new_available(self) -> None:
+    def test_notify_new_available(self) -> None:
         """Test case for notify_new_available
 
         Check if unread notifications exist
         """
         pass
 
-    async def test_notify_read_list(self) -> None:
+    def test_notify_read_list(self) -> None:
         """Test case for notify_read_list
 
         Mark notification threads as read, pinned or unread
         """
         pass
 
-    async def test_notify_read_repo_list(self) -> None:
+    def test_notify_read_repo_list(self) -> None:
         """Test case for notify_read_repo_list
 
         Mark notification threads as read, pinned or unread on a specific repo
         """
         pass
 
-    async def test_notify_read_thread(self) -> None:
+    def test_notify_read_thread(self) -> None:
         """Test case for notify_read_thread
 
         Mark notification thread as read by ID

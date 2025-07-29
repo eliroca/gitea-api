@@ -17,219 +17,219 @@ import unittest
 from gitea_api.api.admin_api import AdminApi
 
 
-class TestAdminApi(unittest.IsolatedAsyncioTestCase):
+class TestAdminApi(unittest.TestCase):
     """AdminApi unit test stubs"""
 
-    async def asyncSetUp(self) -> None:
+    def setUp(self) -> None:
         self.api = AdminApi()
 
-    async def asyncTearDown(self) -> None:
-        await self.api.api_client.close()
+    def tearDown(self) -> None:
+        pass
 
-    async def test_admin_add_user_badges(self) -> None:
+    def test_admin_add_user_badges(self) -> None:
         """Test case for admin_add_user_badges
 
         Add a badge to a user
         """
         pass
 
-    async def test_admin_adopt_repository(self) -> None:
+    def test_admin_adopt_repository(self) -> None:
         """Test case for admin_adopt_repository
 
         Adopt unadopted files as a repository
         """
         pass
 
-    async def test_admin_create_hook(self) -> None:
+    def test_admin_create_hook(self) -> None:
         """Test case for admin_create_hook
 
         Create a hook
         """
         pass
 
-    async def test_admin_create_org(self) -> None:
+    def test_admin_create_org(self) -> None:
         """Test case for admin_create_org
 
         Create an organization
         """
         pass
 
-    async def test_admin_create_public_key(self) -> None:
+    def test_admin_create_public_key(self) -> None:
         """Test case for admin_create_public_key
 
         Add a public key on behalf of a user
         """
         pass
 
-    async def test_admin_create_repo(self) -> None:
+    def test_admin_create_repo(self) -> None:
         """Test case for admin_create_repo
 
         Create a repository on behalf of a user
         """
         pass
 
-    async def test_admin_create_runner_registration_token(self) -> None:
+    def test_admin_create_runner_registration_token(self) -> None:
         """Test case for admin_create_runner_registration_token
 
         Get an global actions runner registration token
         """
         pass
 
-    async def test_admin_create_user(self) -> None:
+    def test_admin_create_user(self) -> None:
         """Test case for admin_create_user
 
         Create a user
         """
         pass
 
-    async def test_admin_cron_list(self) -> None:
+    def test_admin_cron_list(self) -> None:
         """Test case for admin_cron_list
 
         List cron tasks
         """
         pass
 
-    async def test_admin_cron_run(self) -> None:
+    def test_admin_cron_run(self) -> None:
         """Test case for admin_cron_run
 
         Run cron task
         """
         pass
 
-    async def test_admin_delete_hook(self) -> None:
+    def test_admin_delete_hook(self) -> None:
         """Test case for admin_delete_hook
 
         Delete a hook
         """
         pass
 
-    async def test_admin_delete_unadopted_repository(self) -> None:
+    def test_admin_delete_unadopted_repository(self) -> None:
         """Test case for admin_delete_unadopted_repository
 
         Delete unadopted files
         """
         pass
 
-    async def test_admin_delete_user(self) -> None:
+    def test_admin_delete_user(self) -> None:
         """Test case for admin_delete_user
 
         Delete a user
         """
         pass
 
-    async def test_admin_delete_user_badges(self) -> None:
+    def test_admin_delete_user_badges(self) -> None:
         """Test case for admin_delete_user_badges
 
         Remove a badge from a user
         """
         pass
 
-    async def test_admin_delete_user_public_key(self) -> None:
+    def test_admin_delete_user_public_key(self) -> None:
         """Test case for admin_delete_user_public_key
 
         Delete a user's public key
         """
         pass
 
-    async def test_admin_edit_hook(self) -> None:
+    def test_admin_edit_hook(self) -> None:
         """Test case for admin_edit_hook
 
         Update a hook
         """
         pass
 
-    async def test_admin_edit_user(self) -> None:
+    def test_admin_edit_user(self) -> None:
         """Test case for admin_edit_user
 
         Edit an existing user
         """
         pass
 
-    async def test_admin_get_all_emails(self) -> None:
+    def test_admin_get_all_emails(self) -> None:
         """Test case for admin_get_all_emails
 
         List all emails
         """
         pass
 
-    async def test_admin_get_all_orgs(self) -> None:
+    def test_admin_get_all_orgs(self) -> None:
         """Test case for admin_get_all_orgs
 
         List all organizations
         """
         pass
 
-    async def test_admin_get_hook(self) -> None:
+    def test_admin_get_hook(self) -> None:
         """Test case for admin_get_hook
 
         Get a hook
         """
         pass
 
-    async def test_admin_get_runner_registration_token(self) -> None:
+    def test_admin_get_runner_registration_token(self) -> None:
         """Test case for admin_get_runner_registration_token
 
         Get an global actions runner registration token
         """
         pass
 
-    async def test_admin_list_hooks(self) -> None:
+    def test_admin_list_hooks(self) -> None:
         """Test case for admin_list_hooks
 
         List system's webhooks
         """
         pass
 
-    async def test_admin_list_user_badges(self) -> None:
+    def test_admin_list_user_badges(self) -> None:
         """Test case for admin_list_user_badges
 
         List a user's badges
         """
         pass
 
-    async def test_admin_rename_user(self) -> None:
+    def test_admin_rename_user(self) -> None:
         """Test case for admin_rename_user
 
         Rename a user
         """
         pass
 
-    async def test_admin_search_emails(self) -> None:
+    def test_admin_search_emails(self) -> None:
         """Test case for admin_search_emails
 
         Search all emails
         """
         pass
 
-    async def test_admin_search_users(self) -> None:
+    def test_admin_search_users(self) -> None:
         """Test case for admin_search_users
 
         Search users according filter conditions
         """
         pass
 
-    async def test_admin_unadopted_list(self) -> None:
+    def test_admin_unadopted_list(self) -> None:
         """Test case for admin_unadopted_list
 
         List unadopted repositories
         """
         pass
 
-    async def test_delete_admin_runner(self) -> None:
+    def test_delete_admin_runner(self) -> None:
         """Test case for delete_admin_runner
 
         Delete an global runner
         """
         pass
 
-    async def test_get_admin_runner(self) -> None:
+    def test_get_admin_runner(self) -> None:
         """Test case for get_admin_runner
 
         Get an global runner
         """
         pass
 
-    async def test_get_admin_runners(self) -> None:
+    def test_get_admin_runners(self) -> None:
         """Test case for get_admin_runners
 
         Get all runners

@@ -47,7 +47,7 @@ class MiscellaneousApi:
 
 
     @validate_call
-    async def get_gitignore_template_info(
+    def get_gitignore_template_info(
         self,
         name: Annotated[StrictStr, Field(description="name of the template")],
         _request_timeout: Union[
@@ -102,11 +102,11 @@ class MiscellaneousApi:
             '200': "GitignoreTemplateInfo",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -114,7 +114,7 @@ class MiscellaneousApi:
 
 
     @validate_call
-    async def get_gitignore_template_info_with_http_info(
+    def get_gitignore_template_info_with_http_info(
         self,
         name: Annotated[StrictStr, Field(description="name of the template")],
         _request_timeout: Union[
@@ -169,11 +169,11 @@ class MiscellaneousApi:
             '200': "GitignoreTemplateInfo",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -181,7 +181,7 @@ class MiscellaneousApi:
 
 
     @validate_call
-    async def get_gitignore_template_info_without_preload_content(
+    def get_gitignore_template_info_without_preload_content(
         self,
         name: Annotated[StrictStr, Field(description="name of the template")],
         _request_timeout: Union[
@@ -236,7 +236,7 @@ class MiscellaneousApi:
             '200': "GitignoreTemplateInfo",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -314,7 +314,7 @@ class MiscellaneousApi:
 
 
     @validate_call
-    async def get_label_template_info(
+    def get_label_template_info(
         self,
         name: Annotated[StrictStr, Field(description="name of the template")],
         _request_timeout: Union[
@@ -369,11 +369,11 @@ class MiscellaneousApi:
             '200': "List[LabelTemplate]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -381,7 +381,7 @@ class MiscellaneousApi:
 
 
     @validate_call
-    async def get_label_template_info_with_http_info(
+    def get_label_template_info_with_http_info(
         self,
         name: Annotated[StrictStr, Field(description="name of the template")],
         _request_timeout: Union[
@@ -436,11 +436,11 @@ class MiscellaneousApi:
             '200': "List[LabelTemplate]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -448,7 +448,7 @@ class MiscellaneousApi:
 
 
     @validate_call
-    async def get_label_template_info_without_preload_content(
+    def get_label_template_info_without_preload_content(
         self,
         name: Annotated[StrictStr, Field(description="name of the template")],
         _request_timeout: Union[
@@ -503,7 +503,7 @@ class MiscellaneousApi:
             '200': "List[LabelTemplate]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -581,7 +581,7 @@ class MiscellaneousApi:
 
 
     @validate_call
-    async def get_license_template_info(
+    def get_license_template_info(
         self,
         name: Annotated[StrictStr, Field(description="name of the license")],
         _request_timeout: Union[
@@ -636,11 +636,11 @@ class MiscellaneousApi:
             '200': "LicenseTemplateInfo",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -648,7 +648,7 @@ class MiscellaneousApi:
 
 
     @validate_call
-    async def get_license_template_info_with_http_info(
+    def get_license_template_info_with_http_info(
         self,
         name: Annotated[StrictStr, Field(description="name of the license")],
         _request_timeout: Union[
@@ -703,11 +703,11 @@ class MiscellaneousApi:
             '200': "LicenseTemplateInfo",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -715,7 +715,7 @@ class MiscellaneousApi:
 
 
     @validate_call
-    async def get_license_template_info_without_preload_content(
+    def get_license_template_info_without_preload_content(
         self,
         name: Annotated[StrictStr, Field(description="name of the license")],
         _request_timeout: Union[
@@ -770,7 +770,7 @@ class MiscellaneousApi:
             '200': "LicenseTemplateInfo",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -848,7 +848,7 @@ class MiscellaneousApi:
 
 
     @validate_call
-    async def get_node_info(
+    def get_node_info(
         self,
         _request_timeout: Union[
             None,
@@ -898,11 +898,11 @@ class MiscellaneousApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "NodeInfo",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -910,7 +910,7 @@ class MiscellaneousApi:
 
 
     @validate_call
-    async def get_node_info_with_http_info(
+    def get_node_info_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -960,11 +960,11 @@ class MiscellaneousApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "NodeInfo",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -972,7 +972,7 @@ class MiscellaneousApi:
 
 
     @validate_call
-    async def get_node_info_without_preload_content(
+    def get_node_info_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -1022,7 +1022,7 @@ class MiscellaneousApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "NodeInfo",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1097,7 +1097,7 @@ class MiscellaneousApi:
 
 
     @validate_call
-    async def get_signing_key(
+    def get_signing_key(
         self,
         _request_timeout: Union[
             None,
@@ -1147,11 +1147,11 @@ class MiscellaneousApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "str",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1159,7 +1159,7 @@ class MiscellaneousApi:
 
 
     @validate_call
-    async def get_signing_key_with_http_info(
+    def get_signing_key_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -1209,11 +1209,11 @@ class MiscellaneousApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "str",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1221,7 +1221,7 @@ class MiscellaneousApi:
 
 
     @validate_call
-    async def get_signing_key_without_preload_content(
+    def get_signing_key_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -1271,7 +1271,7 @@ class MiscellaneousApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "str",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1346,7 +1346,7 @@ class MiscellaneousApi:
 
 
     @validate_call
-    async def get_version(
+    def get_version(
         self,
         _request_timeout: Union[
             None,
@@ -1396,11 +1396,11 @@ class MiscellaneousApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ServerVersion",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1408,7 +1408,7 @@ class MiscellaneousApi:
 
 
     @validate_call
-    async def get_version_with_http_info(
+    def get_version_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -1458,11 +1458,11 @@ class MiscellaneousApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ServerVersion",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1470,7 +1470,7 @@ class MiscellaneousApi:
 
 
     @validate_call
-    async def get_version_without_preload_content(
+    def get_version_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -1520,7 +1520,7 @@ class MiscellaneousApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ServerVersion",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1595,7 +1595,7 @@ class MiscellaneousApi:
 
 
     @validate_call
-    async def list_gitignores_templates(
+    def list_gitignores_templates(
         self,
         _request_timeout: Union[
             None,
@@ -1645,11 +1645,11 @@ class MiscellaneousApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[str]",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1657,7 +1657,7 @@ class MiscellaneousApi:
 
 
     @validate_call
-    async def list_gitignores_templates_with_http_info(
+    def list_gitignores_templates_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -1707,11 +1707,11 @@ class MiscellaneousApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[str]",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1719,7 +1719,7 @@ class MiscellaneousApi:
 
 
     @validate_call
-    async def list_gitignores_templates_without_preload_content(
+    def list_gitignores_templates_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -1769,7 +1769,7 @@ class MiscellaneousApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[str]",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1844,7 +1844,7 @@ class MiscellaneousApi:
 
 
     @validate_call
-    async def list_label_templates(
+    def list_label_templates(
         self,
         _request_timeout: Union[
             None,
@@ -1894,11 +1894,11 @@ class MiscellaneousApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[str]",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1906,7 +1906,7 @@ class MiscellaneousApi:
 
 
     @validate_call
-    async def list_label_templates_with_http_info(
+    def list_label_templates_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -1956,11 +1956,11 @@ class MiscellaneousApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[str]",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1968,7 +1968,7 @@ class MiscellaneousApi:
 
 
     @validate_call
-    async def list_label_templates_without_preload_content(
+    def list_label_templates_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -2018,7 +2018,7 @@ class MiscellaneousApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[str]",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2093,7 +2093,7 @@ class MiscellaneousApi:
 
 
     @validate_call
-    async def list_license_templates(
+    def list_license_templates(
         self,
         _request_timeout: Union[
             None,
@@ -2143,11 +2143,11 @@ class MiscellaneousApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[LicensesTemplateListEntry]",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2155,7 +2155,7 @@ class MiscellaneousApi:
 
 
     @validate_call
-    async def list_license_templates_with_http_info(
+    def list_license_templates_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -2205,11 +2205,11 @@ class MiscellaneousApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[LicensesTemplateListEntry]",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2217,7 +2217,7 @@ class MiscellaneousApi:
 
 
     @validate_call
-    async def list_license_templates_without_preload_content(
+    def list_license_templates_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -2267,7 +2267,7 @@ class MiscellaneousApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[LicensesTemplateListEntry]",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2342,7 +2342,7 @@ class MiscellaneousApi:
 
 
     @validate_call
-    async def render_markdown(
+    def render_markdown(
         self,
         body: Optional[MarkdownOption] = None,
         _request_timeout: Union[
@@ -2397,11 +2397,11 @@ class MiscellaneousApi:
             '200': "str",
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2409,7 +2409,7 @@ class MiscellaneousApi:
 
 
     @validate_call
-    async def render_markdown_with_http_info(
+    def render_markdown_with_http_info(
         self,
         body: Optional[MarkdownOption] = None,
         _request_timeout: Union[
@@ -2464,11 +2464,11 @@ class MiscellaneousApi:
             '200': "str",
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2476,7 +2476,7 @@ class MiscellaneousApi:
 
 
     @validate_call
-    async def render_markdown_without_preload_content(
+    def render_markdown_without_preload_content(
         self,
         body: Optional[MarkdownOption] = None,
         _request_timeout: Union[
@@ -2531,7 +2531,7 @@ class MiscellaneousApi:
             '200': "str",
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2622,7 +2622,7 @@ class MiscellaneousApi:
 
 
     @validate_call
-    async def render_markdown_raw(
+    def render_markdown_raw(
         self,
         body: Annotated[StrictStr, Field(description="Request body to render")],
         _request_timeout: Union[
@@ -2677,11 +2677,11 @@ class MiscellaneousApi:
             '200': "str",
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2689,7 +2689,7 @@ class MiscellaneousApi:
 
 
     @validate_call
-    async def render_markdown_raw_with_http_info(
+    def render_markdown_raw_with_http_info(
         self,
         body: Annotated[StrictStr, Field(description="Request body to render")],
         _request_timeout: Union[
@@ -2744,11 +2744,11 @@ class MiscellaneousApi:
             '200': "str",
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2756,7 +2756,7 @@ class MiscellaneousApi:
 
 
     @validate_call
-    async def render_markdown_raw_without_preload_content(
+    def render_markdown_raw_without_preload_content(
         self,
         body: Annotated[StrictStr, Field(description="Request body to render")],
         _request_timeout: Union[
@@ -2811,7 +2811,7 @@ class MiscellaneousApi:
             '200': "str",
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2902,7 +2902,7 @@ class MiscellaneousApi:
 
 
     @validate_call
-    async def render_markup(
+    def render_markup(
         self,
         body: Optional[MarkupOption] = None,
         _request_timeout: Union[
@@ -2957,11 +2957,11 @@ class MiscellaneousApi:
             '200': "str",
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2969,7 +2969,7 @@ class MiscellaneousApi:
 
 
     @validate_call
-    async def render_markup_with_http_info(
+    def render_markup_with_http_info(
         self,
         body: Optional[MarkupOption] = None,
         _request_timeout: Union[
@@ -3024,11 +3024,11 @@ class MiscellaneousApi:
             '200': "str",
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3036,7 +3036,7 @@ class MiscellaneousApi:
 
 
     @validate_call
-    async def render_markup_without_preload_content(
+    def render_markup_without_preload_content(
         self,
         body: Optional[MarkupOption] = None,
         _request_timeout: Union[
@@ -3091,7 +3091,7 @@ class MiscellaneousApi:
             '200': "str",
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

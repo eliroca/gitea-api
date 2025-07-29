@@ -85,13 +85,13 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.SettingsApi(api_client)
 
     try:
         # Get instance's global settings for api
-        api_response = await api_instance.get_general_api_settings()
+        api_response = api_instance.get_general_api_settings()
         print("The response of SettingsApi->get_general_api_settings:\n")
         pprint(api_response)
     except Exception as e:
@@ -200,13 +200,13 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.SettingsApi(api_client)
 
     try:
         # Get instance's global settings for Attachment
-        api_response = await api_instance.get_general_attachment_settings()
+        api_response = api_instance.get_general_attachment_settings()
         print("The response of SettingsApi->get_general_attachment_settings:\n")
         pprint(api_response)
     except Exception as e:
@@ -315,13 +315,13 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.SettingsApi(api_client)
 
     try:
         # Get instance's global settings for repositories
-        api_response = await api_instance.get_general_repository_settings()
+        api_response = api_instance.get_general_repository_settings()
         print("The response of SettingsApi->get_general_repository_settings:\n")
         pprint(api_response)
     except Exception as e:
@@ -430,13 +430,13 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.SettingsApi(api_client)
 
     try:
         # Get instance's global settings for ui
-        api_response = await api_instance.get_general_ui_settings()
+        api_response = api_instance.get_general_ui_settings()
         print("The response of SettingsApi->get_general_ui_settings:\n")
         pprint(api_response)
     except Exception as e:

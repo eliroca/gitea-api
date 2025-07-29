@@ -17,93 +17,93 @@ import unittest
 from gitea_api.api.miscellaneous_api import MiscellaneousApi
 
 
-class TestMiscellaneousApi(unittest.IsolatedAsyncioTestCase):
+class TestMiscellaneousApi(unittest.TestCase):
     """MiscellaneousApi unit test stubs"""
 
-    async def asyncSetUp(self) -> None:
+    def setUp(self) -> None:
         self.api = MiscellaneousApi()
 
-    async def asyncTearDown(self) -> None:
-        await self.api.api_client.close()
+    def tearDown(self) -> None:
+        pass
 
-    async def test_get_gitignore_template_info(self) -> None:
+    def test_get_gitignore_template_info(self) -> None:
         """Test case for get_gitignore_template_info
 
         Returns information about a gitignore template
         """
         pass
 
-    async def test_get_label_template_info(self) -> None:
+    def test_get_label_template_info(self) -> None:
         """Test case for get_label_template_info
 
         Returns all labels in a template
         """
         pass
 
-    async def test_get_license_template_info(self) -> None:
+    def test_get_license_template_info(self) -> None:
         """Test case for get_license_template_info
 
         Returns information about a license template
         """
         pass
 
-    async def test_get_node_info(self) -> None:
+    def test_get_node_info(self) -> None:
         """Test case for get_node_info
 
         Returns the nodeinfo of the Gitea application
         """
         pass
 
-    async def test_get_signing_key(self) -> None:
+    def test_get_signing_key(self) -> None:
         """Test case for get_signing_key
 
         Get default signing-key.gpg
         """
         pass
 
-    async def test_get_version(self) -> None:
+    def test_get_version(self) -> None:
         """Test case for get_version
 
         Returns the version of the Gitea application
         """
         pass
 
-    async def test_list_gitignores_templates(self) -> None:
+    def test_list_gitignores_templates(self) -> None:
         """Test case for list_gitignores_templates
 
         Returns a list of all gitignore templates
         """
         pass
 
-    async def test_list_label_templates(self) -> None:
+    def test_list_label_templates(self) -> None:
         """Test case for list_label_templates
 
         Returns a list of all label templates
         """
         pass
 
-    async def test_list_license_templates(self) -> None:
+    def test_list_license_templates(self) -> None:
         """Test case for list_license_templates
 
         Returns a list of all license templates
         """
         pass
 
-    async def test_render_markdown(self) -> None:
+    def test_render_markdown(self) -> None:
         """Test case for render_markdown
 
         Render a markdown document as HTML
         """
         pass
 
-    async def test_render_markdown_raw(self) -> None:
+    def test_render_markdown_raw(self) -> None:
         """Test case for render_markdown_raw
 
         Render raw markdown as HTML
         """
         pass
 
-    async def test_render_markup(self) -> None:
+    def test_render_markup(self) -> None:
         """Test case for render_markup
 
         Render a markup document as HTML

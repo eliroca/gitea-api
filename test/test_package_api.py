@@ -17,65 +17,65 @@ import unittest
 from gitea_api.api.package_api import PackageApi
 
 
-class TestPackageApi(unittest.IsolatedAsyncioTestCase):
+class TestPackageApi(unittest.TestCase):
     """PackageApi unit test stubs"""
 
-    async def asyncSetUp(self) -> None:
+    def setUp(self) -> None:
         self.api = PackageApi()
 
-    async def asyncTearDown(self) -> None:
-        await self.api.api_client.close()
+    def tearDown(self) -> None:
+        pass
 
-    async def test_delete_package(self) -> None:
+    def test_delete_package(self) -> None:
         """Test case for delete_package
 
         Delete a package
         """
         pass
 
-    async def test_get_latest_package_version(self) -> None:
+    def test_get_latest_package_version(self) -> None:
         """Test case for get_latest_package_version
 
         Gets the latest version of a package
         """
         pass
 
-    async def test_get_package(self) -> None:
+    def test_get_package(self) -> None:
         """Test case for get_package
 
         Gets a package
         """
         pass
 
-    async def test_link_package(self) -> None:
+    def test_link_package(self) -> None:
         """Test case for link_package
 
         Link a package to a repository
         """
         pass
 
-    async def test_list_package_files(self) -> None:
+    def test_list_package_files(self) -> None:
         """Test case for list_package_files
 
         Gets all files of a package
         """
         pass
 
-    async def test_list_package_versions(self) -> None:
+    def test_list_package_versions(self) -> None:
         """Test case for list_package_versions
 
         Gets all versions of a package
         """
         pass
 
-    async def test_list_packages(self) -> None:
+    def test_list_packages(self) -> None:
         """Test case for list_packages
 
         Gets all packages of an owner
         """
         pass
 
-    async def test_unlink_package(self) -> None:
+    def test_unlink_package(self) -> None:
         """Test case for unlink_package
 
         Unlink a package from a repository

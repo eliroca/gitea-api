@@ -111,7 +111,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.AdminApi(api_client)
     username = 'username_example' # str | username of user
@@ -119,7 +119,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Add a badge to a user
-        await api_instance.admin_add_user_badges(username, body=body)
+        api_instance.admin_add_user_badges(username, body=body)
     except Exception as e:
         print("Exception when calling AdminApi->admin_add_user_badges: %s\n" % e)
 ```
@@ -230,7 +230,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.AdminApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -238,7 +238,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Adopt unadopted files as a repository
-        await api_instance.admin_adopt_repository(owner, repo)
+        api_instance.admin_adopt_repository(owner, repo)
     except Exception as e:
         print("Exception when calling AdminApi->admin_adopt_repository: %s\n" % e)
 ```
@@ -352,14 +352,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.AdminApi(api_client)
     body = gitea_api.CreateHookOption() # CreateHookOption | 
 
     try:
         # Create a hook
-        api_response = await api_instance.admin_create_hook(body)
+        api_response = api_instance.admin_create_hook(body)
         print("The response of AdminApi->admin_create_hook:\n")
         pprint(api_response)
     except Exception as e:
@@ -472,7 +472,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.AdminApi(api_client)
     username = 'username_example' # str | username of the user that will own the created organization
@@ -480,7 +480,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Create an organization
-        api_response = await api_instance.admin_create_org(username, organization)
+        api_response = api_instance.admin_create_org(username, organization)
         print("The response of AdminApi->admin_create_org:\n")
         pprint(api_response)
     except Exception as e:
@@ -596,7 +596,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.AdminApi(api_client)
     username = 'username_example' # str | username of the user
@@ -604,7 +604,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Add a public key on behalf of a user
-        api_response = await api_instance.admin_create_public_key(username, key=key)
+        api_response = api_instance.admin_create_public_key(username, key=key)
         print("The response of AdminApi->admin_create_public_key:\n")
         pprint(api_response)
     except Exception as e:
@@ -720,7 +720,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.AdminApi(api_client)
     username = 'username_example' # str | username of the user. This user will own the created repository
@@ -728,7 +728,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Create a repository on behalf of a user
-        api_response = await api_instance.admin_create_repo(username, repository)
+        api_response = api_instance.admin_create_repo(username, repository)
         print("The response of AdminApi->admin_create_repo:\n")
         pprint(api_response)
     except Exception as e:
@@ -845,13 +845,13 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.AdminApi(api_client)
 
     try:
         # Get an global actions runner registration token
-        await api_instance.admin_create_runner_registration_token()
+        api_instance.admin_create_runner_registration_token()
     except Exception as e:
         print("Exception when calling AdminApi->admin_create_runner_registration_token: %s\n" % e)
 ```
@@ -959,14 +959,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.AdminApi(api_client)
     body = gitea_api.CreateUserOption() # CreateUserOption |  (optional)
 
     try:
         # Create a user
-        api_response = await api_instance.admin_create_user(body=body)
+        api_response = api_instance.admin_create_user(body=body)
         print("The response of AdminApi->admin_create_user:\n")
         pprint(api_response)
     except Exception as e:
@@ -1081,7 +1081,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.AdminApi(api_client)
     page = 56 # int | page number of results to return (1-based) (optional)
@@ -1089,7 +1089,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List cron tasks
-        api_response = await api_instance.admin_cron_list(page=page, limit=limit)
+        api_response = api_instance.admin_cron_list(page=page, limit=limit)
         print("The response of AdminApi->admin_cron_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -1202,14 +1202,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.AdminApi(api_client)
     task = 'task_example' # str | task to run
 
     try:
         # Run cron task
-        await api_instance.admin_cron_run(task)
+        api_instance.admin_cron_run(task)
     except Exception as e:
         print("Exception when calling AdminApi->admin_cron_run: %s\n" % e)
 ```
@@ -1319,14 +1319,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.AdminApi(api_client)
     id = 56 # int | id of the hook to delete
 
     try:
         # Delete a hook
-        await api_instance.admin_delete_hook(id)
+        api_instance.admin_delete_hook(id)
     except Exception as e:
         print("Exception when calling AdminApi->admin_delete_hook: %s\n" % e)
 ```
@@ -1435,7 +1435,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.AdminApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -1443,7 +1443,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Delete unadopted files
-        await api_instance.admin_delete_unadopted_repository(owner, repo)
+        api_instance.admin_delete_unadopted_repository(owner, repo)
     except Exception as e:
         print("Exception when calling AdminApi->admin_delete_unadopted_repository: %s\n" % e)
 ```
@@ -1554,7 +1554,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.AdminApi(api_client)
     username = 'username_example' # str | username of user to delete
@@ -1562,7 +1562,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Delete a user
-        await api_instance.admin_delete_user(username, purge=purge)
+        api_instance.admin_delete_user(username, purge=purge)
     except Exception as e:
         print("Exception when calling AdminApi->admin_delete_user: %s\n" % e)
 ```
@@ -1676,7 +1676,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.AdminApi(api_client)
     username = 'username_example' # str | username of user
@@ -1684,7 +1684,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Remove a badge from a user
-        await api_instance.admin_delete_user_badges(username, body=body)
+        api_instance.admin_delete_user_badges(username, body=body)
     except Exception as e:
         print("Exception when calling AdminApi->admin_delete_user_badges: %s\n" % e)
 ```
@@ -1796,7 +1796,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.AdminApi(api_client)
     username = 'username_example' # str | username of user
@@ -1804,7 +1804,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Delete a user's public key
-        await api_instance.admin_delete_user_public_key(username, id)
+        api_instance.admin_delete_user_public_key(username, id)
     except Exception as e:
         print("Exception when calling AdminApi->admin_delete_user_public_key: %s\n" % e)
 ```
@@ -1918,7 +1918,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.AdminApi(api_client)
     id = 56 # int | id of the hook to update
@@ -1926,7 +1926,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Update a hook
-        api_response = await api_instance.admin_edit_hook(id, body=body)
+        api_response = api_instance.admin_edit_hook(id, body=body)
         print("The response of AdminApi->admin_edit_hook:\n")
         pprint(api_response)
     except Exception as e:
@@ -2040,7 +2040,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.AdminApi(api_client)
     username = 'username_example' # str | username of user to edit
@@ -2048,7 +2048,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Edit an existing user
-        api_response = await api_instance.admin_edit_user(username, body=body)
+        api_response = api_instance.admin_edit_user(username, body=body)
         print("The response of AdminApi->admin_edit_user:\n")
         pprint(api_response)
     except Exception as e:
@@ -2164,7 +2164,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.AdminApi(api_client)
     page = 56 # int | page number of results to return (1-based) (optional)
@@ -2172,7 +2172,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List all emails
-        api_response = await api_instance.admin_get_all_emails(page=page, limit=limit)
+        api_response = api_instance.admin_get_all_emails(page=page, limit=limit)
         print("The response of AdminApi->admin_get_all_emails:\n")
         pprint(api_response)
     except Exception as e:
@@ -2286,7 +2286,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.AdminApi(api_client)
     page = 56 # int | page number of results to return (1-based) (optional)
@@ -2294,7 +2294,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List all organizations
-        api_response = await api_instance.admin_get_all_orgs(page=page, limit=limit)
+        api_response = api_instance.admin_get_all_orgs(page=page, limit=limit)
         print("The response of AdminApi->admin_get_all_orgs:\n")
         pprint(api_response)
     except Exception as e:
@@ -2408,14 +2408,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.AdminApi(api_client)
     id = 56 # int | id of the hook to get
 
     try:
         # Get a hook
-        api_response = await api_instance.admin_get_hook(id)
+        api_response = api_instance.admin_get_hook(id)
         print("The response of AdminApi->admin_get_hook:\n")
         pprint(api_response)
     except Exception as e:
@@ -2526,13 +2526,13 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.AdminApi(api_client)
 
     try:
         # Get an global actions runner registration token
-        await api_instance.admin_get_runner_registration_token()
+        api_instance.admin_get_runner_registration_token()
     except Exception as e:
         print("Exception when calling AdminApi->admin_get_runner_registration_token: %s\n" % e)
 ```
@@ -2639,7 +2639,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.AdminApi(api_client)
     page = 56 # int | page number of results to return (1-based) (optional)
@@ -2648,7 +2648,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List system's webhooks
-        api_response = await api_instance.admin_list_hooks(page=page, limit=limit, type=type)
+        api_response = api_instance.admin_list_hooks(page=page, limit=limit, type=type)
         print("The response of AdminApi->admin_list_hooks:\n")
         pprint(api_response)
     except Exception as e:
@@ -2762,14 +2762,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.AdminApi(api_client)
     username = 'username_example' # str | username of user
 
     try:
         # List a user's badges
-        api_response = await api_instance.admin_list_user_badges(username)
+        api_response = api_instance.admin_list_user_badges(username)
         print("The response of AdminApi->admin_list_user_badges:\n")
         pprint(api_response)
     except Exception as e:
@@ -2882,7 +2882,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.AdminApi(api_client)
     username = 'username_example' # str | existing username of user
@@ -2890,7 +2890,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Rename a user
-        await api_instance.admin_rename_user(username, body)
+        api_instance.admin_rename_user(username, body)
     except Exception as e:
         print("Exception when calling AdminApi->admin_rename_user: %s\n" % e)
 ```
@@ -3003,7 +3003,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.AdminApi(api_client)
     q = 'q_example' # str | keyword (optional)
@@ -3012,7 +3012,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Search all emails
-        api_response = await api_instance.admin_search_emails(q=q, page=page, limit=limit)
+        api_response = api_instance.admin_search_emails(q=q, page=page, limit=limit)
         print("The response of AdminApi->admin_search_emails:\n")
         pprint(api_response)
     except Exception as e:
@@ -3127,7 +3127,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.AdminApi(api_client)
     source_id = 56 # int | ID of the user's login source to search for (optional)
@@ -3137,7 +3137,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Search users according filter conditions
-        api_response = await api_instance.admin_search_users(source_id=source_id, login_name=login_name, page=page, limit=limit)
+        api_response = api_instance.admin_search_users(source_id=source_id, login_name=login_name, page=page, limit=limit)
         print("The response of AdminApi->admin_search_users:\n")
         pprint(api_response)
     except Exception as e:
@@ -3252,7 +3252,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.AdminApi(api_client)
     page = 56 # int | page number of results to return (1-based) (optional)
@@ -3261,7 +3261,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List unadopted repositories
-        api_response = await api_instance.admin_unadopted_list(page=page, limit=limit, pattern=pattern)
+        api_response = api_instance.admin_unadopted_list(page=page, limit=limit, pattern=pattern)
         print("The response of AdminApi->admin_unadopted_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -3375,14 +3375,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.AdminApi(api_client)
     runner_id = 'runner_id_example' # str | id of the runner
 
     try:
         # Delete an global runner
-        await api_instance.delete_admin_runner(runner_id)
+        api_instance.delete_admin_runner(runner_id)
     except Exception as e:
         print("Exception when calling AdminApi->delete_admin_runner: %s\n" % e)
 ```
@@ -3493,14 +3493,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.AdminApi(api_client)
     runner_id = 'runner_id_example' # str | id of the runner
 
     try:
         # Get an global runner
-        await api_instance.get_admin_runner(runner_id)
+        api_instance.get_admin_runner(runner_id)
     except Exception as e:
         print("Exception when calling AdminApi->get_admin_runner: %s\n" % e)
 ```
@@ -3611,13 +3611,13 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.AdminApi(api_client)
 
     try:
         # Get all runners
-        await api_instance.get_admin_runners()
+        api_instance.get_admin_runners()
     except Exception as e:
         print("Exception when calling AdminApi->get_admin_runners: %s\n" % e)
 ```

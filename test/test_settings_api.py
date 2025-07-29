@@ -17,37 +17,37 @@ import unittest
 from gitea_api.api.settings_api import SettingsApi
 
 
-class TestSettingsApi(unittest.IsolatedAsyncioTestCase):
+class TestSettingsApi(unittest.TestCase):
     """SettingsApi unit test stubs"""
 
-    async def asyncSetUp(self) -> None:
+    def setUp(self) -> None:
         self.api = SettingsApi()
 
-    async def asyncTearDown(self) -> None:
-        await self.api.api_client.close()
+    def tearDown(self) -> None:
+        pass
 
-    async def test_get_general_api_settings(self) -> None:
+    def test_get_general_api_settings(self) -> None:
         """Test case for get_general_api_settings
 
         Get instance's global settings for api
         """
         pass
 
-    async def test_get_general_attachment_settings(self) -> None:
+    def test_get_general_attachment_settings(self) -> None:
         """Test case for get_general_attachment_settings
 
         Get instance's global settings for Attachment
         """
         pass
 
-    async def test_get_general_repository_settings(self) -> None:
+    def test_get_general_repository_settings(self) -> None:
         """Test case for get_general_repository_settings
 
         Get instance's global settings for repositories
         """
         pass
 
-    async def test_get_general_ui_settings(self) -> None:
+    def test_get_general_ui_settings(self) -> None:
         """Test case for get_general_ui_settings
 
         Get instance's global settings for ui

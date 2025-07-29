@@ -39,7 +39,7 @@ class ActivitypubApi:
 
 
     @validate_call
-    async def activitypub_person(
+    def activitypub_person(
         self,
         user_id: Annotated[StrictInt, Field(description="user ID of the user")],
         _request_timeout: Union[
@@ -93,11 +93,11 @@ class ActivitypubApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ActivityPub",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -105,7 +105,7 @@ class ActivitypubApi:
 
 
     @validate_call
-    async def activitypub_person_with_http_info(
+    def activitypub_person_with_http_info(
         self,
         user_id: Annotated[StrictInt, Field(description="user ID of the user")],
         _request_timeout: Union[
@@ -159,11 +159,11 @@ class ActivitypubApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ActivityPub",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -171,7 +171,7 @@ class ActivitypubApi:
 
 
     @validate_call
-    async def activitypub_person_without_preload_content(
+    def activitypub_person_without_preload_content(
         self,
         user_id: Annotated[StrictInt, Field(description="user ID of the user")],
         _request_timeout: Union[
@@ -225,7 +225,7 @@ class ActivitypubApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ActivityPub",
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -303,7 +303,7 @@ class ActivitypubApi:
 
 
     @validate_call
-    async def activitypub_person_inbox(
+    def activitypub_person_inbox(
         self,
         user_id: Annotated[StrictInt, Field(description="user ID of the user")],
         _request_timeout: Union[
@@ -357,11 +357,11 @@ class ActivitypubApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -369,7 +369,7 @@ class ActivitypubApi:
 
 
     @validate_call
-    async def activitypub_person_inbox_with_http_info(
+    def activitypub_person_inbox_with_http_info(
         self,
         user_id: Annotated[StrictInt, Field(description="user ID of the user")],
         _request_timeout: Union[
@@ -423,11 +423,11 @@ class ActivitypubApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -435,7 +435,7 @@ class ActivitypubApi:
 
 
     @validate_call
-    async def activitypub_person_inbox_without_preload_content(
+    def activitypub_person_inbox_without_preload_content(
         self,
         user_id: Annotated[StrictInt, Field(description="user ID of the user")],
         _request_timeout: Union[
@@ -489,7 +489,7 @@ class ActivitypubApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

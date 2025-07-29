@@ -88,7 +88,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.NotificationApi(api_client)
     all = True # bool | If true, show notifications marked as read. Default value is false (optional)
@@ -101,7 +101,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List users's notification threads
-        api_response = await api_instance.notify_get_list(all=all, status_types=status_types, subject_type=subject_type, since=since, before=before, page=page, limit=limit)
+        api_response = api_instance.notify_get_list(all=all, status_types=status_types, subject_type=subject_type, since=since, before=before, page=page, limit=limit)
         print("The response of NotificationApi->notify_get_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -219,7 +219,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.NotificationApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -234,7 +234,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List users's notification threads on a specific repo
-        api_response = await api_instance.notify_get_repo_list(owner, repo, all=all, status_types=status_types, subject_type=subject_type, since=since, before=before, page=page, limit=limit)
+        api_response = api_instance.notify_get_repo_list(owner, repo, all=all, status_types=status_types, subject_type=subject_type, since=since, before=before, page=page, limit=limit)
         print("The response of NotificationApi->notify_get_repo_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -354,14 +354,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.NotificationApi(api_client)
     id = 'id_example' # str | id of notification thread
 
     try:
         # Get notification thread by ID
-        api_response = await api_instance.notify_get_thread(id)
+        api_response = api_instance.notify_get_thread(id)
         print("The response of NotificationApi->notify_get_thread:\n")
         pprint(api_response)
     except Exception as e:
@@ -475,13 +475,13 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.NotificationApi(api_client)
 
     try:
         # Check if unread notifications exist
-        api_response = await api_instance.notify_new_available()
+        api_response = api_instance.notify_new_available()
         print("The response of NotificationApi->notify_new_available:\n")
         pprint(api_response)
     except Exception as e:
@@ -590,7 +590,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.NotificationApi(api_client)
     last_read_at = '2013-10-20T19:20:30+01:00' # datetime | Describes the last point that notifications were checked. Anything updated since this time will not be updated. (optional)
@@ -600,7 +600,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Mark notification threads as read, pinned or unread
-        api_response = await api_instance.notify_read_list(last_read_at=last_read_at, all=all, status_types=status_types, to_status=to_status)
+        api_response = api_instance.notify_read_list(last_read_at=last_read_at, all=all, status_types=status_types, to_status=to_status)
         print("The response of NotificationApi->notify_read_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -715,7 +715,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.NotificationApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -727,7 +727,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Mark notification threads as read, pinned or unread on a specific repo
-        api_response = await api_instance.notify_read_repo_list(owner, repo, all=all, status_types=status_types, to_status=to_status, last_read_at=last_read_at)
+        api_response = api_instance.notify_read_repo_list(owner, repo, all=all, status_types=status_types, to_status=to_status, last_read_at=last_read_at)
         print("The response of NotificationApi->notify_read_repo_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -844,7 +844,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.NotificationApi(api_client)
     id = 'id_example' # str | id of notification thread
@@ -852,7 +852,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Mark notification thread as read by ID
-        api_response = await api_instance.notify_read_thread(id, to_status=to_status)
+        api_response = api_instance.notify_read_thread(id, to_status=to_status)
         print("The response of NotificationApi->notify_read_thread:\n")
         pprint(api_response)
     except Exception as e:

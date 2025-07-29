@@ -41,7 +41,7 @@ class PackageApi:
 
 
     @validate_call
-    async def delete_package(
+    def delete_package(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the package")],
         type: Annotated[StrictStr, Field(description="type of the package")],
@@ -108,11 +108,11 @@ class PackageApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -120,7 +120,7 @@ class PackageApi:
 
 
     @validate_call
-    async def delete_package_with_http_info(
+    def delete_package_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the package")],
         type: Annotated[StrictStr, Field(description="type of the package")],
@@ -187,11 +187,11 @@ class PackageApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -199,7 +199,7 @@ class PackageApi:
 
 
     @validate_call
-    async def delete_package_without_preload_content(
+    def delete_package_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the package")],
         type: Annotated[StrictStr, Field(description="type of the package")],
@@ -266,7 +266,7 @@ class PackageApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -346,7 +346,7 @@ class PackageApi:
 
 
     @validate_call
-    async def get_latest_package_version(
+    def get_latest_package_version(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the package")],
         type: Annotated[StrictStr, Field(description="type of the package")],
@@ -409,11 +409,11 @@ class PackageApi:
             '200': "Package",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -421,7 +421,7 @@ class PackageApi:
 
 
     @validate_call
-    async def get_latest_package_version_with_http_info(
+    def get_latest_package_version_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the package")],
         type: Annotated[StrictStr, Field(description="type of the package")],
@@ -484,11 +484,11 @@ class PackageApi:
             '200': "Package",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -496,7 +496,7 @@ class PackageApi:
 
 
     @validate_call
-    async def get_latest_package_version_without_preload_content(
+    def get_latest_package_version_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the package")],
         type: Annotated[StrictStr, Field(description="type of the package")],
@@ -559,7 +559,7 @@ class PackageApi:
             '200': "Package",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -643,7 +643,7 @@ class PackageApi:
 
 
     @validate_call
-    async def get_package(
+    def get_package(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the package")],
         type: Annotated[StrictStr, Field(description="type of the package")],
@@ -710,11 +710,11 @@ class PackageApi:
             '200': "Package",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -722,7 +722,7 @@ class PackageApi:
 
 
     @validate_call
-    async def get_package_with_http_info(
+    def get_package_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the package")],
         type: Annotated[StrictStr, Field(description="type of the package")],
@@ -789,11 +789,11 @@ class PackageApi:
             '200': "Package",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -801,7 +801,7 @@ class PackageApi:
 
 
     @validate_call
-    async def get_package_without_preload_content(
+    def get_package_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the package")],
         type: Annotated[StrictStr, Field(description="type of the package")],
@@ -868,7 +868,7 @@ class PackageApi:
             '200': "Package",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -955,7 +955,7 @@ class PackageApi:
 
 
     @validate_call
-    async def link_package(
+    def link_package(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the package")],
         type: Annotated[StrictStr, Field(description="type of the package")],
@@ -1022,11 +1022,11 @@ class PackageApi:
             '201': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1034,7 +1034,7 @@ class PackageApi:
 
 
     @validate_call
-    async def link_package_with_http_info(
+    def link_package_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the package")],
         type: Annotated[StrictStr, Field(description="type of the package")],
@@ -1101,11 +1101,11 @@ class PackageApi:
             '201': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1113,7 +1113,7 @@ class PackageApi:
 
 
     @validate_call
-    async def link_package_without_preload_content(
+    def link_package_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the package")],
         type: Annotated[StrictStr, Field(description="type of the package")],
@@ -1180,7 +1180,7 @@ class PackageApi:
             '201': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1260,7 +1260,7 @@ class PackageApi:
 
 
     @validate_call
-    async def list_package_files(
+    def list_package_files(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the package")],
         type: Annotated[StrictStr, Field(description="type of the package")],
@@ -1327,11 +1327,11 @@ class PackageApi:
             '200': "List[PackageFile]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1339,7 +1339,7 @@ class PackageApi:
 
 
     @validate_call
-    async def list_package_files_with_http_info(
+    def list_package_files_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the package")],
         type: Annotated[StrictStr, Field(description="type of the package")],
@@ -1406,11 +1406,11 @@ class PackageApi:
             '200': "List[PackageFile]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1418,7 +1418,7 @@ class PackageApi:
 
 
     @validate_call
-    async def list_package_files_without_preload_content(
+    def list_package_files_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the package")],
         type: Annotated[StrictStr, Field(description="type of the package")],
@@ -1485,7 +1485,7 @@ class PackageApi:
             '200': "List[PackageFile]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1572,7 +1572,7 @@ class PackageApi:
 
 
     @validate_call
-    async def list_package_versions(
+    def list_package_versions(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the package")],
         type: Annotated[StrictStr, Field(description="type of the package")],
@@ -1643,11 +1643,11 @@ class PackageApi:
             '200': "List[Package]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1655,7 +1655,7 @@ class PackageApi:
 
 
     @validate_call
-    async def list_package_versions_with_http_info(
+    def list_package_versions_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the package")],
         type: Annotated[StrictStr, Field(description="type of the package")],
@@ -1726,11 +1726,11 @@ class PackageApi:
             '200': "List[Package]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1738,7 +1738,7 @@ class PackageApi:
 
 
     @validate_call
-    async def list_package_versions_without_preload_content(
+    def list_package_versions_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the package")],
         type: Annotated[StrictStr, Field(description="type of the package")],
@@ -1809,7 +1809,7 @@ class PackageApi:
             '200': "List[Package]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1903,7 +1903,7 @@ class PackageApi:
 
 
     @validate_call
-    async def list_packages(
+    def list_packages(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the packages")],
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -1974,11 +1974,11 @@ class PackageApi:
             '200': "List[Package]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1986,7 +1986,7 @@ class PackageApi:
 
 
     @validate_call
-    async def list_packages_with_http_info(
+    def list_packages_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the packages")],
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -2057,11 +2057,11 @@ class PackageApi:
             '200': "List[Package]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2069,7 +2069,7 @@ class PackageApi:
 
 
     @validate_call
-    async def list_packages_without_preload_content(
+    def list_packages_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the packages")],
         page: Annotated[Optional[StrictInt], Field(description="page number of results to return (1-based)")] = None,
@@ -2140,7 +2140,7 @@ class PackageApi:
             '200': "List[Package]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2238,7 +2238,7 @@ class PackageApi:
 
 
     @validate_call
-    async def unlink_package(
+    def unlink_package(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the package")],
         type: Annotated[StrictStr, Field(description="type of the package")],
@@ -2301,11 +2301,11 @@ class PackageApi:
             '201': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2313,7 +2313,7 @@ class PackageApi:
 
 
     @validate_call
-    async def unlink_package_with_http_info(
+    def unlink_package_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the package")],
         type: Annotated[StrictStr, Field(description="type of the package")],
@@ -2376,11 +2376,11 @@ class PackageApi:
             '201': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2388,7 +2388,7 @@ class PackageApi:
 
 
     @validate_call
-    async def unlink_package_without_preload_content(
+    def unlink_package_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the package")],
         type: Annotated[StrictStr, Field(description="type of the package")],
@@ -2451,7 +2451,7 @@ class PackageApi:
             '201': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

@@ -83,14 +83,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.ActivitypubApi(api_client)
     user_id = 56 # int | user ID of the user
 
     try:
         # Returns the Person actor for a user
-        api_response = await api_instance.activitypub_person(user_id)
+        api_response = api_instance.activitypub_person(user_id)
         print("The response of ActivitypubApi->activitypub_person:\n")
         pprint(api_response)
     except Exception as e:
@@ -201,14 +201,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.ActivitypubApi(api_client)
     user_id = 56 # int | user ID of the user
 
     try:
         # Send to the inbox
-        await api_instance.activitypub_person_inbox(user_id)
+        api_instance.activitypub_person_inbox(user_id)
     except Exception as e:
         print("Exception when calling ActivitypubApi->activitypub_person_inbox: %s\n" % e)
 ```

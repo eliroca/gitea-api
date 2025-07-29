@@ -66,7 +66,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_add_label(
+    def issue_add_label(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -134,11 +134,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -146,7 +146,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_add_label_with_http_info(
+    def issue_add_label_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -214,11 +214,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -226,7 +226,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_add_label_without_preload_content(
+    def issue_add_label_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -294,7 +294,7 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -394,7 +394,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_add_subscription(
+    def issue_add_subscription(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -463,11 +463,11 @@ class IssueApi:
             '304': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -475,7 +475,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_add_subscription_with_http_info(
+    def issue_add_subscription_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -544,11 +544,11 @@ class IssueApi:
             '304': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -556,7 +556,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_add_subscription_without_preload_content(
+    def issue_add_subscription_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -625,7 +625,7 @@ class IssueApi:
             '304': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -705,7 +705,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_add_time(
+    def issue_add_time(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -774,11 +774,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -786,7 +786,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_add_time_with_http_info(
+    def issue_add_time_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -855,11 +855,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -867,7 +867,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_add_time_without_preload_content(
+    def issue_add_time_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -936,7 +936,7 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1036,7 +1036,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_check_subscription(
+    def issue_check_subscription(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -1099,11 +1099,11 @@ class IssueApi:
             '200': "WatchInfo",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1111,7 +1111,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_check_subscription_with_http_info(
+    def issue_check_subscription_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -1174,11 +1174,11 @@ class IssueApi:
             '200': "WatchInfo",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1186,7 +1186,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_check_subscription_without_preload_content(
+    def issue_check_subscription_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -1249,7 +1249,7 @@ class IssueApi:
             '200': "WatchInfo",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1333,7 +1333,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_clear_labels(
+    def issue_clear_labels(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -1397,11 +1397,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1409,7 +1409,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_clear_labels_with_http_info(
+    def issue_clear_labels_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -1473,11 +1473,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1485,7 +1485,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_clear_labels_without_preload_content(
+    def issue_clear_labels_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -1549,7 +1549,7 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1626,7 +1626,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_create_comment(
+    def issue_create_comment(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -1695,11 +1695,11 @@ class IssueApi:
             '404': None,
             '423': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1707,7 +1707,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_create_comment_with_http_info(
+    def issue_create_comment_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -1776,11 +1776,11 @@ class IssueApi:
             '404': None,
             '423': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1788,7 +1788,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_create_comment_without_preload_content(
+    def issue_create_comment_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -1857,7 +1857,7 @@ class IssueApi:
             '404': None,
             '423': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1957,7 +1957,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_create_issue(
+    def issue_create_issue(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -2024,11 +2024,11 @@ class IssueApi:
             '422': None,
             '423': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2036,7 +2036,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_create_issue_with_http_info(
+    def issue_create_issue_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -2103,11 +2103,11 @@ class IssueApi:
             '422': None,
             '423': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2115,7 +2115,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_create_issue_without_preload_content(
+    def issue_create_issue_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -2182,7 +2182,7 @@ class IssueApi:
             '422': None,
             '423': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2279,7 +2279,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_create_issue_attachment(
+    def issue_create_issue_attachment(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -2353,11 +2353,11 @@ class IssueApi:
             '422': None,
             '423': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2365,7 +2365,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_create_issue_attachment_with_http_info(
+    def issue_create_issue_attachment_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -2439,11 +2439,11 @@ class IssueApi:
             '422': None,
             '423': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2451,7 +2451,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_create_issue_attachment_without_preload_content(
+    def issue_create_issue_attachment_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -2525,7 +2525,7 @@ class IssueApi:
             '422': None,
             '423': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2630,7 +2630,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_create_issue_blocking(
+    def issue_create_issue_blocking(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -2697,11 +2697,11 @@ class IssueApi:
             '201': "Issue",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2709,7 +2709,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_create_issue_blocking_with_http_info(
+    def issue_create_issue_blocking_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -2776,11 +2776,11 @@ class IssueApi:
             '201': "Issue",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2788,7 +2788,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_create_issue_blocking_without_preload_content(
+    def issue_create_issue_blocking_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -2855,7 +2855,7 @@ class IssueApi:
             '201': "Issue",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2956,7 +2956,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_create_issue_comment_attachment(
+    def issue_create_issue_comment_attachment(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -3031,11 +3031,11 @@ class IssueApi:
             '422': None,
             '423': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3043,7 +3043,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_create_issue_comment_attachment_with_http_info(
+    def issue_create_issue_comment_attachment_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -3118,11 +3118,11 @@ class IssueApi:
             '422': None,
             '423': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3130,7 +3130,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_create_issue_comment_attachment_without_preload_content(
+    def issue_create_issue_comment_attachment_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -3205,7 +3205,7 @@ class IssueApi:
             '422': None,
             '423': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3310,7 +3310,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_create_issue_dependencies(
+    def issue_create_issue_dependencies(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -3378,11 +3378,11 @@ class IssueApi:
             '404': None,
             '423': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3390,7 +3390,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_create_issue_dependencies_with_http_info(
+    def issue_create_issue_dependencies_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -3458,11 +3458,11 @@ class IssueApi:
             '404': None,
             '423': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3470,7 +3470,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_create_issue_dependencies_without_preload_content(
+    def issue_create_issue_dependencies_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -3538,7 +3538,7 @@ class IssueApi:
             '404': None,
             '423': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3639,7 +3639,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_create_label(
+    def issue_create_label(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -3703,11 +3703,11 @@ class IssueApi:
             '404': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3715,7 +3715,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_create_label_with_http_info(
+    def issue_create_label_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -3779,11 +3779,11 @@ class IssueApi:
             '404': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3791,7 +3791,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_create_label_without_preload_content(
+    def issue_create_label_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -3855,7 +3855,7 @@ class IssueApi:
             '404': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3952,7 +3952,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_create_milestone(
+    def issue_create_milestone(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -4015,11 +4015,11 @@ class IssueApi:
             '201': "Milestone",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4027,7 +4027,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_create_milestone_with_http_info(
+    def issue_create_milestone_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -4090,11 +4090,11 @@ class IssueApi:
             '201': "Milestone",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4102,7 +4102,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_create_milestone_without_preload_content(
+    def issue_create_milestone_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -4165,7 +4165,7 @@ class IssueApi:
             '201': "Milestone",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4262,7 +4262,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_delete(
+    def issue_delete(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -4326,11 +4326,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4338,7 +4338,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_delete_with_http_info(
+    def issue_delete_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -4402,11 +4402,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4414,7 +4414,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_delete_without_preload_content(
+    def issue_delete_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -4478,7 +4478,7 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4555,7 +4555,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_delete_comment(
+    def issue_delete_comment(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -4619,11 +4619,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4631,7 +4631,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_delete_comment_with_http_info(
+    def issue_delete_comment_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -4695,11 +4695,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4707,7 +4707,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_delete_comment_without_preload_content(
+    def issue_delete_comment_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -4771,7 +4771,7 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4848,7 +4848,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_delete_comment_deprecated(
+    def issue_delete_comment_deprecated(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -4917,11 +4917,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4929,7 +4929,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_delete_comment_deprecated_with_http_info(
+    def issue_delete_comment_deprecated_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -4998,11 +4998,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5010,7 +5010,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_delete_comment_deprecated_without_preload_content(
+    def issue_delete_comment_deprecated_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -5079,7 +5079,7 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -5159,7 +5159,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_delete_comment_reaction(
+    def issue_delete_comment_reaction(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -5227,11 +5227,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5239,7 +5239,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_delete_comment_reaction_with_http_info(
+    def issue_delete_comment_reaction_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -5307,11 +5307,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5319,7 +5319,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_delete_comment_reaction_without_preload_content(
+    def issue_delete_comment_reaction_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -5387,7 +5387,7 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -5480,7 +5480,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_delete_issue_attachment(
+    def issue_delete_issue_attachment(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -5548,11 +5548,11 @@ class IssueApi:
             '404': None,
             '423': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5560,7 +5560,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_delete_issue_attachment_with_http_info(
+    def issue_delete_issue_attachment_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -5628,11 +5628,11 @@ class IssueApi:
             '404': None,
             '423': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5640,7 +5640,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_delete_issue_attachment_without_preload_content(
+    def issue_delete_issue_attachment_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -5708,7 +5708,7 @@ class IssueApi:
             '404': None,
             '423': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -5788,7 +5788,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_delete_issue_comment_attachment(
+    def issue_delete_issue_comment_attachment(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -5856,11 +5856,11 @@ class IssueApi:
             '404': None,
             '423': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5868,7 +5868,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_delete_issue_comment_attachment_with_http_info(
+    def issue_delete_issue_comment_attachment_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -5936,11 +5936,11 @@ class IssueApi:
             '404': None,
             '423': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5948,7 +5948,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_delete_issue_comment_attachment_without_preload_content(
+    def issue_delete_issue_comment_attachment_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -6016,7 +6016,7 @@ class IssueApi:
             '404': None,
             '423': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -6096,7 +6096,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_delete_issue_reaction(
+    def issue_delete_issue_reaction(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -6164,11 +6164,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6176,7 +6176,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_delete_issue_reaction_with_http_info(
+    def issue_delete_issue_reaction_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -6244,11 +6244,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6256,7 +6256,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_delete_issue_reaction_without_preload_content(
+    def issue_delete_issue_reaction_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -6324,7 +6324,7 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -6417,7 +6417,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_delete_label(
+    def issue_delete_label(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -6480,11 +6480,11 @@ class IssueApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6492,7 +6492,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_delete_label_with_http_info(
+    def issue_delete_label_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -6555,11 +6555,11 @@ class IssueApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6567,7 +6567,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_delete_label_without_preload_content(
+    def issue_delete_label_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -6630,7 +6630,7 @@ class IssueApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -6707,7 +6707,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_delete_milestone(
+    def issue_delete_milestone(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -6770,11 +6770,11 @@ class IssueApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6782,7 +6782,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_delete_milestone_with_http_info(
+    def issue_delete_milestone_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -6845,11 +6845,11 @@ class IssueApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6857,7 +6857,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_delete_milestone_without_preload_content(
+    def issue_delete_milestone_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -6920,7 +6920,7 @@ class IssueApi:
             '204': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -6997,7 +6997,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_delete_stop_watch(
+    def issue_delete_stop_watch(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -7062,11 +7062,11 @@ class IssueApi:
             '404': None,
             '409': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -7074,7 +7074,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_delete_stop_watch_with_http_info(
+    def issue_delete_stop_watch_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -7139,11 +7139,11 @@ class IssueApi:
             '404': None,
             '409': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -7151,7 +7151,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_delete_stop_watch_without_preload_content(
+    def issue_delete_stop_watch_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -7216,7 +7216,7 @@ class IssueApi:
             '404': None,
             '409': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -7293,7 +7293,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_delete_subscription(
+    def issue_delete_subscription(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -7362,11 +7362,11 @@ class IssueApi:
             '304': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -7374,7 +7374,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_delete_subscription_with_http_info(
+    def issue_delete_subscription_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -7443,11 +7443,11 @@ class IssueApi:
             '304': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -7455,7 +7455,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_delete_subscription_without_preload_content(
+    def issue_delete_subscription_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -7524,7 +7524,7 @@ class IssueApi:
             '304': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -7604,7 +7604,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_delete_time(
+    def issue_delete_time(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -7673,11 +7673,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -7685,7 +7685,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_delete_time_with_http_info(
+    def issue_delete_time_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -7754,11 +7754,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -7766,7 +7766,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_delete_time_without_preload_content(
+    def issue_delete_time_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -7835,7 +7835,7 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -7915,7 +7915,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_edit_comment(
+    def issue_edit_comment(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -7985,11 +7985,11 @@ class IssueApi:
             '404': None,
             '423': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -7997,7 +7997,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_edit_comment_with_http_info(
+    def issue_edit_comment_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -8067,11 +8067,11 @@ class IssueApi:
             '404': None,
             '423': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -8079,7 +8079,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_edit_comment_without_preload_content(
+    def issue_edit_comment_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -8149,7 +8149,7 @@ class IssueApi:
             '404': None,
             '423': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -8249,7 +8249,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_edit_comment_deprecated(
+    def issue_edit_comment_deprecated(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -8323,11 +8323,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -8335,7 +8335,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_edit_comment_deprecated_with_http_info(
+    def issue_edit_comment_deprecated_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -8409,11 +8409,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -8421,7 +8421,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_edit_comment_deprecated_without_preload_content(
+    def issue_edit_comment_deprecated_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -8495,7 +8495,7 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -8598,7 +8598,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_edit_issue(
+    def issue_edit_issue(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -8667,11 +8667,11 @@ class IssueApi:
             '404': None,
             '412': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -8679,7 +8679,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_edit_issue_with_http_info(
+    def issue_edit_issue_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -8748,11 +8748,11 @@ class IssueApi:
             '404': None,
             '412': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -8760,7 +8760,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_edit_issue_without_preload_content(
+    def issue_edit_issue_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -8829,7 +8829,7 @@ class IssueApi:
             '404': None,
             '412': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -8929,7 +8929,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_edit_issue_attachment(
+    def issue_edit_issue_attachment(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -9002,11 +9002,11 @@ class IssueApi:
             '422': None,
             '423': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -9014,7 +9014,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_edit_issue_attachment_with_http_info(
+    def issue_edit_issue_attachment_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -9087,11 +9087,11 @@ class IssueApi:
             '422': None,
             '423': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -9099,7 +9099,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_edit_issue_attachment_without_preload_content(
+    def issue_edit_issue_attachment_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -9172,7 +9172,7 @@ class IssueApi:
             '422': None,
             '423': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -9275,7 +9275,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_edit_issue_comment_attachment(
+    def issue_edit_issue_comment_attachment(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -9348,11 +9348,11 @@ class IssueApi:
             '422': None,
             '423': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -9360,7 +9360,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_edit_issue_comment_attachment_with_http_info(
+    def issue_edit_issue_comment_attachment_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -9433,11 +9433,11 @@ class IssueApi:
             '422': None,
             '423': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -9445,7 +9445,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_edit_issue_comment_attachment_without_preload_content(
+    def issue_edit_issue_comment_attachment_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -9518,7 +9518,7 @@ class IssueApi:
             '422': None,
             '423': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -9621,7 +9621,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_edit_issue_deadline(
+    def issue_edit_issue_deadline(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -9689,11 +9689,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -9701,7 +9701,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_edit_issue_deadline_with_http_info(
+    def issue_edit_issue_deadline_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -9769,11 +9769,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -9781,7 +9781,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_edit_issue_deadline_without_preload_content(
+    def issue_edit_issue_deadline_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -9849,7 +9849,7 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -9949,7 +9949,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_edit_label(
+    def issue_edit_label(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -10017,11 +10017,11 @@ class IssueApi:
             '404': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -10029,7 +10029,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_edit_label_with_http_info(
+    def issue_edit_label_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -10097,11 +10097,11 @@ class IssueApi:
             '404': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -10109,7 +10109,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_edit_label_without_preload_content(
+    def issue_edit_label_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -10177,7 +10177,7 @@ class IssueApi:
             '404': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -10277,7 +10277,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_edit_milestone(
+    def issue_edit_milestone(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -10344,11 +10344,11 @@ class IssueApi:
             '200': "Milestone",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -10356,7 +10356,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_edit_milestone_with_http_info(
+    def issue_edit_milestone_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -10423,11 +10423,11 @@ class IssueApi:
             '200': "Milestone",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -10435,7 +10435,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_edit_milestone_without_preload_content(
+    def issue_edit_milestone_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -10502,7 +10502,7 @@ class IssueApi:
             '200': "Milestone",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -10602,7 +10602,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_get_comment(
+    def issue_get_comment(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -10667,11 +10667,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -10679,7 +10679,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_get_comment_with_http_info(
+    def issue_get_comment_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -10744,11 +10744,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -10756,7 +10756,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_get_comment_without_preload_content(
+    def issue_get_comment_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -10821,7 +10821,7 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -10905,7 +10905,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_get_comment_reactions(
+    def issue_get_comment_reactions(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -10969,11 +10969,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -10981,7 +10981,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_get_comment_reactions_with_http_info(
+    def issue_get_comment_reactions_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -11045,11 +11045,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -11057,7 +11057,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_get_comment_reactions_without_preload_content(
+    def issue_get_comment_reactions_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -11121,7 +11121,7 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -11205,7 +11205,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_get_comments(
+    def issue_get_comments(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -11276,11 +11276,11 @@ class IssueApi:
             '200': "List[Comment]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -11288,7 +11288,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_get_comments_with_http_info(
+    def issue_get_comments_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -11359,11 +11359,11 @@ class IssueApi:
             '200': "List[Comment]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -11371,7 +11371,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_get_comments_without_preload_content(
+    def issue_get_comments_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -11442,7 +11442,7 @@ class IssueApi:
             '200': "List[Comment]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -11554,7 +11554,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_get_comments_and_timeline(
+    def issue_get_comments_and_timeline(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -11633,11 +11633,11 @@ class IssueApi:
             '200': "List[TimelineComment]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -11645,7 +11645,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_get_comments_and_timeline_with_http_info(
+    def issue_get_comments_and_timeline_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -11724,11 +11724,11 @@ class IssueApi:
             '200': "List[TimelineComment]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -11736,7 +11736,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_get_comments_and_timeline_without_preload_content(
+    def issue_get_comments_and_timeline_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -11815,7 +11815,7 @@ class IssueApi:
             '200': "List[TimelineComment]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -11937,7 +11937,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_get_issue(
+    def issue_get_issue(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -12000,11 +12000,11 @@ class IssueApi:
             '200': "Issue",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -12012,7 +12012,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_get_issue_with_http_info(
+    def issue_get_issue_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -12075,11 +12075,11 @@ class IssueApi:
             '200': "Issue",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -12087,7 +12087,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_get_issue_without_preload_content(
+    def issue_get_issue_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -12150,7 +12150,7 @@ class IssueApi:
             '200': "Issue",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -12234,7 +12234,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_get_issue_attachment(
+    def issue_get_issue_attachment(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -12301,11 +12301,11 @@ class IssueApi:
             '200': "Attachment",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -12313,7 +12313,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_get_issue_attachment_with_http_info(
+    def issue_get_issue_attachment_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -12380,11 +12380,11 @@ class IssueApi:
             '200': "Attachment",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -12392,7 +12392,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_get_issue_attachment_without_preload_content(
+    def issue_get_issue_attachment_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -12459,7 +12459,7 @@ class IssueApi:
             '200': "Attachment",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -12546,7 +12546,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_get_issue_comment_attachment(
+    def issue_get_issue_comment_attachment(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -12613,11 +12613,11 @@ class IssueApi:
             '200': "Attachment",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -12625,7 +12625,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_get_issue_comment_attachment_with_http_info(
+    def issue_get_issue_comment_attachment_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -12692,11 +12692,11 @@ class IssueApi:
             '200': "Attachment",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -12704,7 +12704,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_get_issue_comment_attachment_without_preload_content(
+    def issue_get_issue_comment_attachment_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -12771,7 +12771,7 @@ class IssueApi:
             '200': "Attachment",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -12858,7 +12858,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_get_issue_reactions(
+    def issue_get_issue_reactions(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -12930,11 +12930,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -12942,7 +12942,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_get_issue_reactions_with_http_info(
+    def issue_get_issue_reactions_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -13014,11 +13014,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -13026,7 +13026,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_get_issue_reactions_without_preload_content(
+    def issue_get_issue_reactions_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -13098,7 +13098,7 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -13192,7 +13192,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_get_label(
+    def issue_get_label(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -13255,11 +13255,11 @@ class IssueApi:
             '200': "Label",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -13267,7 +13267,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_get_label_with_http_info(
+    def issue_get_label_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -13330,11 +13330,11 @@ class IssueApi:
             '200': "Label",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -13342,7 +13342,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_get_label_without_preload_content(
+    def issue_get_label_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -13405,7 +13405,7 @@ class IssueApi:
             '200': "Label",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -13489,7 +13489,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_get_labels(
+    def issue_get_labels(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -13552,11 +13552,11 @@ class IssueApi:
             '200': "List[Label]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -13564,7 +13564,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_get_labels_with_http_info(
+    def issue_get_labels_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -13627,11 +13627,11 @@ class IssueApi:
             '200': "List[Label]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -13639,7 +13639,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_get_labels_without_preload_content(
+    def issue_get_labels_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -13702,7 +13702,7 @@ class IssueApi:
             '200': "List[Label]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -13786,7 +13786,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_get_milestone(
+    def issue_get_milestone(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -13849,11 +13849,11 @@ class IssueApi:
             '200': "Milestone",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -13861,7 +13861,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_get_milestone_with_http_info(
+    def issue_get_milestone_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -13924,11 +13924,11 @@ class IssueApi:
             '200': "Milestone",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -13936,7 +13936,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_get_milestone_without_preload_content(
+    def issue_get_milestone_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -13999,7 +13999,7 @@ class IssueApi:
             '200': "Milestone",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -14083,7 +14083,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_get_milestones_list(
+    def issue_get_milestones_list(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -14158,11 +14158,11 @@ class IssueApi:
             '200': "List[Milestone]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -14170,7 +14170,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_get_milestones_list_with_http_info(
+    def issue_get_milestones_list_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -14245,11 +14245,11 @@ class IssueApi:
             '200': "List[Milestone]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -14257,7 +14257,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_get_milestones_list_without_preload_content(
+    def issue_get_milestones_list_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -14332,7 +14332,7 @@ class IssueApi:
             '200': "List[Milestone]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -14433,7 +14433,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_get_repo_comments(
+    def issue_get_repo_comments(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -14508,11 +14508,11 @@ class IssueApi:
             '200': "List[Comment]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -14520,7 +14520,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_get_repo_comments_with_http_info(
+    def issue_get_repo_comments_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -14595,11 +14595,11 @@ class IssueApi:
             '200': "List[Comment]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -14607,7 +14607,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_get_repo_comments_without_preload_content(
+    def issue_get_repo_comments_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -14682,7 +14682,7 @@ class IssueApi:
             '200': "List[Comment]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -14801,7 +14801,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_list_blocks(
+    def issue_list_blocks(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -14872,11 +14872,11 @@ class IssueApi:
             '200': "List[Issue]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -14884,7 +14884,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_list_blocks_with_http_info(
+    def issue_list_blocks_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -14955,11 +14955,11 @@ class IssueApi:
             '200': "List[Issue]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -14967,7 +14967,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_list_blocks_without_preload_content(
+    def issue_list_blocks_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -15038,7 +15038,7 @@ class IssueApi:
             '200': "List[Issue]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -15132,7 +15132,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_list_issue_attachments(
+    def issue_list_issue_attachments(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -15195,11 +15195,11 @@ class IssueApi:
             '200': "List[Attachment]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -15207,7 +15207,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_list_issue_attachments_with_http_info(
+    def issue_list_issue_attachments_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -15270,11 +15270,11 @@ class IssueApi:
             '200': "List[Attachment]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -15282,7 +15282,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_list_issue_attachments_without_preload_content(
+    def issue_list_issue_attachments_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -15345,7 +15345,7 @@ class IssueApi:
             '200': "List[Attachment]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -15429,7 +15429,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_list_issue_comment_attachments(
+    def issue_list_issue_comment_attachments(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -15492,11 +15492,11 @@ class IssueApi:
             '200': "List[Attachment]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -15504,7 +15504,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_list_issue_comment_attachments_with_http_info(
+    def issue_list_issue_comment_attachments_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -15567,11 +15567,11 @@ class IssueApi:
             '200': "List[Attachment]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -15579,7 +15579,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_list_issue_comment_attachments_without_preload_content(
+    def issue_list_issue_comment_attachments_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -15642,7 +15642,7 @@ class IssueApi:
             '200': "List[Attachment]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -15726,7 +15726,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_list_issue_dependencies(
+    def issue_list_issue_dependencies(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -15797,11 +15797,11 @@ class IssueApi:
             '200': "List[Issue]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -15809,7 +15809,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_list_issue_dependencies_with_http_info(
+    def issue_list_issue_dependencies_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -15880,11 +15880,11 @@ class IssueApi:
             '200': "List[Issue]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -15892,7 +15892,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_list_issue_dependencies_without_preload_content(
+    def issue_list_issue_dependencies_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -15963,7 +15963,7 @@ class IssueApi:
             '200': "List[Issue]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -16057,7 +16057,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_list_issues(
+    def issue_list_issues(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -16164,11 +16164,11 @@ class IssueApi:
             '200': "List[Issue]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -16176,7 +16176,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_list_issues_with_http_info(
+    def issue_list_issues_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -16283,11 +16283,11 @@ class IssueApi:
             '200': "List[Issue]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -16295,7 +16295,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_list_issues_without_preload_content(
+    def issue_list_issues_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -16402,7 +16402,7 @@ class IssueApi:
             '200': "List[Issue]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -16561,7 +16561,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_list_labels(
+    def issue_list_labels(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -16628,11 +16628,11 @@ class IssueApi:
             '200': "List[Label]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -16640,7 +16640,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_list_labels_with_http_info(
+    def issue_list_labels_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -16707,11 +16707,11 @@ class IssueApi:
             '200': "List[Label]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -16719,7 +16719,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_list_labels_without_preload_content(
+    def issue_list_labels_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -16786,7 +16786,7 @@ class IssueApi:
             '200': "List[Label]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -16877,7 +16877,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_lock_issue(
+    def issue_lock_issue(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -16945,11 +16945,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -16957,7 +16957,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_lock_issue_with_http_info(
+    def issue_lock_issue_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -17025,11 +17025,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -17037,7 +17037,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_lock_issue_without_preload_content(
+    def issue_lock_issue_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -17105,7 +17105,7 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -17198,7 +17198,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_post_comment_reaction(
+    def issue_post_comment_reaction(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -17267,11 +17267,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -17279,7 +17279,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_post_comment_reaction_with_http_info(
+    def issue_post_comment_reaction_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -17348,11 +17348,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -17360,7 +17360,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_post_comment_reaction_without_preload_content(
+    def issue_post_comment_reaction_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -17429,7 +17429,7 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -17529,7 +17529,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_post_issue_reaction(
+    def issue_post_issue_reaction(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -17598,11 +17598,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -17610,7 +17610,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_post_issue_reaction_with_http_info(
+    def issue_post_issue_reaction_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -17679,11 +17679,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -17691,7 +17691,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_post_issue_reaction_without_preload_content(
+    def issue_post_issue_reaction_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -17760,7 +17760,7 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -17860,7 +17860,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_remove_issue_blocking(
+    def issue_remove_issue_blocking(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -17927,11 +17927,11 @@ class IssueApi:
             '200': "Issue",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -17939,7 +17939,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_remove_issue_blocking_with_http_info(
+    def issue_remove_issue_blocking_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -18006,11 +18006,11 @@ class IssueApi:
             '200': "Issue",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -18018,7 +18018,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_remove_issue_blocking_without_preload_content(
+    def issue_remove_issue_blocking_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -18085,7 +18085,7 @@ class IssueApi:
             '200': "Issue",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -18186,7 +18186,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_remove_issue_dependencies(
+    def issue_remove_issue_dependencies(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -18254,11 +18254,11 @@ class IssueApi:
             '404': None,
             '423': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -18266,7 +18266,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_remove_issue_dependencies_with_http_info(
+    def issue_remove_issue_dependencies_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -18334,11 +18334,11 @@ class IssueApi:
             '404': None,
             '423': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -18346,7 +18346,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_remove_issue_dependencies_without_preload_content(
+    def issue_remove_issue_dependencies_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -18414,7 +18414,7 @@ class IssueApi:
             '404': None,
             '423': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -18515,7 +18515,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_remove_label(
+    def issue_remove_label(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -18584,11 +18584,11 @@ class IssueApi:
             '404': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -18596,7 +18596,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_remove_label_with_http_info(
+    def issue_remove_label_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -18665,11 +18665,11 @@ class IssueApi:
             '404': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -18677,7 +18677,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_remove_label_without_preload_content(
+    def issue_remove_label_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -18746,7 +18746,7 @@ class IssueApi:
             '404': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -18826,7 +18826,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_replace_labels(
+    def issue_replace_labels(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -18894,11 +18894,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -18906,7 +18906,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_replace_labels_with_http_info(
+    def issue_replace_labels_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -18974,11 +18974,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -18986,7 +18986,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_replace_labels_without_preload_content(
+    def issue_replace_labels_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -19054,7 +19054,7 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -19154,7 +19154,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_reset_time(
+    def issue_reset_time(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -19219,11 +19219,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -19231,7 +19231,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_reset_time_with_http_info(
+    def issue_reset_time_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -19296,11 +19296,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -19308,7 +19308,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_reset_time_without_preload_content(
+    def issue_reset_time_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -19373,7 +19373,7 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -19450,7 +19450,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_search_issues(
+    def issue_search_issues(
         self,
         state: Annotated[Optional[StrictStr], Field(description="State of the issue")] = None,
         labels: Annotated[Optional[StrictStr], Field(description="Comma-separated list of label names. Fetch only issues that have any of these labels. Non existent labels are discarded.")] = None,
@@ -19570,11 +19570,11 @@ class IssueApi:
             '400': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -19582,7 +19582,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_search_issues_with_http_info(
+    def issue_search_issues_with_http_info(
         self,
         state: Annotated[Optional[StrictStr], Field(description="State of the issue")] = None,
         labels: Annotated[Optional[StrictStr], Field(description="Comma-separated list of label names. Fetch only issues that have any of these labels. Non existent labels are discarded.")] = None,
@@ -19702,11 +19702,11 @@ class IssueApi:
             '400': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -19714,7 +19714,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_search_issues_without_preload_content(
+    def issue_search_issues_without_preload_content(
         self,
         state: Annotated[Optional[StrictStr], Field(description="State of the issue")] = None,
         labels: Annotated[Optional[StrictStr], Field(description="Comma-separated list of label names. Fetch only issues that have any of these labels. Non existent labels are discarded.")] = None,
@@ -19834,7 +19834,7 @@ class IssueApi:
             '400': None,
             '422': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -20012,7 +20012,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_start_stop_watch(
+    def issue_start_stop_watch(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -20077,11 +20077,11 @@ class IssueApi:
             '404': None,
             '409': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -20089,7 +20089,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_start_stop_watch_with_http_info(
+    def issue_start_stop_watch_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -20154,11 +20154,11 @@ class IssueApi:
             '404': None,
             '409': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -20166,7 +20166,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_start_stop_watch_without_preload_content(
+    def issue_start_stop_watch_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -20231,7 +20231,7 @@ class IssueApi:
             '404': None,
             '409': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -20308,7 +20308,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_stop_stop_watch(
+    def issue_stop_stop_watch(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -20373,11 +20373,11 @@ class IssueApi:
             '404': None,
             '409': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -20385,7 +20385,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_stop_stop_watch_with_http_info(
+    def issue_stop_stop_watch_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -20450,11 +20450,11 @@ class IssueApi:
             '404': None,
             '409': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -20462,7 +20462,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_stop_stop_watch_without_preload_content(
+    def issue_stop_stop_watch_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -20527,7 +20527,7 @@ class IssueApi:
             '404': None,
             '409': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -20604,7 +20604,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_subscriptions(
+    def issue_subscriptions(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -20675,11 +20675,11 @@ class IssueApi:
             '200': "List[User]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -20687,7 +20687,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_subscriptions_with_http_info(
+    def issue_subscriptions_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -20758,11 +20758,11 @@ class IssueApi:
             '200': "List[User]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -20770,7 +20770,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_subscriptions_without_preload_content(
+    def issue_subscriptions_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -20841,7 +20841,7 @@ class IssueApi:
             '200': "List[User]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -20935,7 +20935,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_tracked_times(
+    def issue_tracked_times(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -21018,11 +21018,11 @@ class IssueApi:
             '200': "List[TrackedTime]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -21030,7 +21030,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_tracked_times_with_http_info(
+    def issue_tracked_times_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -21113,11 +21113,11 @@ class IssueApi:
             '200': "List[TrackedTime]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -21125,7 +21125,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_tracked_times_without_preload_content(
+    def issue_tracked_times_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -21208,7 +21208,7 @@ class IssueApi:
             '200': "List[TrackedTime]",
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -21335,7 +21335,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_unlock_issue(
+    def issue_unlock_issue(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -21399,11 +21399,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -21411,7 +21411,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_unlock_issue_with_http_info(
+    def issue_unlock_issue_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -21475,11 +21475,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -21487,7 +21487,7 @@ class IssueApi:
 
 
     @validate_call
-    async def issue_unlock_issue_without_preload_content(
+    def issue_unlock_issue_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -21551,7 +21551,7 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -21628,7 +21628,7 @@ class IssueApi:
 
 
     @validate_call
-    async def move_issue_pin(
+    def move_issue_pin(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -21696,11 +21696,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -21708,7 +21708,7 @@ class IssueApi:
 
 
     @validate_call
-    async def move_issue_pin_with_http_info(
+    def move_issue_pin_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -21776,11 +21776,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -21788,7 +21788,7 @@ class IssueApi:
 
 
     @validate_call
-    async def move_issue_pin_without_preload_content(
+    def move_issue_pin_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -21856,7 +21856,7 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -21936,7 +21936,7 @@ class IssueApi:
 
 
     @validate_call
-    async def pin_issue(
+    def pin_issue(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -22000,11 +22000,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -22012,7 +22012,7 @@ class IssueApi:
 
 
     @validate_call
-    async def pin_issue_with_http_info(
+    def pin_issue_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -22076,11 +22076,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -22088,7 +22088,7 @@ class IssueApi:
 
 
     @validate_call
-    async def pin_issue_without_preload_content(
+    def pin_issue_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -22152,7 +22152,7 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -22229,7 +22229,7 @@ class IssueApi:
 
 
     @validate_call
-    async def unpin_issue(
+    def unpin_issue(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -22293,11 +22293,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -22305,7 +22305,7 @@ class IssueApi:
 
 
     @validate_call
-    async def unpin_issue_with_http_info(
+    def unpin_issue_with_http_info(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -22369,11 +22369,11 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        await response_data.read()
+        response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -22381,7 +22381,7 @@ class IssueApi:
 
 
     @validate_call
-    async def unpin_issue_without_preload_content(
+    def unpin_issue_without_preload_content(
         self,
         owner: Annotated[StrictStr, Field(description="owner of the repo")],
         repo: Annotated[StrictStr, Field(description="name of the repo")],
@@ -22445,7 +22445,7 @@ class IssueApi:
             '403': None,
             '404': None,
         }
-        response_data = await self.api_client.call_api(
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

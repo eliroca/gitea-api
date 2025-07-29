@@ -156,14 +156,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     body = gitea_api.CreateRepoOption() # CreateRepoOption |  (optional)
 
     try:
         # Create a repository
-        api_response = await api_instance.create_current_user_repo(body=body)
+        api_response = api_instance.create_current_user_repo(body=body)
         print("The response of UserApi->create_current_user_repo:\n")
         pprint(api_response)
     except Exception as e:
@@ -278,7 +278,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     variablename = 'variablename_example' # str | name of the variable
@@ -286,7 +286,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Create a user-level variable
-        await api_instance.create_user_variable(variablename, body=body)
+        api_instance.create_user_variable(variablename, body=body)
     except Exception as e:
         print("Exception when calling UserApi->create_user_variable: %s\n" % e)
 ```
@@ -399,14 +399,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     runner_id = 'runner_id_example' # str | id of the runner
 
     try:
         # Delete an user-level runner
-        await api_instance.delete_user_runner(runner_id)
+        api_instance.delete_user_runner(runner_id)
     except Exception as e:
         print("Exception when calling UserApi->delete_user_runner: %s\n" % e)
 ```
@@ -517,14 +517,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     secretname = 'secretname_example' # str | name of the secret
 
     try:
         # Delete a secret in a user scope
-        await api_instance.delete_user_secret(secretname)
+        api_instance.delete_user_secret(secretname)
     except Exception as e:
         print("Exception when calling UserApi->delete_user_secret: %s\n" % e)
 ```
@@ -635,14 +635,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     variablename = 'variablename_example' # str | name of the variable
 
     try:
         # Delete a user-level variable which is created by current doer
-        await api_instance.delete_user_variable(variablename)
+        api_instance.delete_user_variable(variablename)
     except Exception as e:
         print("Exception when calling UserApi->delete_user_variable: %s\n" % e)
 ```
@@ -754,14 +754,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     runner_id = 'runner_id_example' # str | id of the runner
 
     try:
         # Get an user-level runner
-        await api_instance.get_user_runner(runner_id)
+        api_instance.get_user_runner(runner_id)
     except Exception as e:
         print("Exception when calling UserApi->get_user_runner: %s\n" % e)
 ```
@@ -872,13 +872,13 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
 
     try:
         # Get user-level runners
-        await api_instance.get_user_runners()
+        api_instance.get_user_runners()
     except Exception as e:
         print("Exception when calling UserApi->get_user_runners: %s\n" % e)
 ```
@@ -987,13 +987,13 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
 
     try:
         # Get user settings
-        api_response = await api_instance.get_user_settings()
+        api_response = api_instance.get_user_settings()
         print("The response of UserApi->get_user_settings:\n")
         pprint(api_response)
     except Exception as e:
@@ -1102,14 +1102,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     variablename = 'variablename_example' # str | name of the variable
 
     try:
         # Get a user-level variable which is created by current doer
-        api_response = await api_instance.get_user_variable(variablename)
+        api_response = api_instance.get_user_variable(variablename)
         print("The response of UserApi->get_user_variable:\n")
         pprint(api_response)
     except Exception as e:
@@ -1223,7 +1223,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     page = 56 # int | page number of results to return (1-based) (optional)
@@ -1231,7 +1231,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get the user-level list of variables which is created by current doer
-        api_response = await api_instance.get_user_variables_list(page=page, limit=limit)
+        api_response = api_instance.get_user_variables_list(page=page, limit=limit)
         print("The response of UserApi->get_user_variables_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -1345,13 +1345,13 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
 
     try:
         # Get a Token to verify
-        api_response = await api_instance.get_verification_token()
+        api_response = api_instance.get_verification_token()
         print("The response of UserApi->get_verification_token:\n")
         pprint(api_response)
     except Exception as e:
@@ -1461,7 +1461,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     secretname = 'secretname_example' # str | name of the secret
@@ -1469,7 +1469,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Create or Update a secret value in a user scope
-        await api_instance.update_user_secret(secretname, body=body)
+        api_instance.update_user_secret(secretname, body=body)
     except Exception as e:
         print("Exception when calling UserApi->update_user_secret: %s\n" % e)
 ```
@@ -1584,14 +1584,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     body = gitea_api.UserSettingsOptions() # UserSettingsOptions |  (optional)
 
     try:
         # Update user settings
-        api_response = await api_instance.update_user_settings(body=body)
+        api_response = api_instance.update_user_settings(body=body)
         print("The response of UserApi->update_user_settings:\n")
         pprint(api_response)
     except Exception as e:
@@ -1703,7 +1703,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     variablename = 'variablename_example' # str | name of the variable
@@ -1711,7 +1711,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Update a user-level variable which is created by current doer
-        await api_instance.update_user_variable(variablename, body=body)
+        api_instance.update_user_variable(variablename, body=body)
     except Exception as e:
         print("Exception when calling UserApi->update_user_variable: %s\n" % e)
 ```
@@ -1826,14 +1826,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     body = gitea_api.CreateEmailOption() # CreateEmailOption |  (optional)
 
     try:
         # Add email addresses
-        api_response = await api_instance.user_add_email(body=body)
+        api_response = api_instance.user_add_email(body=body)
         print("The response of UserApi->user_add_email:\n")
         pprint(api_response)
     except Exception as e:
@@ -1945,7 +1945,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     username = 'username_example' # str | user to block
@@ -1953,7 +1953,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Block a user
-        await api_instance.user_block_user(username, note=note)
+        api_instance.user_block_user(username, note=note)
     except Exception as e:
         print("Exception when calling UserApi->user_block_user: %s\n" % e)
 ```
@@ -2065,7 +2065,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     username = 'username_example' # str | username of following user
@@ -2073,7 +2073,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Check if one user is following another user
-        await api_instance.user_check_following(username, target)
+        api_instance.user_check_following(username, target)
     except Exception as e:
         print("Exception when calling UserApi->user_check_following: %s\n" % e)
 ```
@@ -2184,14 +2184,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     username = 'username_example' # str | user to check
 
     try:
         # Check if a user is blocked by the authenticated user
-        await api_instance.user_check_user_block(username)
+        api_instance.user_check_user_block(username)
     except Exception as e:
         print("Exception when calling UserApi->user_check_user_block: %s\n" % e)
 ```
@@ -2303,14 +2303,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     body = gitea_api.CreateHookOption() # CreateHookOption | 
 
     try:
         # Create a hook
-        api_response = await api_instance.user_create_hook(body)
+        api_response = api_instance.user_create_hook(body)
         print("The response of UserApi->user_create_hook:\n")
         pprint(api_response)
     except Exception as e:
@@ -2423,14 +2423,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     body = gitea_api.CreateOAuth2ApplicationOptions() # CreateOAuth2ApplicationOptions | 
 
     try:
         # creates a new OAuth2 application
-        api_response = await api_instance.user_create_o_auth2_application(body)
+        api_response = api_instance.user_create_o_auth2_application(body)
         print("The response of UserApi->user_create_o_auth2_application:\n")
         pprint(api_response)
     except Exception as e:
@@ -2542,13 +2542,13 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
 
     try:
         # Get an user's actions runner registration token
-        await api_instance.user_create_runner_registration_token()
+        api_instance.user_create_runner_registration_token()
     except Exception as e:
         print("Exception when calling UserApi->user_create_runner_registration_token: %s\n" % e)
 ```
@@ -2656,7 +2656,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     username = 'username_example' # str | username of user
@@ -2664,7 +2664,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Create an access token
-        api_response = await api_instance.user_create_token(username, body=body)
+        api_response = api_instance.user_create_token(username, body=body)
         print("The response of UserApi->user_create_token:\n")
         pprint(api_response)
     except Exception as e:
@@ -2778,14 +2778,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     username = 'username_example' # str | username of followed user
 
     try:
         # Check whether a user is followed by the authenticated user
-        await api_instance.user_current_check_following(username)
+        api_instance.user_current_check_following(username)
     except Exception as e:
         print("Exception when calling UserApi->user_current_check_following: %s\n" % e)
 ```
@@ -2895,7 +2895,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -2903,7 +2903,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Whether the authenticated is starring the repo
-        await api_instance.user_current_check_starring(owner, repo)
+        api_instance.user_current_check_starring(owner, repo)
     except Exception as e:
         print("Exception when calling UserApi->user_current_check_starring: %s\n" % e)
 ```
@@ -3015,14 +3015,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     username = 'username_example' # str | username of user to unfollow
 
     try:
         # Unfollow a user
-        await api_instance.user_current_delete_follow(username)
+        api_instance.user_current_delete_follow(username)
     except Exception as e:
         print("Exception when calling UserApi->user_current_delete_follow: %s\n" % e)
 ```
@@ -3132,14 +3132,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     id = 56 # int | id of key to delete
 
     try:
         # Remove a GPG key
-        await api_instance.user_current_delete_gpg_key(id)
+        api_instance.user_current_delete_gpg_key(id)
     except Exception as e:
         print("Exception when calling UserApi->user_current_delete_gpg_key: %s\n" % e)
 ```
@@ -3250,14 +3250,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     id = 56 # int | id of key to delete
 
     try:
         # Delete a public key
-        await api_instance.user_current_delete_key(id)
+        api_instance.user_current_delete_key(id)
     except Exception as e:
         print("Exception when calling UserApi->user_current_delete_key: %s\n" % e)
 ```
@@ -3368,7 +3368,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     owner = 'owner_example' # str | owner of the repo to unstar
@@ -3376,7 +3376,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Unstar the given repo
-        await api_instance.user_current_delete_star(owner, repo)
+        api_instance.user_current_delete_star(owner, repo)
     except Exception as e:
         print("Exception when calling UserApi->user_current_delete_star: %s\n" % e)
 ```
@@ -3489,14 +3489,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     id = 56 # int | id of key to get
 
     try:
         # Get a GPG key
-        api_response = await api_instance.user_current_get_gpg_key(id)
+        api_response = api_instance.user_current_get_gpg_key(id)
         print("The response of UserApi->user_current_get_gpg_key:\n")
         pprint(api_response)
     except Exception as e:
@@ -3609,14 +3609,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     id = 56 # int | id of key to get
 
     try:
         # Get a public key
-        api_response = await api_instance.user_current_get_key(id)
+        api_response = api_instance.user_current_get_key(id)
         print("The response of UserApi->user_current_get_key:\n")
         pprint(api_response)
     except Exception as e:
@@ -3729,7 +3729,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     page = 56 # int | page number of results to return (1-based) (optional)
@@ -3737,7 +3737,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List the authenticated user's followers
-        api_response = await api_instance.user_current_list_followers(page=page, limit=limit)
+        api_response = api_instance.user_current_list_followers(page=page, limit=limit)
         print("The response of UserApi->user_current_list_followers:\n")
         pprint(api_response)
     except Exception as e:
@@ -3850,7 +3850,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     page = 56 # int | page number of results to return (1-based) (optional)
@@ -3858,7 +3858,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List the users that the authenticated user is following
-        api_response = await api_instance.user_current_list_following(page=page, limit=limit)
+        api_response = api_instance.user_current_list_following(page=page, limit=limit)
         print("The response of UserApi->user_current_list_following:\n")
         pprint(api_response)
     except Exception as e:
@@ -3971,7 +3971,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     page = 56 # int | page number of results to return (1-based) (optional)
@@ -3979,7 +3979,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List the authenticated user's GPG keys
-        api_response = await api_instance.user_current_list_gpg_keys(page=page, limit=limit)
+        api_response = api_instance.user_current_list_gpg_keys(page=page, limit=limit)
         print("The response of UserApi->user_current_list_gpg_keys:\n")
         pprint(api_response)
     except Exception as e:
@@ -4092,7 +4092,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     fingerprint = 'fingerprint_example' # str | fingerprint of the key (optional)
@@ -4101,7 +4101,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List the authenticated user's public keys
-        api_response = await api_instance.user_current_list_keys(fingerprint=fingerprint, page=page, limit=limit)
+        api_response = api_instance.user_current_list_keys(fingerprint=fingerprint, page=page, limit=limit)
         print("The response of UserApi->user_current_list_keys:\n")
         pprint(api_response)
     except Exception as e:
@@ -4215,7 +4215,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     page = 56 # int | page number of results to return (1-based) (optional)
@@ -4223,7 +4223,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List the repos that the authenticated user owns
-        api_response = await api_instance.user_current_list_repos(page=page, limit=limit)
+        api_response = api_instance.user_current_list_repos(page=page, limit=limit)
         print("The response of UserApi->user_current_list_repos:\n")
         pprint(api_response)
     except Exception as e:
@@ -4336,7 +4336,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     page = 56 # int | page number of results to return (1-based) (optional)
@@ -4344,7 +4344,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # The repos that the authenticated user has starred
-        api_response = await api_instance.user_current_list_starred(page=page, limit=limit)
+        api_response = api_instance.user_current_list_starred(page=page, limit=limit)
         print("The response of UserApi->user_current_list_starred:\n")
         pprint(api_response)
     except Exception as e:
@@ -4458,7 +4458,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     page = 56 # int | page number of results to return (1-based) (optional)
@@ -4466,7 +4466,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List repositories watched by the authenticated user
-        api_response = await api_instance.user_current_list_subscriptions(page=page, limit=limit)
+        api_response = api_instance.user_current_list_subscriptions(page=page, limit=limit)
         print("The response of UserApi->user_current_list_subscriptions:\n")
         pprint(api_response)
     except Exception as e:
@@ -4580,14 +4580,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     form = gitea_api.CreateGPGKeyOption() # CreateGPGKeyOption |  (optional)
 
     try:
         # Create a GPG key
-        api_response = await api_instance.user_current_post_gpg_key(form=form)
+        api_response = api_instance.user_current_post_gpg_key(form=form)
         print("The response of UserApi->user_current_post_gpg_key:\n")
         pprint(api_response)
     except Exception as e:
@@ -4702,14 +4702,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     body = gitea_api.CreateKeyOption() # CreateKeyOption |  (optional)
 
     try:
         # Create a public key
-        api_response = await api_instance.user_current_post_key(body=body)
+        api_response = api_instance.user_current_post_key(body=body)
         print("The response of UserApi->user_current_post_key:\n")
         pprint(api_response)
     except Exception as e:
@@ -4821,14 +4821,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     username = 'username_example' # str | username of user to follow
 
     try:
         # Follow a user
-        await api_instance.user_current_put_follow(username)
+        api_instance.user_current_put_follow(username)
     except Exception as e:
         print("Exception when calling UserApi->user_current_put_follow: %s\n" % e)
 ```
@@ -4939,7 +4939,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     owner = 'owner_example' # str | owner of the repo to star
@@ -4947,7 +4947,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Star the given repo
-        await api_instance.user_current_put_star(owner, repo)
+        api_instance.user_current_put_star(owner, repo)
     except Exception as e:
         print("Exception when calling UserApi->user_current_put_star: %s\n" % e)
 ```
@@ -5060,7 +5060,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     page = 56 # int | page number of results to return (1-based) (optional)
@@ -5070,7 +5070,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List the current user's tracked times
-        api_response = await api_instance.user_current_tracked_times(page=page, limit=limit, since=since, before=before)
+        api_response = api_instance.user_current_tracked_times(page=page, limit=limit, since=since, before=before)
         print("The response of UserApi->user_current_tracked_times:\n")
         pprint(api_response)
     except Exception as e:
@@ -5184,7 +5184,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     username = 'username_example' # str | username of user
@@ -5192,7 +5192,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # delete an access token
-        await api_instance.user_delete_access_token(username, token)
+        api_instance.user_delete_access_token(username, token)
     except Exception as e:
         print("Exception when calling UserApi->user_delete_access_token: %s\n" % e)
 ```
@@ -5305,13 +5305,13 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
 
     try:
         # Delete Avatar
-        await api_instance.user_delete_avatar()
+        api_instance.user_delete_avatar()
     except Exception as e:
         print("Exception when calling UserApi->user_delete_avatar: %s\n" % e)
 ```
@@ -5418,14 +5418,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     body = gitea_api.DeleteEmailOption() # DeleteEmailOption |  (optional)
 
     try:
         # Delete email addresses
-        await api_instance.user_delete_email(body=body)
+        api_instance.user_delete_email(body=body)
     except Exception as e:
         print("Exception when calling UserApi->user_delete_email: %s\n" % e)
 ```
@@ -5535,14 +5535,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     id = 56 # int | id of the hook to delete
 
     try:
         # Delete a hook
-        await api_instance.user_delete_hook(id)
+        api_instance.user_delete_hook(id)
     except Exception as e:
         print("Exception when calling UserApi->user_delete_hook: %s\n" % e)
 ```
@@ -5651,14 +5651,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     id = 56 # int | token to be deleted
 
     try:
         # delete an OAuth2 Application
-        await api_instance.user_delete_o_auth2_application(id)
+        api_instance.user_delete_o_auth2_application(id)
     except Exception as e:
         print("Exception when calling UserApi->user_delete_o_auth2_application: %s\n" % e)
 ```
@@ -5770,7 +5770,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     id = 56 # int | id of the hook to update
@@ -5778,7 +5778,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Update a hook
-        api_response = await api_instance.user_edit_hook(id, body=body)
+        api_response = api_instance.user_edit_hook(id, body=body)
         print("The response of UserApi->user_edit_hook:\n")
         pprint(api_response)
     except Exception as e:
@@ -5891,14 +5891,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     username = 'username_example' # str | username of user to get
 
     try:
         # Get a user
-        api_response = await api_instance.user_get(username)
+        api_response = api_instance.user_get(username)
         print("The response of UserApi->user_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -6011,13 +6011,13 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
 
     try:
         # Get the authenticated user
-        api_response = await api_instance.user_get_current()
+        api_response = api_instance.user_get_current()
         print("The response of UserApi->user_get_current:\n")
         pprint(api_response)
     except Exception as e:
@@ -6126,14 +6126,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     username = 'username_example' # str | username of user to get
 
     try:
         # Get a user's heatmap
-        api_response = await api_instance.user_get_heatmap_data(username)
+        api_response = api_instance.user_get_heatmap_data(username)
         print("The response of UserApi->user_get_heatmap_data:\n")
         pprint(api_response)
     except Exception as e:
@@ -6246,14 +6246,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     id = 56 # int | id of the hook to get
 
     try:
         # Get a hook
-        api_response = await api_instance.user_get_hook(id)
+        api_response = api_instance.user_get_hook(id)
         print("The response of UserApi->user_get_hook:\n")
         pprint(api_response)
     except Exception as e:
@@ -6365,14 +6365,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     id = 56 # int | Application ID to be found
 
     try:
         # get an OAuth2 Application
-        api_response = await api_instance.user_get_o_auth2_application(id)
+        api_response = api_instance.user_get_o_auth2_application(id)
         print("The response of UserApi->user_get_o_auth2_application:\n")
         pprint(api_response)
     except Exception as e:
@@ -6485,7 +6485,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     page = 56 # int | page number of results to return (1-based) (optional)
@@ -6493,7 +6493,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List the authenticated user's oauth2 applications
-        api_response = await api_instance.user_get_oauth2_application(page=page, limit=limit)
+        api_response = api_instance.user_get_oauth2_application(page=page, limit=limit)
         print("The response of UserApi->user_get_oauth2_application:\n")
         pprint(api_response)
     except Exception as e:
@@ -6605,13 +6605,13 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
 
     try:
         # Get an user's actions runner registration token
-        await api_instance.user_get_runner_registration_token()
+        api_instance.user_get_runner_registration_token()
     except Exception as e:
         print("Exception when calling UserApi->user_get_runner_registration_token: %s\n" % e)
 ```
@@ -6718,7 +6718,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     page = 56 # int | page number of results to return (1-based) (optional)
@@ -6726,7 +6726,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get list of all existing stopwatches
-        api_response = await api_instance.user_get_stop_watches(page=page, limit=limit)
+        api_response = api_instance.user_get_stop_watches(page=page, limit=limit)
         print("The response of UserApi->user_get_stop_watches:\n")
         pprint(api_response)
     except Exception as e:
@@ -6839,7 +6839,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     username = 'username_example' # str | username of user
@@ -6848,7 +6848,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List the authenticated user's access tokens
-        api_response = await api_instance.user_get_tokens(username, page=page, limit=limit)
+        api_response = api_instance.user_get_tokens(username, page=page, limit=limit)
         print("The response of UserApi->user_get_tokens:\n")
         pprint(api_response)
     except Exception as e:
@@ -6963,7 +6963,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     username = 'username_example' # str | username of user
@@ -6974,7 +6974,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List a user's activity feeds
-        api_response = await api_instance.user_list_activity_feeds(username, only_performed_by=only_performed_by, var_date=var_date, page=page, limit=limit)
+        api_response = api_instance.user_list_activity_feeds(username, only_performed_by=only_performed_by, var_date=var_date, page=page, limit=limit)
         print("The response of UserApi->user_list_activity_feeds:\n")
         pprint(api_response)
     except Exception as e:
@@ -7091,7 +7091,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     page = 56 # int | page number of results to return (1-based) (optional)
@@ -7099,7 +7099,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List users blocked by the authenticated user
-        api_response = await api_instance.user_list_blocks(page=page, limit=limit)
+        api_response = api_instance.user_list_blocks(page=page, limit=limit)
         print("The response of UserApi->user_list_blocks:\n")
         pprint(api_response)
     except Exception as e:
@@ -7212,13 +7212,13 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
 
     try:
         # List the authenticated user's email addresses
-        api_response = await api_instance.user_list_emails()
+        api_response = api_instance.user_list_emails()
         print("The response of UserApi->user_list_emails:\n")
         pprint(api_response)
     except Exception as e:
@@ -7327,7 +7327,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     username = 'username_example' # str | username of user
@@ -7336,7 +7336,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List the given user's followers
-        api_response = await api_instance.user_list_followers(username, page=page, limit=limit)
+        api_response = api_instance.user_list_followers(username, page=page, limit=limit)
         print("The response of UserApi->user_list_followers:\n")
         pprint(api_response)
     except Exception as e:
@@ -7451,7 +7451,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     username = 'username_example' # str | username of user
@@ -7460,7 +7460,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List the users that the given user is following
-        api_response = await api_instance.user_list_following(username, page=page, limit=limit)
+        api_response = api_instance.user_list_following(username, page=page, limit=limit)
         print("The response of UserApi->user_list_following:\n")
         pprint(api_response)
     except Exception as e:
@@ -7575,7 +7575,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     username = 'username_example' # str | username of user
@@ -7584,7 +7584,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List the given user's GPG keys
-        api_response = await api_instance.user_list_gpg_keys(username, page=page, limit=limit)
+        api_response = api_instance.user_list_gpg_keys(username, page=page, limit=limit)
         print("The response of UserApi->user_list_gpg_keys:\n")
         pprint(api_response)
     except Exception as e:
@@ -7699,7 +7699,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     page = 56 # int | page number of results to return (1-based) (optional)
@@ -7707,7 +7707,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List the authenticated user's webhooks
-        api_response = await api_instance.user_list_hooks(page=page, limit=limit)
+        api_response = api_instance.user_list_hooks(page=page, limit=limit)
         print("The response of UserApi->user_list_hooks:\n")
         pprint(api_response)
     except Exception as e:
@@ -7820,7 +7820,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     username = 'username_example' # str | username of user
@@ -7830,7 +7830,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List the given user's public keys
-        api_response = await api_instance.user_list_keys(username, fingerprint=fingerprint, page=page, limit=limit)
+        api_response = api_instance.user_list_keys(username, fingerprint=fingerprint, page=page, limit=limit)
         print("The response of UserApi->user_list_keys:\n")
         pprint(api_response)
     except Exception as e:
@@ -7946,7 +7946,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     username = 'username_example' # str | username of user
@@ -7955,7 +7955,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List the repos owned by the given user
-        api_response = await api_instance.user_list_repos(username, page=page, limit=limit)
+        api_response = api_instance.user_list_repos(username, page=page, limit=limit)
         print("The response of UserApi->user_list_repos:\n")
         pprint(api_response)
     except Exception as e:
@@ -8070,7 +8070,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     username = 'username_example' # str | username of user
@@ -8079,7 +8079,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # The repos that the given user has starred
-        api_response = await api_instance.user_list_starred(username, page=page, limit=limit)
+        api_response = api_instance.user_list_starred(username, page=page, limit=limit)
         print("The response of UserApi->user_list_starred:\n")
         pprint(api_response)
     except Exception as e:
@@ -8195,7 +8195,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     username = 'username_example' # str | username of the user
@@ -8204,7 +8204,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List the repositories watched by a user
-        api_response = await api_instance.user_list_subscriptions(username, page=page, limit=limit)
+        api_response = api_instance.user_list_subscriptions(username, page=page, limit=limit)
         print("The response of UserApi->user_list_subscriptions:\n")
         pprint(api_response)
     except Exception as e:
@@ -8319,7 +8319,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     page = 56 # int | page number of results to return (1-based) (optional)
@@ -8327,7 +8327,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List all the teams a user belongs to
-        api_response = await api_instance.user_list_teams(page=page, limit=limit)
+        api_response = api_instance.user_list_teams(page=page, limit=limit)
         print("The response of UserApi->user_list_teams:\n")
         pprint(api_response)
     except Exception as e:
@@ -8440,7 +8440,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     q = 'q_example' # str | keyword (optional)
@@ -8450,7 +8450,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Search for users
-        api_response = await api_instance.user_search(q=q, uid=uid, page=page, limit=limit)
+        api_response = api_instance.user_search(q=q, uid=uid, page=page, limit=limit)
         print("The response of UserApi->user_search:\n")
         pprint(api_response)
     except Exception as e:
@@ -8564,14 +8564,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     username = 'username_example' # str | user to unblock
 
     try:
         # Unblock a user
-        await api_instance.user_unblock_user(username)
+        api_instance.user_unblock_user(username)
     except Exception as e:
         print("Exception when calling UserApi->user_unblock_user: %s\n" % e)
 ```
@@ -8683,14 +8683,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     body = gitea_api.UpdateUserAvatarOption() # UpdateUserAvatarOption |  (optional)
 
     try:
         # Update Avatar
-        await api_instance.user_update_avatar(body=body)
+        api_instance.user_update_avatar(body=body)
     except Exception as e:
         print("Exception when calling UserApi->user_update_avatar: %s\n" % e)
 ```
@@ -8801,7 +8801,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
     id = 56 # int | application to be updated
@@ -8809,7 +8809,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # update an OAuth2 Application, this includes regenerating the client secret
-        api_response = await api_instance.user_update_o_auth2_application(id, body)
+        api_response = api_instance.user_update_o_auth2_application(id, body)
         print("The response of UserApi->user_update_o_auth2_application:\n")
         pprint(api_response)
     except Exception as e:
@@ -8923,13 +8923,13 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
 
     try:
         # Verify a GPG key
-        api_response = await api_instance.user_verify_gpg_key()
+        api_response = api_instance.user_verify_gpg_key()
         print("The response of UserApi->user_verify_gpg_key:\n")
         pprint(api_response)
     except Exception as e:

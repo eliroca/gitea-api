@@ -264,7 +264,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo to transfer
@@ -272,7 +272,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Accept a repo transfer
-        api_response = await api_instance.accept_repo_transfer(owner, repo)
+        api_response = api_instance.accept_repo_transfer(owner, repo)
         print("The response of RepositoryApi->accept_repo_transfer:\n")
         pprint(api_response)
     except Exception as e:
@@ -386,7 +386,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -395,7 +395,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Disable a workflow
-        await api_instance.actions_disable_workflow(owner, repo, workflow_id)
+        api_instance.actions_disable_workflow(owner, repo, workflow_id)
     except Exception as e:
         print("Exception when calling RepositoryApi->actions_disable_workflow: %s\n" % e)
 ```
@@ -511,7 +511,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -521,7 +521,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Create a workflow dispatch event
-        await api_instance.actions_dispatch_workflow(owner, repo, workflow_id, body=body)
+        api_instance.actions_dispatch_workflow(owner, repo, workflow_id, body=body)
     except Exception as e:
         print("Exception when calling RepositoryApi->actions_dispatch_workflow: %s\n" % e)
 ```
@@ -637,7 +637,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -646,7 +646,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Enable a workflow
-        await api_instance.actions_enable_workflow(owner, repo, workflow_id)
+        api_instance.actions_enable_workflow(owner, repo, workflow_id)
     except Exception as e:
         print("Exception when calling RepositoryApi->actions_enable_workflow: %s\n" % e)
 ```
@@ -763,7 +763,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -772,7 +772,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get a workflow
-        api_response = await api_instance.actions_get_workflow(owner, repo, workflow_id)
+        api_response = api_instance.actions_get_workflow(owner, repo, workflow_id)
         print("The response of RepositoryApi->actions_get_workflow:\n")
         pprint(api_response)
     except Exception as e:
@@ -891,7 +891,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -899,7 +899,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List repository workflows
-        api_response = await api_instance.actions_list_repository_workflows(owner, repo)
+        api_response = api_instance.actions_list_repository_workflows(owner, repo)
         print("The response of RepositoryApi->actions_list_repository_workflows:\n")
         pprint(api_response)
     except Exception as e:
@@ -1018,14 +1018,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     body = gitea_api.CreateRepoOption() # CreateRepoOption |  (optional)
 
     try:
         # Create a repository
-        api_response = await api_instance.create_current_user_repo(body=body)
+        api_response = api_instance.create_current_user_repo(body=body)
         print("The response of RepositoryApi->create_current_user_repo:\n")
         pprint(api_response)
     except Exception as e:
@@ -1141,7 +1141,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo to fork
@@ -1150,7 +1150,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Fork a repository
-        api_response = await api_instance.create_fork(owner, repo, body=body)
+        api_response = api_instance.create_fork(owner, repo, body=body)
         print("The response of RepositoryApi->create_fork:\n")
         pprint(api_response)
     except Exception as e:
@@ -1268,7 +1268,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | name of the owner
@@ -1278,7 +1278,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Create a repo-level variable
-        await api_instance.create_repo_variable(owner, repo, variablename, body=body)
+        api_instance.create_repo_variable(owner, repo, variablename, body=body)
     except Exception as e:
         print("Exception when calling RepositoryApi->create_repo_variable: %s\n" % e)
 ```
@@ -1393,7 +1393,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | name of the owner
@@ -1402,7 +1402,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Deletes a specific artifact for a workflow run
-        await api_instance.delete_artifact(owner, repo, artifact_id)
+        api_instance.delete_artifact(owner, repo, artifact_id)
     except Exception as e:
         print("Exception when calling RepositoryApi->delete_artifact: %s\n" % e)
 ```
@@ -1515,7 +1515,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -1524,7 +1524,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Delete an repo-level runner
-        await api_instance.delete_repo_runner(owner, repo, runner_id)
+        api_instance.delete_repo_runner(owner, repo, runner_id)
     except Exception as e:
         print("Exception when calling RepositoryApi->delete_repo_runner: %s\n" % e)
 ```
@@ -1637,7 +1637,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repository
@@ -1646,7 +1646,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Delete a secret in a repository
-        await api_instance.delete_repo_secret(owner, repo, secretname)
+        api_instance.delete_repo_secret(owner, repo, secretname)
     except Exception as e:
         print("Exception when calling RepositoryApi->delete_repo_secret: %s\n" % e)
 ```
@@ -1760,7 +1760,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | name of the owner
@@ -1769,7 +1769,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Delete a repo-level variable
-        api_response = await api_instance.delete_repo_variable(owner, repo, variablename)
+        api_response = api_instance.delete_repo_variable(owner, repo, variablename)
         print("The response of RepositoryApi->delete_repo_variable:\n")
         pprint(api_response)
     except Exception as e:
@@ -1886,7 +1886,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | name of the owner
@@ -1895,7 +1895,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Downloads the job logs for a workflow run
-        await api_instance.download_actions_run_job_logs(owner, repo, job_id)
+        api_instance.download_actions_run_job_logs(owner, repo, job_id)
     except Exception as e:
         print("Exception when calling RepositoryApi->download_actions_run_job_logs: %s\n" % e)
 ```
@@ -2008,7 +2008,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | name of the owner
@@ -2017,7 +2017,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Downloads a specific artifact for a workflow run redirects to blob url
-        await api_instance.download_artifact(owner, repo, artifact_id)
+        api_instance.download_artifact(owner, repo, artifact_id)
     except Exception as e:
         print("Exception when calling RepositoryApi->download_artifact: %s\n" % e)
 ```
@@ -2132,7 +2132,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     template_owner = 'template_owner_example' # str | name of the template repository owner
@@ -2141,7 +2141,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Create a repository using a template
-        api_response = await api_instance.generate_repo(template_owner, template_repo, body=body)
+        api_response = api_instance.generate_repo(template_owner, template_repo, body=body)
         print("The response of RepositoryApi->generate_repo:\n")
         pprint(api_response)
     except Exception as e:
@@ -2259,7 +2259,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -2268,7 +2268,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Gets the tag object of an annotated tag (not lightweight tags)
-        api_response = await api_instance.get_annotated_tag(owner, repo, sha)
+        api_response = api_instance.get_annotated_tag(owner, repo, sha)
         print("The response of RepositoryApi->get_annotated_tag:\n")
         pprint(api_response)
     except Exception as e:
@@ -2384,7 +2384,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | name of the owner
@@ -2393,7 +2393,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Gets a specific artifact for a workflow run
-        api_response = await api_instance.get_artifact(owner, repo, artifact_id)
+        api_response = api_instance.get_artifact(owner, repo, artifact_id)
         print("The response of RepositoryApi->get_artifact:\n")
         pprint(api_response)
     except Exception as e:
@@ -2509,7 +2509,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | name of the owner
@@ -2518,7 +2518,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Lists all artifacts for a repository
-        api_response = await api_instance.get_artifacts(owner, repo, name=name)
+        api_response = api_instance.get_artifacts(owner, repo, name=name)
         print("The response of RepositoryApi->get_artifacts:\n")
         pprint(api_response)
     except Exception as e:
@@ -2634,7 +2634,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | name of the owner
@@ -2644,7 +2644,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Lists all artifacts for a repository run
-        api_response = await api_instance.get_artifacts_of_run(owner, repo, run, name=name)
+        api_response = api_instance.get_artifacts_of_run(owner, repo, run, name=name)
         print("The response of RepositoryApi->get_artifacts_of_run:\n")
         pprint(api_response)
     except Exception as e:
@@ -2761,7 +2761,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -2770,7 +2770,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Gets the blob of a repository.
-        api_response = await api_instance.get_blob(owner, repo, sha)
+        api_response = api_instance.get_blob(owner, repo, sha)
         print("The response of RepositoryApi->get_blob:\n")
         pprint(api_response)
     except Exception as e:
@@ -2885,7 +2885,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -2894,7 +2894,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get an repo-level runner
-        await api_instance.get_repo_runner(owner, repo, runner_id)
+        api_instance.get_repo_runner(owner, repo, runner_id)
     except Exception as e:
         print("Exception when calling RepositoryApi->get_repo_runner: %s\n" % e)
 ```
@@ -3007,7 +3007,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -3015,7 +3015,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get repo-level runners
-        await api_instance.get_repo_runners(owner, repo)
+        api_instance.get_repo_runners(owner, repo)
     except Exception as e:
         print("Exception when calling RepositoryApi->get_repo_runners: %s\n" % e)
 ```
@@ -3128,7 +3128,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | name of the owner
@@ -3137,7 +3137,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get a repo-level variable
-        api_response = await api_instance.get_repo_variable(owner, repo, variablename)
+        api_response = api_instance.get_repo_variable(owner, repo, variablename)
         print("The response of RepositoryApi->get_repo_variable:\n")
         pprint(api_response)
     except Exception as e:
@@ -3253,7 +3253,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | name of the owner
@@ -3263,7 +3263,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get repo-level variables list
-        api_response = await api_instance.get_repo_variables_list(owner, repo, page=page, limit=limit)
+        api_response = api_instance.get_repo_variables_list(owner, repo, page=page, limit=limit)
         print("The response of RepositoryApi->get_repo_variables_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -3380,7 +3380,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -3392,7 +3392,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Gets the tree of a repository.
-        api_response = await api_instance.get_tree(owner, repo, sha, recursive=recursive, page=page, per_page=per_page)
+        api_response = api_instance.get_tree(owner, repo, sha, recursive=recursive, page=page, per_page=per_page)
         print("The response of RepositoryApi->get_tree:\n")
         pprint(api_response)
     except Exception as e:
@@ -3511,7 +3511,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -3521,7 +3521,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List a repository's action tasks
-        api_response = await api_instance.list_action_tasks(owner, repo, page=page, limit=limit)
+        api_response = api_instance.list_action_tasks(owner, repo, page=page, limit=limit)
         print("The response of RepositoryApi->list_action_tasks:\n")
         pprint(api_response)
     except Exception as e:
@@ -3641,7 +3641,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -3651,7 +3651,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List a repository's forks
-        api_response = await api_instance.list_forks(owner, repo, page=page, limit=limit)
+        api_response = api_instance.list_forks(owner, repo, page=page, limit=limit)
         print("The response of RepositoryApi->list_forks:\n")
         pprint(api_response)
     except Exception as e:
@@ -3767,7 +3767,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo to transfer
@@ -3775,7 +3775,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Reject a repo transfer
-        api_response = await api_instance.reject_repo_transfer(owner, repo)
+        api_response = api_instance.reject_repo_transfer(owner, repo)
         print("The response of RepositoryApi->reject_repo_transfer:\n")
         pprint(api_response)
     except Exception as e:
@@ -3890,7 +3890,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -3900,7 +3900,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Add or Update a collaborator to a repository
-        await api_instance.repo_add_collaborator(owner, repo, collaborator, body=body)
+        api_instance.repo_add_collaborator(owner, repo, collaborator, body=body)
     except Exception as e:
         print("Exception when calling RepositoryApi->repo_add_collaborator: %s\n" % e)
 ```
@@ -4017,7 +4017,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -4026,7 +4026,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # add a push mirror to the repository
-        api_response = await api_instance.repo_add_push_mirror(owner, repo, body=body)
+        api_response = api_instance.repo_add_push_mirror(owner, repo, body=body)
         print("The response of RepositoryApi->repo_add_push_mirror:\n")
         pprint(api_response)
     except Exception as e:
@@ -4142,7 +4142,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -4151,7 +4151,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Add a team to a repository
-        await api_instance.repo_add_team(owner, repo, team)
+        api_instance.repo_add_team(owner, repo, team)
     except Exception as e:
         print("Exception when calling RepositoryApi->repo_add_team: %s\n" % e)
 ```
@@ -4265,7 +4265,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -4274,7 +4274,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Add a topic to a repository
-        await api_instance.repo_add_topic(owner, repo, topic)
+        api_instance.repo_add_topic(owner, repo, topic)
     except Exception as e:
         print("Exception when calling RepositoryApi->repo_add_topic: %s\n" % e)
 ```
@@ -4389,7 +4389,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -4398,7 +4398,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Apply diff patch to repository
-        api_response = await api_instance.repo_apply_diff_patch(owner, repo, body)
+        api_response = api_instance.repo_apply_diff_patch(owner, repo, body)
         print("The response of RepositoryApi->repo_apply_diff_patch:\n")
         pprint(api_response)
     except Exception as e:
@@ -4513,7 +4513,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -4522,7 +4522,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Cancel the scheduled auto merge for the given pull request
-        await api_instance.repo_cancel_scheduled_auto_merge(owner, repo, index)
+        api_instance.repo_cancel_scheduled_auto_merge(owner, repo, index)
     except Exception as e:
         print("Exception when calling RepositoryApi->repo_cancel_scheduled_auto_merge: %s\n" % e)
 ```
@@ -4638,7 +4638,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -4647,7 +4647,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Modify multiple files in a repository
-        api_response = await api_instance.repo_change_files(owner, repo, body)
+        api_response = api_instance.repo_change_files(owner, repo, body)
         print("The response of RepositoryApi->repo_change_files:\n")
         pprint(api_response)
     except Exception as e:
@@ -4764,7 +4764,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -4773,7 +4773,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Check if a user is a collaborator of a repository
-        await api_instance.repo_check_collaborator(owner, repo, collaborator)
+        api_instance.repo_check_collaborator(owner, repo, collaborator)
     except Exception as e:
         print("Exception when calling RepositoryApi->repo_check_collaborator: %s\n" % e)
 ```
@@ -4887,7 +4887,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -4896,7 +4896,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Check if a team is assigned to a repository
-        api_response = await api_instance.repo_check_team(owner, repo, team)
+        api_response = api_instance.repo_check_team(owner, repo, team)
         print("The response of RepositoryApi->repo_check_team:\n")
         pprint(api_response)
     except Exception as e:
@@ -5012,7 +5012,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -5021,7 +5021,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get commit comparison information
-        api_response = await api_instance.repo_compare_diff(owner, repo, basehead)
+        api_response = api_instance.repo_compare_diff(owner, repo, basehead)
         print("The response of RepositoryApi->repo_compare_diff:\n")
         pprint(api_response)
     except Exception as e:
@@ -5137,7 +5137,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -5146,7 +5146,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Create a branch
-        api_response = await api_instance.repo_create_branch(owner, repo, body=body)
+        api_response = api_instance.repo_create_branch(owner, repo, body=body)
         print("The response of RepositoryApi->repo_create_branch:\n")
         pprint(api_response)
     except Exception as e:
@@ -5265,7 +5265,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -5274,7 +5274,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Create a branch protections for a repository
-        api_response = await api_instance.repo_create_branch_protection(owner, repo, body=body)
+        api_response = api_instance.repo_create_branch_protection(owner, repo, body=body)
         print("The response of RepositoryApi->repo_create_branch_protection:\n")
         pprint(api_response)
     except Exception as e:
@@ -5393,7 +5393,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -5403,7 +5403,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Create a file in a repository
-        api_response = await api_instance.repo_create_file(owner, repo, filepath, body)
+        api_response = api_instance.repo_create_file(owner, repo, filepath, body)
         print("The response of RepositoryApi->repo_create_file:\n")
         pprint(api_response)
     except Exception as e:
@@ -5523,7 +5523,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -5532,7 +5532,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Create a hook
-        api_response = await api_instance.repo_create_hook(owner, repo, body=body)
+        api_response = api_instance.repo_create_hook(owner, repo, body=body)
         print("The response of RepositoryApi->repo_create_hook:\n")
         pprint(api_response)
     except Exception as e:
@@ -5648,7 +5648,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -5657,7 +5657,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Add a key to a repository
-        api_response = await api_instance.repo_create_key(owner, repo, body=body)
+        api_response = api_instance.repo_create_key(owner, repo, body=body)
         print("The response of RepositoryApi->repo_create_key:\n")
         pprint(api_response)
     except Exception as e:
@@ -5774,7 +5774,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -5783,7 +5783,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Create a pull request
-        api_response = await api_instance.repo_create_pull_request(owner, repo, body=body)
+        api_response = api_instance.repo_create_pull_request(owner, repo, body=body)
         print("The response of RepositoryApi->repo_create_pull_request:\n")
         pprint(api_response)
     except Exception as e:
@@ -5903,7 +5903,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -5913,7 +5913,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Create a review to an pull request
-        api_response = await api_instance.repo_create_pull_review(owner, repo, index, body)
+        api_response = api_instance.repo_create_pull_review(owner, repo, index, body)
         print("The response of RepositoryApi->repo_create_pull_review:\n")
         pprint(api_response)
     except Exception as e:
@@ -6031,7 +6031,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -6041,7 +6041,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # create review requests for a pull request
-        api_response = await api_instance.repo_create_pull_review_requests(owner, repo, index, body)
+        api_response = api_instance.repo_create_pull_review_requests(owner, repo, index, body)
         print("The response of RepositoryApi->repo_create_pull_review_requests:\n")
         pprint(api_response)
     except Exception as e:
@@ -6159,7 +6159,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -6168,7 +6168,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Create a release
-        api_response = await api_instance.repo_create_release(owner, repo, body=body)
+        api_response = api_instance.repo_create_release(owner, repo, body=body)
         print("The response of RepositoryApi->repo_create_release:\n")
         pprint(api_response)
     except Exception as e:
@@ -6285,7 +6285,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -6296,7 +6296,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Create a release attachment
-        api_response = await api_instance.repo_create_release_attachment(owner, repo, id, name=name, attachment=attachment)
+        api_response = api_instance.repo_create_release_attachment(owner, repo, id, name=name, attachment=attachment)
         print("The response of RepositoryApi->repo_create_release_attachment:\n")
         pprint(api_response)
     except Exception as e:
@@ -6413,7 +6413,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -6421,7 +6421,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get a repository's actions runner registration token
-        await api_instance.repo_create_runner_registration_token(owner, repo)
+        api_instance.repo_create_runner_registration_token(owner, repo)
     except Exception as e:
         print("Exception when calling RepositoryApi->repo_create_runner_registration_token: %s\n" % e)
 ```
@@ -6533,7 +6533,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -6543,7 +6543,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Create a commit status
-        api_response = await api_instance.repo_create_status(owner, repo, sha, body=body)
+        api_response = api_instance.repo_create_status(owner, repo, sha, body=body)
         print("The response of RepositoryApi->repo_create_status:\n")
         pprint(api_response)
     except Exception as e:
@@ -6661,7 +6661,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -6670,7 +6670,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Create a new git tag in a repository
-        api_response = await api_instance.repo_create_tag(owner, repo, body=body)
+        api_response = api_instance.repo_create_tag(owner, repo, body=body)
         print("The response of RepositoryApi->repo_create_tag:\n")
         pprint(api_response)
     except Exception as e:
@@ -6790,7 +6790,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -6799,7 +6799,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Create a tag protections for a repository
-        api_response = await api_instance.repo_create_tag_protection(owner, repo, body=body)
+        api_response = api_instance.repo_create_tag_protection(owner, repo, body=body)
         print("The response of RepositoryApi->repo_create_tag_protection:\n")
         pprint(api_response)
     except Exception as e:
@@ -6918,7 +6918,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -6927,7 +6927,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Create a wiki page
-        api_response = await api_instance.repo_create_wiki_page(owner, repo, body=body)
+        api_response = api_instance.repo_create_wiki_page(owner, repo, body=body)
         print("The response of RepositoryApi->repo_create_wiki_page:\n")
         pprint(api_response)
     except Exception as e:
@@ -7044,7 +7044,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo to delete
@@ -7052,7 +7052,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Delete a repository
-        await api_instance.repo_delete(owner, repo)
+        api_instance.repo_delete(owner, repo)
     except Exception as e:
         print("Exception when calling RepositoryApi->repo_delete: %s\n" % e)
 ```
@@ -7164,7 +7164,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -7172,7 +7172,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Delete avatar
-        await api_instance.repo_delete_avatar(owner, repo)
+        api_instance.repo_delete_avatar(owner, repo)
     except Exception as e:
         print("Exception when calling RepositoryApi->repo_delete_avatar: %s\n" % e)
 ```
@@ -7283,7 +7283,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -7292,7 +7292,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Delete a specific branch from a repository
-        await api_instance.repo_delete_branch(owner, repo, branch)
+        api_instance.repo_delete_branch(owner, repo, branch)
     except Exception as e:
         print("Exception when calling RepositoryApi->repo_delete_branch: %s\n" % e)
 ```
@@ -7406,7 +7406,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -7415,7 +7415,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Delete a specific branch protection for the repository
-        await api_instance.repo_delete_branch_protection(owner, repo, name)
+        api_instance.repo_delete_branch_protection(owner, repo, name)
     except Exception as e:
         print("Exception when calling RepositoryApi->repo_delete_branch_protection: %s\n" % e)
 ```
@@ -7527,7 +7527,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -7536,7 +7536,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Delete a collaborator from a repository
-        await api_instance.repo_delete_collaborator(owner, repo, collaborator)
+        api_instance.repo_delete_collaborator(owner, repo, collaborator)
     except Exception as e:
         print("Exception when calling RepositoryApi->repo_delete_collaborator: %s\n" % e)
 ```
@@ -7651,7 +7651,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -7661,7 +7661,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Delete a file in a repository
-        api_response = await api_instance.repo_delete_file(owner, repo, filepath, body)
+        api_response = api_instance.repo_delete_file(owner, repo, filepath, body)
         print("The response of RepositoryApi->repo_delete_file:\n")
         pprint(api_response)
     except Exception as e:
@@ -7779,7 +7779,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -7788,7 +7788,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Delete a Git hook in a repository
-        await api_instance.repo_delete_git_hook(owner, repo, id)
+        api_instance.repo_delete_git_hook(owner, repo, id)
     except Exception as e:
         print("Exception when calling RepositoryApi->repo_delete_git_hook: %s\n" % e)
 ```
@@ -7900,7 +7900,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -7909,7 +7909,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Delete a hook in a repository
-        await api_instance.repo_delete_hook(owner, repo, id)
+        api_instance.repo_delete_hook(owner, repo, id)
     except Exception as e:
         print("Exception when calling RepositoryApi->repo_delete_hook: %s\n" % e)
 ```
@@ -8021,7 +8021,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -8030,7 +8030,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Delete a key from a repository
-        await api_instance.repo_delete_key(owner, repo, id)
+        api_instance.repo_delete_key(owner, repo, id)
     except Exception as e:
         print("Exception when calling RepositoryApi->repo_delete_key: %s\n" % e)
 ```
@@ -8143,7 +8143,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -8153,7 +8153,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Delete a specific review from a pull request
-        await api_instance.repo_delete_pull_review(owner, repo, index, id)
+        api_instance.repo_delete_pull_review(owner, repo, index, id)
     except Exception as e:
         print("Exception when calling RepositoryApi->repo_delete_pull_review: %s\n" % e)
 ```
@@ -8268,7 +8268,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -8278,7 +8278,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # cancel review requests for a pull request
-        await api_instance.repo_delete_pull_review_requests(owner, repo, index, body)
+        api_instance.repo_delete_pull_review_requests(owner, repo, index, body)
     except Exception as e:
         print("Exception when calling RepositoryApi->repo_delete_pull_review_requests: %s\n" % e)
 ```
@@ -8393,7 +8393,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -8402,7 +8402,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # deletes a push mirror from a repository by remoteName
-        await api_instance.repo_delete_push_mirror(owner, repo, name)
+        api_instance.repo_delete_push_mirror(owner, repo, name)
     except Exception as e:
         print("Exception when calling RepositoryApi->repo_delete_push_mirror: %s\n" % e)
 ```
@@ -8515,7 +8515,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -8524,7 +8524,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Delete a release
-        await api_instance.repo_delete_release(owner, repo, id)
+        api_instance.repo_delete_release(owner, repo, id)
     except Exception as e:
         print("Exception when calling RepositoryApi->repo_delete_release: %s\n" % e)
 ```
@@ -8637,7 +8637,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -8647,7 +8647,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Delete a release attachment
-        await api_instance.repo_delete_release_attachment(owner, repo, id, attachment_id)
+        api_instance.repo_delete_release_attachment(owner, repo, id, attachment_id)
     except Exception as e:
         print("Exception when calling RepositoryApi->repo_delete_release_attachment: %s\n" % e)
 ```
@@ -8760,7 +8760,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -8769,7 +8769,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Delete a release by tag name
-        await api_instance.repo_delete_release_by_tag(owner, repo, tag)
+        api_instance.repo_delete_release_by_tag(owner, repo, tag)
     except Exception as e:
         print("Exception when calling RepositoryApi->repo_delete_release_by_tag: %s\n" % e)
 ```
@@ -8882,7 +8882,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -8891,7 +8891,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Delete a repository's tag by name
-        await api_instance.repo_delete_tag(owner, repo, tag)
+        api_instance.repo_delete_tag(owner, repo, tag)
     except Exception as e:
         print("Exception when calling RepositoryApi->repo_delete_tag: %s\n" % e)
 ```
@@ -9007,7 +9007,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -9016,7 +9016,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Delete a specific tag protection for the repository
-        await api_instance.repo_delete_tag_protection(owner, repo, id)
+        api_instance.repo_delete_tag_protection(owner, repo, id)
     except Exception as e:
         print("Exception when calling RepositoryApi->repo_delete_tag_protection: %s\n" % e)
 ```
@@ -9128,7 +9128,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -9137,7 +9137,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Delete a team from a repository
-        await api_instance.repo_delete_team(owner, repo, team)
+        api_instance.repo_delete_team(owner, repo, team)
     except Exception as e:
         print("Exception when calling RepositoryApi->repo_delete_team: %s\n" % e)
 ```
@@ -9251,7 +9251,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -9260,7 +9260,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Delete a topic from a repository
-        await api_instance.repo_delete_topic(owner, repo, topic)
+        api_instance.repo_delete_topic(owner, repo, topic)
     except Exception as e:
         print("Exception when calling RepositoryApi->repo_delete_topic: %s\n" % e)
 ```
@@ -9373,7 +9373,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -9382,7 +9382,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Delete a wiki page
-        await api_instance.repo_delete_wiki_page(owner, repo, page_name)
+        api_instance.repo_delete_wiki_page(owner, repo, page_name)
     except Exception as e:
         print("Exception when calling RepositoryApi->repo_delete_wiki_page: %s\n" % e)
 ```
@@ -9498,7 +9498,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -9509,7 +9509,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Dismiss a review for a pull request
-        api_response = await api_instance.repo_dismiss_pull_review(owner, repo, index, id, body)
+        api_response = api_instance.repo_dismiss_pull_review(owner, repo, index, id, body)
         print("The response of RepositoryApi->repo_dismiss_pull_review:\n")
         pprint(api_response)
     except Exception as e:
@@ -9627,7 +9627,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -9637,7 +9637,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get a commit's diff or patch
-        api_response = await api_instance.repo_download_commit_diff_or_patch(owner, repo, sha, diff_type)
+        api_response = api_instance.repo_download_commit_diff_or_patch(owner, repo, sha, diff_type)
         print("The response of RepositoryApi->repo_download_commit_diff_or_patch:\n")
         pprint(api_response)
     except Exception as e:
@@ -9752,7 +9752,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -9763,7 +9763,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get a pull request diff or patch
-        api_response = await api_instance.repo_download_pull_diff_or_patch(owner, repo, index, diff_type, binary=binary)
+        api_response = api_instance.repo_download_pull_diff_or_patch(owner, repo, index, diff_type, binary=binary)
         print("The response of RepositoryApi->repo_download_pull_diff_or_patch:\n")
         pprint(api_response)
     except Exception as e:
@@ -9881,7 +9881,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo to edit
@@ -9890,7 +9890,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Edit a repository's properties. Only fields that are set will be changed.
-        api_response = await api_instance.repo_edit(owner, repo, body=body)
+        api_response = api_instance.repo_edit(owner, repo, body=body)
         print("The response of RepositoryApi->repo_edit:\n")
         pprint(api_response)
     except Exception as e:
@@ -10008,7 +10008,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -10018,7 +10018,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Edit a branch protections for a repository. Only fields that are set will be changed
-        api_response = await api_instance.repo_edit_branch_protection(owner, repo, name, body=body)
+        api_response = api_instance.repo_edit_branch_protection(owner, repo, name, body=body)
         print("The response of RepositoryApi->repo_edit_branch_protection:\n")
         pprint(api_response)
     except Exception as e:
@@ -10137,7 +10137,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -10147,7 +10147,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Edit a Git hook in a repository
-        api_response = await api_instance.repo_edit_git_hook(owner, repo, id, body=body)
+        api_response = api_instance.repo_edit_git_hook(owner, repo, id, body=body)
         print("The response of RepositoryApi->repo_edit_git_hook:\n")
         pprint(api_response)
     except Exception as e:
@@ -10264,7 +10264,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -10274,7 +10274,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Edit a hook in a repository
-        api_response = await api_instance.repo_edit_hook(owner, repo, id, body=body)
+        api_response = api_instance.repo_edit_hook(owner, repo, id, body=body)
         print("The response of RepositoryApi->repo_edit_hook:\n")
         pprint(api_response)
     except Exception as e:
@@ -10391,7 +10391,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -10401,7 +10401,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Update a pull request. If using deadline only the date will be taken into account, and time of day ignored.
-        api_response = await api_instance.repo_edit_pull_request(owner, repo, index, body=body)
+        api_response = api_instance.repo_edit_pull_request(owner, repo, index, body=body)
         print("The response of RepositoryApi->repo_edit_pull_request:\n")
         pprint(api_response)
     except Exception as e:
@@ -10522,7 +10522,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -10532,7 +10532,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Update a release
-        api_response = await api_instance.repo_edit_release(owner, repo, id, body=body)
+        api_response = api_instance.repo_edit_release(owner, repo, id, body=body)
         print("The response of RepositoryApi->repo_edit_release:\n")
         pprint(api_response)
     except Exception as e:
@@ -10649,7 +10649,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -10660,7 +10660,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Edit a release attachment
-        api_response = await api_instance.repo_edit_release_attachment(owner, repo, id, attachment_id, body=body)
+        api_response = api_instance.repo_edit_release_attachment(owner, repo, id, attachment_id, body=body)
         print("The response of RepositoryApi->repo_edit_release_attachment:\n")
         pprint(api_response)
     except Exception as e:
@@ -10779,7 +10779,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -10789,7 +10789,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Edit a tag protections for a repository. Only fields that are set will be changed
-        api_response = await api_instance.repo_edit_tag_protection(owner, repo, id, body=body)
+        api_response = api_instance.repo_edit_tag_protection(owner, repo, id, body=body)
         print("The response of RepositoryApi->repo_edit_tag_protection:\n")
         pprint(api_response)
     except Exception as e:
@@ -10908,7 +10908,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -10918,7 +10918,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Edit a wiki page
-        api_response = await api_instance.repo_edit_wiki_page(owner, repo, page_name, body=body)
+        api_response = api_instance.repo_edit_wiki_page(owner, repo, page_name, body=body)
         print("The response of RepositoryApi->repo_edit_wiki_page:\n")
         pprint(api_response)
     except Exception as e:
@@ -11037,7 +11037,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -11045,7 +11045,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get a repository
-        api_response = await api_instance.repo_get(owner, repo)
+        api_response = api_instance.repo_get(owner, repo)
         print("The response of RepositoryApi->repo_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -11159,7 +11159,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -11175,7 +11175,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get a list of all commits from a repository
-        api_response = await api_instance.repo_get_all_commits(owner, repo, sha=sha, path=path, stat=stat, verification=verification, files=files, page=page, limit=limit, var_not=var_not)
+        api_response = api_instance.repo_get_all_commits(owner, repo, sha=sha, path=path, stat=stat, verification=verification, files=files, page=page, limit=limit, var_not=var_not)
         print("The response of RepositoryApi->repo_get_all_commits:\n")
         pprint(api_response)
     except Exception as e:
@@ -11297,7 +11297,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -11306,7 +11306,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get an archive of a repository
-        await api_instance.repo_get_archive(owner, repo, archive)
+        api_instance.repo_get_archive(owner, repo, archive)
     except Exception as e:
         print("Exception when calling RepositoryApi->repo_get_archive: %s\n" % e)
 ```
@@ -11419,7 +11419,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -11427,7 +11427,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Return all users that have write access and can be assigned to issues
-        api_response = await api_instance.repo_get_assignees(owner, repo)
+        api_response = api_instance.repo_get_assignees(owner, repo)
         print("The response of RepositoryApi->repo_get_assignees:\n")
         pprint(api_response)
     except Exception as e:
@@ -11541,7 +11541,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -11550,7 +11550,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve a specific branch from a repository, including its effective branch protection
-        api_response = await api_instance.repo_get_branch(owner, repo, branch)
+        api_response = api_instance.repo_get_branch(owner, repo, branch)
         print("The response of RepositoryApi->repo_get_branch:\n")
         pprint(api_response)
     except Exception as e:
@@ -11665,7 +11665,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -11674,7 +11674,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get a specific branch protection for the repository
-        api_response = await api_instance.repo_get_branch_protection(owner, repo, name)
+        api_response = api_instance.repo_get_branch_protection(owner, repo, name)
         print("The response of RepositoryApi->repo_get_branch_protection:\n")
         pprint(api_response)
     except Exception as e:
@@ -11789,14 +11789,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     id = 56 # int | id of the repo to get
 
     try:
         # Get a repository by id
-        api_response = await api_instance.repo_get_by_id(id)
+        api_response = api_instance.repo_get_by_id(id)
         print("The response of RepositoryApi->repo_get_by_id:\n")
         pprint(api_response)
     except Exception as e:
@@ -11909,7 +11909,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -11920,7 +11920,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get a commit's combined status, by branch/tag/commit reference
-        api_response = await api_instance.repo_get_combined_status_by_ref(owner, repo, ref, page=page, limit=limit)
+        api_response = api_instance.repo_get_combined_status_by_ref(owner, repo, ref, page=page, limit=limit)
         print("The response of RepositoryApi->repo_get_combined_status_by_ref:\n")
         pprint(api_response)
     except Exception as e:
@@ -12038,7 +12038,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -12047,7 +12047,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get the merged pull request of the commit
-        api_response = await api_instance.repo_get_commit_pull_request(owner, repo, sha)
+        api_response = api_instance.repo_get_commit_pull_request(owner, repo, sha)
         print("The response of RepositoryApi->repo_get_commit_pull_request:\n")
         pprint(api_response)
     except Exception as e:
@@ -12162,7 +12162,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -12172,7 +12172,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Gets the metadata and contents (if a file) of an entry in a repository, or a list of entries if a dir
-        api_response = await api_instance.repo_get_contents(owner, repo, filepath, ref=ref)
+        api_response = api_instance.repo_get_contents(owner, repo, filepath, ref=ref)
         print("The response of RepositoryApi->repo_get_contents:\n")
         pprint(api_response)
     except Exception as e:
@@ -12288,7 +12288,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -12297,7 +12297,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Gets the metadata of all the entries of the root dir
-        api_response = await api_instance.repo_get_contents_list(owner, repo, ref=ref)
+        api_response = api_instance.repo_get_contents_list(owner, repo, ref=ref)
         print("The response of RepositoryApi->repo_get_contents_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -12411,7 +12411,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -12421,7 +12421,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get the EditorConfig definitions of a file in a repository
-        await api_instance.repo_get_editor_config(owner, repo, filepath, ref=ref)
+        api_instance.repo_get_editor_config(owner, repo, filepath, ref=ref)
     except Exception as e:
         print("Exception when calling RepositoryApi->repo_get_editor_config: %s\n" % e)
 ```
@@ -12537,7 +12537,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -12547,7 +12547,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get the metadata and contents of requested files
-        api_response = await api_instance.repo_get_file_contents(owner, repo, body, ref=ref)
+        api_response = api_instance.repo_get_file_contents(owner, repo, body, ref=ref)
         print("The response of RepositoryApi->repo_get_file_contents:\n")
         pprint(api_response)
     except Exception as e:
@@ -12666,7 +12666,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -12676,7 +12676,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get the metadata and contents of requested files
-        api_response = await api_instance.repo_get_file_contents_post(owner, repo, body, ref=ref)
+        api_response = api_instance.repo_get_file_contents_post(owner, repo, body, ref=ref)
         print("The response of RepositoryApi->repo_get_file_contents_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -12792,7 +12792,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -12801,7 +12801,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get a Git hook
-        api_response = await api_instance.repo_get_git_hook(owner, repo, id)
+        api_response = api_instance.repo_get_git_hook(owner, repo, id)
         print("The response of RepositoryApi->repo_get_git_hook:\n")
         pprint(api_response)
     except Exception as e:
@@ -12916,7 +12916,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -12925,7 +12925,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get a hook
-        api_response = await api_instance.repo_get_hook(owner, repo, id)
+        api_response = api_instance.repo_get_hook(owner, repo, id)
         print("The response of RepositoryApi->repo_get_hook:\n")
         pprint(api_response)
     except Exception as e:
@@ -13040,7 +13040,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -13048,7 +13048,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Returns the issue config for a repo
-        api_response = await api_instance.repo_get_issue_config(owner, repo)
+        api_response = api_instance.repo_get_issue_config(owner, repo)
         print("The response of RepositoryApi->repo_get_issue_config:\n")
         pprint(api_response)
     except Exception as e:
@@ -13162,7 +13162,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -13170,7 +13170,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get available issue templates for a repository
-        api_response = await api_instance.repo_get_issue_templates(owner, repo)
+        api_response = api_instance.repo_get_issue_templates(owner, repo)
         print("The response of RepositoryApi->repo_get_issue_templates:\n")
         pprint(api_response)
     except Exception as e:
@@ -13284,7 +13284,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -13293,7 +13293,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get a repository's key by id
-        api_response = await api_instance.repo_get_key(owner, repo, id)
+        api_response = api_instance.repo_get_key(owner, repo, id)
         print("The response of RepositoryApi->repo_get_key:\n")
         pprint(api_response)
     except Exception as e:
@@ -13407,7 +13407,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -13415,7 +13415,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get languages and number of bytes of code written
-        api_response = await api_instance.repo_get_languages(owner, repo)
+        api_response = api_instance.repo_get_languages(owner, repo)
         print("The response of RepositoryApi->repo_get_languages:\n")
         pprint(api_response)
     except Exception as e:
@@ -13529,7 +13529,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -13537,7 +13537,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Gets the most recent non-prerelease, non-draft release of a repository, sorted by created_at
-        api_response = await api_instance.repo_get_latest_release(owner, repo)
+        api_response = api_instance.repo_get_latest_release(owner, repo)
         print("The response of RepositoryApi->repo_get_latest_release:\n")
         pprint(api_response)
     except Exception as e:
@@ -13650,7 +13650,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -13658,7 +13658,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get repo licenses
-        api_response = await api_instance.repo_get_licenses(owner, repo)
+        api_response = api_instance.repo_get_licenses(owner, repo)
         print("The response of RepositoryApi->repo_get_licenses:\n")
         pprint(api_response)
     except Exception as e:
@@ -13772,7 +13772,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -13783,7 +13783,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get a note corresponding to a single commit from a repository
-        api_response = await api_instance.repo_get_note(owner, repo, sha, verification=verification, files=files)
+        api_response = api_instance.repo_get_note(owner, repo, sha, verification=verification, files=files)
         print("The response of RepositoryApi->repo_get_note:\n")
         pprint(api_response)
     except Exception as e:
@@ -13901,7 +13901,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -13910,7 +13910,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get a pull request
-        api_response = await api_instance.repo_get_pull_request(owner, repo, index)
+        api_response = api_instance.repo_get_pull_request(owner, repo, index)
         print("The response of RepositoryApi->repo_get_pull_request:\n")
         pprint(api_response)
     except Exception as e:
@@ -14025,7 +14025,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -14035,7 +14035,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get a pull request by base and head
-        api_response = await api_instance.repo_get_pull_request_by_base_head(owner, repo, base, head)
+        api_response = api_instance.repo_get_pull_request_by_base_head(owner, repo, base, head)
         print("The response of RepositoryApi->repo_get_pull_request_by_base_head:\n")
         pprint(api_response)
     except Exception as e:
@@ -14151,7 +14151,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -14164,7 +14164,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get commits for a pull request
-        api_response = await api_instance.repo_get_pull_request_commits(owner, repo, index, page=page, limit=limit, verification=verification, files=files)
+        api_response = api_instance.repo_get_pull_request_commits(owner, repo, index, page=page, limit=limit, verification=verification, files=files)
         print("The response of RepositoryApi->repo_get_pull_request_commits:\n")
         pprint(api_response)
     except Exception as e:
@@ -14283,7 +14283,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -14296,7 +14296,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get changed files for a pull request
-        api_response = await api_instance.repo_get_pull_request_files(owner, repo, index, skip_to=skip_to, whitespace=whitespace, page=page, limit=limit)
+        api_response = api_instance.repo_get_pull_request_files(owner, repo, index, skip_to=skip_to, whitespace=whitespace, page=page, limit=limit)
         print("The response of RepositoryApi->repo_get_pull_request_files:\n")
         pprint(api_response)
     except Exception as e:
@@ -14415,7 +14415,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -14425,7 +14425,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get a specific review for a pull request
-        api_response = await api_instance.repo_get_pull_review(owner, repo, index, id)
+        api_response = api_instance.repo_get_pull_review(owner, repo, index, id)
         print("The response of RepositoryApi->repo_get_pull_review:\n")
         pprint(api_response)
     except Exception as e:
@@ -14541,7 +14541,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -14551,7 +14551,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get a specific review for a pull request
-        api_response = await api_instance.repo_get_pull_review_comments(owner, repo, index, id)
+        api_response = api_instance.repo_get_pull_review_comments(owner, repo, index, id)
         print("The response of RepositoryApi->repo_get_pull_review_comments:\n")
         pprint(api_response)
     except Exception as e:
@@ -14667,7 +14667,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -14676,7 +14676,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get push mirror of the repository by remoteName
-        api_response = await api_instance.repo_get_push_mirror_by_remote_name(owner, repo, name)
+        api_response = api_instance.repo_get_push_mirror_by_remote_name(owner, repo, name)
         print("The response of RepositoryApi->repo_get_push_mirror_by_remote_name:\n")
         pprint(api_response)
     except Exception as e:
@@ -14792,7 +14792,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -14802,7 +14802,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get a file from a repository
-        api_response = await api_instance.repo_get_raw_file(owner, repo, filepath, ref=ref)
+        api_response = api_instance.repo_get_raw_file(owner, repo, filepath, ref=ref)
         print("The response of RepositoryApi->repo_get_raw_file:\n")
         pprint(api_response)
     except Exception as e:
@@ -14917,7 +14917,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -14927,7 +14927,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get a file or it's LFS object from a repository
-        api_response = await api_instance.repo_get_raw_file_or_lfs(owner, repo, filepath, ref=ref)
+        api_response = api_instance.repo_get_raw_file_or_lfs(owner, repo, filepath, ref=ref)
         print("The response of RepositoryApi->repo_get_raw_file_or_lfs:\n")
         pprint(api_response)
     except Exception as e:
@@ -15043,7 +15043,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -15052,7 +15052,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get a release
-        api_response = await api_instance.repo_get_release(owner, repo, id)
+        api_response = api_instance.repo_get_release(owner, repo, id)
         print("The response of RepositoryApi->repo_get_release:\n")
         pprint(api_response)
     except Exception as e:
@@ -15167,7 +15167,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -15177,7 +15177,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get a release attachment
-        api_response = await api_instance.repo_get_release_attachment(owner, repo, id, attachment_id)
+        api_response = api_instance.repo_get_release_attachment(owner, repo, id, attachment_id)
         print("The response of RepositoryApi->repo_get_release_attachment:\n")
         pprint(api_response)
     except Exception as e:
@@ -15293,7 +15293,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -15302,7 +15302,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get a release by tag name
-        api_response = await api_instance.repo_get_release_by_tag(owner, repo, tag)
+        api_response = api_instance.repo_get_release_by_tag(owner, repo, tag)
         print("The response of RepositoryApi->repo_get_release_by_tag:\n")
         pprint(api_response)
     except Exception as e:
@@ -15417,7 +15417,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -15426,7 +15426,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get repository permissions for a user
-        api_response = await api_instance.repo_get_repo_permissions(owner, repo, collaborator)
+        api_response = api_instance.repo_get_repo_permissions(owner, repo, collaborator)
         print("The response of RepositoryApi->repo_get_repo_permissions:\n")
         pprint(api_response)
     except Exception as e:
@@ -15542,7 +15542,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -15550,7 +15550,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Return all users that can be requested to review in this repo
-        api_response = await api_instance.repo_get_reviewers(owner, repo)
+        api_response = api_instance.repo_get_reviewers(owner, repo)
         print("The response of RepositoryApi->repo_get_reviewers:\n")
         pprint(api_response)
     except Exception as e:
@@ -15663,7 +15663,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -15671,7 +15671,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get a repository's actions runner registration token
-        await api_instance.repo_get_runner_registration_token(owner, repo)
+        api_instance.repo_get_runner_registration_token(owner, repo)
     except Exception as e:
         print("Exception when calling RepositoryApi->repo_get_runner_registration_token: %s\n" % e)
 ```
@@ -15782,7 +15782,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -15794,7 +15794,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get a single commit from a repository
-        api_response = await api_instance.repo_get_single_commit(owner, repo, sha, stat=stat, verification=verification, files=files)
+        api_response = api_instance.repo_get_single_commit(owner, repo, sha, stat=stat, verification=verification, files=files)
         print("The response of RepositoryApi->repo_get_single_commit:\n")
         pprint(api_response)
     except Exception as e:
@@ -15913,7 +15913,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -15922,7 +15922,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get the tag of a repository by tag name
-        api_response = await api_instance.repo_get_tag(owner, repo, tag)
+        api_response = api_instance.repo_get_tag(owner, repo, tag)
         print("The response of RepositoryApi->repo_get_tag:\n")
         pprint(api_response)
     except Exception as e:
@@ -16037,7 +16037,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -16046,7 +16046,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get a specific tag protection for the repository
-        api_response = await api_instance.repo_get_tag_protection(owner, repo, id)
+        api_response = api_instance.repo_get_tag_protection(owner, repo, id)
         print("The response of RepositoryApi->repo_get_tag_protection:\n")
         pprint(api_response)
     except Exception as e:
@@ -16161,7 +16161,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -16170,7 +16170,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get a wiki page
-        api_response = await api_instance.repo_get_wiki_page(owner, repo, page_name)
+        api_response = api_instance.repo_get_wiki_page(owner, repo, page_name)
         print("The response of RepositoryApi->repo_get_wiki_page:\n")
         pprint(api_response)
     except Exception as e:
@@ -16285,7 +16285,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -16295,7 +16295,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get revisions of a wiki page
-        api_response = await api_instance.repo_get_wiki_page_revisions(owner, repo, page_name, page=page)
+        api_response = api_instance.repo_get_wiki_page_revisions(owner, repo, page_name, page=page)
         print("The response of RepositoryApi->repo_get_wiki_page_revisions:\n")
         pprint(api_response)
     except Exception as e:
@@ -16411,7 +16411,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -16421,7 +16421,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get all wiki pages
-        api_response = await api_instance.repo_get_wiki_pages(owner, repo, page=page, limit=limit)
+        api_response = api_instance.repo_get_wiki_pages(owner, repo, page=page, limit=limit)
         print("The response of RepositoryApi->repo_get_wiki_pages:\n")
         pprint(api_response)
     except Exception as e:
@@ -16537,7 +16537,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repository
@@ -16547,7 +16547,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List an repo's actions secrets
-        api_response = await api_instance.repo_list_actions_secrets(owner, repo, page=page, limit=limit)
+        api_response = api_instance.repo_list_actions_secrets(owner, repo, page=page, limit=limit)
         print("The response of RepositoryApi->repo_list_actions_secrets:\n")
         pprint(api_response)
     except Exception as e:
@@ -16663,7 +16663,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -16674,7 +16674,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List a repository's activity feeds
-        api_response = await api_instance.repo_list_activity_feeds(owner, repo, var_date=var_date, page=page, limit=limit)
+        api_response = api_instance.repo_list_activity_feeds(owner, repo, var_date=var_date, page=page, limit=limit)
         print("The response of RepositoryApi->repo_list_activity_feeds:\n")
         pprint(api_response)
     except Exception as e:
@@ -16791,7 +16791,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -16799,7 +16799,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get specified ref or filtered repository's refs
-        api_response = await api_instance.repo_list_all_git_refs(owner, repo)
+        api_response = api_instance.repo_list_all_git_refs(owner, repo)
         print("The response of RepositoryApi->repo_list_all_git_refs:\n")
         pprint(api_response)
     except Exception as e:
@@ -16913,7 +16913,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -16921,7 +16921,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List branch protections for a repository
-        api_response = await api_instance.repo_list_branch_protection(owner, repo)
+        api_response = api_instance.repo_list_branch_protection(owner, repo)
         print("The response of RepositoryApi->repo_list_branch_protection:\n")
         pprint(api_response)
     except Exception as e:
@@ -17034,7 +17034,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -17044,7 +17044,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List a repository's branches
-        api_response = await api_instance.repo_list_branches(owner, repo, page=page, limit=limit)
+        api_response = api_instance.repo_list_branches(owner, repo, page=page, limit=limit)
         print("The response of RepositoryApi->repo_list_branches:\n")
         pprint(api_response)
     except Exception as e:
@@ -17159,7 +17159,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -17169,7 +17169,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List a repository's collaborators
-        api_response = await api_instance.repo_list_collaborators(owner, repo, page=page, limit=limit)
+        api_response = api_instance.repo_list_collaborators(owner, repo, page=page, limit=limit)
         print("The response of RepositoryApi->repo_list_collaborators:\n")
         pprint(api_response)
     except Exception as e:
@@ -17285,7 +17285,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -17293,7 +17293,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List the Git hooks in a repository
-        api_response = await api_instance.repo_list_git_hooks(owner, repo)
+        api_response = api_instance.repo_list_git_hooks(owner, repo)
         print("The response of RepositoryApi->repo_list_git_hooks:\n")
         pprint(api_response)
     except Exception as e:
@@ -17407,7 +17407,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -17416,7 +17416,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get specified ref or filtered repository's refs
-        api_response = await api_instance.repo_list_git_refs(owner, repo, ref)
+        api_response = api_instance.repo_list_git_refs(owner, repo, ref)
         print("The response of RepositoryApi->repo_list_git_refs:\n")
         pprint(api_response)
     except Exception as e:
@@ -17531,7 +17531,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -17541,7 +17541,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List the hooks in a repository
-        api_response = await api_instance.repo_list_hooks(owner, repo, page=page, limit=limit)
+        api_response = api_instance.repo_list_hooks(owner, repo, page=page, limit=limit)
         print("The response of RepositoryApi->repo_list_hooks:\n")
         pprint(api_response)
     except Exception as e:
@@ -17657,7 +17657,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -17669,7 +17669,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List a repository's keys
-        api_response = await api_instance.repo_list_keys(owner, repo, key_id=key_id, fingerprint=fingerprint, page=page, limit=limit)
+        api_response = api_instance.repo_list_keys(owner, repo, key_id=key_id, fingerprint=fingerprint, page=page, limit=limit)
         print("The response of RepositoryApi->repo_list_keys:\n")
         pprint(api_response)
     except Exception as e:
@@ -17787,7 +17787,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -17795,7 +17795,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List a repo's pinned issues
-        api_response = await api_instance.repo_list_pinned_issues(owner, repo)
+        api_response = api_instance.repo_list_pinned_issues(owner, repo)
         print("The response of RepositoryApi->repo_list_pinned_issues:\n")
         pprint(api_response)
     except Exception as e:
@@ -17909,7 +17909,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -17917,7 +17917,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List a repo's pinned pull requests
-        api_response = await api_instance.repo_list_pinned_pull_requests(owner, repo)
+        api_response = api_instance.repo_list_pinned_pull_requests(owner, repo)
         print("The response of RepositoryApi->repo_list_pinned_pull_requests:\n")
         pprint(api_response)
     except Exception as e:
@@ -18031,7 +18031,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | Owner of the repo
@@ -18047,7 +18047,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List a repo's pull requests
-        api_response = await api_instance.repo_list_pull_requests(owner, repo, base_branch=base_branch, state=state, sort=sort, milestone=milestone, labels=labels, poster=poster, page=page, limit=limit)
+        api_response = api_instance.repo_list_pull_requests(owner, repo, base_branch=base_branch, state=state, sort=sort, milestone=milestone, labels=labels, poster=poster, page=page, limit=limit)
         print("The response of RepositoryApi->repo_list_pull_requests:\n")
         pprint(api_response)
     except Exception as e:
@@ -18170,7 +18170,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -18181,7 +18181,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List all reviews for a pull request
-        api_response = await api_instance.repo_list_pull_reviews(owner, repo, index, page=page, limit=limit)
+        api_response = api_instance.repo_list_pull_reviews(owner, repo, index, page=page, limit=limit)
         print("The response of RepositoryApi->repo_list_pull_reviews:\n")
         pprint(api_response)
     except Exception as e:
@@ -18298,7 +18298,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -18308,7 +18308,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get all push mirrors of the repository
-        api_response = await api_instance.repo_list_push_mirrors(owner, repo, page=page, limit=limit)
+        api_response = api_instance.repo_list_push_mirrors(owner, repo, page=page, limit=limit)
         print("The response of RepositoryApi->repo_list_push_mirrors:\n")
         pprint(api_response)
     except Exception as e:
@@ -18426,7 +18426,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -18435,7 +18435,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List release's attachments
-        api_response = await api_instance.repo_list_release_attachments(owner, repo, id)
+        api_response = api_instance.repo_list_release_attachments(owner, repo, id)
         print("The response of RepositoryApi->repo_list_release_attachments:\n")
         pprint(api_response)
     except Exception as e:
@@ -18550,7 +18550,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -18562,7 +18562,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List a repo's releases
-        api_response = await api_instance.repo_list_releases(owner, repo, draft=draft, pre_release=pre_release, page=page, limit=limit)
+        api_response = api_instance.repo_list_releases(owner, repo, draft=draft, pre_release=pre_release, page=page, limit=limit)
         print("The response of RepositoryApi->repo_list_releases:\n")
         pprint(api_response)
     except Exception as e:
@@ -18680,7 +18680,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -18690,7 +18690,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List a repo's stargazers
-        api_response = await api_instance.repo_list_stargazers(owner, repo, page=page, limit=limit)
+        api_response = api_instance.repo_list_stargazers(owner, repo, page=page, limit=limit)
         print("The response of RepositoryApi->repo_list_stargazers:\n")
         pprint(api_response)
     except Exception as e:
@@ -18807,7 +18807,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -18820,7 +18820,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get a commit's statuses
-        api_response = await api_instance.repo_list_statuses(owner, repo, sha, sort=sort, state=state, page=page, limit=limit)
+        api_response = api_instance.repo_list_statuses(owner, repo, sha, sort=sort, state=state, page=page, limit=limit)
         print("The response of RepositoryApi->repo_list_statuses:\n")
         pprint(api_response)
     except Exception as e:
@@ -18940,7 +18940,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -18953,7 +18953,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get a commit's statuses, by branch/tag/commit reference
-        api_response = await api_instance.repo_list_statuses_by_ref(owner, repo, ref, sort=sort, state=state, page=page, limit=limit)
+        api_response = api_instance.repo_list_statuses_by_ref(owner, repo, ref, sort=sort, state=state, page=page, limit=limit)
         print("The response of RepositoryApi->repo_list_statuses_by_ref:\n")
         pprint(api_response)
     except Exception as e:
@@ -19073,7 +19073,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -19083,7 +19083,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List a repo's watchers
-        api_response = await api_instance.repo_list_subscribers(owner, repo, page=page, limit=limit)
+        api_response = api_instance.repo_list_subscribers(owner, repo, page=page, limit=limit)
         print("The response of RepositoryApi->repo_list_subscribers:\n")
         pprint(api_response)
     except Exception as e:
@@ -19199,7 +19199,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -19207,7 +19207,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List tag protections for a repository
-        api_response = await api_instance.repo_list_tag_protection(owner, repo)
+        api_response = api_instance.repo_list_tag_protection(owner, repo)
         print("The response of RepositoryApi->repo_list_tag_protection:\n")
         pprint(api_response)
     except Exception as e:
@@ -19320,7 +19320,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -19330,7 +19330,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List a repository's tags
-        api_response = await api_instance.repo_list_tags(owner, repo, page=page, limit=limit)
+        api_response = api_instance.repo_list_tags(owner, repo, page=page, limit=limit)
         print("The response of RepositoryApi->repo_list_tags:\n")
         pprint(api_response)
     except Exception as e:
@@ -19446,7 +19446,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -19454,7 +19454,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List a repository's teams
-        api_response = await api_instance.repo_list_teams(owner, repo)
+        api_response = api_instance.repo_list_teams(owner, repo)
         print("The response of RepositoryApi->repo_list_teams:\n")
         pprint(api_response)
     except Exception as e:
@@ -19568,7 +19568,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -19578,7 +19578,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get list of topics that a repository has
-        api_response = await api_instance.repo_list_topics(owner, repo, page=page, limit=limit)
+        api_response = api_instance.repo_list_topics(owner, repo, page=page, limit=limit)
         print("The response of RepositoryApi->repo_list_topics:\n")
         pprint(api_response)
     except Exception as e:
@@ -19694,7 +19694,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -19704,7 +19704,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Merge a pull request
-        await api_instance.repo_merge_pull_request(owner, repo, index, body=body)
+        api_instance.repo_merge_pull_request(owner, repo, index, body=body)
     except Exception as e:
         print("Exception when calling RepositoryApi->repo_merge_pull_request: %s\n" % e)
 ```
@@ -19822,7 +19822,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -19831,7 +19831,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Merge a branch from upstream
-        api_response = await api_instance.repo_merge_upstream(owner, repo, body=body)
+        api_response = api_instance.repo_merge_upstream(owner, repo, body=body)
         print("The response of RepositoryApi->repo_merge_upstream:\n")
         pprint(api_response)
     except Exception as e:
@@ -19948,14 +19948,14 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     body = gitea_api.MigrateRepoOptions() # MigrateRepoOptions |  (optional)
 
     try:
         # Migrate a remote git repository
-        api_response = await api_instance.repo_migrate(body=body)
+        api_response = api_instance.repo_migrate(body=body)
         print("The response of RepositoryApi->repo_migrate:\n")
         pprint(api_response)
     except Exception as e:
@@ -20069,7 +20069,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo to sync
@@ -20077,7 +20077,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Sync a mirrored repository
-        await api_instance.repo_mirror_sync(owner, repo)
+        api_instance.repo_mirror_sync(owner, repo)
     except Exception as e:
         print("Exception when calling RepositoryApi->repo_mirror_sync: %s\n" % e)
 ```
@@ -20190,7 +20190,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -20198,7 +20198,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Returns if new Issue Pins are allowed
-        api_response = await api_instance.repo_new_pin_allowed(owner, repo)
+        api_response = api_instance.repo_new_pin_allowed(owner, repo)
         print("The response of RepositoryApi->repo_new_pin_allowed:\n")
         pprint(api_response)
     except Exception as e:
@@ -20311,7 +20311,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -20320,7 +20320,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Check if a pull request has been merged
-        await api_instance.repo_pull_request_is_merged(owner, repo, index)
+        api_instance.repo_pull_request_is_merged(owner, repo, index)
     except Exception as e:
         print("Exception when calling RepositoryApi->repo_pull_request_is_merged: %s\n" % e)
 ```
@@ -20432,7 +20432,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo to sync
@@ -20440,7 +20440,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Sync all push mirrored repository
-        await api_instance.repo_push_mirror_sync(owner, repo)
+        api_instance.repo_push_mirror_sync(owner, repo)
     except Exception as e:
         print("Exception when calling RepositoryApi->repo_push_mirror_sync: %s\n" % e)
 ```
@@ -20554,7 +20554,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     q = 'q_example' # str | keyword (optional)
@@ -20577,7 +20577,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Search for repositories
-        api_response = await api_instance.repo_search(q=q, topic=topic, include_desc=include_desc, uid=uid, priority_owner_id=priority_owner_id, team_id=team_id, starred_by=starred_by, private=private, is_private=is_private, template=template, archived=archived, mode=mode, exclusive=exclusive, sort=sort, order=order, page=page, limit=limit)
+        api_response = api_instance.repo_search(q=q, topic=topic, include_desc=include_desc, uid=uid, priority_owner_id=priority_owner_id, team_id=team_id, starred_by=starred_by, private=private, is_private=is_private, template=template, archived=archived, mode=mode, exclusive=exclusive, sort=sort, order=order, page=page, limit=limit)
         print("The response of RepositoryApi->repo_search:\n")
         pprint(api_response)
     except Exception as e:
@@ -20705,7 +20705,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -20713,7 +20713,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Get signing-key.gpg for given repository
-        api_response = await api_instance.repo_signing_key(owner, repo)
+        api_response = api_instance.repo_signing_key(owner, repo)
         print("The response of RepositoryApi->repo_signing_key:\n")
         pprint(api_response)
     except Exception as e:
@@ -20827,7 +20827,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -20838,7 +20838,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Submit a pending review to an pull request
-        api_response = await api_instance.repo_submit_pull_review(owner, repo, index, id, body)
+        api_response = api_instance.repo_submit_pull_review(owner, repo, index, id, body)
         print("The response of RepositoryApi->repo_submit_pull_review:\n")
         pprint(api_response)
     except Exception as e:
@@ -20955,7 +20955,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -20965,7 +20965,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Test a push webhook
-        await api_instance.repo_test_hook(owner, repo, id, ref=ref)
+        api_instance.repo_test_hook(owner, repo, id, ref=ref)
     except Exception as e:
         print("Exception when calling RepositoryApi->repo_test_hook: %s\n" % e)
 ```
@@ -21079,7 +21079,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -21092,7 +21092,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List a repo's tracked times
-        api_response = await api_instance.repo_tracked_times(owner, repo, user=user, since=since, before=before, page=page, limit=limit)
+        api_response = api_instance.repo_tracked_times(owner, repo, user=user, since=since, before=before, page=page, limit=limit)
         print("The response of RepositoryApi->repo_tracked_times:\n")
         pprint(api_response)
     except Exception as e:
@@ -21214,7 +21214,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo to transfer
@@ -21223,7 +21223,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Transfer a repo ownership
-        api_response = await api_instance.repo_transfer(owner, repo, body)
+        api_response = api_instance.repo_transfer(owner, repo, body)
         print("The response of RepositoryApi->repo_transfer:\n")
         pprint(api_response)
     except Exception as e:
@@ -21340,7 +21340,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -21350,7 +21350,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Cancel to dismiss a review for a pull request
-        api_response = await api_instance.repo_un_dismiss_pull_review(owner, repo, index, id)
+        api_response = api_instance.repo_un_dismiss_pull_review(owner, repo, index, id)
         print("The response of RepositoryApi->repo_un_dismiss_pull_review:\n")
         pprint(api_response)
     except Exception as e:
@@ -21468,7 +21468,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -21477,7 +21477,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Update avatar
-        await api_instance.repo_update_avatar(owner, repo, body=body)
+        api_instance.repo_update_avatar(owner, repo, body=body)
     except Exception as e:
         print("Exception when calling RepositoryApi->repo_update_avatar: %s\n" % e)
 ```
@@ -21590,7 +21590,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -21600,7 +21600,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Update a branch
-        await api_instance.repo_update_branch(owner, repo, branch, body=body)
+        api_instance.repo_update_branch(owner, repo, branch, body=body)
     except Exception as e:
         print("Exception when calling RepositoryApi->repo_update_branch: %s\n" % e)
 ```
@@ -21716,7 +21716,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -21725,7 +21725,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Update the priorities of branch protections for a repository.
-        await api_instance.repo_update_branch_protection_priories(owner, repo, body=body)
+        api_instance.repo_update_branch_protection_priories(owner, repo, body=body)
     except Exception as e:
         print("Exception when calling RepositoryApi->repo_update_branch_protection_priories: %s\n" % e)
 ```
@@ -21841,7 +21841,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -21851,7 +21851,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Update a file in a repository
-        api_response = await api_instance.repo_update_file(owner, repo, filepath, body)
+        api_response = api_instance.repo_update_file(owner, repo, filepath, body)
         print("The response of RepositoryApi->repo_update_file:\n")
         pprint(api_response)
     except Exception as e:
@@ -21969,7 +21969,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -21979,7 +21979,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Merge PR's baseBranch into headBranch
-        await api_instance.repo_update_pull_request(owner, repo, index, style=style)
+        api_instance.repo_update_pull_request(owner, repo, index, style=style)
     except Exception as e:
         print("Exception when calling RepositoryApi->repo_update_pull_request: %s\n" % e)
 ```
@@ -22096,7 +22096,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -22105,7 +22105,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Replace list of topics for a repository
-        await api_instance.repo_update_topics(owner, repo, body=body)
+        api_instance.repo_update_topics(owner, repo, body=body)
     except Exception as e:
         print("Exception when calling RepositoryApi->repo_update_topics: %s\n" % e)
 ```
@@ -22219,7 +22219,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -22227,7 +22227,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Returns the validation information for a issue config
-        api_response = await api_instance.repo_validate_issue_config(owner, repo)
+        api_response = api_instance.repo_validate_issue_config(owner, repo)
         print("The response of RepositoryApi->repo_validate_issue_config:\n")
         pprint(api_response)
     except Exception as e:
@@ -22341,7 +22341,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     q = 'q_example' # str | keywords to search
@@ -22350,7 +22350,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # search topics via keyword
-        api_response = await api_instance.topic_search(q, page=page, limit=limit)
+        api_response = api_instance.topic_search(q, page=page, limit=limit)
         print("The response of RepositoryApi->topic_search:\n")
         pprint(api_response)
     except Exception as e:
@@ -22466,7 +22466,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repository
@@ -22476,7 +22476,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Create or Update a secret value in a repository
-        await api_instance.update_repo_secret(owner, repo, secretname, body=body)
+        api_instance.update_repo_secret(owner, repo, secretname, body=body)
     except Exception as e:
         print("Exception when calling RepositoryApi->update_repo_secret: %s\n" % e)
 ```
@@ -22592,7 +22592,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | name of the owner
@@ -22602,7 +22602,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Update a repo-level variable
-        await api_instance.update_repo_variable(owner, repo, variablename, body=body)
+        api_instance.update_repo_variable(owner, repo, variablename, body=body)
     except Exception as e:
         print("Exception when calling RepositoryApi->update_repo_variable: %s\n" % e)
 ```
@@ -22718,7 +22718,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -22726,7 +22726,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Check if the current user is watching a repo
-        api_response = await api_instance.user_current_check_subscription(owner, repo)
+        api_response = api_instance.user_current_check_subscription(owner, repo)
         print("The response of RepositoryApi->user_current_check_subscription:\n")
         pprint(api_response)
     except Exception as e:
@@ -22839,7 +22839,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -22847,7 +22847,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Unwatch a repo
-        await api_instance.user_current_delete_subscription(owner, repo)
+        api_instance.user_current_delete_subscription(owner, repo)
     except Exception as e:
         print("Exception when calling RepositoryApi->user_current_delete_subscription: %s\n" % e)
 ```
@@ -22959,7 +22959,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -22967,7 +22967,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # Watch a repo
-        api_response = await api_instance.user_current_put_subscription(owner, repo)
+        api_response = api_instance.user_current_put_subscription(owner, repo)
         print("The response of RepositoryApi->user_current_put_subscription:\n")
         pprint(api_response)
     except Exception as e:
@@ -23082,7 +23082,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['Token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-async with gitea_api.ApiClient(configuration) as api_client:
+with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
@@ -23091,7 +23091,7 @@ async with gitea_api.ApiClient(configuration) as api_client:
 
     try:
         # List a user's tracked times in a repo
-        api_response = await api_instance.user_tracked_times(owner, repo, user)
+        api_response = api_instance.user_tracked_times(owner, repo, user)
         print("The response of RepositoryApi->user_tracked_times:\n")
         pprint(api_response)
     except Exception as e:
