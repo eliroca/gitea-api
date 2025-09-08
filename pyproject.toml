@@ -1,6 +1,6 @@
 [project]
 name = "gitea_api"
-version = "1.24.3"
+version = "1.24.5"
 description = "Gitea API"
 authors = [
   {name = "OpenAPI Generator Community",email = "team@openapitools.org"},
@@ -14,7 +14,7 @@ dependencies = [
   "urllib3 (>=2.1.0,<3.0.0)",
   "python-dateutil (>=2.8.2)",
   "pydantic (>=2)",
-  "typing-extensions (>=4.7.1)"
+  "typing-extensions (>=4.7.1)",
 ]
 
 [project.urls]
