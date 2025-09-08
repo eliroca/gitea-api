@@ -29489,7 +29489,7 @@ class RepositoryApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ContentsResponse:
+    ) -> List[ContentsResponse]:
         """Gets the metadata and contents (if a file) of an entry in a repository, or a list of entries if a dir
 
 
@@ -29535,7 +29535,7 @@ class RepositoryApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ContentsResponse",
+            '200': "List[ContentsResponse]",
             '404': None,
         }
         response_data = self.api_client.call_api(
@@ -29568,7 +29568,7 @@ class RepositoryApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ContentsResponse]:
+    ) -> ApiResponse[List[ContentsResponse]]:
         """Gets the metadata and contents (if a file) of an entry in a repository, or a list of entries if a dir
 
 
@@ -29614,7 +29614,7 @@ class RepositoryApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ContentsResponse",
+            '200': "List[ContentsResponse]",
             '404': None,
         }
         response_data = self.api_client.call_api(
@@ -29693,7 +29693,7 @@ class RepositoryApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ContentsResponse",
+            '200': "List[ContentsResponse]",
             '404': None,
         }
         response_data = self.api_client.call_api(
