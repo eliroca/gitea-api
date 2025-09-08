@@ -12088,7 +12088,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **repo_get_contents**
-> ContentsResponse repo_get_contents(owner, repo, filepath, ref=ref)
+> List[ContentsResponse] repo_get_contents(owner, repo, filepath, ref=ref)
 
 Gets the metadata and contents (if a file) of an entry in a repository, or a list of entries if a dir
 
@@ -12193,7 +12193,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ContentsResponse**](ContentsResponse.md)
+[**List[ContentsResponse]**](ContentsResponse.md)
 
 ### Authorization
 
@@ -12208,7 +12208,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | ContentsResponse |  -  |
+**200** | A list of directory entries |  -  |
 **404** | APINotFound is a not found empty response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
