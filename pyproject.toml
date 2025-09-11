@@ -1,11 +1,11 @@
 [project]
 name = "gitea_api"
-version = "1.24.5"
+version = "1.24.6"
 description = "Gitea API"
 authors = [
   {name = "OpenAPI Generator Community",email = "team@openapitools.org"},
 ]
-license = "MIT"
+license = { text = "MIT" }
 readme = "README.md"
 keywords = ["OpenAPI", "OpenAPI-Generator", "Gitea API"]
 requires-python = ">=3.9"
