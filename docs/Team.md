@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **permission** | **str** |  | [optional] 
 **units** | **List[str]** |  | [optional] 
 **units_map** | **Dict[str, str]** |  | [optional] 
+**visibility** | **str** | Team visibility within the organization. \&quot;private\&quot; teams are only listable by members and org owners; \&quot;limited\&quot; teams are listable by any organization member; \&quot;public\&quot; teams are listable by any signed-in user. public TeamVisibilityPublic limited TeamVisibilityLimited private TeamVisibilityPrivate | [optional] 
 
 ## Example
 

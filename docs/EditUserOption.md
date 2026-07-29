@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **prohibit_login** | **bool** | Whether the user is prohibited from logging in | [optional] 
 **restricted** | **bool** | Whether the user has restricted access privileges | [optional] 
 **source_id** | **int** |  | 
-**visibility** | **str** | User visibility level: public, limited, or private | [optional] 
+**visibility** | **str** | User visibility level: public, limited, or private public UserVisibilityPublic limited UserVisibilityLimited private UserVisibilityPrivate | [optional] 
 **website** | **str** | The user&#39;s personal website URL | [optional] 
 
 ## Example

@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **restricted** | **bool** | Is user restricted | [optional] 
 **source_id** | **int** | The ID of the user&#39;s Authentication Source | [optional] 
 **starred_repos_count** | **int** |  | [optional] 
-**visibility** | **str** | User visibility level option: public, limited, private | [optional] 
+**visibility** | **str** | User visibility level option: public, limited, private public UserVisibilityPublic limited UserVisibilityLimited private UserVisibilityPrivate | [optional] 
 **website** | **str** | the user&#39;s website | [optional] 
 
 ## Example

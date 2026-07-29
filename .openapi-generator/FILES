@@ -22,8 +22,6 @@ docs/ActionWorkflowRun.md
 docs/ActionWorkflowRunsResponse.md
 docs/ActionWorkflowStep.md
 docs/Activity.md
-docs/ActivityPub.md
-docs/ActivitypubApi.md
 docs/AddCollaboratorOption.md
 docs/AddTimeOption.md
 docs/AdminApi.md
@@ -68,6 +66,7 @@ docs/CreateOrUpdateSecretOption.md
 docs/CreateOrgOption.md
 docs/CreatePullRequestOption.md
 docs/CreatePullReviewComment.md
+docs/CreatePullReviewCommentReplyOptions.md
 docs/CreatePullReviewOptions.md
 docs/CreatePushMirrorOption.md
 docs/CreateReleaseOption.md
@@ -80,10 +79,12 @@ docs/CreateUserOption.md
 docs/CreateVariableOption.md
 docs/CreateWikiPageOptions.md
 docs/Cron.md
+docs/CurrentAccessToken.md
 docs/DeleteEmailOption.md
 docs/DeleteFileOptions.md
 docs/DeployKey.md
 docs/DismissPullReviewOptions.md
+docs/EditActionRunnerOption.md
 docs/EditAttachmentOptions.md
 docs/EditBranchProtectionOption.md
 docs/EditDeadlineOption.md
@@ -128,6 +129,7 @@ docs/Identity.md
 docs/InternalTracker.md
 docs/Issue.md
 docs/IssueApi.md
+docs/IssueAssigneesOption.md
 docs/IssueConfig.md
 docs/IssueConfigContactLink.md
 docs/IssueConfigValidation.md
@@ -172,9 +174,13 @@ docs/PayloadCommit.md
 docs/PayloadCommitVerification.md
 docs/PayloadUser.md
 docs/Permission.md
+docs/Project.md
 docs/PublicKey.md
 docs/PullRequest.md
 docs/PullRequestMeta.md
+docs/PullRequestMinimal.md
+docs/PullRequestMinimalHead.md
+docs/PullRequestMinimalHeadRepo.md
 docs/PullReview.md
 docs/PullReviewComment.md
 docs/PullReviewRequestOptions.md
@@ -185,6 +191,7 @@ docs/Release.md
 docs/RenameBranchRepoOption.md
 docs/RenameOrgOption.md
 docs/RenameUserOption.md
+docs/ReparentRepoOption.md
 docs/RepoCollaboratorPermission.md
 docs/RepoCommit.md
 docs/RepoCreateReleaseAttachmentRequest.md
@@ -193,6 +200,7 @@ docs/RepoTransfer.md
 docs/Repository.md
 docs/RepositoryApi.md
 docs/RepositoryMeta.md
+docs/RunDetails.md
 docs/SearchResults.md
 docs/Secret.md
 docs/ServerVersion.md
@@ -204,11 +212,13 @@ docs/TagProtection.md
 docs/Team.md
 docs/TeamSearch200Response.md
 docs/TimelineComment.md
+docs/TopicListResponse.md
 docs/TopicName.md
 docs/TopicResponse.md
 docs/TrackedTime.md
 docs/TransferRepoOption.md
 docs/UpdateBranchProtectionPriories.md
+docs/UpdateBranchRepoOption.md
 docs/UpdateFileOptions.md
 docs/UpdateRepoAvatarOption.md
 docs/UpdateUserAvatarOption.md
@@ -217,6 +227,7 @@ docs/User.md
 docs/UserApi.md
 docs/UserBadgeOption.md
 docs/UserHeatmapData.md
+docs/UserMeta.md
 docs/UserSearch200Response.md
 docs/UserSettings.md
 docs/UserSettingsOptions.md
@@ -228,7 +239,6 @@ docs/WikiPageMetaData.md
 git_push.sh
 gitea_api/__init__.py
 gitea_api/api/__init__.py
-gitea_api/api/activitypub_api.py
 gitea_api/api/admin_api.py
 gitea_api/api/issue_api.py
 gitea_api/api/miscellaneous_api.py
@@ -260,7 +270,6 @@ gitea_api/models/action_workflow_run.py
 gitea_api/models/action_workflow_runs_response.py
 gitea_api/models/action_workflow_step.py
 gitea_api/models/activity.py
-gitea_api/models/activity_pub.py
 gitea_api/models/add_collaborator_option.py
 gitea_api/models/add_time_option.py
 gitea_api/models/annotated_tag.py
@@ -305,6 +314,7 @@ gitea_api/models/create_or_update_secret_option.py
 gitea_api/models/create_org_option.py
 gitea_api/models/create_pull_request_option.py
 gitea_api/models/create_pull_review_comment.py
+gitea_api/models/create_pull_review_comment_reply_options.py
 gitea_api/models/create_pull_review_options.py
 gitea_api/models/create_push_mirror_option.py
 gitea_api/models/create_release_option.py
@@ -317,10 +327,12 @@ gitea_api/models/create_user_option.py
 gitea_api/models/create_variable_option.py
 gitea_api/models/create_wiki_page_options.py
 gitea_api/models/cron.py
+gitea_api/models/current_access_token.py
 gitea_api/models/delete_email_option.py
 gitea_api/models/delete_file_options.py
 gitea_api/models/deploy_key.py
 gitea_api/models/dismiss_pull_review_options.py
+gitea_api/models/edit_action_runner_option.py
 gitea_api/models/edit_attachment_options.py
 gitea_api/models/edit_branch_protection_option.py
 gitea_api/models/edit_deadline_option.py
@@ -364,6 +376,7 @@ gitea_api/models/hook.py
 gitea_api/models/identity.py
 gitea_api/models/internal_tracker.py
 gitea_api/models/issue.py
+gitea_api/models/issue_assignees_option.py
 gitea_api/models/issue_config.py
 gitea_api/models/issue_config_contact_link.py
 gitea_api/models/issue_config_validation.py
@@ -404,9 +417,13 @@ gitea_api/models/payload_commit_verification.py
 gitea_api/models/payload_user.py
 gitea_api/models/permission.py
 gitea_api/models/pr_branch_info.py
+gitea_api/models/project.py
 gitea_api/models/public_key.py
 gitea_api/models/pull_request.py
 gitea_api/models/pull_request_meta.py
+gitea_api/models/pull_request_minimal.py
+gitea_api/models/pull_request_minimal_head.py
+gitea_api/models/pull_request_minimal_head_repo.py
 gitea_api/models/pull_review.py
 gitea_api/models/pull_review_comment.py
 gitea_api/models/pull_review_request_options.py
@@ -417,6 +434,7 @@ gitea_api/models/release.py
 gitea_api/models/rename_branch_repo_option.py
 gitea_api/models/rename_org_option.py
 gitea_api/models/rename_user_option.py
+gitea_api/models/reparent_repo_option.py
 gitea_api/models/repo_collaborator_permission.py
 gitea_api/models/repo_commit.py
 gitea_api/models/repo_create_release_attachment_request.py
@@ -424,6 +442,7 @@ gitea_api/models/repo_topic_options.py
 gitea_api/models/repo_transfer.py
 gitea_api/models/repository.py
 gitea_api/models/repository_meta.py
+gitea_api/models/run_details.py
 gitea_api/models/search_results.py
 gitea_api/models/secret.py
 gitea_api/models/server_version.py
@@ -434,11 +453,13 @@ gitea_api/models/tag_protection.py
 gitea_api/models/team.py
 gitea_api/models/team_search200_response.py
 gitea_api/models/timeline_comment.py
+gitea_api/models/topic_list_response.py
 gitea_api/models/topic_name.py
 gitea_api/models/topic_response.py
 gitea_api/models/tracked_time.py
 gitea_api/models/transfer_repo_option.py
 gitea_api/models/update_branch_protection_priories.py
+gitea_api/models/update_branch_repo_option.py
 gitea_api/models/update_file_options.py
 gitea_api/models/update_repo_avatar_option.py
 gitea_api/models/update_user_avatar_option.py
@@ -446,6 +467,7 @@ gitea_api/models/update_variable_option.py
 gitea_api/models/user.py
 gitea_api/models/user_badge_option.py
 gitea_api/models/user_heatmap_data.py
+gitea_api/models/user_meta.py
 gitea_api/models/user_search200_response.py
 gitea_api/models/user_settings.py
 gitea_api/models/user_settings_options.py
@@ -479,8 +501,6 @@ test/test_action_workflow_run.py
 test/test_action_workflow_runs_response.py
 test/test_action_workflow_step.py
 test/test_activity.py
-test/test_activity_pub.py
-test/test_activitypub_api.py
 test/test_add_collaborator_option.py
 test/test_add_time_option.py
 test/test_admin_api.py
@@ -526,6 +546,7 @@ test/test_create_or_update_secret_option.py
 test/test_create_org_option.py
 test/test_create_pull_request_option.py
 test/test_create_pull_review_comment.py
+test/test_create_pull_review_comment_reply_options.py
 test/test_create_pull_review_options.py
 test/test_create_push_mirror_option.py
 test/test_create_release_option.py
@@ -538,10 +559,12 @@ test/test_create_user_option.py
 test/test_create_variable_option.py
 test/test_create_wiki_page_options.py
 test/test_cron.py
+test/test_current_access_token.py
 test/test_delete_email_option.py
 test/test_delete_file_options.py
 test/test_deploy_key.py
 test/test_dismiss_pull_review_options.py
+test/test_edit_action_runner_option.py
 test/test_edit_attachment_options.py
 test/test_edit_branch_protection_option.py
 test/test_edit_deadline_option.py
@@ -586,6 +609,7 @@ test/test_identity.py
 test/test_internal_tracker.py
 test/test_issue.py
 test/test_issue_api.py
+test/test_issue_assignees_option.py
 test/test_issue_config.py
 test/test_issue_config_contact_link.py
 test/test_issue_config_validation.py
@@ -630,9 +654,13 @@ test/test_payload_commit_verification.py
 test/test_payload_user.py
 test/test_permission.py
 test/test_pr_branch_info.py
+test/test_project.py
 test/test_public_key.py
 test/test_pull_request.py
 test/test_pull_request_meta.py
+test/test_pull_request_minimal.py
+test/test_pull_request_minimal_head.py
+test/test_pull_request_minimal_head_repo.py
 test/test_pull_review.py
 test/test_pull_review_comment.py
 test/test_pull_review_request_options.py
@@ -643,6 +671,7 @@ test/test_release.py
 test/test_rename_branch_repo_option.py
 test/test_rename_org_option.py
 test/test_rename_user_option.py
+test/test_reparent_repo_option.py
 test/test_repo_collaborator_permission.py
 test/test_repo_commit.py
 test/test_repo_create_release_attachment_request.py
@@ -651,6 +680,7 @@ test/test_repo_transfer.py
 test/test_repository.py
 test/test_repository_api.py
 test/test_repository_meta.py
+test/test_run_details.py
 test/test_search_results.py
 test/test_secret.py
 test/test_server_version.py
@@ -662,11 +692,13 @@ test/test_tag_protection.py
 test/test_team.py
 test/test_team_search200_response.py
 test/test_timeline_comment.py
+test/test_topic_list_response.py
 test/test_topic_name.py
 test/test_topic_response.py
 test/test_tracked_time.py
 test/test_transfer_repo_option.py
 test/test_update_branch_protection_priories.py
+test/test_update_branch_repo_option.py
 test/test_update_file_options.py
 test/test_update_repo_avatar_option.py
 test/test_update_user_avatar_option.py
@@ -675,6 +707,7 @@ test/test_user.py
 test/test_user_api.py
 test/test_user_badge_option.py
 test/test_user_heatmap_data.py
+test/test_user_meta.py
 test/test_user_search200_response.py
 test/test_user_settings.py
 test/test_user_settings_options.py

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **commit_url** | **str** | CommitURL is the API URL for the commit | [optional] 
 **repository** | [**Repository**](Repository.md) |  | [optional] 
 **sha** | **str** | SHA is the commit SHA this status applies to | [optional] 
-**state** | **str** | State is the overall combined status state pending CommitStatusPending  CommitStatusPending is for when the CommitStatus is Pending success CommitStatusSuccess  CommitStatusSuccess is for when the CommitStatus is Success error CommitStatusError  CommitStatusError is for when the CommitStatus is Error failure CommitStatusFailure  CommitStatusFailure is for when the CommitStatus is Failure warning CommitStatusWarning  CommitStatusWarning is for when the CommitStatus is Warning skipped CommitStatusSkipped  CommitStatusSkipped is for when CommitStatus is Skipped | [optional] 
+**state** | **str** | State is the overall combined status state pending CommitStatusPending is for when the CommitStatus is Pending success CommitStatusSuccess is for when the CommitStatus is Success error CommitStatusError is for when the CommitStatus is Error failure CommitStatusFailure is for when the CommitStatus is Failure warning CommitStatusWarning is for when the CommitStatus is Warning skipped CommitStatusSkipped is for when CommitStatus is Skipped | [optional] 
 **statuses** | [**List[CommitStatus]**](CommitStatus.md) | Statuses contains all individual commit statuses | [optional] 
 **total_count** | **int** | TotalCount is the total number of statuses | [optional] 
 **url** | **str** | URL is the API URL for this combined status | [optional] 

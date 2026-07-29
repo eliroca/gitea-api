@@ -6,7 +6,7 @@ RepoCollaboratorPermission to get repository permission for a collaborator
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**permission** | **str** | Permission level of the collaborator | [optional] 
+**permission** | **str** | Permission level of the collaborator none AccessLevelNameNone read AccessLevelNameRead write AccessLevelNameWrite admin AccessLevelNameAdmin owner AccessLevelNameOwner | [optional] 
 **role_name** | **str** | RoleName is the name of the permission role | [optional] 
 **user** | [**User**](User.md) |  | [optional] 
 

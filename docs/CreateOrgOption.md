@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **location** | **str** | The location of the organization | [optional] 
 **repo_admin_change_team_access** | **bool** | Whether repository administrators can change team access | [optional] 
 **username** | **str** | username of the organization | 
-**visibility** | **str** | possible values are &#x60;public&#x60; (default), &#x60;limited&#x60; or &#x60;private&#x60; | [optional] 
+**visibility** | **str** | possible values are &#x60;public&#x60; (default), &#x60;limited&#x60; or &#x60;private&#x60; public UserVisibilityPublic limited UserVisibilityLimited private UserVisibilityPrivate | [optional] 
 **website** | **str** | The website URL of the organization | [optional] 
 
 ## Example

@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **send_notify** | **bool** | Whether to send welcome notification email to the user | [optional] 
 **source_id** | **int** | The authentication source ID to associate with the user | [optional] 
 **username** | **str** | username of the user | 
-**visibility** | **str** | User visibility level: public, limited, or private | [optional] 
+**visibility** | **str** | User visibility level: public, limited, or private public UserVisibilityPublic limited UserVisibilityLimited private UserVisibilityPrivate | [optional] 
 
 ## Example
 

@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **due_date** | **datetime** |  | [optional] 
 **labels** | **List[int]** | list of label ids | [optional] 
 **milestone** | **int** | milestone id | [optional] 
+**projects** | **List[int]** | list of project ids | [optional] 
 **ref** | **str** |  | [optional] 
 **title** | **str** |  | 
 

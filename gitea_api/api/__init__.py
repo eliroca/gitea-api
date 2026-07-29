@@ -1,7 +1,6 @@
 # flake8: noqa
 
 # import apis into api package
-from gitea_api.api.activitypub_api import ActivitypubApi
 from gitea_api.api.admin_api import AdminApi
 from gitea_api.api.issue_api import IssueApi
 from gitea_api.api.miscellaneous_api import MiscellaneousApi

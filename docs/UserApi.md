@@ -6,10 +6,10 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_current_user_repo**](UserApi.md#create_current_user_repo) | **POST** /user/repos | Create a repository
 [**create_user_variable**](UserApi.md#create_user_variable) | **POST** /user/actions/variables/{variablename} | Create a user-level variable
-[**delete_user_runner**](UserApi.md#delete_user_runner) | **DELETE** /user/actions/runners/{runner_id} | Delete an user-level runner
+[**delete_user_runner**](UserApi.md#delete_user_runner) | **DELETE** /user/actions/runners/{runner_id} | Delete a user-level runner
 [**delete_user_secret**](UserApi.md#delete_user_secret) | **DELETE** /user/actions/secrets/{secretname} | Delete a secret in a user scope
 [**delete_user_variable**](UserApi.md#delete_user_variable) | **DELETE** /user/actions/variables/{variablename} | Delete a user-level variable which is created by current doer
-[**get_user_runner**](UserApi.md#get_user_runner) | **GET** /user/actions/runners/{runner_id} | Get an user-level runner
+[**get_user_runner**](UserApi.md#get_user_runner) | **GET** /user/actions/runners/{runner_id} | Get a user-level runner
 [**get_user_runners**](UserApi.md#get_user_runners) | **GET** /user/actions/runners | Get user-level runners
 [**get_user_settings**](UserApi.md#get_user_settings) | **GET** /user/settings | Get user settings
 [**get_user_variable**](UserApi.md#get_user_variable) | **GET** /user/actions/variables/{variablename} | Get a user-level variable which is created by current doer
@@ -17,6 +17,7 @@ Method | HTTP request | Description
 [**get_user_workflow_jobs**](UserApi.md#get_user_workflow_jobs) | **GET** /user/actions/jobs | Get workflow jobs
 [**get_user_workflow_runs**](UserApi.md#get_user_workflow_runs) | **GET** /user/actions/runs | Get workflow runs
 [**get_verification_token**](UserApi.md#get_verification_token) | **GET** /user/gpg_key_token | Get a Token to verify
+[**update_user_runner**](UserApi.md#update_user_runner) | **PATCH** /user/actions/runners/{runner_id} | Update a user-level runner
 [**update_user_secret**](UserApi.md#update_user_secret) | **PUT** /user/actions/secrets/{secretname} | Create or Update a secret value in a user scope
 [**update_user_settings**](UserApi.md#update_user_settings) | **PATCH** /user/settings | Update user settings
 [**update_user_variable**](UserApi.md#update_user_variable) | **PUT** /user/actions/variables/{variablename} | Update a user-level variable which is created by current doer
@@ -26,7 +27,7 @@ Method | HTTP request | Description
 [**user_check_user_block**](UserApi.md#user_check_user_block) | **GET** /user/blocks/{username} | Check if a user is blocked by the authenticated user
 [**user_create_hook**](UserApi.md#user_create_hook) | **POST** /user/hooks | Create a hook
 [**user_create_o_auth2_application**](UserApi.md#user_create_o_auth2_application) | **POST** /user/applications/oauth2 | creates a new OAuth2 application
-[**user_create_runner_registration_token**](UserApi.md#user_create_runner_registration_token) | **POST** /user/actions/runners/registration-token | Get an user&#39;s actions runner registration token
+[**user_create_runner_registration_token**](UserApi.md#user_create_runner_registration_token) | **POST** /user/actions/runners/registration-token | Get a user&#39;s actions runner registration token
 [**user_create_token**](UserApi.md#user_create_token) | **POST** /users/{username}/tokens | Create an access token
 [**user_current_check_following**](UserApi.md#user_current_check_following) | **GET** /user/following/{username} | Check whether a user is followed by the authenticated user
 [**user_current_check_starring**](UserApi.md#user_current_check_starring) | **GET** /user/starred/{owner}/{repo} | Whether the authenticated is starring the repo
@@ -60,7 +61,6 @@ Method | HTTP request | Description
 [**user_get_hook**](UserApi.md#user_get_hook) | **GET** /user/hooks/{id} | Get a hook
 [**user_get_o_auth2_application**](UserApi.md#user_get_o_auth2_application) | **GET** /user/applications/oauth2/{id} | get an OAuth2 Application
 [**user_get_oauth2_application**](UserApi.md#user_get_oauth2_application) | **GET** /user/applications/oauth2 | List the authenticated user&#39;s oauth2 applications
-[**user_get_runner_registration_token**](UserApi.md#user_get_runner_registration_token) | **GET** /user/actions/runners/registration-token | Get an user&#39;s actions runner registration token
 [**user_get_stop_watches**](UserApi.md#user_get_stop_watches) | **GET** /user/stopwatches | Get list of all existing stopwatches
 [**user_get_tokens**](UserApi.md#user_get_tokens) | **GET** /users/{username}/tokens | List the authenticated user&#39;s access tokens
 [**user_list_activity_feeds**](UserApi.md#user_list_activity_feeds) | **GET** /users/{username}/activities/feeds | List a user&#39;s activity feeds
@@ -329,7 +329,7 @@ void (empty response body)
 # **delete_user_runner**
 > delete_user_runner(runner_id)
 
-Delete an user-level runner
+Delete a user-level runner
 
 ### Example
 
@@ -406,7 +406,7 @@ with gitea_api.ApiClient(configuration) as api_client:
     runner_id = 'runner_id_example' # str | id of the runner
 
     try:
-        # Delete an user-level runner
+        # Delete a user-level runner
         api_instance.delete_user_runner(runner_id)
     except Exception as e:
         print("Exception when calling UserApi->delete_user_runner: %s\n" % e)
@@ -682,9 +682,9 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_user_runner**
-> get_user_runner(runner_id)
+> ActionRunner get_user_runner(runner_id)
 
-Get an user-level runner
+Get a user-level runner
 
 ### Example
 
@@ -698,6 +698,7 @@ Get an user-level runner
 
 ```python
 import gitea_api
+from gitea_api.models.action_runner import ActionRunner
 from gitea_api.rest import ApiException
 from pprint import pprint
 
@@ -761,8 +762,10 @@ with gitea_api.ApiClient(configuration) as api_client:
     runner_id = 'runner_id_example' # str | id of the runner
 
     try:
-        # Get an user-level runner
-        api_instance.get_user_runner(runner_id)
+        # Get a user-level runner
+        api_response = api_instance.get_user_runner(runner_id)
+        print("The response of UserApi->get_user_runner:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling UserApi->get_user_runner: %s\n" % e)
 ```
@@ -778,7 +781,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**ActionRunner**](ActionRunner.md)
 
 ### Authorization
 
@@ -787,20 +790,20 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** |  |  -  |
+**200** | Runner |  -  |
 **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 **404** | APINotFound is a not found empty response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_user_runners**
-> get_user_runners()
+> ActionRunnersResponse get_user_runners(disabled=disabled)
 
 Get user-level runners
 
@@ -816,6 +819,7 @@ Get user-level runners
 
 ```python
 import gitea_api
+from gitea_api.models.action_runners_response import ActionRunnersResponse
 from gitea_api.rest import ApiException
 from pprint import pprint
 
@@ -876,10 +880,13 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.UserApi(api_client)
+    disabled = True # bool | filter by disabled status (true or false) (optional)
 
     try:
         # Get user-level runners
-        api_instance.get_user_runners()
+        api_response = api_instance.get_user_runners(disabled=disabled)
+        print("The response of UserApi->get_user_runners:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling UserApi->get_user_runners: %s\n" % e)
 ```
@@ -888,11 +895,14 @@ with gitea_api.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **disabled** | **bool**| filter by disabled status (true or false) | [optional] 
 
 ### Return type
 
-void (empty response body)
+[**ActionRunnersResponse**](ActionRunnersResponse.md)
 
 ### Authorization
 
@@ -901,20 +911,20 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** |  |  -  |
+**200** | RunnerList |  -  |
 **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 **404** | APINotFound is a not found empty response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_user_settings**
-> List[UserSettings] get_user_settings()
+> UserSettings get_user_settings()
 
 Get user settings
 
@@ -1009,7 +1019,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List[UserSettings]**](UserSettings.md)
+[**UserSettings**](UserSettings.md)
 
 ### Authorization
 
@@ -1273,7 +1283,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_user_workflow_jobs**
-> ActionWorkflowJobsResponse get_user_workflow_jobs(status=status, page=page, limit=limit)
+> ActionWorkflowJobsResponse get_user_workflow_jobs(status=status, page=page, limit=limit, sort=sort, order=order)
 
 Get workflow jobs
 
@@ -1353,10 +1363,12 @@ with gitea_api.ApiClient(configuration) as api_client:
     status = 'status_example' # str | workflow status (pending, queued, in_progress, failure, success, skipped) (optional)
     page = 56 # int | page number of results to return (1-based) (optional)
     limit = 56 # int | page size of results (optional)
+    sort = 'sort_example' # str | sort jobs by attribute. Supported values are \"id\". Default is \"id\" (optional)
+    order = 'order_example' # str | sort order, either \"asc\" (ascending) or \"desc\" (descending). Default is \"asc\" (optional)
 
     try:
         # Get workflow jobs
-        api_response = api_instance.get_user_workflow_jobs(status=status, page=page, limit=limit)
+        api_response = api_instance.get_user_workflow_jobs(status=status, page=page, limit=limit, sort=sort, order=order)
         print("The response of UserApi->get_user_workflow_jobs:\n")
         pprint(api_response)
     except Exception as e:
@@ -1373,6 +1385,8 @@ Name | Type | Description  | Notes
  **status** | **str**| workflow status (pending, queued, in_progress, failure, success, skipped) | [optional] 
  **page** | **int**| page number of results to return (1-based) | [optional] 
  **limit** | **int**| page size of results | [optional] 
+ **sort** | **str**| sort jobs by attribute. Supported values are \&quot;id\&quot;. Default is \&quot;id\&quot; | [optional] 
+ **order** | **str**| sort order, either \&quot;asc\&quot; (ascending) or \&quot;desc\&quot; (descending). Default is \&quot;asc\&quot; | [optional] 
 
 ### Return type
 
@@ -1394,6 +1408,7 @@ Name | Type | Description  | Notes
 **200** | WorkflowJobsList |  -  |
 **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 **404** | APINotFound is a not found empty response |  -  |
+**422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1645,6 +1660,131 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **update_user_runner**
+> ActionRunner update_user_runner(runner_id, body=body)
+
+Update a user-level runner
+
+### Example
+
+* Api Key Authentication (TOTPHeader):
+* Api Key Authentication (AuthorizationHeaderToken):
+* Api Key Authentication (SudoHeader):
+* Basic Authentication (BasicAuth):
+* Api Key Authentication (AccessToken):
+* Api Key Authentication (SudoParam):
+* Api Key Authentication (Token):
+
+```python
+import gitea_api
+from gitea_api.models.action_runner import ActionRunner
+from gitea_api.models.edit_action_runner_option import EditActionRunnerOption
+from gitea_api.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gitea_api.Configuration(
+    host = "/api/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: TOTPHeader
+configuration.api_key['TOTPHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['TOTPHeader'] = 'Bearer'
+
+# Configure API key authorization: AuthorizationHeaderToken
+configuration.api_key['AuthorizationHeaderToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AuthorizationHeaderToken'] = 'Bearer'
+
+# Configure API key authorization: SudoHeader
+configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoHeader'] = 'Bearer'
+
+# Configure HTTP basic authorization: BasicAuth
+configuration = gitea_api.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Configure API key authorization: AccessToken
+configuration.api_key['AccessToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AccessToken'] = 'Bearer'
+
+# Configure API key authorization: SudoParam
+configuration.api_key['SudoParam'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoParam'] = 'Bearer'
+
+# Configure API key authorization: Token
+configuration.api_key['Token'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Token'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with gitea_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = gitea_api.UserApi(api_client)
+    runner_id = 'runner_id_example' # str | id of the runner
+    body = gitea_api.EditActionRunnerOption() # EditActionRunnerOption |  (optional)
+
+    try:
+        # Update a user-level runner
+        api_response = api_instance.update_user_runner(runner_id, body=body)
+        print("The response of UserApi->update_user_runner:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling UserApi->update_user_runner: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **runner_id** | **str**| id of the runner | 
+ **body** | [**EditActionRunnerOption**](EditActionRunnerOption.md)|  | [optional] 
+
+### Return type
+
+[**ActionRunner**](ActionRunner.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Runner |  -  |
+**400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+**404** | APINotFound is a not found empty response |  -  |
+**422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **update_user_secret**
 > update_user_secret(secretname, body=body)
 
@@ -1768,7 +1908,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_user_settings**
-> List[UserSettings] update_user_settings(body=body)
+> UserSettings update_user_settings(body=body)
 
 Update user settings
 
@@ -1868,7 +2008,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[UserSettings]**](UserSettings.md)
+[**UserSettings**](UserSettings.md)
 
 ### Authorization
 
@@ -1876,7 +2016,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/plain
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -2118,7 +2258,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/plain
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -2715,7 +2855,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/plain
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -2730,7 +2870,7 @@ Name | Type | Description  | Notes
 # **user_create_runner_registration_token**
 > user_create_runner_registration_token()
 
-Get an user's actions runner registration token
+Get a user's actions runner registration token
 
 ### Example
 
@@ -2806,7 +2946,7 @@ with gitea_api.ApiClient(configuration) as api_client:
     api_instance = gitea_api.UserApi(api_client)
 
     try:
-        # Get an user's actions runner registration token
+        # Get a user's actions runner registration token
         api_instance.user_create_runner_registration_token()
     except Exception as e:
         print("Exception when calling UserApi->user_create_runner_registration_token: %s\n" % e)
@@ -5708,7 +5848,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/plain
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 ### HTTP response details
@@ -6787,118 +6927,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OAuth2ApplicationList represents a list of OAuth2 applications. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **user_get_runner_registration_token**
-> user_get_runner_registration_token()
-
-Get an user's actions runner registration token
-
-### Example
-
-* Api Key Authentication (TOTPHeader):
-* Api Key Authentication (AuthorizationHeaderToken):
-* Api Key Authentication (SudoHeader):
-* Basic Authentication (BasicAuth):
-* Api Key Authentication (AccessToken):
-* Api Key Authentication (SudoParam):
-* Api Key Authentication (Token):
-
-```python
-import gitea_api
-from gitea_api.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to /api/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = gitea_api.Configuration(
-    host = "/api/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: TOTPHeader
-configuration.api_key['TOTPHeader'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['TOTPHeader'] = 'Bearer'
-
-# Configure API key authorization: AuthorizationHeaderToken
-configuration.api_key['AuthorizationHeaderToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['AuthorizationHeaderToken'] = 'Bearer'
-
-# Configure API key authorization: SudoHeader
-configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['SudoHeader'] = 'Bearer'
-
-# Configure HTTP basic authorization: BasicAuth
-configuration = gitea_api.Configuration(
-    username = os.environ["USERNAME"],
-    password = os.environ["PASSWORD"]
-)
-
-# Configure API key authorization: AccessToken
-configuration.api_key['AccessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['AccessToken'] = 'Bearer'
-
-# Configure API key authorization: SudoParam
-configuration.api_key['SudoParam'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['SudoParam'] = 'Bearer'
-
-# Configure API key authorization: Token
-configuration.api_key['Token'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Token'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with gitea_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = gitea_api.UserApi(api_client)
-
-    try:
-        # Get an user's actions runner registration token
-        api_instance.user_get_runner_registration_token()
-    except Exception as e:
-        print("Exception when calling UserApi->user_get_runner_registration_token: %s\n" % e)
-```
-
-
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | RegistrationToken is response related to registration token |  * token -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -8973,7 +9001,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/plain
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 ### HTTP response details
@@ -9095,7 +9123,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/plain
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -9103,6 +9131,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OAuth2Application |  -  |
+**400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 **404** | APINotFound is a not found empty response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

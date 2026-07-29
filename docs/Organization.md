@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **name** | **str** | The name of the organization | [optional] 
 **repo_admin_change_team_access** | **bool** | Whether repository administrators can change team access | [optional] 
 **username** | **str** | username of the organization deprecated | [optional] 
-**visibility** | **str** | The visibility level of the organization (public, limited, private) | [optional] 
+**visibility** | **str** | The visibility level of the organization (public, limited, private) public UserVisibilityPublic limited UserVisibilityLimited private UserVisibilityPrivate | [optional] 
 **website** | **str** | The website URL of the organization | [optional] 
 
 ## Example

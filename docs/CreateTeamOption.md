@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **permission** | **str** |  | [optional] 
 **units** | **List[str]** |  | [optional] 
 **units_map** | **Dict[str, str]** |  | [optional] 
+**visibility** | **str** | Team visibility within the organization. Defaults to \&quot;private\&quot;. public TeamVisibilityPublic limited TeamVisibilityLimited private TeamVisibilityPrivate | [optional] 
 
 ## Example
 

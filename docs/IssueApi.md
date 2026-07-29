@@ -4,9 +4,11 @@ All URIs are relative to */api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**issue_add_assignees**](IssueApi.md#issue_add_assignees) | **POST** /repos/{owner}/{repo}/issues/{index}/assignees | Add assignees to an issue
 [**issue_add_label**](IssueApi.md#issue_add_label) | **POST** /repos/{owner}/{repo}/issues/{index}/labels | Add a label to an issue
 [**issue_add_subscription**](IssueApi.md#issue_add_subscription) | **PUT** /repos/{owner}/{repo}/issues/{index}/subscriptions/{user} | Subscribe user to issue
 [**issue_add_time**](IssueApi.md#issue_add_time) | **POST** /repos/{owner}/{repo}/issues/{index}/times | Add tracked time to a issue
+[**issue_check_assignee**](IssueApi.md#issue_check_assignee) | **GET** /repos/{owner}/{repo}/issues/{index}/assignees/{assignee} | Check if a user can be assigned to an issue
 [**issue_check_subscription**](IssueApi.md#issue_check_subscription) | **GET** /repos/{owner}/{repo}/issues/{index}/subscriptions/check | Check if user is subscribed to an issue
 [**issue_clear_labels**](IssueApi.md#issue_clear_labels) | **DELETE** /repos/{owner}/{repo}/issues/{index}/labels | Remove all labels from an issue
 [**issue_create_comment**](IssueApi.md#issue_create_comment) | **POST** /repos/{owner}/{repo}/issues/{index}/comments | Add a comment to an issue
@@ -59,6 +61,7 @@ Method | HTTP request | Description
 [**issue_lock_issue**](IssueApi.md#issue_lock_issue) | **PUT** /repos/{owner}/{repo}/issues/{index}/lock | Lock an issue
 [**issue_post_comment_reaction**](IssueApi.md#issue_post_comment_reaction) | **POST** /repos/{owner}/{repo}/issues/comments/{id}/reactions | Add a reaction to a comment of an issue
 [**issue_post_issue_reaction**](IssueApi.md#issue_post_issue_reaction) | **POST** /repos/{owner}/{repo}/issues/{index}/reactions | Add a reaction to an issue
+[**issue_remove_assignees**](IssueApi.md#issue_remove_assignees) | **DELETE** /repos/{owner}/{repo}/issues/{index}/assignees | Remove assignees from an issue
 [**issue_remove_issue_blocking**](IssueApi.md#issue_remove_issue_blocking) | **DELETE** /repos/{owner}/{repo}/issues/{index}/blocks | Unblock the issue given in the body by the issue in path
 [**issue_remove_issue_dependencies**](IssueApi.md#issue_remove_issue_dependencies) | **DELETE** /repos/{owner}/{repo}/issues/{index}/dependencies | Remove an issue dependency
 [**issue_remove_label**](IssueApi.md#issue_remove_label) | **DELETE** /repos/{owner}/{repo}/issues/{index}/labels/{id} | Remove a label from an issue
@@ -74,6 +77,136 @@ Method | HTTP request | Description
 [**pin_issue**](IssueApi.md#pin_issue) | **POST** /repos/{owner}/{repo}/issues/{index}/pin | Pin an Issue
 [**unpin_issue**](IssueApi.md#unpin_issue) | **DELETE** /repos/{owner}/{repo}/issues/{index}/pin | Unpin an Issue
 
+
+# **issue_add_assignees**
+> Issue issue_add_assignees(owner, repo, index, body)
+
+Add assignees to an issue
+
+### Example
+
+* Api Key Authentication (TOTPHeader):
+* Api Key Authentication (AuthorizationHeaderToken):
+* Api Key Authentication (SudoHeader):
+* Basic Authentication (BasicAuth):
+* Api Key Authentication (AccessToken):
+* Api Key Authentication (SudoParam):
+* Api Key Authentication (Token):
+
+```python
+import gitea_api
+from gitea_api.models.issue import Issue
+from gitea_api.models.issue_assignees_option import IssueAssigneesOption
+from gitea_api.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gitea_api.Configuration(
+    host = "/api/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: TOTPHeader
+configuration.api_key['TOTPHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['TOTPHeader'] = 'Bearer'
+
+# Configure API key authorization: AuthorizationHeaderToken
+configuration.api_key['AuthorizationHeaderToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AuthorizationHeaderToken'] = 'Bearer'
+
+# Configure API key authorization: SudoHeader
+configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoHeader'] = 'Bearer'
+
+# Configure HTTP basic authorization: BasicAuth
+configuration = gitea_api.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Configure API key authorization: AccessToken
+configuration.api_key['AccessToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AccessToken'] = 'Bearer'
+
+# Configure API key authorization: SudoParam
+configuration.api_key['SudoParam'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoParam'] = 'Bearer'
+
+# Configure API key authorization: Token
+configuration.api_key['Token'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Token'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with gitea_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = gitea_api.IssueApi(api_client)
+    owner = 'owner_example' # str | owner of the repo
+    repo = 'repo_example' # str | name of the repo
+    index = 56 # int | index of the issue
+    body = gitea_api.IssueAssigneesOption() # IssueAssigneesOption | 
+
+    try:
+        # Add assignees to an issue
+        api_response = api_instance.issue_add_assignees(owner, repo, index, body)
+        print("The response of IssueApi->issue_add_assignees:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling IssueApi->issue_add_assignees: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **owner** | **str**| owner of the repo | 
+ **repo** | **str**| name of the repo | 
+ **index** | **int**| index of the issue | 
+ **body** | [**IssueAssigneesOption**](IssueAssigneesOption.md)|  | 
+
+### Return type
+
+[**Issue**](Issue.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Issue |  -  |
+**400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+**403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+**404** | APINotFound is a not found empty response |  -  |
+**422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **issue_add_label**
 > List[Label] issue_add_label(owner, repo, index, body=body)
@@ -453,6 +586,130 @@ Name | Type | Description  | Notes
 **200** | TrackedTime |  -  |
 **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+**404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **issue_check_assignee**
+> issue_check_assignee(owner, repo, index, assignee)
+
+Check if a user can be assigned to an issue
+
+### Example
+
+* Api Key Authentication (TOTPHeader):
+* Api Key Authentication (AuthorizationHeaderToken):
+* Api Key Authentication (SudoHeader):
+* Basic Authentication (BasicAuth):
+* Api Key Authentication (AccessToken):
+* Api Key Authentication (SudoParam):
+* Api Key Authentication (Token):
+
+```python
+import gitea_api
+from gitea_api.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gitea_api.Configuration(
+    host = "/api/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: TOTPHeader
+configuration.api_key['TOTPHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['TOTPHeader'] = 'Bearer'
+
+# Configure API key authorization: AuthorizationHeaderToken
+configuration.api_key['AuthorizationHeaderToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AuthorizationHeaderToken'] = 'Bearer'
+
+# Configure API key authorization: SudoHeader
+configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoHeader'] = 'Bearer'
+
+# Configure HTTP basic authorization: BasicAuth
+configuration = gitea_api.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Configure API key authorization: AccessToken
+configuration.api_key['AccessToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AccessToken'] = 'Bearer'
+
+# Configure API key authorization: SudoParam
+configuration.api_key['SudoParam'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoParam'] = 'Bearer'
+
+# Configure API key authorization: Token
+configuration.api_key['Token'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Token'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with gitea_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = gitea_api.IssueApi(api_client)
+    owner = 'owner_example' # str | owner of the repo
+    repo = 'repo_example' # str | name of the repo
+    index = 56 # int | index of the issue
+    assignee = 'assignee_example' # str | username of the user to check for being an assignee
+
+    try:
+        # Check if a user can be assigned to an issue
+        api_instance.issue_check_assignee(owner, repo, index, assignee)
+    except Exception as e:
+        print("Exception when calling IssueApi->issue_check_assignee: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **owner** | **str**| owner of the repo | 
+ **repo** | **str**| name of the repo | 
+ **index** | **int**| index of the issue | 
+ **assignee** | **str**| username of the user to check for being an assignee | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | APIEmpty is an empty response |  -  |
+**400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 **404** | APINotFound is a not found empty response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1208,7 +1465,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/plain
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -1468,7 +1725,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/plain
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -2219,7 +2476,7 @@ void (empty response body)
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | APIEmpty is an empty response |  -  |
+**204** | APIEmpty is an empty response |  -  |
 **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 **404** | APINotFound is a not found empty response |  -  |
 
@@ -2592,7 +2849,7 @@ void (empty response body)
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | APIEmpty is an empty response |  -  |
+**204** | APIEmpty is an empty response |  -  |
 **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 **404** | APINotFound is a not found empty response |  -  |
 
@@ -3478,6 +3735,10 @@ Name | Type | Description  | Notes
 > Issue issue_edit_issue(owner, repo, index, body=body)
 
 Edit an issue. If using deadline only the date will be taken into account, and time of day ignored.
+
+Pass `content_version` to enable optimistic locking on body edits.
+If the version doesn't match the current value, the request fails with 409 Conflict.
+
 
 ### Example
 
@@ -6481,7 +6742,7 @@ with gitea_api.ApiClient(configuration) as api_client:
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repo
     state = 'state_example' # str | whether issue is open or closed (optional)
-    labels = 'labels_example' # str | comma separated list of labels. Fetch only issues that have any of this labels. Non existent labels are discarded (optional)
+    labels = 'labels_example' # str | comma separated list of label names. Fetch only issues that have any of this label names. Non existent labels are discarded. (optional)
     q = 'q_example' # str | search string (optional)
     type = 'type_example' # str | filter by type (issues / pulls) if set (optional)
     milestones = 'milestones_example' # str | comma separated list of milestone names or ids. It uses names and fall back to ids. Fetch only issues that have any of this milestones. Non existent milestones are discarded (optional)
@@ -6512,7 +6773,7 @@ Name | Type | Description  | Notes
  **owner** | **str**| owner of the repo | 
  **repo** | **str**| name of the repo | 
  **state** | **str**| whether issue is open or closed | [optional] 
- **labels** | **str**| comma separated list of labels. Fetch only issues that have any of this labels. Non existent labels are discarded | [optional] 
+ **labels** | **str**| comma separated list of label names. Fetch only issues that have any of this label names. Non existent labels are discarded. | [optional] 
  **q** | **str**| search string | [optional] 
  **type** | **str**| filter by type (issues / pulls) if set | [optional] 
  **milestones** | **str**| comma separated list of milestone names or ids. It uses names and fall back to ids. Fetch only issues that have any of this milestones. Non existent milestones are discarded | [optional] 
@@ -7055,6 +7316,135 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **issue_remove_assignees**
+> Issue issue_remove_assignees(owner, repo, index, body)
+
+Remove assignees from an issue
+
+### Example
+
+* Api Key Authentication (TOTPHeader):
+* Api Key Authentication (AuthorizationHeaderToken):
+* Api Key Authentication (SudoHeader):
+* Basic Authentication (BasicAuth):
+* Api Key Authentication (AccessToken):
+* Api Key Authentication (SudoParam):
+* Api Key Authentication (Token):
+
+```python
+import gitea_api
+from gitea_api.models.issue import Issue
+from gitea_api.models.issue_assignees_option import IssueAssigneesOption
+from gitea_api.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gitea_api.Configuration(
+    host = "/api/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: TOTPHeader
+configuration.api_key['TOTPHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['TOTPHeader'] = 'Bearer'
+
+# Configure API key authorization: AuthorizationHeaderToken
+configuration.api_key['AuthorizationHeaderToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AuthorizationHeaderToken'] = 'Bearer'
+
+# Configure API key authorization: SudoHeader
+configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoHeader'] = 'Bearer'
+
+# Configure HTTP basic authorization: BasicAuth
+configuration = gitea_api.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Configure API key authorization: AccessToken
+configuration.api_key['AccessToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AccessToken'] = 'Bearer'
+
+# Configure API key authorization: SudoParam
+configuration.api_key['SudoParam'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoParam'] = 'Bearer'
+
+# Configure API key authorization: Token
+configuration.api_key['Token'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Token'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with gitea_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = gitea_api.IssueApi(api_client)
+    owner = 'owner_example' # str | owner of the repo
+    repo = 'repo_example' # str | name of the repo
+    index = 56 # int | index of the issue
+    body = gitea_api.IssueAssigneesOption() # IssueAssigneesOption | 
+
+    try:
+        # Remove assignees from an issue
+        api_response = api_instance.issue_remove_assignees(owner, repo, index, body)
+        print("The response of IssueApi->issue_remove_assignees:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling IssueApi->issue_remove_assignees: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **owner** | **str**| owner of the repo | 
+ **repo** | **str**| name of the repo | 
+ **index** | **int**| index of the issue | 
+ **body** | [**IssueAssigneesOption**](IssueAssigneesOption.md)|  | 
+
+### Return type
+
+[**Issue**](Issue.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Issue |  -  |
+**403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+**404** | APINotFound is a not found empty response |  -  |
+**422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **issue_remove_issue_blocking**
 > Issue issue_remove_issue_blocking(owner, repo, index, body=body)
 
@@ -7170,7 +7560,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/plain
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -7297,7 +7687,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/plain
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -7687,7 +8077,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **issue_search_issues**
-> List[Issue] issue_search_issues(state=state, labels=labels, milestones=milestones, q=q, priority_repo_id=priority_repo_id, type=type, since=since, before=before, assigned=assigned, created=created, mentioned=mentioned, review_requested=review_requested, reviewed=reviewed, owner=owner, team=team, page=page, limit=limit)
+> List[Issue] issue_search_issues(state=state, labels=labels, milestones=milestones, q=q, type=type, since=since, before=before, assigned=assigned, created=created, mentioned=mentioned, review_requested=review_requested, reviewed=reviewed, owner=owner, created_by=created_by, team=team, page=page, limit=limit)
 
 Search for issues across the repositories that the user has access to
 
@@ -7764,11 +8154,10 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.IssueApi(api_client)
-    state = open # str | State of the issue (optional) (default to open)
+    state = 'open' # str | State of the issue (optional) (default to 'open')
     labels = 'labels_example' # str | Comma-separated list of label names. Fetch only issues that have any of these labels. Non existent labels are discarded. (optional)
     milestones = 'milestones_example' # str | Comma-separated list of milestone names. Fetch only issues that have any of these milestones. Non existent milestones are discarded. (optional)
     q = 'q_example' # str | Search string (optional)
-    priority_repo_id = 56 # int | Repository ID to prioritize in the results (optional)
     type = 'type_example' # str | Filter by issue type (optional)
     since = '2013-10-20T19:20:30+01:00' # datetime | Only show issues updated after the given time (RFC 3339 format) (optional)
     before = '2013-10-20T19:20:30+01:00' # datetime | Only show issues updated before the given time (RFC 3339 format) (optional)
@@ -7778,13 +8167,14 @@ with gitea_api.ApiClient(configuration) as api_client:
     review_requested = False # bool | Filter pull requests where the authenticated user's review was requested (optional) (default to False)
     reviewed = False # bool | Filter pull requests reviewed by the authenticated user (optional) (default to False)
     owner = 'owner_example' # str | Filter by repository owner (optional)
+    created_by = 'created_by_example' # str | Only show items which were created by the given user (optional)
     team = 'team_example' # str | Filter by team (requires organization owner parameter) (optional)
     page = 1 # int | Page number of results to return (1-based) (optional) (default to 1)
     limit = 56 # int | Number of items per page (optional)
 
     try:
         # Search for issues across the repositories that the user has access to
-        api_response = api_instance.issue_search_issues(state=state, labels=labels, milestones=milestones, q=q, priority_repo_id=priority_repo_id, type=type, since=since, before=before, assigned=assigned, created=created, mentioned=mentioned, review_requested=review_requested, reviewed=reviewed, owner=owner, team=team, page=page, limit=limit)
+        api_response = api_instance.issue_search_issues(state=state, labels=labels, milestones=milestones, q=q, type=type, since=since, before=before, assigned=assigned, created=created, mentioned=mentioned, review_requested=review_requested, reviewed=reviewed, owner=owner, created_by=created_by, team=team, page=page, limit=limit)
         print("The response of IssueApi->issue_search_issues:\n")
         pprint(api_response)
     except Exception as e:
@@ -7798,11 +8188,10 @@ with gitea_api.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **state** | **str**| State of the issue | [optional] [default to open]
+ **state** | **str**| State of the issue | [optional] [default to &#39;open&#39;]
  **labels** | **str**| Comma-separated list of label names. Fetch only issues that have any of these labels. Non existent labels are discarded. | [optional] 
  **milestones** | **str**| Comma-separated list of milestone names. Fetch only issues that have any of these milestones. Non existent milestones are discarded. | [optional] 
  **q** | **str**| Search string | [optional] 
- **priority_repo_id** | **int**| Repository ID to prioritize in the results | [optional] 
  **type** | **str**| Filter by issue type | [optional] 
  **since** | **datetime**| Only show issues updated after the given time (RFC 3339 format) | [optional] 
  **before** | **datetime**| Only show issues updated before the given time (RFC 3339 format) | [optional] 
@@ -7812,6 +8201,7 @@ Name | Type | Description  | Notes
  **review_requested** | **bool**| Filter pull requests where the authenticated user&#39;s review was requested | [optional] [default to False]
  **reviewed** | **bool**| Filter pull requests reviewed by the authenticated user | [optional] [default to False]
  **owner** | **str**| Filter by repository owner | [optional] 
+ **created_by** | **str**| Only show items which were created by the given user | [optional] 
  **team** | **str**| Filter by team (requires organization owner parameter) | [optional] 
  **page** | **int**| Page number of results to return (1-based) | [optional] [default to 1]
  **limit** | **int**| Number of items per page | [optional] 
