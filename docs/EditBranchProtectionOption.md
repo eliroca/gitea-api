@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **approvals_whitelist_teams** | **List[str]** |  | [optional] 
 **approvals_whitelist_username** | **List[str]** |  | [optional] 
 **block_admin_merge_override** | **bool** |  | [optional] 
+**block_on_codeowner_reviews** | **bool** |  | [optional] 
 **block_on_official_review_requests** | **bool** |  | [optional] 
 **block_on_outdated_branch** | **bool** |  | [optional] 
 **block_on_rejected_reviews** | **bool** |  | [optional] 

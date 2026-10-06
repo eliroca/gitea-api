@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **author** | [**CommitUser**](CommitUser.md) |  | [optional] 
 **committer** | [**CommitUser**](CommitUser.md) |  | [optional] 
-**created** | **datetime** |  | [optional] 
+**created** | **datetime** | Created is the time when the commit was created | [optional] 
 **html_url** | **str** | HTMLURL is the web URL for viewing this commit | [optional] 
 **message** | **str** | Message is the commit message | [optional] 
 **parents** | [**List[CommitMeta]**](CommitMeta.md) | Parents contains parent commit metadata | [optional] 

@@ -6,7 +6,7 @@ PublicKey publickey is a user key to push code to repository
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**created_at** | **datetime** |  | [optional] 
+**created_at** | **datetime** | Created is the time when the key was added | [optional] 
 **fingerprint** | **str** | Fingerprint is the key&#39;s fingerprint | [optional] 
 **id** | **int** | ID is the unique identifier for the public key | [optional] 
 **key** | **str** | Key contains the actual SSH public key content | [optional] 

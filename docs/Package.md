@@ -6,7 +6,7 @@ Package represents a package
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**created_at** | **datetime** |  | [optional] 
+**created_at** | **datetime** | The date and time when the package was created | [optional] 
 **creator** | [**User**](User.md) |  | [optional] 
 **html_url** | **str** | The HTML URL to view the package | [optional] 
 **id** | **int** | The unique identifier of the package | [optional] 

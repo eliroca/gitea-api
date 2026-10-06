@@ -7,7 +7,7 @@ Attachment a generic attachment
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **browser_download_url** | **str** | DownloadURL is the URL to download the attachment | [optional] 
-**created_at** | **datetime** |  | [optional] 
+**created_at** | **datetime** | Created is the time when the attachment was uploaded | [optional] 
 **download_count** | **int** | DownloadCount is the number of times the attachment has been downloaded | [optional] 
 **id** | **int** | ID is the unique identifier for the attachment | [optional] 
 **name** | **str** | Name is the filename of the attachment | [optional] 

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **file_path** | **str** | File path for detecting extension in file mode | [optional] 
 **mode** | **str** | Mode to render (markdown, comment, wiki, file) | [optional] 
 **text** | **str** | Text markup to render | [optional] 
-**wiki** | **bool** | Is it a wiki page? (use mode&#x3D;wiki instead)  Deprecated: true | [optional] 
+**wiki** | **bool** | Is it a wiki page? (use mode&#x3D;wiki instead) | [optional] 
 
 ## Example
 

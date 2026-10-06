@@ -25,6 +25,7 @@ Method | HTTP request | Description
 [**admin_get_all_orgs**](AdminApi.md#admin_get_all_orgs) | **GET** /admin/orgs | List all organizations
 [**admin_get_hook**](AdminApi.md#admin_get_hook) | **GET** /admin/hooks/{id} | Get a hook
 [**admin_list_hooks**](AdminApi.md#admin_list_hooks) | **GET** /admin/hooks | List system&#39;s webhooks
+[**admin_list_packages**](AdminApi.md#admin_list_packages) | **GET** /admin/packages | List all packages
 [**admin_list_user_badges**](AdminApi.md#admin_list_user_badges) | **GET** /admin/users/{username}/badges | List a user&#39;s badges
 [**admin_rename_user**](AdminApi.md#admin_rename_user) | **POST** /admin/users/{username}/rename | Rename a user
 [**admin_search_emails**](AdminApi.md#admin_search_emails) | **GET** /admin/emails/search | Search all emails
@@ -1004,6 +1005,7 @@ Name | Type | Description  | Notes
 **201** | User |  -  |
 **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+**409** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -2087,6 +2089,7 @@ Name | Type | Description  | Notes
 **200** | User |  -  |
 **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+**409** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -2574,6 +2577,132 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | HookList |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **admin_list_packages**
+> List[Package] admin_list_packages(page=page, limit=limit, type=type, q=q)
+
+List all packages
+
+### Example
+
+* Api Key Authentication (TOTPHeader):
+* Api Key Authentication (AuthorizationHeaderToken):
+* Api Key Authentication (SudoHeader):
+* Basic Authentication (BasicAuth):
+* Api Key Authentication (AccessToken):
+* Api Key Authentication (SudoParam):
+* Api Key Authentication (Token):
+
+```python
+import gitea_api
+from gitea_api.models.package import Package
+from gitea_api.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gitea_api.Configuration(
+    host = "/api/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: TOTPHeader
+configuration.api_key['TOTPHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['TOTPHeader'] = 'Bearer'
+
+# Configure API key authorization: AuthorizationHeaderToken
+configuration.api_key['AuthorizationHeaderToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AuthorizationHeaderToken'] = 'Bearer'
+
+# Configure API key authorization: SudoHeader
+configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoHeader'] = 'Bearer'
+
+# Configure HTTP basic authorization: BasicAuth
+configuration = gitea_api.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Configure API key authorization: AccessToken
+configuration.api_key['AccessToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AccessToken'] = 'Bearer'
+
+# Configure API key authorization: SudoParam
+configuration.api_key['SudoParam'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoParam'] = 'Bearer'
+
+# Configure API key authorization: Token
+configuration.api_key['Token'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Token'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with gitea_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = gitea_api.AdminApi(api_client)
+    page = 56 # int | page number of results to return (1-based) (optional)
+    limit = 56 # int | page size of results (optional)
+    type = 'type_example' # str | package type filter (optional)
+    q = 'q_example' # str | name filter (optional)
+
+    try:
+        # List all packages
+        api_response = api_instance.admin_list_packages(page=page, limit=limit, type=type, q=q)
+        print("The response of AdminApi->admin_list_packages:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminApi->admin_list_packages: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**| page number of results to return (1-based) | [optional] 
+ **limit** | **int**| page size of results | [optional] 
+ **type** | **str**| package type filter | [optional] 
+ **q** | **str**| name filter | [optional] 
+
+### Return type
+
+[**List[Package]**](Package.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | PackageList |  -  |
+**403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3088,7 +3217,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **admin_unadopted_list**
-> List[str] admin_unadopted_list(page=page, limit=limit, pattern=pattern)
+> List[str] admin_unadopted_list(page=page, limit=limit, query=query)
 
 List unadopted repositories
 
@@ -3166,11 +3295,11 @@ with gitea_api.ApiClient(configuration) as api_client:
     api_instance = gitea_api.AdminApi(api_client)
     page = 56 # int | page number of results to return (1-based) (optional)
     limit = 56 # int | page size of results (optional)
-    pattern = 'pattern_example' # str | pattern of repositories to search for (optional)
+    query = 'query_example' # str | glob pattern of repositories to search for, in the form owner or owner/repo (optional)
 
     try:
         # List unadopted repositories
-        api_response = api_instance.admin_unadopted_list(page=page, limit=limit, pattern=pattern)
+        api_response = api_instance.admin_unadopted_list(page=page, limit=limit, query=query)
         print("The response of AdminApi->admin_unadopted_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -3186,7 +3315,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**| page number of results to return (1-based) | [optional] 
  **limit** | **int**| page size of results | [optional] 
- **pattern** | **str**| pattern of repositories to search for | [optional] 
+ **query** | **str**| glob pattern of repositories to search for, in the form owner or owner/repo | [optional] 
 
 ### Return type
 
@@ -3648,7 +3777,7 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.AdminApi(api_client)
-    status = 'status_example' # str | workflow status (pending, queued, in_progress, failure, success, skipped) (optional)
+    status = 'status_example' # str | workflow status (requested, pending, queued, in_progress, failure, success, skipped) (optional)
     page = 56 # int | page number of results to return (1-based) (optional)
     limit = 56 # int | page size of results (optional)
     sort = 'sort_example' # str | sort jobs by attribute. Supported values are \"id\". Default is \"id\" (optional)
@@ -3670,7 +3799,7 @@ with gitea_api.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **status** | **str**| workflow status (pending, queued, in_progress, failure, success, skipped) | [optional] 
+ **status** | **str**| workflow status (requested, pending, queued, in_progress, failure, success, skipped) | [optional] 
  **page** | **int**| page number of results to return (1-based) | [optional] 
  **limit** | **int**| page size of results | [optional] 
  **sort** | **str**| sort jobs by attribute. Supported values are \&quot;id\&quot;. Default is \&quot;id\&quot; | [optional] 
@@ -3780,7 +3909,7 @@ with gitea_api.ApiClient(configuration) as api_client:
     api_instance = gitea_api.AdminApi(api_client)
     event = 'event_example' # str | workflow event name (optional)
     branch = 'branch_example' # str | workflow branch (optional)
-    status = 'status_example' # str | workflow status (pending, queued, in_progress, failure, success, skipped) (optional)
+    status = 'status_example' # str | workflow status (requested, pending, queued, in_progress, failure, success, skipped) (optional)
     actor = 'actor_example' # str | triggered by user (optional)
     head_sha = 'head_sha_example' # str | triggering sha of the workflow run (optional)
     page = 56 # int | page number of results to return (1-based) (optional)
@@ -3804,7 +3933,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **event** | **str**| workflow event name | [optional] 
  **branch** | **str**| workflow branch | [optional] 
- **status** | **str**| workflow status (pending, queued, in_progress, failure, success, skipped) | [optional] 
+ **status** | **str**| workflow status (requested, pending, queued, in_progress, failure, success, skipped) | [optional] 
  **actor** | **str**| triggered by user | [optional] 
  **head_sha** | **str**| triggering sha of the workflow run | [optional] 
  **page** | **int**| page number of results to return (1-based) | [optional] 

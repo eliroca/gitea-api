@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **author** | [**User**](User.md) |  | [optional] 
 **commit** | [**RepoCommit**](RepoCommit.md) |  | [optional] 
 **committer** | [**User**](User.md) |  | [optional] 
-**created** | **datetime** |  | [optional] 
+**created** | **datetime** | Created is the time when the commit was created | [optional] 
 **files** | [**List[CommitAffectedFiles]**](CommitAffectedFiles.md) | Files contains information about files affected by the commit | [optional] 
 **html_url** | **str** | HTMLURL is the web URL for viewing the commit | [optional] 
 **parents** | [**List[CommitMeta]**](CommitMeta.md) | Parents contains the parent commit information | [optional] 

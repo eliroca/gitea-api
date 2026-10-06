@@ -6,7 +6,7 @@ Email an email address belonging to a user
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**email** | **str** |  | [optional] 
+**email** | **str** | The email address | [optional] 
 **primary** | **bool** | Whether this is the primary email address | [optional] 
 **user_id** | **int** | The unique identifier of the user who owns this email | [optional] 
 **username** | **str** | username of the user | [optional] 

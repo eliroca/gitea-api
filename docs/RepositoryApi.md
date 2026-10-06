@@ -12,7 +12,8 @@ Method | HTTP request | Description
 [**actions_get_workflow**](RepositoryApi.md#actions_get_workflow) | **GET** /repos/{owner}/{repo}/actions/workflows/{workflow_id} | Get a workflow
 [**actions_list_repository_workflows**](RepositoryApi.md#actions_list_repository_workflows) | **GET** /repos/{owner}/{repo}/actions/workflows | List repository workflows
 [**actions_list_workflow_runs**](RepositoryApi.md#actions_list_workflow_runs) | **GET** /repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs | List runs for a workflow
-[**create_current_user_repo**](RepositoryApi.md#create_current_user_repo) | **POST** /user/repos | Create a repository
+[**approve_workflow_run**](RepositoryApi.md#approve_workflow_run) | **POST** /repos/{owner}/{repo}/actions/runs/{run}/approve | Approve a workflow run that requires approval
+[**cancel_workflow_run**](RepositoryApi.md#cancel_workflow_run) | **POST** /repos/{owner}/{repo}/actions/runs/{run}/cancel | Cancel a workflow run and its jobs
 [**create_fork**](RepositoryApi.md#create_fork) | **POST** /repos/{owner}/{repo}/forks | Fork a repository
 [**create_repo_variable**](RepositoryApi.md#create_repo_variable) | **POST** /repos/{owner}/{repo}/actions/variables/{variablename} | Create a repo-level variable
 [**delete_action_run**](RepositoryApi.md#delete_action_run) | **DELETE** /repos/{owner}/{repo}/actions/runs/{run} | Delete a workflow run
@@ -22,6 +23,7 @@ Method | HTTP request | Description
 [**delete_repo_variable**](RepositoryApi.md#delete_repo_variable) | **DELETE** /repos/{owner}/{repo}/actions/variables/{variablename} | Delete a repo-level variable
 [**download_actions_run_job_logs**](RepositoryApi.md#download_actions_run_job_logs) | **GET** /repos/{owner}/{repo}/actions/jobs/{job_id}/logs | Downloads the job logs for a workflow run
 [**download_artifact**](RepositoryApi.md#download_artifact) | **GET** /repos/{owner}/{repo}/actions/artifacts/{artifact_id}/zip | Downloads a specific artifact for a workflow run redirects to blob url
+[**force_cancel_workflow_run**](RepositoryApi.md#force_cancel_workflow_run) | **POST** /repos/{owner}/{repo}/actions/runs/{run}/force-cancel | Force-cancel a workflow run
 [**generate_repo**](RepositoryApi.md#generate_repo) | **POST** /repos/{template_owner}/{template_repo}/generate | Create a repository using a template
 [**get_annotated_tag**](RepositoryApi.md#get_annotated_tag) | **GET** /repos/{owner}/{repo}/git/tags/{sha} | Gets the tag object of an annotated tag (not lightweight tags)
 [**get_artifact**](RepositoryApi.md#get_artifact) | **GET** /repos/{owner}/{repo}/actions/artifacts/{artifact_id} | Gets a specific artifact for a workflow run
@@ -36,6 +38,7 @@ Method | HTTP request | Description
 [**get_workflow_job**](RepositoryApi.md#get_workflow_job) | **GET** /repos/{owner}/{repo}/actions/jobs/{job_id} | Gets a specific workflow job for a workflow run
 [**get_workflow_run**](RepositoryApi.md#get_workflow_run) | **GET** /repos/{owner}/{repo}/actions/runs/{run} | Gets a specific workflow run
 [**get_workflow_run_attempt**](RepositoryApi.md#get_workflow_run_attempt) | **GET** /repos/{owner}/{repo}/actions/runs/{run}/attempts/{attempt} | Gets a specific workflow run attempt
+[**get_workflow_run_logs**](RepositoryApi.md#get_workflow_run_logs) | **GET** /repos/{owner}/{repo}/actions/runs/{run}/logs | Download workflow run logs as archive
 [**get_workflow_runs**](RepositoryApi.md#get_workflow_runs) | **GET** /repos/{owner}/{repo}/actions/runs | Lists all runs for a repository run
 [**list_action_tasks**](RepositoryApi.md#list_action_tasks) | **GET** /repos/{owner}/{repo}/actions/tasks | List a repository&#39;s action tasks
 [**list_forks**](RepositoryApi.md#list_forks) | **GET** /repos/{owner}/{repo}/forks | List a repository&#39;s forks
@@ -45,6 +48,7 @@ Method | HTTP request | Description
 [**reject_repo_reparent**](RepositoryApi.md#reject_repo_reparent) | **POST** /repos/{owner}/{repo}/reparent/reject | Reject a reparenting request
 [**reject_repo_transfer**](RepositoryApi.md#reject_repo_transfer) | **POST** /repos/{owner}/{repo}/transfer/reject | Reject a repo transfer
 [**repo_add_collaborator**](RepositoryApi.md#repo_add_collaborator) | **PUT** /repos/{owner}/{repo}/collaborators/{collaborator} | Add or Update a collaborator to a repository
+[**repo_add_issue_to_project_column**](RepositoryApi.md#repo_add_issue_to_project_column) | **POST** /repos/{owner}/{repo}/projects/{id}/columns/{column_id}/issues/{issue_id} | Add an issue to a project column
 [**repo_add_push_mirror**](RepositoryApi.md#repo_add_push_mirror) | **POST** /repos/{owner}/{repo}/push_mirrors | add a push mirror to the repository
 [**repo_add_team**](RepositoryApi.md#repo_add_team) | **PUT** /repos/{owner}/{repo}/teams/{team} | Add a team to a repository
 [**repo_add_topic**](RepositoryApi.md#repo_add_topic) | **PUT** /repos/{owner}/{repo}/topics/{topic} | Add a topic to a repository
@@ -57,9 +61,12 @@ Method | HTTP request | Description
 [**repo_compare_diff**](RepositoryApi.md#repo_compare_diff) | **GET** /repos/{owner}/{repo}/compare/{basehead} | Get commit comparison information
 [**repo_create_branch**](RepositoryApi.md#repo_create_branch) | **POST** /repos/{owner}/{repo}/branches | Create a branch
 [**repo_create_branch_protection**](RepositoryApi.md#repo_create_branch_protection) | **POST** /repos/{owner}/{repo}/branch_protections | Create a branch protections for a repository
+[**repo_create_deploy_token**](RepositoryApi.md#repo_create_deploy_token) | **POST** /repos/{owner}/{repo}/keys/tokens | Add a deploy token to a repository, it authenticates git over HTTPS
 [**repo_create_file**](RepositoryApi.md#repo_create_file) | **POST** /repos/{owner}/{repo}/contents/{filepath} | Create a file in a repository
 [**repo_create_hook**](RepositoryApi.md#repo_create_hook) | **POST** /repos/{owner}/{repo}/hooks | Create a hook
 [**repo_create_key**](RepositoryApi.md#repo_create_key) | **POST** /repos/{owner}/{repo}/keys | Add a key to a repository
+[**repo_create_project**](RepositoryApi.md#repo_create_project) | **POST** /repos/{owner}/{repo}/projects | Create a project owned by a repository
+[**repo_create_project_column**](RepositoryApi.md#repo_create_project_column) | **POST** /repos/{owner}/{repo}/projects/{id}/columns | Create a column in a project
 [**repo_create_pull_request**](RepositoryApi.md#repo_create_pull_request) | **POST** /repos/{owner}/{repo}/pulls | Create a pull request
 [**repo_create_pull_review**](RepositoryApi.md#repo_create_pull_review) | **POST** /repos/{owner}/{repo}/pulls/{index}/reviews | Create a review to a pull request
 [**repo_create_pull_review_comment_reply**](RepositoryApi.md#repo_create_pull_review_comment_reply) | **POST** /repos/{owner}/{repo}/pulls/{index}/comments/{id}/replies | Reply to a pull request review comment
@@ -80,6 +87,8 @@ Method | HTTP request | Description
 [**repo_delete_git_hook**](RepositoryApi.md#repo_delete_git_hook) | **DELETE** /repos/{owner}/{repo}/hooks/git/{id} | Delete a Git hook in a repository
 [**repo_delete_hook**](RepositoryApi.md#repo_delete_hook) | **DELETE** /repos/{owner}/{repo}/hooks/{id} | Delete a hook in a repository
 [**repo_delete_key**](RepositoryApi.md#repo_delete_key) | **DELETE** /repos/{owner}/{repo}/keys/{id} | Delete a key from a repository
+[**repo_delete_project**](RepositoryApi.md#repo_delete_project) | **DELETE** /repos/{owner}/{repo}/projects/{id} | Delete a project
+[**repo_delete_project_column**](RepositoryApi.md#repo_delete_project_column) | **DELETE** /repos/{owner}/{repo}/projects/{id}/columns/{column_id} | Delete a project column
 [**repo_delete_pull_review**](RepositoryApi.md#repo_delete_pull_review) | **DELETE** /repos/{owner}/{repo}/pulls/{index}/reviews/{id} | Delete a specific review from a pull request
 [**repo_delete_pull_review_requests**](RepositoryApi.md#repo_delete_pull_review_requests) | **DELETE** /repos/{owner}/{repo}/pulls/{index}/requested_reviewers | cancel review requests for a pull request
 [**repo_delete_push_mirror**](RepositoryApi.md#repo_delete_push_mirror) | **DELETE** /repos/{owner}/{repo}/push_mirrors/{name} | deletes a push mirror from a repository by remoteName
@@ -98,6 +107,8 @@ Method | HTTP request | Description
 [**repo_edit_branch_protection**](RepositoryApi.md#repo_edit_branch_protection) | **PATCH** /repos/{owner}/{repo}/branch_protections/{name} | Edit a branch protections for a repository. Only fields that are set will be changed
 [**repo_edit_git_hook**](RepositoryApi.md#repo_edit_git_hook) | **PATCH** /repos/{owner}/{repo}/hooks/git/{id} | Edit a Git hook in a repository
 [**repo_edit_hook**](RepositoryApi.md#repo_edit_hook) | **PATCH** /repos/{owner}/{repo}/hooks/{id} | Edit a hook in a repository
+[**repo_edit_project**](RepositoryApi.md#repo_edit_project) | **PATCH** /repos/{owner}/{repo}/projects/{id} | Edit a project
+[**repo_edit_project_column**](RepositoryApi.md#repo_edit_project_column) | **PATCH** /repos/{owner}/{repo}/projects/{id}/columns/{column_id} | Edit a project column
 [**repo_edit_pull_request**](RepositoryApi.md#repo_edit_pull_request) | **PATCH** /repos/{owner}/{repo}/pulls/{index} | Update a pull request. If using deadline only the date will be taken into account, and time of day ignored.
 [**repo_edit_release**](RepositoryApi.md#repo_edit_release) | **PATCH** /repos/{owner}/{repo}/releases/{id} | Update a release
 [**repo_edit_release_attachment**](RepositoryApi.md#repo_edit_release_attachment) | **PATCH** /repos/{owner}/{repo}/releases/{id}/assets/{attachment_id} | Edit a release attachment
@@ -127,6 +138,8 @@ Method | HTTP request | Description
 [**repo_get_latest_release**](RepositoryApi.md#repo_get_latest_release) | **GET** /repos/{owner}/{repo}/releases/latest | Gets the most recent non-prerelease, non-draft release of a repository, sorted by created_at
 [**repo_get_licenses**](RepositoryApi.md#repo_get_licenses) | **GET** /repos/{owner}/{repo}/licenses | Get repo licenses
 [**repo_get_note**](RepositoryApi.md#repo_get_note) | **GET** /repos/{owner}/{repo}/git/notes/{sha} | Get a note corresponding to a single commit from a repository
+[**repo_get_project**](RepositoryApi.md#repo_get_project) | **GET** /repos/{owner}/{repo}/projects/{id} | Get a project
+[**repo_get_project_column**](RepositoryApi.md#repo_get_project_column) | **GET** /repos/{owner}/{repo}/projects/{id}/columns/{column_id} | Get a project column
 [**repo_get_pull_request**](RepositoryApi.md#repo_get_pull_request) | **GET** /repos/{owner}/{repo}/pulls/{index} | Get a pull request
 [**repo_get_pull_request_by_base_head**](RepositoryApi.md#repo_get_pull_request_by_base_head) | **GET** /repos/{owner}/{repo}/pulls/{base}/{head} | Get a pull request by base and head
 [**repo_get_pull_request_commits**](RepositoryApi.md#repo_get_pull_request_commits) | **GET** /repos/{owner}/{repo}/pulls/{index}/commits | Get commits for a pull request
@@ -141,13 +154,13 @@ Method | HTTP request | Description
 [**repo_get_release_by_tag**](RepositoryApi.md#repo_get_release_by_tag) | **GET** /repos/{owner}/{repo}/releases/tags/{tag} | Get a release by tag name
 [**repo_get_repo_permissions**](RepositoryApi.md#repo_get_repo_permissions) | **GET** /repos/{owner}/{repo}/collaborators/{collaborator}/permission | Get repository permissions for a user
 [**repo_get_reviewers**](RepositoryApi.md#repo_get_reviewers) | **GET** /repos/{owner}/{repo}/reviewers | Return all users that can be requested to review in this repo
-[**repo_get_single_commit**](RepositoryApi.md#repo_get_single_commit) | **GET** /repos/{owner}/{repo}/git/commits/{sha} | Get a single commit from a repository
+[**repo_get_single_commit**](RepositoryApi.md#repo_get_single_commit) | **GET** /repos/{owner}/{repo}/git/commits/{sha} | Get a single commit from a repository, it has a GitHub-compatible alias \&quot;/repos/{owner}/{repo}/commits/{ref}\&quot;
 [**repo_get_tag**](RepositoryApi.md#repo_get_tag) | **GET** /repos/{owner}/{repo}/tags/{tag} | Get the tag of a repository by tag name
 [**repo_get_tag_protection**](RepositoryApi.md#repo_get_tag_protection) | **GET** /repos/{owner}/{repo}/tag_protections/{id} | Get a specific tag protection for the repository
 [**repo_get_wiki_page**](RepositoryApi.md#repo_get_wiki_page) | **GET** /repos/{owner}/{repo}/wiki/page/{pageName} | Get a wiki page
 [**repo_get_wiki_page_revisions**](RepositoryApi.md#repo_get_wiki_page_revisions) | **GET** /repos/{owner}/{repo}/wiki/revisions/{pageName} | Get revisions of a wiki page
 [**repo_get_wiki_pages**](RepositoryApi.md#repo_get_wiki_pages) | **GET** /repos/{owner}/{repo}/wiki/pages | Get all wiki pages
-[**repo_list_actions_secrets**](RepositoryApi.md#repo_list_actions_secrets) | **GET** /repos/{owner}/{repo}/actions/secrets | List an repo&#39;s actions secrets
+[**repo_list_actions_secrets**](RepositoryApi.md#repo_list_actions_secrets) | **GET** /repos/{owner}/{repo}/actions/secrets | List a repo&#39;s actions secrets
 [**repo_list_activity_feeds**](RepositoryApi.md#repo_list_activity_feeds) | **GET** /repos/{owner}/{repo}/activities/feeds | List a repository&#39;s activity feeds
 [**repo_list_all_git_refs**](RepositoryApi.md#repo_list_all_git_refs) | **GET** /repos/{owner}/{repo}/git/refs | Get specified ref or filtered repository&#39;s refs
 [**repo_list_branch_protection**](RepositoryApi.md#repo_list_branch_protection) | **GET** /repos/{owner}/{repo}/branch_protections | List branch protections for a repository
@@ -159,6 +172,9 @@ Method | HTTP request | Description
 [**repo_list_keys**](RepositoryApi.md#repo_list_keys) | **GET** /repos/{owner}/{repo}/keys | List a repository&#39;s keys
 [**repo_list_pinned_issues**](RepositoryApi.md#repo_list_pinned_issues) | **GET** /repos/{owner}/{repo}/issues/pinned | List a repo&#39;s pinned issues
 [**repo_list_pinned_pull_requests**](RepositoryApi.md#repo_list_pinned_pull_requests) | **GET** /repos/{owner}/{repo}/pulls/pinned | List a repo&#39;s pinned pull requests
+[**repo_list_project_column_issues**](RepositoryApi.md#repo_list_project_column_issues) | **GET** /repos/{owner}/{repo}/projects/{id}/columns/{column_id}/issues | List the issues in a project column
+[**repo_list_project_columns**](RepositoryApi.md#repo_list_project_columns) | **GET** /repos/{owner}/{repo}/projects/{id}/columns | List a project&#39;s columns
+[**repo_list_projects**](RepositoryApi.md#repo_list_projects) | **GET** /repos/{owner}/{repo}/projects | List a repository&#39;s projects
 [**repo_list_pull_requests**](RepositoryApi.md#repo_list_pull_requests) | **GET** /repos/{owner}/{repo}/pulls | List a repo&#39;s pull requests
 [**repo_list_pull_reviews**](RepositoryApi.md#repo_list_pull_reviews) | **GET** /repos/{owner}/{repo}/pulls/{index}/reviews | List all reviews for a pull request
 [**repo_list_push_mirrors**](RepositoryApi.md#repo_list_push_mirrors) | **GET** /repos/{owner}/{repo}/push_mirrors | Get all push mirrors of the repository
@@ -176,13 +192,17 @@ Method | HTTP request | Description
 [**repo_merge_upstream**](RepositoryApi.md#repo_merge_upstream) | **POST** /repos/{owner}/{repo}/merge-upstream | Merge a branch from upstream
 [**repo_migrate**](RepositoryApi.md#repo_migrate) | **POST** /repos/migrate | Migrate a remote git repository
 [**repo_mirror_sync**](RepositoryApi.md#repo_mirror_sync) | **POST** /repos/{owner}/{repo}/mirror-sync | Sync a mirrored repository
+[**repo_move_project_columns**](RepositoryApi.md#repo_move_project_columns) | **POST** /repos/{owner}/{repo}/projects/{id}/columns/move | Reorder a project&#39;s columns
+[**repo_move_project_issue**](RepositoryApi.md#repo_move_project_issue) | **POST** /repos/{owner}/{repo}/projects/{id}/issues/{issue_id}/move | Move an issue between a project&#39;s columns
 [**repo_new_pin_allowed**](RepositoryApi.md#repo_new_pin_allowed) | **GET** /repos/{owner}/{repo}/new_pin_allowed | Returns if new Issue Pins are allowed
 [**repo_pull_request_is_merged**](RepositoryApi.md#repo_pull_request_is_merged) | **GET** /repos/{owner}/{repo}/pulls/{index}/merge | Check if a pull request has been merged
 [**repo_push_mirror_sync**](RepositoryApi.md#repo_push_mirror_sync) | **POST** /repos/{owner}/{repo}/push_mirrors-sync | Sync all push mirrored repository
+[**repo_remove_issue_from_project_column**](RepositoryApi.md#repo_remove_issue_from_project_column) | **DELETE** /repos/{owner}/{repo}/projects/{id}/columns/{column_id}/issues/{issue_id} | Remove an issue from a project column
 [**repo_rename_branch**](RepositoryApi.md#repo_rename_branch) | **PATCH** /repos/{owner}/{repo}/branches/{branch} | Rename a branch
 [**repo_reparent**](RepositoryApi.md#repo_reparent) | **POST** /repos/{owner}/{repo}/reparent | Reparent a repo
 [**repo_resolve_pull_review_comment**](RepositoryApi.md#repo_resolve_pull_review_comment) | **POST** /repos/{owner}/{repo}/pulls/comments/{id}/resolve | Resolve a pull request review comment
 [**repo_search**](RepositoryApi.md#repo_search) | **GET** /repos/search | Search for repositories
+[**repo_set_default_project_column**](RepositoryApi.md#repo_set_default_project_column) | **POST** /repos/{owner}/{repo}/projects/{id}/columns/{column_id}/default | Set a project&#39;s default column
 [**repo_signing_key**](RepositoryApi.md#repo_signing_key) | **GET** /repos/{owner}/{repo}/signing-key.gpg | Get signing-key.gpg for given repository
 [**repo_signing_key_ssh**](RepositoryApi.md#repo_signing_key_ssh) | **GET** /repos/{owner}/{repo}/signing-key.pub | Get signing-key.pub for given repository
 [**repo_submit_pull_review**](RepositoryApi.md#repo_submit_pull_review) | **POST** /repos/{owner}/{repo}/pulls/{index}/reviews/{id} | Submit a pending review to a pull request
@@ -1178,7 +1198,7 @@ with gitea_api.ApiClient(configuration) as api_client:
     workflow_id = 'workflow_id_example' # str | id of the workflow, must be the workflow file name (e.g. `build.yml`)
     event = 'event_example' # str | workflow event name (optional)
     branch = 'branch_example' # str | workflow branch (optional)
-    status = 'status_example' # str | workflow status (pending, queued, in_progress, failure, success, skipped) (optional)
+    status = 'status_example' # str | workflow status (requested, pending, queued, in_progress, failure, success, skipped) (optional)
     actor = 'actor_example' # str | triggered by user (optional)
     head_sha = 'head_sha_example' # str | triggering sha of the workflow run (optional)
     exclude_pull_requests = True # bool | if true, the `pull_requests` field on each returned run is emptied (optional)
@@ -1207,7 +1227,7 @@ Name | Type | Description  | Notes
  **workflow_id** | **str**| id of the workflow, must be the workflow file name (e.g. &#x60;build.yml&#x60;) | 
  **event** | **str**| workflow event name | [optional] 
  **branch** | **str**| workflow branch | [optional] 
- **status** | **str**| workflow status (pending, queued, in_progress, failure, success, skipped) | [optional] 
+ **status** | **str**| workflow status (requested, pending, queued, in_progress, failure, success, skipped) | [optional] 
  **actor** | **str**| triggered by user | [optional] 
  **head_sha** | **str**| triggering sha of the workflow run | [optional] 
  **exclude_pull_requests** | **bool**| if true, the &#x60;pull_requests&#x60; field on each returned run is emptied | [optional] 
@@ -1239,10 +1259,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_current_user_repo**
-> Repository create_current_user_repo(body=body)
+# **approve_workflow_run**
+> ActionWorkflowRun approve_workflow_run(owner, repo, run)
 
-Create a repository
+Approve a workflow run that requires approval
 
 ### Example
 
@@ -1256,8 +1276,7 @@ Create a repository
 
 ```python
 import gitea_api
-from gitea_api.models.create_repo_option import CreateRepoOption
-from gitea_api.models.repository import Repository
+from gitea_api.models.action_workflow_run import ActionWorkflowRun
 from gitea_api.rest import ApiException
 from pprint import pprint
 
@@ -1318,15 +1337,17 @@ configuration.api_key['Token'] = os.environ["API_KEY"]
 with gitea_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gitea_api.RepositoryApi(api_client)
-    body = gitea_api.CreateRepoOption() # CreateRepoOption |  (optional)
+    owner = 'owner_example' # str | owner of the repo
+    repo = 'repo_example' # str | name of the repository
+    run = 56 # int | run ID
 
     try:
-        # Create a repository
-        api_response = api_instance.create_current_user_repo(body=body)
-        print("The response of RepositoryApi->create_current_user_repo:\n")
+        # Approve a workflow run that requires approval
+        api_response = api_instance.approve_workflow_run(owner, repo, run)
+        print("The response of RepositoryApi->approve_workflow_run:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling RepositoryApi->create_current_user_repo: %s\n" % e)
+        print("Exception when calling RepositoryApi->approve_workflow_run: %s\n" % e)
 ```
 
 
@@ -1336,11 +1357,13 @@ with gitea_api.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateRepoOption**](CreateRepoOption.md)|  | [optional] 
+ **owner** | **str**| owner of the repo | 
+ **repo** | **str**| name of the repository | 
+ **run** | **int**| run ID | 
 
 ### Return type
 
-[**Repository**](Repository.md)
+[**ActionWorkflowRun**](ActionWorkflowRun.md)
 
 ### Authorization
 
@@ -1348,17 +1371,145 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Repository |  -  |
+**200** | WorkflowRun |  -  |
 **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
-**409** | The repository with the same name already exists. |  -  |
-**422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+**403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+**404** | APINotFound is a not found empty response |  -  |
+**409** | APIConflict is a conflict empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **cancel_workflow_run**
+> ActionWorkflowRun cancel_workflow_run(owner, repo, run)
+
+Cancel a workflow run and its jobs
+
+### Example
+
+* Api Key Authentication (TOTPHeader):
+* Api Key Authentication (AuthorizationHeaderToken):
+* Api Key Authentication (SudoHeader):
+* Basic Authentication (BasicAuth):
+* Api Key Authentication (AccessToken):
+* Api Key Authentication (SudoParam):
+* Api Key Authentication (Token):
+
+```python
+import gitea_api
+from gitea_api.models.action_workflow_run import ActionWorkflowRun
+from gitea_api.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gitea_api.Configuration(
+    host = "/api/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: TOTPHeader
+configuration.api_key['TOTPHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['TOTPHeader'] = 'Bearer'
+
+# Configure API key authorization: AuthorizationHeaderToken
+configuration.api_key['AuthorizationHeaderToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AuthorizationHeaderToken'] = 'Bearer'
+
+# Configure API key authorization: SudoHeader
+configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoHeader'] = 'Bearer'
+
+# Configure HTTP basic authorization: BasicAuth
+configuration = gitea_api.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Configure API key authorization: AccessToken
+configuration.api_key['AccessToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AccessToken'] = 'Bearer'
+
+# Configure API key authorization: SudoParam
+configuration.api_key['SudoParam'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoParam'] = 'Bearer'
+
+# Configure API key authorization: Token
+configuration.api_key['Token'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Token'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with gitea_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = gitea_api.RepositoryApi(api_client)
+    owner = 'owner_example' # str | owner of the repo
+    repo = 'repo_example' # str | name of the repository
+    run = 56 # int | run ID
+
+    try:
+        # Cancel a workflow run and its jobs
+        api_response = api_instance.cancel_workflow_run(owner, repo, run)
+        print("The response of RepositoryApi->cancel_workflow_run:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling RepositoryApi->cancel_workflow_run: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **owner** | **str**| owner of the repo | 
+ **repo** | **str**| name of the repository | 
+ **run** | **int**| run ID | 
+
+### Return type
+
+[**ActionWorkflowRun**](ActionWorkflowRun.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | WorkflowRun |  -  |
+**400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+**403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+**404** | APINotFound is a not found empty response |  -  |
+**409** | APIConflict is a conflict empty response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2472,6 +2623,138 @@ void (empty response body)
 **302** | redirect to the blob download |  -  |
 **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **force_cancel_workflow_run**
+> ActionWorkflowRun force_cancel_workflow_run(owner, repo, run)
+
+Force-cancel a workflow run
+
+Cancels a workflow run without waiting for its runners to acknowledge the cancellation.
+The jobs are marked cancelled at once and anything a runner reports for them afterwards is discarded.
+Only use this endpoint when the workflow run does not respond to `POST /repos/{owner}/{repo}/actions/runs/{run}/cancel`.
+
+
+### Example
+
+* Api Key Authentication (TOTPHeader):
+* Api Key Authentication (AuthorizationHeaderToken):
+* Api Key Authentication (SudoHeader):
+* Basic Authentication (BasicAuth):
+* Api Key Authentication (AccessToken):
+* Api Key Authentication (SudoParam):
+* Api Key Authentication (Token):
+
+```python
+import gitea_api
+from gitea_api.models.action_workflow_run import ActionWorkflowRun
+from gitea_api.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gitea_api.Configuration(
+    host = "/api/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: TOTPHeader
+configuration.api_key['TOTPHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['TOTPHeader'] = 'Bearer'
+
+# Configure API key authorization: AuthorizationHeaderToken
+configuration.api_key['AuthorizationHeaderToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AuthorizationHeaderToken'] = 'Bearer'
+
+# Configure API key authorization: SudoHeader
+configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoHeader'] = 'Bearer'
+
+# Configure HTTP basic authorization: BasicAuth
+configuration = gitea_api.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Configure API key authorization: AccessToken
+configuration.api_key['AccessToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AccessToken'] = 'Bearer'
+
+# Configure API key authorization: SudoParam
+configuration.api_key['SudoParam'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoParam'] = 'Bearer'
+
+# Configure API key authorization: Token
+configuration.api_key['Token'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Token'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with gitea_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = gitea_api.RepositoryApi(api_client)
+    owner = 'owner_example' # str | owner of the repo
+    repo = 'repo_example' # str | name of the repository
+    run = 56 # int | run ID
+
+    try:
+        # Force-cancel a workflow run
+        api_response = api_instance.force_cancel_workflow_run(owner, repo, run)
+        print("The response of RepositoryApi->force_cancel_workflow_run:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling RepositoryApi->force_cancel_workflow_run: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **owner** | **str**| owner of the repo | 
+ **repo** | **str**| name of the repository | 
+ **run** | **int**| run ID | 
+
+### Return type
+
+[**ActionWorkflowRun**](ActionWorkflowRun.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | WorkflowRun |  -  |
+**400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
+**403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+**404** | APINotFound is a not found empty response |  -  |
+**409** | APIConflict is a conflict empty response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -4240,6 +4523,127 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_workflow_run_logs**
+> get_workflow_run_logs(owner, repo, run)
+
+Download workflow run logs as archive
+
+### Example
+
+* Api Key Authentication (TOTPHeader):
+* Api Key Authentication (AuthorizationHeaderToken):
+* Api Key Authentication (SudoHeader):
+* Basic Authentication (BasicAuth):
+* Api Key Authentication (AccessToken):
+* Api Key Authentication (SudoParam):
+* Api Key Authentication (Token):
+
+```python
+import gitea_api
+from gitea_api.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gitea_api.Configuration(
+    host = "/api/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: TOTPHeader
+configuration.api_key['TOTPHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['TOTPHeader'] = 'Bearer'
+
+# Configure API key authorization: AuthorizationHeaderToken
+configuration.api_key['AuthorizationHeaderToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AuthorizationHeaderToken'] = 'Bearer'
+
+# Configure API key authorization: SudoHeader
+configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoHeader'] = 'Bearer'
+
+# Configure HTTP basic authorization: BasicAuth
+configuration = gitea_api.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Configure API key authorization: AccessToken
+configuration.api_key['AccessToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AccessToken'] = 'Bearer'
+
+# Configure API key authorization: SudoParam
+configuration.api_key['SudoParam'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoParam'] = 'Bearer'
+
+# Configure API key authorization: Token
+configuration.api_key['Token'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Token'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with gitea_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = gitea_api.RepositoryApi(api_client)
+    owner = 'owner_example' # str | owner of the repo
+    repo = 'repo_example' # str | name of the repository
+    run = 56 # int | run ID
+
+    try:
+        # Download workflow run logs as archive
+        api_instance.get_workflow_run_logs(owner, repo, run)
+    except Exception as e:
+        print("Exception when calling RepositoryApi->get_workflow_run_logs: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **owner** | **str**| owner of the repo | 
+ **repo** | **str**| name of the repository | 
+ **run** | **int**| run ID | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Logs archive |  -  |
+**404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_workflow_runs**
 > ActionWorkflowRunsResponse get_workflow_runs(owner, repo, event=event, branch=branch, status=status, actor=actor, head_sha=head_sha, exclude_pull_requests=exclude_pull_requests, page=page, limit=limit)
 
@@ -4322,7 +4726,7 @@ with gitea_api.ApiClient(configuration) as api_client:
     repo = 'repo_example' # str | name of the repository
     event = 'event_example' # str | workflow event name (optional)
     branch = 'branch_example' # str | workflow branch (optional)
-    status = 'status_example' # str | workflow status (pending, queued, in_progress, failure, success, skipped) (optional)
+    status = 'status_example' # str | workflow status (requested, pending, queued, in_progress, failure, success, skipped) (optional)
     actor = 'actor_example' # str | triggered by user (optional)
     head_sha = 'head_sha_example' # str | triggering sha of the workflow run (optional)
     exclude_pull_requests = True # bool | if true, the `pull_requests` field on each returned run is emptied (optional)
@@ -4349,7 +4753,7 @@ Name | Type | Description  | Notes
  **repo** | **str**| name of the repository | 
  **event** | **str**| workflow event name | [optional] 
  **branch** | **str**| workflow branch | [optional] 
- **status** | **str**| workflow status (pending, queued, in_progress, failure, success, skipped) | [optional] 
+ **status** | **str**| workflow status (requested, pending, queued, in_progress, failure, success, skipped) | [optional] 
  **actor** | **str**| triggered by user | [optional] 
  **head_sha** | **str**| triggering sha of the workflow run | [optional] 
  **exclude_pull_requests** | **bool**| if true, the &#x60;pull_requests&#x60; field on each returned run is emptied | [optional] 
@@ -4715,7 +5119,7 @@ with gitea_api.ApiClient(configuration) as api_client:
     api_instance = gitea_api.RepositoryApi(api_client)
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repository
-    status = 'status_example' # str | workflow status (pending, queued, in_progress, failure, success, skipped) (optional)
+    status = 'status_example' # str | workflow status (requested, pending, queued, in_progress, failure, success, skipped) (optional)
     page = 56 # int | page number of results to return (1-based) (optional)
     limit = 56 # int | page size of results (optional)
     sort = 'sort_example' # str | sort jobs by attribute. Supported values are \"id\". Default is \"id\" (optional)
@@ -4739,7 +5143,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **owner** | **str**| owner of the repo | 
  **repo** | **str**| name of the repository | 
- **status** | **str**| workflow status (pending, queued, in_progress, failure, success, skipped) | [optional] 
+ **status** | **str**| workflow status (requested, pending, queued, in_progress, failure, success, skipped) | [optional] 
  **page** | **int**| page number of results to return (1-based) | [optional] 
  **limit** | **int**| page size of results | [optional] 
  **sort** | **str**| sort jobs by attribute. Supported values are \&quot;id\&quot;. Default is \&quot;id\&quot; | [optional] 
@@ -4851,7 +5255,7 @@ with gitea_api.ApiClient(configuration) as api_client:
     repo = 'repo_example' # str | name of the repository
     run = 56 # int | id of the workflow run
     attempt = 56 # int | logical attempt number of the run
-    status = 'status_example' # str | workflow status (pending, queued, in_progress, failure, success, skipped) (optional)
+    status = 'status_example' # str | workflow status (requested, pending, queued, in_progress, failure, success, skipped) (optional)
     page = 56 # int | page number of results to return (1-based) (optional)
     limit = 56 # int | page size of results (optional)
 
@@ -4875,7 +5279,7 @@ Name | Type | Description  | Notes
  **repo** | **str**| name of the repository | 
  **run** | **int**| id of the workflow run | 
  **attempt** | **int**| logical attempt number of the run | 
- **status** | **str**| workflow status (pending, queued, in_progress, failure, success, skipped) | [optional] 
+ **status** | **str**| workflow status (requested, pending, queued, in_progress, failure, success, skipped) | [optional] 
  **page** | **int**| page number of results to return (1-based) | [optional] 
  **limit** | **int**| page size of results | [optional] 
 
@@ -4983,7 +5387,7 @@ with gitea_api.ApiClient(configuration) as api_client:
     owner = 'owner_example' # str | owner of the repo
     repo = 'repo_example' # str | name of the repository
     run = 56 # int | runid of the workflow run
-    status = 'status_example' # str | workflow status (pending, queued, in_progress, failure, success, skipped) (optional)
+    status = 'status_example' # str | workflow status (requested, pending, queued, in_progress, failure, success, skipped) (optional)
     page = 56 # int | page number of results to return (1-based) (optional)
     limit = 56 # int | page size of results (optional)
     sort = 'sort_example' # str | sort jobs by attribute. Supported values are \"id\". Default is \"id\" (optional)
@@ -5008,7 +5412,7 @@ Name | Type | Description  | Notes
  **owner** | **str**| owner of the repo | 
  **repo** | **str**| name of the repository | 
  **run** | **int**| runid of the workflow run | 
- **status** | **str**| workflow status (pending, queued, in_progress, failure, success, skipped) | [optional] 
+ **status** | **str**| workflow status (requested, pending, queued, in_progress, failure, success, skipped) | [optional] 
  **page** | **int**| page number of results to return (1-based) | [optional] 
  **limit** | **int**| page size of results | [optional] 
  **sort** | **str**| sort jobs by attribute. Supported values are \&quot;id\&quot;. Default is \&quot;id\&quot; | [optional] 
@@ -5410,6 +5814,136 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **repo_add_issue_to_project_column**
+> repo_add_issue_to_project_column(owner, repo, id, column_id, issue_id)
+
+Add an issue to a project column
+
+Assigns the issue to the project if it is not a member yet, then places it in the column.
+
+### Example
+
+* Api Key Authentication (TOTPHeader):
+* Api Key Authentication (AuthorizationHeaderToken):
+* Api Key Authentication (SudoHeader):
+* Basic Authentication (BasicAuth):
+* Api Key Authentication (AccessToken):
+* Api Key Authentication (SudoParam):
+* Api Key Authentication (Token):
+
+```python
+import gitea_api
+from gitea_api.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gitea_api.Configuration(
+    host = "/api/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: TOTPHeader
+configuration.api_key['TOTPHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['TOTPHeader'] = 'Bearer'
+
+# Configure API key authorization: AuthorizationHeaderToken
+configuration.api_key['AuthorizationHeaderToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AuthorizationHeaderToken'] = 'Bearer'
+
+# Configure API key authorization: SudoHeader
+configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoHeader'] = 'Bearer'
+
+# Configure HTTP basic authorization: BasicAuth
+configuration = gitea_api.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Configure API key authorization: AccessToken
+configuration.api_key['AccessToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AccessToken'] = 'Bearer'
+
+# Configure API key authorization: SudoParam
+configuration.api_key['SudoParam'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoParam'] = 'Bearer'
+
+# Configure API key authorization: Token
+configuration.api_key['Token'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Token'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with gitea_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = gitea_api.RepositoryApi(api_client)
+    owner = 'owner_example' # str | owner of the repo
+    repo = 'repo_example' # str | name of the repo
+    id = 56 # int | id of the project
+    column_id = 56 # int | id of the column
+    issue_id = 56 # int | global id of the issue, not the repository-local index
+
+    try:
+        # Add an issue to a project column
+        api_instance.repo_add_issue_to_project_column(owner, repo, id, column_id, issue_id)
+    except Exception as e:
+        print("Exception when calling RepositoryApi->repo_add_issue_to_project_column: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **owner** | **str**| owner of the repo | 
+ **repo** | **str**| name of the repo | 
+ **id** | **int**| id of the project | 
+ **column_id** | **int**| id of the column | 
+ **issue_id** | **int**| global id of the issue, not the repository-local index | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | APIEmpty is an empty response |  -  |
+**403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+**404** | APINotFound is a not found empty response |  -  |
+**422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+**423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **repo_add_push_mirror**
 > PushMirror repo_add_push_mirror(owner, repo, body=body)
 
@@ -5654,6 +6188,7 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | APIEmpty is an empty response |  -  |
+**403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 **404** | APINotFound is a not found empty response |  -  |
 **405** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
@@ -5779,6 +6314,7 @@ void (empty response body)
 **204** | APIEmpty is an empty response |  -  |
 **404** | APINotFound is a not found empty response |  -  |
 **422** | APIInvalidTopicsError is error format response to invalid topics |  * invalidTopics -  <br>  * message -  <br>  |
+**423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -6529,7 +7065,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **repo_compare_diff**
-> Compare repo_compare_diff(owner, repo, basehead, output=output)
+> Compare repo_compare_diff(owner, repo, basehead, output=output, verification=verification, files=files)
 
 Get commit comparison information
 
@@ -6614,10 +7150,12 @@ with gitea_api.ApiClient(configuration) as api_client:
     repo = 'repo_example' # str | name of the repo
     basehead = 'basehead_example' # str | compare two refs as `base...head` (or `base..head`); refs may be branches, tags, full or short SHAs (including branch names that contain slashes), optionally with a `^` or `~N` revision suffix.
     output = 'output_example' # str | return the raw comparison as `diff` or `patch` instead of JSON (optional)
+    verification = True # bool | include verification for every commit (disable for speedup, default 'true') (optional)
+    files = True # bool | include a list of affected files for every commit (disable for speedup, default 'true') (optional)
 
     try:
         # Get commit comparison information
-        api_response = api_instance.repo_compare_diff(owner, repo, basehead, output=output)
+        api_response = api_instance.repo_compare_diff(owner, repo, basehead, output=output, verification=verification, files=files)
         print("The response of RepositoryApi->repo_compare_diff:\n")
         pprint(api_response)
     except Exception as e:
@@ -6635,6 +7173,8 @@ Name | Type | Description  | Notes
  **repo** | **str**| name of the repo | 
  **basehead** | **str**| compare two refs as &#x60;base...head&#x60; (or &#x60;base..head&#x60;); refs may be branches, tags, full or short SHAs (including branch names that contain slashes), optionally with a &#x60;^&#x60; or &#x60;~N&#x60; revision suffix. | 
  **output** | **str**| return the raw comparison as &#x60;diff&#x60; or &#x60;patch&#x60; instead of JSON | [optional] 
+ **verification** | **bool**| include verification for every commit (disable for speedup, default &#39;true&#39;) | [optional] 
+ **files** | **bool**| include a list of affected files for every commit (disable for speedup, default &#39;true&#39;) | [optional] 
 
 ### Return type
 
@@ -6912,6 +7452,132 @@ Name | Type | Description  | Notes
 **404** | APINotFound is a not found empty response |  -  |
 **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
 **423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **repo_create_deploy_token**
+> DeployKey repo_create_deploy_token(owner, repo, body=body)
+
+Add a deploy token to a repository, it authenticates git over HTTPS
+
+### Example
+
+* Api Key Authentication (TOTPHeader):
+* Api Key Authentication (AuthorizationHeaderToken):
+* Api Key Authentication (SudoHeader):
+* Basic Authentication (BasicAuth):
+* Api Key Authentication (AccessToken):
+* Api Key Authentication (SudoParam):
+* Api Key Authentication (Token):
+
+```python
+import gitea_api
+from gitea_api.models.create_deploy_key_token_option import CreateDeployKeyTokenOption
+from gitea_api.models.deploy_key import DeployKey
+from gitea_api.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gitea_api.Configuration(
+    host = "/api/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: TOTPHeader
+configuration.api_key['TOTPHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['TOTPHeader'] = 'Bearer'
+
+# Configure API key authorization: AuthorizationHeaderToken
+configuration.api_key['AuthorizationHeaderToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AuthorizationHeaderToken'] = 'Bearer'
+
+# Configure API key authorization: SudoHeader
+configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoHeader'] = 'Bearer'
+
+# Configure HTTP basic authorization: BasicAuth
+configuration = gitea_api.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Configure API key authorization: AccessToken
+configuration.api_key['AccessToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AccessToken'] = 'Bearer'
+
+# Configure API key authorization: SudoParam
+configuration.api_key['SudoParam'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoParam'] = 'Bearer'
+
+# Configure API key authorization: Token
+configuration.api_key['Token'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Token'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with gitea_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = gitea_api.RepositoryApi(api_client)
+    owner = 'owner_example' # str | owner of the repo
+    repo = 'repo_example' # str | name of the repo
+    body = gitea_api.CreateDeployKeyTokenOption() # CreateDeployKeyTokenOption |  (optional)
+
+    try:
+        # Add a deploy token to a repository, it authenticates git over HTTPS
+        api_response = api_instance.repo_create_deploy_token(owner, repo, body=body)
+        print("The response of RepositoryApi->repo_create_deploy_token:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling RepositoryApi->repo_create_deploy_token: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **owner** | **str**| owner of the repo | 
+ **repo** | **str**| name of the repo | 
+ **body** | [**CreateDeployKeyTokenOption**](CreateDeployKeyTokenOption.md)|  | [optional] 
+
+### Return type
+
+[**DeployKey**](DeployKey.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | DeployKey |  -  |
+**404** | APINotFound is a not found empty response |  -  |
+**422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -7293,6 +7959,263 @@ Name | Type | Description  | Notes
 **201** | DeployKey |  -  |
 **404** | APINotFound is a not found empty response |  -  |
 **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **repo_create_project**
+> Project repo_create_project(owner, repo, body=body)
+
+Create a project owned by a repository
+
+### Example
+
+* Api Key Authentication (TOTPHeader):
+* Api Key Authentication (AuthorizationHeaderToken):
+* Api Key Authentication (SudoHeader):
+* Basic Authentication (BasicAuth):
+* Api Key Authentication (AccessToken):
+* Api Key Authentication (SudoParam):
+* Api Key Authentication (Token):
+
+```python
+import gitea_api
+from gitea_api.models.create_project_option import CreateProjectOption
+from gitea_api.models.project import Project
+from gitea_api.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gitea_api.Configuration(
+    host = "/api/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: TOTPHeader
+configuration.api_key['TOTPHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['TOTPHeader'] = 'Bearer'
+
+# Configure API key authorization: AuthorizationHeaderToken
+configuration.api_key['AuthorizationHeaderToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AuthorizationHeaderToken'] = 'Bearer'
+
+# Configure API key authorization: SudoHeader
+configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoHeader'] = 'Bearer'
+
+# Configure HTTP basic authorization: BasicAuth
+configuration = gitea_api.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Configure API key authorization: AccessToken
+configuration.api_key['AccessToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AccessToken'] = 'Bearer'
+
+# Configure API key authorization: SudoParam
+configuration.api_key['SudoParam'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoParam'] = 'Bearer'
+
+# Configure API key authorization: Token
+configuration.api_key['Token'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Token'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with gitea_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = gitea_api.RepositoryApi(api_client)
+    owner = 'owner_example' # str | owner of the repo
+    repo = 'repo_example' # str | name of the repo
+    body = gitea_api.CreateProjectOption() # CreateProjectOption |  (optional)
+
+    try:
+        # Create a project owned by a repository
+        api_response = api_instance.repo_create_project(owner, repo, body=body)
+        print("The response of RepositoryApi->repo_create_project:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling RepositoryApi->repo_create_project: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **owner** | **str**| owner of the repo | 
+ **repo** | **str**| name of the repo | 
+ **body** | [**CreateProjectOption**](CreateProjectOption.md)|  | [optional] 
+
+### Return type
+
+[**Project**](Project.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Project |  -  |
+**404** | APINotFound is a not found empty response |  -  |
+**422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+**423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **repo_create_project_column**
+> ProjectColumn repo_create_project_column(owner, repo, id, body=body)
+
+Create a column in a project
+
+### Example
+
+* Api Key Authentication (TOTPHeader):
+* Api Key Authentication (AuthorizationHeaderToken):
+* Api Key Authentication (SudoHeader):
+* Basic Authentication (BasicAuth):
+* Api Key Authentication (AccessToken):
+* Api Key Authentication (SudoParam):
+* Api Key Authentication (Token):
+
+```python
+import gitea_api
+from gitea_api.models.create_project_column_option import CreateProjectColumnOption
+from gitea_api.models.project_column import ProjectColumn
+from gitea_api.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gitea_api.Configuration(
+    host = "/api/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: TOTPHeader
+configuration.api_key['TOTPHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['TOTPHeader'] = 'Bearer'
+
+# Configure API key authorization: AuthorizationHeaderToken
+configuration.api_key['AuthorizationHeaderToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AuthorizationHeaderToken'] = 'Bearer'
+
+# Configure API key authorization: SudoHeader
+configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoHeader'] = 'Bearer'
+
+# Configure HTTP basic authorization: BasicAuth
+configuration = gitea_api.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Configure API key authorization: AccessToken
+configuration.api_key['AccessToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AccessToken'] = 'Bearer'
+
+# Configure API key authorization: SudoParam
+configuration.api_key['SudoParam'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoParam'] = 'Bearer'
+
+# Configure API key authorization: Token
+configuration.api_key['Token'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Token'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with gitea_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = gitea_api.RepositoryApi(api_client)
+    owner = 'owner_example' # str | owner of the repo
+    repo = 'repo_example' # str | name of the repo
+    id = 56 # int | id of the project
+    body = gitea_api.CreateProjectColumnOption() # CreateProjectColumnOption |  (optional)
+
+    try:
+        # Create a column in a project
+        api_response = api_instance.repo_create_project_column(owner, repo, id, body=body)
+        print("The response of RepositoryApi->repo_create_project_column:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling RepositoryApi->repo_create_project_column: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **owner** | **str**| owner of the repo | 
+ **repo** | **str**| name of the repo | 
+ **id** | **int**| id of the project | 
+ **body** | [**CreateProjectColumnOption**](CreateProjectColumnOption.md)|  | [optional] 
+
+### Return type
+
+[**ProjectColumn**](ProjectColumn.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | ProjectColumn |  -  |
+**403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+**404** | APINotFound is a not found empty response |  -  |
+**422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+**423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -9800,6 +10723,256 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **repo_delete_project**
+> repo_delete_project(owner, repo, id)
+
+Delete a project
+
+### Example
+
+* Api Key Authentication (TOTPHeader):
+* Api Key Authentication (AuthorizationHeaderToken):
+* Api Key Authentication (SudoHeader):
+* Basic Authentication (BasicAuth):
+* Api Key Authentication (AccessToken):
+* Api Key Authentication (SudoParam):
+* Api Key Authentication (Token):
+
+```python
+import gitea_api
+from gitea_api.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gitea_api.Configuration(
+    host = "/api/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: TOTPHeader
+configuration.api_key['TOTPHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['TOTPHeader'] = 'Bearer'
+
+# Configure API key authorization: AuthorizationHeaderToken
+configuration.api_key['AuthorizationHeaderToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AuthorizationHeaderToken'] = 'Bearer'
+
+# Configure API key authorization: SudoHeader
+configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoHeader'] = 'Bearer'
+
+# Configure HTTP basic authorization: BasicAuth
+configuration = gitea_api.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Configure API key authorization: AccessToken
+configuration.api_key['AccessToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AccessToken'] = 'Bearer'
+
+# Configure API key authorization: SudoParam
+configuration.api_key['SudoParam'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoParam'] = 'Bearer'
+
+# Configure API key authorization: Token
+configuration.api_key['Token'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Token'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with gitea_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = gitea_api.RepositoryApi(api_client)
+    owner = 'owner_example' # str | owner of the repo
+    repo = 'repo_example' # str | name of the repo
+    id = 56 # int | id of the project
+
+    try:
+        # Delete a project
+        api_instance.repo_delete_project(owner, repo, id)
+    except Exception as e:
+        print("Exception when calling RepositoryApi->repo_delete_project: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **owner** | **str**| owner of the repo | 
+ **repo** | **str**| name of the repo | 
+ **id** | **int**| id of the project | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | APIEmpty is an empty response |  -  |
+**404** | APINotFound is a not found empty response |  -  |
+**423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **repo_delete_project_column**
+> repo_delete_project_column(owner, repo, id, column_id)
+
+Delete a project column
+
+The default column cannot be deleted while it is still the column new issues land in.
+
+### Example
+
+* Api Key Authentication (TOTPHeader):
+* Api Key Authentication (AuthorizationHeaderToken):
+* Api Key Authentication (SudoHeader):
+* Basic Authentication (BasicAuth):
+* Api Key Authentication (AccessToken):
+* Api Key Authentication (SudoParam):
+* Api Key Authentication (Token):
+
+```python
+import gitea_api
+from gitea_api.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gitea_api.Configuration(
+    host = "/api/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: TOTPHeader
+configuration.api_key['TOTPHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['TOTPHeader'] = 'Bearer'
+
+# Configure API key authorization: AuthorizationHeaderToken
+configuration.api_key['AuthorizationHeaderToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AuthorizationHeaderToken'] = 'Bearer'
+
+# Configure API key authorization: SudoHeader
+configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoHeader'] = 'Bearer'
+
+# Configure HTTP basic authorization: BasicAuth
+configuration = gitea_api.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Configure API key authorization: AccessToken
+configuration.api_key['AccessToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AccessToken'] = 'Bearer'
+
+# Configure API key authorization: SudoParam
+configuration.api_key['SudoParam'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoParam'] = 'Bearer'
+
+# Configure API key authorization: Token
+configuration.api_key['Token'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Token'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with gitea_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = gitea_api.RepositoryApi(api_client)
+    owner = 'owner_example' # str | owner of the repo
+    repo = 'repo_example' # str | name of the repo
+    id = 56 # int | id of the project
+    column_id = 56 # int | id of the column
+
+    try:
+        # Delete a project column
+        api_instance.repo_delete_project_column(owner, repo, id, column_id)
+    except Exception as e:
+        print("Exception when calling RepositoryApi->repo_delete_project_column: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **owner** | **str**| owner of the repo | 
+ **repo** | **str**| name of the repo | 
+ **id** | **int**| id of the project | 
+ **column_id** | **int**| id of the column | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | APIEmpty is an empty response |  -  |
+**403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+**404** | APINotFound is a not found empty response |  -  |
+**422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+**423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **repo_delete_pull_review**
 > repo_delete_pull_review(owner, repo, index, id)
 
@@ -10902,6 +12075,7 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | APIEmpty is an empty response |  -  |
+**403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 **404** | APINotFound is a not found empty response |  -  |
 **405** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
@@ -11027,6 +12201,7 @@ void (empty response body)
 **204** | APIEmpty is an empty response |  -  |
 **404** | APINotFound is a not found empty response |  -  |
 **422** | APIInvalidTopicsError is error format response to invalid topics |  * invalidTopics -  <br>  * message -  <br>  |
+**423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -12046,6 +13221,267 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **repo_edit_project**
+> Project repo_edit_project(owner, repo, id, body=body)
+
+Edit a project
+
+### Example
+
+* Api Key Authentication (TOTPHeader):
+* Api Key Authentication (AuthorizationHeaderToken):
+* Api Key Authentication (SudoHeader):
+* Basic Authentication (BasicAuth):
+* Api Key Authentication (AccessToken):
+* Api Key Authentication (SudoParam):
+* Api Key Authentication (Token):
+
+```python
+import gitea_api
+from gitea_api.models.edit_project_option import EditProjectOption
+from gitea_api.models.project import Project
+from gitea_api.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gitea_api.Configuration(
+    host = "/api/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: TOTPHeader
+configuration.api_key['TOTPHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['TOTPHeader'] = 'Bearer'
+
+# Configure API key authorization: AuthorizationHeaderToken
+configuration.api_key['AuthorizationHeaderToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AuthorizationHeaderToken'] = 'Bearer'
+
+# Configure API key authorization: SudoHeader
+configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoHeader'] = 'Bearer'
+
+# Configure HTTP basic authorization: BasicAuth
+configuration = gitea_api.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Configure API key authorization: AccessToken
+configuration.api_key['AccessToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AccessToken'] = 'Bearer'
+
+# Configure API key authorization: SudoParam
+configuration.api_key['SudoParam'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoParam'] = 'Bearer'
+
+# Configure API key authorization: Token
+configuration.api_key['Token'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Token'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with gitea_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = gitea_api.RepositoryApi(api_client)
+    owner = 'owner_example' # str | owner of the repo
+    repo = 'repo_example' # str | name of the repo
+    id = 56 # int | id of the project
+    body = gitea_api.EditProjectOption() # EditProjectOption |  (optional)
+
+    try:
+        # Edit a project
+        api_response = api_instance.repo_edit_project(owner, repo, id, body=body)
+        print("The response of RepositoryApi->repo_edit_project:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling RepositoryApi->repo_edit_project: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **owner** | **str**| owner of the repo | 
+ **repo** | **str**| name of the repo | 
+ **id** | **int**| id of the project | 
+ **body** | [**EditProjectOption**](EditProjectOption.md)|  | [optional] 
+
+### Return type
+
+[**Project**](Project.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Project |  -  |
+**404** | APINotFound is a not found empty response |  -  |
+**422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+**423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **repo_edit_project_column**
+> ProjectColumn repo_edit_project_column(owner, repo, id, column_id, body=body)
+
+Edit a project column
+
+### Example
+
+* Api Key Authentication (TOTPHeader):
+* Api Key Authentication (AuthorizationHeaderToken):
+* Api Key Authentication (SudoHeader):
+* Basic Authentication (BasicAuth):
+* Api Key Authentication (AccessToken):
+* Api Key Authentication (SudoParam):
+* Api Key Authentication (Token):
+
+```python
+import gitea_api
+from gitea_api.models.edit_project_column_option import EditProjectColumnOption
+from gitea_api.models.project_column import ProjectColumn
+from gitea_api.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gitea_api.Configuration(
+    host = "/api/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: TOTPHeader
+configuration.api_key['TOTPHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['TOTPHeader'] = 'Bearer'
+
+# Configure API key authorization: AuthorizationHeaderToken
+configuration.api_key['AuthorizationHeaderToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AuthorizationHeaderToken'] = 'Bearer'
+
+# Configure API key authorization: SudoHeader
+configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoHeader'] = 'Bearer'
+
+# Configure HTTP basic authorization: BasicAuth
+configuration = gitea_api.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Configure API key authorization: AccessToken
+configuration.api_key['AccessToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AccessToken'] = 'Bearer'
+
+# Configure API key authorization: SudoParam
+configuration.api_key['SudoParam'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoParam'] = 'Bearer'
+
+# Configure API key authorization: Token
+configuration.api_key['Token'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Token'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with gitea_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = gitea_api.RepositoryApi(api_client)
+    owner = 'owner_example' # str | owner of the repo
+    repo = 'repo_example' # str | name of the repo
+    id = 56 # int | id of the project
+    column_id = 56 # int | id of the column
+    body = gitea_api.EditProjectColumnOption() # EditProjectColumnOption |  (optional)
+
+    try:
+        # Edit a project column
+        api_response = api_instance.repo_edit_project_column(owner, repo, id, column_id, body=body)
+        print("The response of RepositoryApi->repo_edit_project_column:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling RepositoryApi->repo_edit_project_column: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **owner** | **str**| owner of the repo | 
+ **repo** | **str**| name of the repo | 
+ **id** | **int**| id of the project | 
+ **column_id** | **int**| id of the column | 
+ **body** | [**EditProjectColumnOption**](EditProjectColumnOption.md)|  | [optional] 
+
+### Return type
+
+[**ProjectColumn**](ProjectColumn.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | ProjectColumn |  -  |
+**403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+**404** | APINotFound is a not found empty response |  -  |
+**422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+**423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **repo_edit_pull_request**
 > PullRequest repo_edit_pull_request(owner, repo, index, body=body)
 
@@ -12952,7 +14388,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | CommitList |  * X-HasMore - True if there is another page <br>  * X-PageCount - Total number of pages <br>  * X-PerPage - Commits per page <br>  * X-Total - Total commit count <br>  * X-Page - The current page <br>  |
+**200** | CommitList |  * X-HasMore - True if there is another page <br>  * X-PageCount - Total number of pages <br>  * X-PerPage - Files per page <br>  * X-Total-Count - Total file count <br>  * X-Page - The current page <br>  |
 **404** | APINotFound is a not found empty response |  -  |
 **409** | EmptyRepository |  -  |
 
@@ -15697,6 +17133,256 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **repo_get_project**
+> Project repo_get_project(owner, repo, id)
+
+Get a project
+
+### Example
+
+* Api Key Authentication (TOTPHeader):
+* Api Key Authentication (AuthorizationHeaderToken):
+* Api Key Authentication (SudoHeader):
+* Basic Authentication (BasicAuth):
+* Api Key Authentication (AccessToken):
+* Api Key Authentication (SudoParam):
+* Api Key Authentication (Token):
+
+```python
+import gitea_api
+from gitea_api.models.project import Project
+from gitea_api.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gitea_api.Configuration(
+    host = "/api/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: TOTPHeader
+configuration.api_key['TOTPHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['TOTPHeader'] = 'Bearer'
+
+# Configure API key authorization: AuthorizationHeaderToken
+configuration.api_key['AuthorizationHeaderToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AuthorizationHeaderToken'] = 'Bearer'
+
+# Configure API key authorization: SudoHeader
+configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoHeader'] = 'Bearer'
+
+# Configure HTTP basic authorization: BasicAuth
+configuration = gitea_api.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Configure API key authorization: AccessToken
+configuration.api_key['AccessToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AccessToken'] = 'Bearer'
+
+# Configure API key authorization: SudoParam
+configuration.api_key['SudoParam'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoParam'] = 'Bearer'
+
+# Configure API key authorization: Token
+configuration.api_key['Token'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Token'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with gitea_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = gitea_api.RepositoryApi(api_client)
+    owner = 'owner_example' # str | owner of the repo
+    repo = 'repo_example' # str | name of the repo
+    id = 56 # int | id of the project
+
+    try:
+        # Get a project
+        api_response = api_instance.repo_get_project(owner, repo, id)
+        print("The response of RepositoryApi->repo_get_project:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling RepositoryApi->repo_get_project: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **owner** | **str**| owner of the repo | 
+ **repo** | **str**| name of the repo | 
+ **id** | **int**| id of the project | 
+
+### Return type
+
+[**Project**](Project.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Project |  -  |
+**404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **repo_get_project_column**
+> ProjectColumn repo_get_project_column(owner, repo, id, column_id)
+
+Get a project column
+
+### Example
+
+* Api Key Authentication (TOTPHeader):
+* Api Key Authentication (AuthorizationHeaderToken):
+* Api Key Authentication (SudoHeader):
+* Basic Authentication (BasicAuth):
+* Api Key Authentication (AccessToken):
+* Api Key Authentication (SudoParam):
+* Api Key Authentication (Token):
+
+```python
+import gitea_api
+from gitea_api.models.project_column import ProjectColumn
+from gitea_api.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gitea_api.Configuration(
+    host = "/api/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: TOTPHeader
+configuration.api_key['TOTPHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['TOTPHeader'] = 'Bearer'
+
+# Configure API key authorization: AuthorizationHeaderToken
+configuration.api_key['AuthorizationHeaderToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AuthorizationHeaderToken'] = 'Bearer'
+
+# Configure API key authorization: SudoHeader
+configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoHeader'] = 'Bearer'
+
+# Configure HTTP basic authorization: BasicAuth
+configuration = gitea_api.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Configure API key authorization: AccessToken
+configuration.api_key['AccessToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AccessToken'] = 'Bearer'
+
+# Configure API key authorization: SudoParam
+configuration.api_key['SudoParam'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoParam'] = 'Bearer'
+
+# Configure API key authorization: Token
+configuration.api_key['Token'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Token'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with gitea_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = gitea_api.RepositoryApi(api_client)
+    owner = 'owner_example' # str | owner of the repo
+    repo = 'repo_example' # str | name of the repo
+    id = 56 # int | id of the project
+    column_id = 56 # int | id of the column
+
+    try:
+        # Get a project column
+        api_response = api_instance.repo_get_project_column(owner, repo, id, column_id)
+        print("The response of RepositoryApi->repo_get_project_column:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling RepositoryApi->repo_get_project_column: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **owner** | **str**| owner of the repo | 
+ **repo** | **str**| name of the repo | 
+ **id** | **int**| id of the project | 
+ **column_id** | **int**| id of the column | 
+
+### Return type
+
+[**ProjectColumn**](ProjectColumn.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | ProjectColumn |  -  |
+**404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **repo_get_pull_request**
 > PullRequest repo_get_pull_request(owner, repo, index)
 
@@ -16074,7 +17760,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | CommitList |  * X-HasMore - True if there is another page <br>  * X-PageCount - Total number of pages <br>  * X-PerPage - Commits per page <br>  * X-Total - Total commit count <br>  * X-Page - The current page <br>  |
+**200** | CommitList |  * X-HasMore - True if there is another page <br>  * X-PageCount - Total number of pages <br>  * X-PerPage - Files per page <br>  * X-Total-Count - Total file count <br>  * X-Page - The current page <br>  |
 **404** | APINotFound is a not found empty response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -16206,7 +17892,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | ChangedFileList |  * X-HasMore - True if there is another page <br>  * X-PageCount - Total number of pages <br>  * X-PerPage - Commits per page <br>  * X-Total - Total commit count <br>  * X-Page - The current page <br>  |
+**200** | ChangedFileList |  * X-HasMore - True if there is another page <br>  * X-PageCount - Total number of pages <br>  * X-PerPage - Files per page <br>  * X-Total-Count - Total file count <br>  * X-Page - The current page <br>  |
 **404** | APINotFound is a not found empty response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -17463,7 +19149,7 @@ Name | Type | Description  | Notes
 # **repo_get_single_commit**
 > Commit repo_get_single_commit(owner, repo, sha, stat=stat, verification=verification, files=files)
 
-Get a single commit from a repository
+Get a single commit from a repository, it has a GitHub-compatible alias \"/repos/{owner}/{repo}/commits/{ref}\"
 
 ### Example
 
@@ -17546,7 +19232,7 @@ with gitea_api.ApiClient(configuration) as api_client:
     files = True # bool | include a list of affected files for every commit (disable for speedup, default 'true') (optional)
 
     try:
-        # Get a single commit from a repository
+        # Get a single commit from a repository, it has a GitHub-compatible alias \"/repos/{owner}/{repo}/commits/{ref}\"
         api_response = api_instance.repo_get_single_commit(owner, repo, sha, stat=stat, verification=verification, files=files)
         print("The response of RepositoryApi->repo_get_single_commit:\n")
         pprint(api_response)
@@ -18218,7 +19904,7 @@ Name | Type | Description  | Notes
 # **repo_list_actions_secrets**
 > List[Secret] repo_list_actions_secrets(owner, repo, page=page, limit=limit)
 
-List an repo's actions secrets
+List a repo's actions secrets
 
 ### Example
 
@@ -18299,7 +19985,7 @@ with gitea_api.ApiClient(configuration) as api_client:
     limit = 56 # int | page size of results (optional)
 
     try:
-        # List an repo's actions secrets
+        # List a repo's actions secrets
         api_response = api_instance.repo_list_actions_secrets(owner, repo, page=page, limit=limit)
         print("The response of RepositoryApi->repo_list_actions_secrets:\n")
         pprint(api_response)
@@ -19711,6 +21397,392 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **repo_list_project_column_issues**
+> List[Issue] repo_list_project_column_issues(owner, repo, id, column_id, page=page, limit=limit)
+
+List the issues in a project column
+
+### Example
+
+* Api Key Authentication (TOTPHeader):
+* Api Key Authentication (AuthorizationHeaderToken):
+* Api Key Authentication (SudoHeader):
+* Basic Authentication (BasicAuth):
+* Api Key Authentication (AccessToken):
+* Api Key Authentication (SudoParam):
+* Api Key Authentication (Token):
+
+```python
+import gitea_api
+from gitea_api.models.issue import Issue
+from gitea_api.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gitea_api.Configuration(
+    host = "/api/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: TOTPHeader
+configuration.api_key['TOTPHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['TOTPHeader'] = 'Bearer'
+
+# Configure API key authorization: AuthorizationHeaderToken
+configuration.api_key['AuthorizationHeaderToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AuthorizationHeaderToken'] = 'Bearer'
+
+# Configure API key authorization: SudoHeader
+configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoHeader'] = 'Bearer'
+
+# Configure HTTP basic authorization: BasicAuth
+configuration = gitea_api.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Configure API key authorization: AccessToken
+configuration.api_key['AccessToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AccessToken'] = 'Bearer'
+
+# Configure API key authorization: SudoParam
+configuration.api_key['SudoParam'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoParam'] = 'Bearer'
+
+# Configure API key authorization: Token
+configuration.api_key['Token'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Token'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with gitea_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = gitea_api.RepositoryApi(api_client)
+    owner = 'owner_example' # str | owner of the repo
+    repo = 'repo_example' # str | name of the repo
+    id = 56 # int | id of the project
+    column_id = 56 # int | id of the column
+    page = 56 # int | page number of results to return (1-based) (optional)
+    limit = 56 # int | page size of results (optional)
+
+    try:
+        # List the issues in a project column
+        api_response = api_instance.repo_list_project_column_issues(owner, repo, id, column_id, page=page, limit=limit)
+        print("The response of RepositoryApi->repo_list_project_column_issues:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling RepositoryApi->repo_list_project_column_issues: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **owner** | **str**| owner of the repo | 
+ **repo** | **str**| name of the repo | 
+ **id** | **int**| id of the project | 
+ **column_id** | **int**| id of the column | 
+ **page** | **int**| page number of results to return (1-based) | [optional] 
+ **limit** | **int**| page size of results | [optional] 
+
+### Return type
+
+[**List[Issue]**](Issue.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | IssueList |  -  |
+**404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **repo_list_project_columns**
+> List[ProjectColumn] repo_list_project_columns(owner, repo, id, page=page, limit=limit)
+
+List a project's columns
+
+### Example
+
+* Api Key Authentication (TOTPHeader):
+* Api Key Authentication (AuthorizationHeaderToken):
+* Api Key Authentication (SudoHeader):
+* Basic Authentication (BasicAuth):
+* Api Key Authentication (AccessToken):
+* Api Key Authentication (SudoParam):
+* Api Key Authentication (Token):
+
+```python
+import gitea_api
+from gitea_api.models.project_column import ProjectColumn
+from gitea_api.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gitea_api.Configuration(
+    host = "/api/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: TOTPHeader
+configuration.api_key['TOTPHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['TOTPHeader'] = 'Bearer'
+
+# Configure API key authorization: AuthorizationHeaderToken
+configuration.api_key['AuthorizationHeaderToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AuthorizationHeaderToken'] = 'Bearer'
+
+# Configure API key authorization: SudoHeader
+configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoHeader'] = 'Bearer'
+
+# Configure HTTP basic authorization: BasicAuth
+configuration = gitea_api.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Configure API key authorization: AccessToken
+configuration.api_key['AccessToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AccessToken'] = 'Bearer'
+
+# Configure API key authorization: SudoParam
+configuration.api_key['SudoParam'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoParam'] = 'Bearer'
+
+# Configure API key authorization: Token
+configuration.api_key['Token'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Token'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with gitea_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = gitea_api.RepositoryApi(api_client)
+    owner = 'owner_example' # str | owner of the repo
+    repo = 'repo_example' # str | name of the repo
+    id = 56 # int | id of the project
+    page = 56 # int | page number of results to return (1-based) (optional)
+    limit = 56 # int | page size of results (optional)
+
+    try:
+        # List a project's columns
+        api_response = api_instance.repo_list_project_columns(owner, repo, id, page=page, limit=limit)
+        print("The response of RepositoryApi->repo_list_project_columns:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling RepositoryApi->repo_list_project_columns: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **owner** | **str**| owner of the repo | 
+ **repo** | **str**| name of the repo | 
+ **id** | **int**| id of the project | 
+ **page** | **int**| page number of results to return (1-based) | [optional] 
+ **limit** | **int**| page size of results | [optional] 
+
+### Return type
+
+[**List[ProjectColumn]**](ProjectColumn.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | ProjectColumnList |  -  |
+**404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **repo_list_projects**
+> List[Project] repo_list_projects(owner, repo, state=state, page=page, limit=limit)
+
+List a repository's projects
+
+### Example
+
+* Api Key Authentication (TOTPHeader):
+* Api Key Authentication (AuthorizationHeaderToken):
+* Api Key Authentication (SudoHeader):
+* Basic Authentication (BasicAuth):
+* Api Key Authentication (AccessToken):
+* Api Key Authentication (SudoParam):
+* Api Key Authentication (Token):
+
+```python
+import gitea_api
+from gitea_api.models.project import Project
+from gitea_api.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gitea_api.Configuration(
+    host = "/api/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: TOTPHeader
+configuration.api_key['TOTPHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['TOTPHeader'] = 'Bearer'
+
+# Configure API key authorization: AuthorizationHeaderToken
+configuration.api_key['AuthorizationHeaderToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AuthorizationHeaderToken'] = 'Bearer'
+
+# Configure API key authorization: SudoHeader
+configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoHeader'] = 'Bearer'
+
+# Configure HTTP basic authorization: BasicAuth
+configuration = gitea_api.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Configure API key authorization: AccessToken
+configuration.api_key['AccessToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AccessToken'] = 'Bearer'
+
+# Configure API key authorization: SudoParam
+configuration.api_key['SudoParam'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoParam'] = 'Bearer'
+
+# Configure API key authorization: Token
+configuration.api_key['Token'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Token'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with gitea_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = gitea_api.RepositoryApi(api_client)
+    owner = 'owner_example' # str | owner of the repo
+    repo = 'repo_example' # str | name of the repo
+    state = 'open' # str | State of the project (open, closed, all) (optional) (default to 'open')
+    page = 56 # int | page number of results to return (1-based) (optional)
+    limit = 56 # int | page size of results (optional)
+
+    try:
+        # List a repository's projects
+        api_response = api_instance.repo_list_projects(owner, repo, state=state, page=page, limit=limit)
+        print("The response of RepositoryApi->repo_list_projects:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling RepositoryApi->repo_list_projects: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **owner** | **str**| owner of the repo | 
+ **repo** | **str**| name of the repo | 
+ **state** | **str**| State of the project (open, closed, all) | [optional] [default to &#39;open&#39;]
+ **page** | **int**| page number of results to return (1-based) | [optional] 
+ **limit** | **int**| page size of results | [optional] 
+
+### Return type
+
+[**List[Project]**](Project.md)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | ProjectList |  -  |
+**404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **repo_list_pull_requests**
 > List[PullRequest] repo_list_pull_requests(owner, repo, base_branch=base_branch, state=state, sort=sort, milestone=milestone, labels=labels, poster=poster, page=page, limit=limit)
 
@@ -20231,7 +22303,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **repo_list_releases**
-> List[Release] repo_list_releases(owner, repo, draft=draft, pre_release=pre_release, page=page, limit=limit)
+> List[Release] repo_list_releases(owner, repo, draft=draft, pre_release=pre_release, tag_filter=tag_filter, page=page, limit=limit)
 
 List a repo's releases
 
@@ -20312,12 +22384,13 @@ with gitea_api.ApiClient(configuration) as api_client:
     repo = 'repo_example' # str | name of the repo
     draft = True # bool | filter (exclude / include) drafts, if you don't have repo write access none will show (optional)
     pre_release = True # bool | filter (exclude / include) pre-releases (optional)
+    tag_filter = 'tag_filter_example' # str | filter releases by tag. supports \"*\" as a wildcard (for example: v1*, *beta, *rc*). (optional)
     page = 56 # int | page number of results to return (1-based) (optional)
     limit = 56 # int | page size of results (optional)
 
     try:
         # List a repo's releases
-        api_response = api_instance.repo_list_releases(owner, repo, draft=draft, pre_release=pre_release, page=page, limit=limit)
+        api_response = api_instance.repo_list_releases(owner, repo, draft=draft, pre_release=pre_release, tag_filter=tag_filter, page=page, limit=limit)
         print("The response of RepositoryApi->repo_list_releases:\n")
         pprint(api_response)
     except Exception as e:
@@ -20335,6 +22408,7 @@ Name | Type | Description  | Notes
  **repo** | **str**| name of the repo | 
  **draft** | **bool**| filter (exclude / include) drafts, if you don&#39;t have repo write access none will show | [optional] 
  **pre_release** | **bool**| filter (exclude / include) pre-releases | [optional] 
+ **tag_filter** | **str**| filter releases by tag. supports \&quot;*\&quot; as a wildcard (for example: v1*, *beta, *rc*). | [optional] 
  **page** | **int**| page number of results to return (1-based) | [optional] 
  **limit** | **int**| page size of results | [optional] 
 
@@ -21625,6 +23699,7 @@ Name | Type | Description  | Notes
 **200** |  |  -  |
 **400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 **404** | APINotFound is a not found empty response |  -  |
+**409** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -21868,6 +23943,264 @@ void (empty response body)
 **200** | APIEmpty is an empty response |  -  |
 **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 **404** | APINotFound is a not found empty response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **repo_move_project_columns**
+> repo_move_project_columns(owner, repo, id, body=body)
+
+Reorder a project's columns
+
+Reorders every column of the project at once. The body lists all column IDs in their new order.
+
+### Example
+
+* Api Key Authentication (TOTPHeader):
+* Api Key Authentication (AuthorizationHeaderToken):
+* Api Key Authentication (SudoHeader):
+* Basic Authentication (BasicAuth):
+* Api Key Authentication (AccessToken):
+* Api Key Authentication (SudoParam):
+* Api Key Authentication (Token):
+
+```python
+import gitea_api
+from gitea_api.models.move_project_columns_option import MoveProjectColumnsOption
+from gitea_api.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gitea_api.Configuration(
+    host = "/api/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: TOTPHeader
+configuration.api_key['TOTPHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['TOTPHeader'] = 'Bearer'
+
+# Configure API key authorization: AuthorizationHeaderToken
+configuration.api_key['AuthorizationHeaderToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AuthorizationHeaderToken'] = 'Bearer'
+
+# Configure API key authorization: SudoHeader
+configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoHeader'] = 'Bearer'
+
+# Configure HTTP basic authorization: BasicAuth
+configuration = gitea_api.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Configure API key authorization: AccessToken
+configuration.api_key['AccessToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AccessToken'] = 'Bearer'
+
+# Configure API key authorization: SudoParam
+configuration.api_key['SudoParam'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoParam'] = 'Bearer'
+
+# Configure API key authorization: Token
+configuration.api_key['Token'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Token'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with gitea_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = gitea_api.RepositoryApi(api_client)
+    owner = 'owner_example' # str | owner of the repo
+    repo = 'repo_example' # str | name of the repo
+    id = 56 # int | id of the project
+    body = gitea_api.MoveProjectColumnsOption() # MoveProjectColumnsOption |  (optional)
+
+    try:
+        # Reorder a project's columns
+        api_instance.repo_move_project_columns(owner, repo, id, body=body)
+    except Exception as e:
+        print("Exception when calling RepositoryApi->repo_move_project_columns: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **owner** | **str**| owner of the repo | 
+ **repo** | **str**| name of the repo | 
+ **id** | **int**| id of the project | 
+ **body** | [**MoveProjectColumnsOption**](MoveProjectColumnsOption.md)|  | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | APIEmpty is an empty response |  -  |
+**403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+**404** | APINotFound is a not found empty response |  -  |
+**422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+**423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **repo_move_project_issue**
+> repo_move_project_issue(owner, repo, id, issue_id, body=body)
+
+Move an issue between a project's columns
+
+### Example
+
+* Api Key Authentication (TOTPHeader):
+* Api Key Authentication (AuthorizationHeaderToken):
+* Api Key Authentication (SudoHeader):
+* Basic Authentication (BasicAuth):
+* Api Key Authentication (AccessToken):
+* Api Key Authentication (SudoParam):
+* Api Key Authentication (Token):
+
+```python
+import gitea_api
+from gitea_api.models.move_project_issue_option import MoveProjectIssueOption
+from gitea_api.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gitea_api.Configuration(
+    host = "/api/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: TOTPHeader
+configuration.api_key['TOTPHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['TOTPHeader'] = 'Bearer'
+
+# Configure API key authorization: AuthorizationHeaderToken
+configuration.api_key['AuthorizationHeaderToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AuthorizationHeaderToken'] = 'Bearer'
+
+# Configure API key authorization: SudoHeader
+configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoHeader'] = 'Bearer'
+
+# Configure HTTP basic authorization: BasicAuth
+configuration = gitea_api.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Configure API key authorization: AccessToken
+configuration.api_key['AccessToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AccessToken'] = 'Bearer'
+
+# Configure API key authorization: SudoParam
+configuration.api_key['SudoParam'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoParam'] = 'Bearer'
+
+# Configure API key authorization: Token
+configuration.api_key['Token'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Token'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with gitea_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = gitea_api.RepositoryApi(api_client)
+    owner = 'owner_example' # str | owner of the repo
+    repo = 'repo_example' # str | name of the repo
+    id = 56 # int | id of the project
+    issue_id = 56 # int | global id of the issue, not the repository-local index
+    body = gitea_api.MoveProjectIssueOption() # MoveProjectIssueOption |  (optional)
+
+    try:
+        # Move an issue between a project's columns
+        api_instance.repo_move_project_issue(owner, repo, id, issue_id, body=body)
+    except Exception as e:
+        print("Exception when calling RepositoryApi->repo_move_project_issue: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **owner** | **str**| owner of the repo | 
+ **repo** | **str**| name of the repo | 
+ **id** | **int**| id of the project | 
+ **issue_id** | **int**| global id of the issue, not the repository-local index | 
+ **body** | [**MoveProjectIssueOption**](MoveProjectIssueOption.md)|  | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | APIEmpty is an empty response |  -  |
+**403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+**404** | APINotFound is a not found empty response |  -  |
+**422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+**423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -22236,6 +24569,133 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **repo_remove_issue_from_project_column**
+> repo_remove_issue_from_project_column(owner, repo, id, column_id, issue_id)
+
+Remove an issue from a project column
+
+### Example
+
+* Api Key Authentication (TOTPHeader):
+* Api Key Authentication (AuthorizationHeaderToken):
+* Api Key Authentication (SudoHeader):
+* Basic Authentication (BasicAuth):
+* Api Key Authentication (AccessToken):
+* Api Key Authentication (SudoParam):
+* Api Key Authentication (Token):
+
+```python
+import gitea_api
+from gitea_api.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gitea_api.Configuration(
+    host = "/api/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: TOTPHeader
+configuration.api_key['TOTPHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['TOTPHeader'] = 'Bearer'
+
+# Configure API key authorization: AuthorizationHeaderToken
+configuration.api_key['AuthorizationHeaderToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AuthorizationHeaderToken'] = 'Bearer'
+
+# Configure API key authorization: SudoHeader
+configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoHeader'] = 'Bearer'
+
+# Configure HTTP basic authorization: BasicAuth
+configuration = gitea_api.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Configure API key authorization: AccessToken
+configuration.api_key['AccessToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AccessToken'] = 'Bearer'
+
+# Configure API key authorization: SudoParam
+configuration.api_key['SudoParam'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoParam'] = 'Bearer'
+
+# Configure API key authorization: Token
+configuration.api_key['Token'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Token'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with gitea_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = gitea_api.RepositoryApi(api_client)
+    owner = 'owner_example' # str | owner of the repo
+    repo = 'repo_example' # str | name of the repo
+    id = 56 # int | id of the project
+    column_id = 56 # int | id of the column
+    issue_id = 56 # int | global id of the issue, not the repository-local index
+
+    try:
+        # Remove an issue from a project column
+        api_instance.repo_remove_issue_from_project_column(owner, repo, id, column_id, issue_id)
+    except Exception as e:
+        print("Exception when calling RepositoryApi->repo_remove_issue_from_project_column: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **owner** | **str**| owner of the repo | 
+ **repo** | **str**| name of the repo | 
+ **id** | **int**| id of the project | 
+ **column_id** | **int**| id of the column | 
+ **issue_id** | **int**| global id of the issue, not the repository-local index | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | APIEmpty is an empty response |  -  |
+**403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+**404** | APINotFound is a not found empty response |  -  |
+**423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **repo_rename_branch**
 > repo_rename_branch(owner, repo, branch, body=body)
 
@@ -22482,9 +24942,12 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+**200** | Repository |  -  |
 **202** | Repository |  -  |
+**400** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 **403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
 **404** | APINotFound is a not found empty response |  -  |
+**409** | APIError is error format response |  * message -  <br>  * url -  <br>  |
 **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -22761,6 +25224,133 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | SearchResults |  -  |
 **422** | APIValidationError is error format response related to input validation |  * message -  <br>  * url -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **repo_set_default_project_column**
+> repo_set_default_project_column(owner, repo, id, column_id)
+
+Set a project's default column
+
+The default column is where newly assigned issues land.
+
+### Example
+
+* Api Key Authentication (TOTPHeader):
+* Api Key Authentication (AuthorizationHeaderToken):
+* Api Key Authentication (SudoHeader):
+* Basic Authentication (BasicAuth):
+* Api Key Authentication (AccessToken):
+* Api Key Authentication (SudoParam):
+* Api Key Authentication (Token):
+
+```python
+import gitea_api
+from gitea_api.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gitea_api.Configuration(
+    host = "/api/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: TOTPHeader
+configuration.api_key['TOTPHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['TOTPHeader'] = 'Bearer'
+
+# Configure API key authorization: AuthorizationHeaderToken
+configuration.api_key['AuthorizationHeaderToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AuthorizationHeaderToken'] = 'Bearer'
+
+# Configure API key authorization: SudoHeader
+configuration.api_key['SudoHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoHeader'] = 'Bearer'
+
+# Configure HTTP basic authorization: BasicAuth
+configuration = gitea_api.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Configure API key authorization: AccessToken
+configuration.api_key['AccessToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AccessToken'] = 'Bearer'
+
+# Configure API key authorization: SudoParam
+configuration.api_key['SudoParam'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['SudoParam'] = 'Bearer'
+
+# Configure API key authorization: Token
+configuration.api_key['Token'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Token'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with gitea_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = gitea_api.RepositoryApi(api_client)
+    owner = 'owner_example' # str | owner of the repo
+    repo = 'repo_example' # str | name of the repo
+    id = 56 # int | id of the project
+    column_id = 56 # int | id of the column
+
+    try:
+        # Set a project's default column
+        api_instance.repo_set_default_project_column(owner, repo, id, column_id)
+    except Exception as e:
+        print("Exception when calling RepositoryApi->repo_set_default_project_column: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **owner** | **str**| owner of the repo | 
+ **repo** | **str**| name of the repo | 
+ **id** | **int**| id of the project | 
+ **column_id** | **int**| id of the column | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[TOTPHeader](../README.md#TOTPHeader), [AuthorizationHeaderToken](../README.md#AuthorizationHeaderToken), [SudoHeader](../README.md#SudoHeader), [BasicAuth](../README.md#BasicAuth), [AccessToken](../README.md#AccessToken), [SudoParam](../README.md#SudoParam), [Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | APIEmpty is an empty response |  -  |
+**403** | APIForbiddenError is a forbidden error response |  * message -  <br>  * url -  <br>  |
+**404** | APINotFound is a not found empty response |  -  |
+**423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -24519,6 +27109,7 @@ void (empty response body)
 **204** | APIEmpty is an empty response |  -  |
 **404** | APINotFound is a not found empty response |  -  |
 **422** | APIInvalidTopicsError is error format response to invalid topics |  * invalidTopics -  <br>  * message -  <br>  |
+**423** | APIRepoArchivedError is an error that is raised when an archived repo should be modified |  * message -  <br>  * url -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

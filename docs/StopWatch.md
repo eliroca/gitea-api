@@ -6,7 +6,7 @@ StopWatch represent a running stopwatch
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**created** | **datetime** |  | [optional] 
+**created** | **datetime** | Created is the time when the stopwatch was started | [optional] 
 **duration** | **str** | Duration is a human-readable duration string | [optional] 
 **issue_index** | **int** | IssueIndex is the index number of the associated issue | [optional] 
 **issue_title** | **str** | IssueTitle is the title of the associated issue | [optional] 

@@ -6,7 +6,7 @@ EditIssueCommentOption options for editing a comment
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**body** | **str** |  | 
+**body** | **str** | Body is the updated comment text content | 
 
 ## Example
 

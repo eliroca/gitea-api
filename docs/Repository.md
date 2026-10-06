@@ -56,7 +56,7 @@ Name | Type | Description | Notes
 **mirror_last_sync_at** | **datetime** |  | [optional] 
 **mirror_updated** | **datetime** |  | [optional] 
 **name** | **str** |  | [optional] 
-**object_format_name** | **str** | ObjectFormatName of the underlying git repository sha1 ObjectFormatSHA1 sha256 ObjectFormatSHA256 | [optional] 
+**object_format_name** | **str** | ObjectFormatName of the underlying git repository | [optional] 
 **open_issues_count** | **int** |  | [optional] 
 **open_pr_counter** | **int** |  | [optional] 
 **original_url** | **str** |  | [optional] 

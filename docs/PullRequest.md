@@ -39,7 +39,7 @@ Name | Type | Description | Notes
 **requested_reviewers** | [**List[User]**](User.md) | The users requested to review the pull request | [optional] 
 **requested_reviewers_teams** | [**List[Team]**](Team.md) | The teams requested to review the pull request | [optional] 
 **review_comments** | **int** | number of review comments made on the diff of a PR review (not including comments on commits or issues in a PR) | [optional] 
-**state** | **str** | The current state of the pull request open StateOpen pr is opened closed StateClosed pr is closed | [optional] 
+**state** | **str** | The current state of the pull request | [optional] 
 **title** | **str** | The title of the pull request | [optional] 
 **updated_at** | **datetime** |  | [optional] 
 **url** | **str** | The API URL of the pull request | [optional] 

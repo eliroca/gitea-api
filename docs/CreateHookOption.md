@@ -6,13 +6,13 @@ CreateHookOption options when create a hook
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**active** | **bool** |  | [optional] [default to False]
+**active** | **bool** | Whether the webhook should be active upon creation | [optional] [default to False]
 **authorization_header** | **str** | Authorization header to include in webhook requests | [optional] 
 **branch_filter** | **str** | Branch filter pattern to determine which branches trigger the webhook | [optional] 
 **config** | **Dict[str, str]** | CreateHookOptionConfig has all config options in it required are \&quot;content_type\&quot; and \&quot;url\&quot; Required | 
 **events** | **List[str]** | List of events that will trigger this webhook | [optional] 
 **name** | **str** | Optional human-readable name for the webhook | [optional] 
-**type** | **str** |  | 
+**type** | **str** | The type of the webhook to create | 
 
 ## Example
 

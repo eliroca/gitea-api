@@ -1,7 +1,6 @@
 .github/workflows/python.yml
 .gitignore
 .gitlab-ci.yml
-.openapi-generator-ignore
 .travis.yml
 README.md
 docs/APIError.md
@@ -51,6 +50,7 @@ docs/CreateAccessTokenOption.md
 docs/CreateActionWorkflowDispatch.md
 docs/CreateBranchProtectionOption.md
 docs/CreateBranchRepoOption.md
+docs/CreateDeployKeyTokenOption.md
 docs/CreateEmailOption.md
 docs/CreateFileOptions.md
 docs/CreateForkOption.md
@@ -64,6 +64,8 @@ docs/CreateMilestoneOption.md
 docs/CreateOAuth2ApplicationOptions.md
 docs/CreateOrUpdateSecretOption.md
 docs/CreateOrgOption.md
+docs/CreateProjectColumnOption.md
+docs/CreateProjectOption.md
 docs/CreatePullRequestOption.md
 docs/CreatePullReviewComment.md
 docs/CreatePullReviewCommentReplyOptions.md
@@ -95,6 +97,8 @@ docs/EditIssueOption.md
 docs/EditLabelOption.md
 docs/EditMilestoneOption.md
 docs/EditOrgOption.md
+docs/EditProjectColumnOption.md
+docs/EditProjectOption.md
 docs/EditPullRequestOption.md
 docs/EditReactionOption.md
 docs/EditReleaseOption.md
@@ -151,12 +155,9 @@ docs/MergeUpstreamResponse.md
 docs/MigrateRepoOptions.md
 docs/Milestone.md
 docs/MiscellaneousApi.md
+docs/MoveProjectColumnsOption.md
+docs/MoveProjectIssueOption.md
 docs/NewIssuePinsAllowed.md
-docs/NodeInfo.md
-docs/NodeInfoServices.md
-docs/NodeInfoSoftware.md
-docs/NodeInfoUsage.md
-docs/NodeInfoUsageUsers.md
 docs/Note.md
 docs/NotificationApi.md
 docs/NotificationCount.md
@@ -175,6 +176,7 @@ docs/PayloadCommitVerification.md
 docs/PayloadUser.md
 docs/Permission.md
 docs/Project.md
+docs/ProjectColumn.md
 docs/PublicKey.md
 docs/PullRequest.md
 docs/PullRequestMeta.md
@@ -299,6 +301,7 @@ gitea_api/models/create_access_token_option.py
 gitea_api/models/create_action_workflow_dispatch.py
 gitea_api/models/create_branch_protection_option.py
 gitea_api/models/create_branch_repo_option.py
+gitea_api/models/create_deploy_key_token_option.py
 gitea_api/models/create_email_option.py
 gitea_api/models/create_file_options.py
 gitea_api/models/create_fork_option.py
@@ -312,6 +315,8 @@ gitea_api/models/create_milestone_option.py
 gitea_api/models/create_o_auth2_application_options.py
 gitea_api/models/create_or_update_secret_option.py
 gitea_api/models/create_org_option.py
+gitea_api/models/create_project_column_option.py
+gitea_api/models/create_project_option.py
 gitea_api/models/create_pull_request_option.py
 gitea_api/models/create_pull_review_comment.py
 gitea_api/models/create_pull_review_comment_reply_options.py
@@ -343,6 +348,8 @@ gitea_api/models/edit_issue_option.py
 gitea_api/models/edit_label_option.py
 gitea_api/models/edit_milestone_option.py
 gitea_api/models/edit_org_option.py
+gitea_api/models/edit_project_column_option.py
+gitea_api/models/edit_project_option.py
 gitea_api/models/edit_pull_request_option.py
 gitea_api/models/edit_reaction_option.py
 gitea_api/models/edit_release_option.py
@@ -397,12 +404,9 @@ gitea_api/models/merge_upstream_request.py
 gitea_api/models/merge_upstream_response.py
 gitea_api/models/migrate_repo_options.py
 gitea_api/models/milestone.py
+gitea_api/models/move_project_columns_option.py
+gitea_api/models/move_project_issue_option.py
 gitea_api/models/new_issue_pins_allowed.py
-gitea_api/models/node_info.py
-gitea_api/models/node_info_services.py
-gitea_api/models/node_info_software.py
-gitea_api/models/node_info_usage.py
-gitea_api/models/node_info_usage_users.py
 gitea_api/models/note.py
 gitea_api/models/notification_count.py
 gitea_api/models/notification_subject.py
@@ -418,6 +422,7 @@ gitea_api/models/payload_user.py
 gitea_api/models/permission.py
 gitea_api/models/pr_branch_info.py
 gitea_api/models/project.py
+gitea_api/models/project_column.py
 gitea_api/models/public_key.py
 gitea_api/models/pull_request.py
 gitea_api/models/pull_request_meta.py
@@ -531,6 +536,7 @@ test/test_create_access_token_option.py
 test/test_create_action_workflow_dispatch.py
 test/test_create_branch_protection_option.py
 test/test_create_branch_repo_option.py
+test/test_create_deploy_key_token_option.py
 test/test_create_email_option.py
 test/test_create_file_options.py
 test/test_create_fork_option.py
@@ -544,6 +550,8 @@ test/test_create_milestone_option.py
 test/test_create_o_auth2_application_options.py
 test/test_create_or_update_secret_option.py
 test/test_create_org_option.py
+test/test_create_project_column_option.py
+test/test_create_project_option.py
 test/test_create_pull_request_option.py
 test/test_create_pull_review_comment.py
 test/test_create_pull_review_comment_reply_options.py
@@ -575,6 +583,8 @@ test/test_edit_issue_option.py
 test/test_edit_label_option.py
 test/test_edit_milestone_option.py
 test/test_edit_org_option.py
+test/test_edit_project_column_option.py
+test/test_edit_project_option.py
 test/test_edit_pull_request_option.py
 test/test_edit_reaction_option.py
 test/test_edit_release_option.py
@@ -631,12 +641,9 @@ test/test_merge_upstream_response.py
 test/test_migrate_repo_options.py
 test/test_milestone.py
 test/test_miscellaneous_api.py
+test/test_move_project_columns_option.py
+test/test_move_project_issue_option.py
 test/test_new_issue_pins_allowed.py
-test/test_node_info.py
-test/test_node_info_services.py
-test/test_node_info_software.py
-test/test_node_info_usage.py
-test/test_node_info_usage_users.py
 test/test_note.py
 test/test_notification_api.py
 test/test_notification_count.py
@@ -655,6 +662,7 @@ test/test_payload_user.py
 test/test_permission.py
 test/test_pr_branch_info.py
 test/test_project.py
+test/test_project_column.py
 test/test_public_key.py
 test/test_pull_request.py
 test/test_pull_request_meta.py

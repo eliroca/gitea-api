@@ -6,7 +6,7 @@ CreateIssueCommentOption options for creating a comment on an issue
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**body** | **str** |  | 
+**body** | **str** | Body is the comment text content | 
 
 ## Example
 

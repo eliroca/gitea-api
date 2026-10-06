@@ -21,12 +21,13 @@ Name | Type | Description | Notes
 **last_login** | **datetime** |  | [optional] 
 **location** | **str** | the user&#39;s location | [optional] 
 **login** | **str** | login of the user, same as &#x60;username&#x60; | [optional] 
-**login_name** | **str** | identifier of the user, provided by the external authenticator (if configured) | [optional] [default to 'empty']
+**login_name** | **str** | identifier of the user, provided by the external authenticator (if configured) | [optional] 
 **prohibit_login** | **bool** | Is user login prohibited | [optional] 
 **restricted** | **bool** | Is user restricted | [optional] 
 **source_id** | **int** | The ID of the user&#39;s Authentication Source | [optional] 
 **starred_repos_count** | **int** |  | [optional] 
-**visibility** | **str** | User visibility level option: public, limited, private public UserVisibilityPublic limited UserVisibilityLimited private UserVisibilityPrivate | [optional] 
+**type** | **str** | the user type | [optional] 
+**visibility** | **str** | User visibility level option: public, limited, private | [optional] 
 **website** | **str** | the user&#39;s website | [optional] 
 
 ## Example

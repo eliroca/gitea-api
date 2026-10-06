@@ -7,8 +7,11 @@ ActionWorkflowRun represents a WorkflowRun
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **actor** | [**User**](User.md) |  | [optional] 
+**artifacts_url** | **str** |  | [optional] 
+**cancel_url** | **str** |  | [optional] 
 **completed_at** | **datetime** |  | [optional] 
 **conclusion** | **str** |  | [optional] 
+**created_at** | **datetime** |  | [optional] 
 **display_title** | **str** |  | [optional] 
 **event** | **str** |  | [optional] 
 **head_branch** | **str** |  | [optional] 
@@ -16,16 +19,20 @@ Name | Type | Description | Notes
 **head_sha** | **str** |  | [optional] 
 **html_url** | **str** |  | [optional] 
 **id** | **int** |  | [optional] 
+**jobs_url** | **str** |  | [optional] 
+**logs_url** | **str** |  | [optional] 
 **path** | **str** |  | [optional] 
 **previous_attempt_url** | **str** | PreviousAttemptURL is the API URL of the previous attempt of this run, e.g. \&quot;.../actions/runs/{run_id}/attempts/{attempt-1}\&quot;. It is set only when the current attempt is &gt; 1 (i.e. a rerun). For the first attempt, or for legacy runs that pre-date ActionRunAttempt, it is null. | [optional] 
 **pull_requests** | [**List[PullRequestMinimal]**](PullRequestMinimal.md) |  | [optional] 
 **repository** | [**Repository**](Repository.md) |  | [optional] 
 **repository_id** | **int** |  | [optional] 
+**rerun_url** | **str** |  | [optional] 
 **run_attempt** | **int** | RunAttempt is 1-based for runs created after ActionRunAttempt was introduced. A value of 0 is a legacy-only sentinel for runs created before attempts existed and indicates no corresponding /attempts/{n} resource is available. | [optional] 
 **run_number** | **int** |  | [optional] 
 **started_at** | **datetime** |  | [optional] 
 **status** | **str** |  | [optional] 
 **trigger_actor** | [**User**](User.md) |  | [optional] 
+**updated_at** | **datetime** |  | [optional] 
 **url** | **str** |  | [optional] 
 
 ## Example

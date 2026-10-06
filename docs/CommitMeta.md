@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**created** | **datetime** |  | [optional] 
+**created** | **datetime** | Created is the time when the commit was created | [optional] 
 **sha** | **str** | SHA is the commit SHA hash | [optional] 
 **url** | **str** | URL is the API URL for the commit | [optional] 
 

@@ -6,10 +6,10 @@ TagProtection represents a tag protection
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**created_at** | **datetime** |  | [optional] 
+**created_at** | **datetime** | The date and time when the tag protection was created | [optional] 
 **id** | **int** | The unique identifier of the tag protection | [optional] 
 **name_pattern** | **str** | The pattern to match tag names for protection | [optional] 
-**updated_at** | **datetime** |  | [optional] 
+**updated_at** | **datetime** | The date and time when the tag protection was last updated | [optional] 
 **whitelist_teams** | **List[str]** | List of team names allowed to create/delete protected tags | [optional] 
 **whitelist_usernames** | **List[str]** | List of usernames allowed to create/delete protected tags | [optional] 
 

@@ -1,21 +1,30 @@
 # Project
 
-Project represents a project
+Projects track issues and pull requests, standalone note cards are not supported.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**card_type** | **str** | Card type: \&quot;text_only\&quot; or \&quot;images_and_text\&quot; | [optional] 
 **closed_at** | **datetime** |  | [optional] 
 **created_at** | **datetime** |  | [optional] 
-**creator_id** | **int** | CreatorID is the user who created the project | [optional] 
-**description** | **str** | Description provides details about the project | [optional] 
-**id** | **int** | ID is the unique identifier for the project | [optional] 
-**is_closed** | **bool** | IsClosed indicates if the project is closed | [optional] 
-**owner_id** | **int** | OwnerID is the owner of the project (for org-level projects) | [optional] 
-**repo_id** | **int** | RepoID is the repository this project belongs to (for repo-level projects) | [optional] 
-**title** | **str** | Title is the title of the project | [optional] 
-**updated_at** | **datetime** |  | [optional] 
+**creator** | [**User**](User.md) |  | [optional] 
+**creator_id** | **int** | Deprecated: use Creator instead | [optional] 
+**description** | **str** |  | [optional] 
+**html_url** | **str** |  | [optional] 
+**id** | **int** |  | [optional] 
+**is_closed** | **bool** | Deprecated: use State instead | [optional] 
+**num_closed_issues** | **int** |  | [optional] 
+**num_issues** | **int** |  | [optional] 
+**num_open_issues** | **int** |  | [optional] 
+**owner_id** | **int** |  | [optional] 
+**repo_id** | **int** |  | [optional] 
+**state** | **str** |  | [optional] 
+**template_type** | **str** | Template type: \&quot;none\&quot;, \&quot;basic_kanban\&quot; or \&quot;bug_triage\&quot; | [optional] 
+**title** | **str** |  | [optional] 
+**type** | **str** | Project type: \&quot;individual\&quot;, \&quot;repository\&quot; or \&quot;organization\&quot; | [optional] 
+**updated_at** | **datetime** | null only for legacy rows that carry no update timestamp | [optional] 
 
 ## Example
 

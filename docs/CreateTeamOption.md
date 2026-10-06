@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 **description** | **str** | The description of the team | [optional] 
 **includes_all_repositories** | **bool** | Whether the team has access to all repositories in the organization | [optional] 
 **name** | **str** |  | 
-**permission** | **str** |  | [optional] 
-**units** | **List[str]** |  | [optional] 
+**permission** | **str** | All units have this permission (read/write/admin) | [optional] 
+**units** | **List[str]** | Deprecated: This variable should be replaced by UnitsMap and will be dropped in later versions. | [optional] 
 **units_map** | **Dict[str, str]** |  | [optional] 
-**visibility** | **str** | Team visibility within the organization. Defaults to \&quot;private\&quot;. public TeamVisibilityPublic limited TeamVisibilityLimited private TeamVisibilityPrivate | [optional] 
+**visibility** | **str** | Team visibility within the organization. Defaults to \&quot;private\&quot;. | [optional] 
 
 ## Example
 

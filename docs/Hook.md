@@ -10,12 +10,12 @@ Name | Type | Description | Notes
 **authorization_header** | **str** | Authorization header to include in webhook requests | [optional] 
 **branch_filter** | **str** | Branch filter pattern to determine which branches trigger the webhook | [optional] 
 **config** | **Dict[str, str]** | Configuration settings for the webhook | [optional] 
-**created_at** | **datetime** |  | [optional] 
+**created_at** | **datetime** | The date and time when the webhook was created | [optional] 
 **events** | **List[str]** | List of events that trigger this webhook | [optional] 
 **id** | **int** | The unique identifier of the webhook | [optional] 
 **name** | **str** | Optional human-readable name for the webhook | [optional] 
 **type** | **str** | The type of the webhook (e.g., gitea, slack, discord) | [optional] 
-**updated_at** | **datetime** |  | [optional] 
+**updated_at** | **datetime** | The date and time when the webhook was last updated | [optional] 
 
 ## Example
 

@@ -1,6 +1,5 @@
 # CreateKeyOption
 
-CreateKeyOption options when creating a key
 
 ## Properties
 

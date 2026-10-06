@@ -13,9 +13,9 @@ Name | Type | Description | Notes
 **name** | **str** | The name of the team | [optional] 
 **organization** | [**Organization**](Organization.md) |  | [optional] 
 **permission** | **str** |  | [optional] 
-**units** | **List[str]** |  | [optional] 
+**units** | **List[str]** | Deprecated: This variable should be replaced by UnitsMap and will be dropped in later versions. | [optional] 
 **units_map** | **Dict[str, str]** |  | [optional] 
-**visibility** | **str** | Team visibility within the organization. \&quot;private\&quot; teams are only listable by members and org owners; \&quot;limited\&quot; teams are listable by any organization member; \&quot;public\&quot; teams are listable by any signed-in user. public TeamVisibilityPublic limited TeamVisibilityLimited private TeamVisibilityPrivate | [optional] 
+**visibility** | **str** | Team visibility within the organization. \&quot;private\&quot; teams are only listable by members and org owners; \&quot;limited\&quot; teams are listable by any organization member; \&quot;public\&quot; teams are listable by any signed-in user. | [optional] 
 
 ## Example
 

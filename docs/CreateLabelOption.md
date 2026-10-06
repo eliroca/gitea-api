@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **description** | **str** | Description provides additional context about the label&#39;s purpose | [optional] 
 **exclusive** | **bool** |  | [optional] 
 **is_archived** | **bool** |  | [optional] 
-**name** | **str** |  | 
+**name** | **str** | Name is the display name for the new label | 
 
 ## Example
 

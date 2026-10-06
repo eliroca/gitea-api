@@ -7,7 +7,7 @@ CreateTagOption options when creating a tag
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **message** | **str** | The message to associate with the tag | [optional] 
-**tag_name** | **str** |  | 
+**tag_name** | **str** | The name of the tag to create | 
 **target** | **str** | The target commit SHA or branch name for the tag | [optional] 
 
 ## Example

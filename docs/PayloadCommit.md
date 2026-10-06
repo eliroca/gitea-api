@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **message** | **str** | The commit message | [optional] 
 **modified** | **List[str]** | List of files modified in this commit | [optional] 
 **removed** | **List[str]** | List of files removed in this commit | [optional] 
-**timestamp** | **datetime** |  | [optional] 
+**timestamp** | **datetime** | The timestamp when the commit was made | [optional] 
 **url** | **str** | The URL to view this commit | [optional] 
 **verification** | [**PayloadCommitVerification**](PayloadCommitVerification.md) |  | [optional] 
 

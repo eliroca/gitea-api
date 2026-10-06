@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **last_committer_date** | **datetime** |  | [optional] 
 **lfs_oid** | **str** | LfsOid is the Git LFS object ID if this file is stored in LFS | [optional] 
 **lfs_size** | **int** | LfsSize is the file size if this file is stored in LFS | [optional] 
+**mode** | **str** | &#x60;mode&#x60; is the Git file mode as an octal string, e.g. &#x60;100644&#x60; (regular), &#x60;100755&#x60; (executable), &#x60;120000&#x60; (symlink), &#x60;160000&#x60; (submodule) | [optional] 
 **name** | **str** | Name is the file or directory name | [optional] 
 **path** | **str** | Path is the full path to the file or directory | [optional] 
 **sha** | **str** | SHA is the Git blob or tree SHA | [optional] 

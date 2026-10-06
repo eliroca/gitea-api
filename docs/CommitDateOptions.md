@@ -6,8 +6,8 @@ CommitDateOptions store dates for GIT_AUTHOR_DATE and GIT_COMMITTER_DATE
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**author** | **datetime** |  | [optional] 
-**committer** | **datetime** |  | [optional] 
+**author** | **datetime** | Author is the author date for the commit | [optional] 
+**committer** | **datetime** | Committer is the committer date for the commit | [optional] 
 
 ## Example
 

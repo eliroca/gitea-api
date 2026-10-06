@@ -6,7 +6,7 @@ AddCollaboratorOption options when adding a user as a collaborator of a reposito
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**permission** | **str** | Permission level to grant the collaborator read RepoWritePermissionRead write RepoWritePermissionWrite admin RepoWritePermissionAdmin | [optional] 
+**permission** | **str** | Permission level to grant the collaborator | [optional] 
 
 ## Example
 
