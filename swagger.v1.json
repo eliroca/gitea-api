@@ -18898,23 +18898,14 @@
           }
         ],
         "responses": {
-          "200": {
-            "$ref": "#/responses/Repository"
-          },
           "202": {
             "$ref": "#/responses/Repository"
-          },
-          "400": {
-            "$ref": "#/responses/error"
           },
           "403": {
             "$ref": "#/responses/forbidden"
           },
           "404": {
             "$ref": "#/responses/notFound"
-          },
-          "409": {
-            "$ref": "#/responses/error"
           },
           "422": {
             "$ref": "#/responses/validationError"
@@ -32664,12 +32655,12 @@
       ],
       "properties": {
         "new_name": {
-          "description": "name of the parent repository; defaults to the source repository name",
+          "description": "new name of the parent repository",
           "type": "string",
           "x-go-name": "NewName"
         },
         "new_owner": {
-          "description": "name of the organization or user that owns the parent repository",
+          "description": "name of the organization or user that owns the fork to be promoted",
           "type": "string",
           "x-go-name": "NewOwner"
         }
@@ -32757,10 +32748,6 @@
         },
         "recipient": {
           "$ref": "#/definitions/User"
-        },
-        "target_name": {
-          "type": "string",
-          "x-go-name": "TargetName"
         },
         "teams": {
           "type": "array",

@@ -235,7 +235,7 @@ class SettingsApi:
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _header_params: Dict[str, Any] = self.api_client._merge_headers(_headers)
         _form_params: List[Tuple[str, str]] = []
         _files: Dict[
             str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
@@ -250,7 +250,7 @@ class SettingsApi:
 
 
         # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
+        if not any(key.lower() == 'accept' for key in _header_params):
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
                     'application/json'
@@ -484,7 +484,7 @@ class SettingsApi:
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _header_params: Dict[str, Any] = self.api_client._merge_headers(_headers)
         _form_params: List[Tuple[str, str]] = []
         _files: Dict[
             str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
@@ -499,7 +499,7 @@ class SettingsApi:
 
 
         # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
+        if not any(key.lower() == 'accept' for key in _header_params):
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
                     'application/json'
@@ -733,7 +733,7 @@ class SettingsApi:
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _header_params: Dict[str, Any] = self.api_client._merge_headers(_headers)
         _form_params: List[Tuple[str, str]] = []
         _files: Dict[
             str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
@@ -748,7 +748,7 @@ class SettingsApi:
 
 
         # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
+        if not any(key.lower() == 'accept' for key in _header_params):
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
                     'application/json'
@@ -982,7 +982,7 @@ class SettingsApi:
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _header_params: Dict[str, Any] = self.api_client._merge_headers(_headers)
         _form_params: List[Tuple[str, str]] = []
         _files: Dict[
             str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
@@ -997,7 +997,7 @@ class SettingsApi:
 
 
         # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
+        if not any(key.lower() == 'accept' for key in _header_params):
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
                     'application/json'

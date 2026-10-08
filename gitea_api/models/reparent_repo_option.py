@@ -27,8 +27,8 @@ class ReparentRepoOption(BaseModel):
     """
     ReparentRepoOption options when reparenting a repository
     """ # noqa: E501
-    new_name: Optional[StrictStr] = Field(default=None, description="name of the parent repository; defaults to the source repository name")
-    new_owner: StrictStr = Field(description="name of the organization or user that owns the parent repository")
+    new_name: Optional[StrictStr] = Field(default=None, description="new name of the parent repository")
+    new_owner: StrictStr = Field(description="name of the organization or user that owns the fork to be promoted")
     __properties: ClassVar[List[str]] = ["new_name", "new_owner"]
 
     model_config = ConfigDict(

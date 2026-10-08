@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **doer** | [**User**](User.md) |  | [optional] 
 **recipient** | [**User**](User.md) |  | [optional] 
-**target_name** | **str** |  | [optional] 
 **teams** | [**List[Team]**](Team.md) |  | [optional] 
 
 ## Example

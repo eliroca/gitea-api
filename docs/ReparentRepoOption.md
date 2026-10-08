@@ -6,8 +6,8 @@ ReparentRepoOption options when reparenting a repository
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**new_name** | **str** | name of the parent repository; defaults to the source repository name | [optional] 
-**new_owner** | **str** | name of the organization or user that owns the parent repository | 
+**new_name** | **str** | new name of the parent repository | [optional] 
+**new_owner** | **str** | name of the organization or user that owns the fork to be promoted | 
 
 ## Example
 

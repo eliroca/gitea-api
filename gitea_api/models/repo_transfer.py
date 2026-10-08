@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from gitea_api.models.team import Team
 from gitea_api.models.user import User
@@ -31,9 +31,8 @@ class RepoTransfer(BaseModel):
     """ # noqa: E501
     doer: Optional[User] = None
     recipient: Optional[User] = None
-    target_name: Optional[StrictStr] = None
     teams: Optional[List[Team]] = None
-    __properties: ClassVar[List[str]] = ["doer", "recipient", "target_name", "teams"]
+    __properties: ClassVar[List[str]] = ["doer", "recipient", "teams"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -100,7 +99,6 @@ class RepoTransfer(BaseModel):
         _obj = cls.model_validate({
             "doer": User.from_dict(obj["doer"]) if obj.get("doer") is not None else None,
             "recipient": User.from_dict(obj["recipient"]) if obj.get("recipient") is not None else None,
-            "target_name": obj.get("target_name"),
             "teams": [Team.from_dict(_item) for _item in obj["teams"]] if obj.get("teams") is not None else None
         })
         return _obj

@@ -83,7 +83,6 @@ class TestRepoTransfer(unittest.TestCase):
                     type = 'User', 
                     visibility = 'public', 
                     website = '', ),
-                target_name = '',
                 teams = [
                     gitea_api.models.team.Team(
                         can_create_org_repo = True, 
