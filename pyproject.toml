@@ -1,6 +1,6 @@
 [project]
 name = "gitea_api"
-version = "28.1.0"
+version = "28.2.0"
 description = "Gitea API"
 authors = [
   {name = "OpenAPI Generator Community",email = "team@openapitools.org"},
@@ -8,7 +8,7 @@ authors = [
 license = { text = "MIT" }
 readme = "README.md"
 keywords = ["OpenAPI", "OpenAPI-Generator", "Gitea API"]
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 
 dependencies = [
   "urllib3 (>=2.7.0,<3.0.0)",
