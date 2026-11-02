@@ -1,6 +1,6 @@
 [project]
 name = "gitea_api"
-version = "28.2.0"
+version = "28.3.0"
 description = "Gitea API"
 authors = [
   {name = "OpenAPI Generator Community",email = "team@openapitools.org"},
